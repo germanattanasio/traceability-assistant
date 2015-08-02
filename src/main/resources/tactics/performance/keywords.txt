@@ -1,0 +1,13 @@
+latency
+computation efficiency
+event rate
+parallel
+thread
+multitasking
+simultaneously
+rapidly
+queue
+throughtput
+manage event rate
+improve performance
+impoves performance

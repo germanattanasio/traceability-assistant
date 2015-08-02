@@ -1,0 +1,10 @@
+runtime registration
+binding time of modification
+publish subscribe
+polymorphism
+resource file
+dynamic lookup
+plug-in
+shared repositories
+component replacement
+configuration time binding

@@ -1,0 +1,6 @@
+cach
+concurr
+schedul polici
+schedul resourc
+synchron
+asynchron

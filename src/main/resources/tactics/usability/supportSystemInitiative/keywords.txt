@@ -1,0 +1,5 @@
+cancel operation
+undo operation
+redo operation
+pause/resume
+aggregate object

@@ -1,0 +1,5 @@
+detect intrusion
+verify message integrity
+detect message delay
+detect service denial
+denial of service

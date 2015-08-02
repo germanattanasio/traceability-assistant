@@ -1,0 +1,14 @@
+oauth
+https
+audit trail
+checksum
+man in the middle
+unauthorized
+nonrepudation
+malicious
+biometric identification
+access right
+access control
+degradation
+access token
+security

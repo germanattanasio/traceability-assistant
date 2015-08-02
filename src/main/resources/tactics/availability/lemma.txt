@@ -1,0 +1,10 @@
+transaction
+rollback
+degradate
+fault
+failure
+error
+timeout
+monitor
+inconsistency
+debug

@@ -1,0 +1,23 @@
+increase resources
+concurrency
+concurrence
+maintain multiple copies
+bound queue sizes
+schedule resources
+schedule policy
+FIFO
+first-in first-out
+first in first out
+fixed priority scheduling
+earliest deadline first
+round robin
+race condition
+least slack first
+load balancer
+cache
+caching
+data replication
+multiple processors
+multiple CPU
+asynchronous
+synchronous

@@ -1,0 +1,364 @@
+The Adventure Builder is an e-commerce application that sells adventure packages for vacationers over the Internet. 
+It uses web services to interact with external suppliers such as banks, airlines, hotels and adventure providers.
+
+High-level architecture.
+
+Consumer Website, The web-based user interface of the Adventure Builder is implemented in this module. 
+The user interface lets the user browse the catalog of travel packages, place a new purchase order, and track the status of existing orders. 
+This module creates the purchase orders based on user input and passes them to OpcApp for processing. 
+It uses an implementation of the Model View Controller pattern called the Web Application Framework (waf). 
+The model is implemented using Entity beans, the controller is implemented using servlets, and the view is a collection of JSPs and static HTML pages. 
+Part of the client-facing code is implemented using the GWT framework.
+
+OpcApp stands for Order Processing Center Application. The business logic of the Adventure Builder is implemented in this module. 
+Accepting purchase order requests from the ConsumerWebsite for processing by hosting the Purchase Order Web Service.
+Provide a mechanism for the Consumer Website to query the current status of a purchase order by hosting the Order Tracking Web Service.
+Communicate with external suppliers to process and maintain the status of a purchase order.
+Upon completion of processing a purchase order, send an email to the customer of its success or failure.
+A module decomposition refined view and a module uses refined view of OpcApp are available.
+Utils, this module contains utilities used by the Adventure Builder system.
+
+The dao contains Data Access Object (DAO) utilities, such as a DAO factory. 
+It does not contain the actual DAO classes that access the database
+these classes are inside the ConsumerWebsite module.
+The logger contains tracing and debugging utilities. The original name was tracer.
+The servicelocator module is an implementation of the ServiceLocator design pattern.
+
+Google Web Toolkit (gwt) is an open source framework for development of rich internet applications based on Ajax.
+The GWT framework was chosen for the following reasons:
+It is open source, which allows us to go under the hood and fix things when needed.
+It provides a rich development environment with powerful trace/debug, IDE integration and build management.
+It integrates well with any other frontend technologies since it does not use proprietary standards.
+It offers powerful widget construction features.
+There are several extension libraries of widget components available.
+Code is written in Java (and translated to JavaScript during build), which is an OO language that is familiar to the majority of the team.
+Code is compiled into Javascript, which is available on a very high percentage of browsers.
+
+Waf stands for Web Application Framework. It is a Model View Controller framework similar to Struts. 
+It allows you to specify in configuration files the web screens and action that are associated to user clicks on specific elements of the screen. 
+The configuration file has the mapping of screens and actions to Java classes. The framework provides the engine to display the proper screens and invoke the proper actions.
+The WAF framework was chosen because it facilitates the implementation of the Consumer Website code by providing template classes for using the MVC pattern. 
+For a given user operation, the developer implements an action class (controller) and JSP pages that correspond to the user screens (view). 
+The developer also uses configuration files to provide a configurable mapping between actions, action classes, events and screens. 
+The WAF infrastructure can then automatically take http requests and invoke the action classes and JSP screens.
+WAF also provides support for event-based communication and internationalization. 
+
+This is the Customer Relationship Manager (CRM) module. The job of this module is to send out an email once an order has been completely and successfully processed. 
+It is implemented as a message-driven bean. In the future this module can hold additional information about customers that could assist in providing the customers with a better experience. 
+This could include things like a history of a particular customer's purchases, or sending out periodic emails to customers regarding new and fresh deals.
+
+Invoice:
+This package contains a data structure that holds information that the OPC uses to communicate with external suppliers. 
+The data structure also holds the status of an order in the invoice (for more information on the lifecycle of an order see the state diagram in the OPC C&C view).
+
+Mailer:
+The mailer is a helper module and its primary responsibility is to send out emails using the Java Mail API. 
+It is provided with a message and email addresses to send out emails. 
+In the future this module will be moved to the utils package outside opc.
+
+Financial:
+The financial module is responsible for verifying and charging the customer's credit card. For this purpose it calls the external web services provided by the bank. 
+The verification of the credit card happens in a synchronous manner and the OPC application waits for the external web service to reply before moving on. 
+If the response from the banking service is not positive, the OPC application does not further process the order.
+
+Orderfiller:
+This module reads an internal queue of order requests. When an order arrives, it decomposes the order into requests to the different providers involved. 
+These requests are sent in XML format to internal queues.
+
+Powebservice:
+This module provides a web service that is used by ConsumerWebsite to communicate the details of a purchase order to the OPC for processing. 
+The web service interface is OpcPurchaseOrderService.
+
+Submit a complete purchase order for an adventure package. This operation returns the order ID as a String. 
+The operation simply checks if the PurchaseOrder argument is valid. If it is valid, the order is created in the database and this operation returns to the caller. 
+The actual processing of the purchase order is carried on in background. 
+If there is some unforeseen error during the processing of the purchase order after this operation has returned to the caller, 
+the error is handled elsewhere and is not the responsibility of this interface.
+
+Error handling:
+InvalidPOException. The service throws this exception if the purchase order is null, or if any of the components that make up the purchase order is null.
+ProcessingException. If the processing of the purchase order fails after it has passed its validation (there is no InvalidPOException), then a ProcessingException is thrown. 
+This indicates that the purchase order is valid but something has gone wrong while placing the order.
+
+Otwebservice:
+This module provides a web service that is used by ConsumerWebsite to query the status of an order by providing the order id. 
+
+The exceptions raised by this interface are:
+OrderNotFoundException. The service throws this exception if no purchase order with the given order id was found, or the orderId was null or ill-formed,
+RemoteException. The caller receives a RemoteException when there is a communication problem with the service provider implementing this interface.
+
+Orderreceiver:
+The Orderreceiver helps in persisting the purchase order in a relational database.
+
+Workflowmanager:
+The workflowmanager coordinates the processing of a purchase order and tracks the status of the purchase order throughout its lifecycle. 
+The workflow manager mediates the interaction among the other internal modules of the OPC in such a manner that 
+they (other internal modules) are oblivious to each others existence.
+
+Purchaseorder:
+This package contains the classes that correspond in memory to the data entities required to create a purchase order. 
+For each data entity, there is a POJO and an entity bean. 
+The POJOs are used throughout the application as data transfer objects. The data entities in this package are:
+Activity, CreditCard, Lodging, PurchaseOrder, Transportation, ContactInfo, Address.
+
+Webservicebroker:
+The webservicebroker is responsible for the interaction via web services with the airline, lodging and activity providers. 
+This module is divided into two sub-modules described below.
+
+Requestor, contains classes that can invoke the external web services provided by airline, lodging and activity supplier partners. 
+It also contains a message-driven bean that can receive messages sent through an internal queue. 
+These messages contain exactly the requests to be sent to the external web services.
+
+Provider:
+This module provides a web service that is visible to airline, lodging and activity supplier partners. 
+This web service is implemented in a session bean and is used by the external partners to submit the result of processing requests made to them. 
+Calls to this web service are forwarded to an internal queue.
+
+Processmanager:
+The processmanager is used by the otwebservice module to retrieve from the database adventure package purchase orders and their updated status. 
+It is also used by the workflowmanager to retrieve the orders placed with the external providers and persist their status. 
+This module contains the submodules described below.
+
+Ejb, contains a session bean that offers operations to retrieve orders and update the status of a 
+given order (both the adventure purchase order and the orders placed with the partner suppliers).
+
+Manager-ejb:
+Contains an entity bean to persist a purchase order. The entity bean uses container-managed persistence (CMP).
+
+PoEndPointBean:
+This class is a stateless session bean. It provides the implementation for the OpcPurchaseOrderService web service. 
+When it receives a purchase order, it checks that all arguments are valid and if ok dispatches the order to the workflowmanager sending a message to a JMS queue.
+
+WorkFlowManagerBean:
+This class is a message-driven bean. It is activated when there is a message in the queue. It processes two kinds of messages:
+purchase order message, in this case it calls the PoHandler class. 
+The sequence diagram down below shows the interactions involved in processing a purchase order.
+invoice message, this is a message that came from one of the external suppliers in response for a booking order. 
+WorkFlowManagerBean calls the InvoiceHandler class to take care of this messages.
+WorkFlowManagerBean also sets a timer with the EJB container so that it is activated periodically to check the status of all pending orders.
+
+PoHandler:
+The PoHandler class is not visible outside the workflowmanager package. 
+It acts as a delegate of the WorkFlowManagerBean class to handle any purchase order request. 
+When processing a request, it first uses POReceiver and processmanager to insert the order in the database in the Pending state. 
+Then it calls CreditCardVerifier synchronously to charge the customer's credit card. If the credit card is OK, 
+it sends a message to a JMS queue to be processed by OrderFillerBean. 
+Finally, it sends another JMS message to CrmBean, which will create and send an email to the customer informing about the status of his order.
+
+InvoiceHandler:
+The InvoiceHandler is not visible outside the workflowmanager package. 
+It acts as a delegate of the WorkflowManagerBean class to handle any invoice it receives from any of the suppliers. 
+When an invoice is received, InvoiceHandler basically uses processmanager to update the status of the corresponding order. 
+A given adventure package order may consist of:
+zero or one hotel booking, zero, one or two airline flights (departing and returning flight), zero or more activity items.
+
+When InvoiceHandler receives the last invoice confirming completion of the reservation, it sends a JMS message to CrmBean to notify the customer via email.
+
+CrmBean:
+This class is a message-driven bean. It is responsible for handling the communication with customers via email.
+
+CreditCardVerifier:
+This class is used to verify the credit information for a user. 
+It contacts an external web service to get the banking related information for the credit card number specified.
+
+OrderFillerBean:
+This class is a message-driven bean. It is responsible for sending out all the booking requests to the airline, 
+lodging and activity suppliers involved in a given purchase order.
+
+POReceiver:
+The purchase order receiver's responsibility is to create a purchase order entity bean and persist it in a relational database. 
+The POReceiver is implemented as a Java class and it creates a PurchaseOrder entity bean.
+
+Invoice:
+This "value object" class holds the data for an invoice that arrives from any of the external suppliers. 
+It has a method to provide an XML representation of the invoice.
+
+
+SMTP host, message body contents, subject, sender address and reply-to address for all 
+email messages sent by CrmBean are configurable via text files that can be changed at run time, 
+but require re-initialization of the application to take effect. 
+These files are implemented using standard Java i18n support. 
+
+Web browser:
+This component represents the user interface of the application running on a web browser. 
+Consumer Website is a Web 2.0 application implemented using GWT. Therefore, in addition to HTML, 
+the web browser runs JavaScript code that uses Ajax to communicate with the server. 
+Using the web browser, a customer of Adventure Builder opens the web site, 
+browses through the existing catalog of adventure packages, places orders, and tracks the status of existing orders.
+
+Consumer Website:
+The ConsumerWebsite is a multi-tier application implemented using Java EE technology. 
+It's the client facing part of the Adventure Builder system. 
+It is implemented using GWT code, a number of JSP and html pages, and standard components of the WAF framework. 
+Its primary responsibility is to process the http requests coming from customers browsing the catalog or placing/tracking orders. 
+Requests to place or track orders are relayed to the OPC application via SOAP web services.
+See the Consumer Website Multi-tier View for a description of the internal components of Consumer Website.
+
+OPC:
+OPC is the order processing center application. It's a Java EE application that communicates with external components using SOAP web services. 
+Internally, it consists of loosely coupled EJBs that communicate with each other using primarily asynchronous messaging. 
+The internal architecture follows the message channel design pattern [Hohpe 2003]. 
+See the OPC C&C View for a description of the internal components of OPC. 
+
+The core functionality of the Adventure Builder is implemented in this module. Its major functions are:
+Accept purchase order requests from the ConsumerWebsite for processing,
+Fill a purchase order by communicating with external suppliers.
+Provide a mechanism for the Consumer Website to query the current status of a purchase order,
+Upon completion of processing a purchase order, send an email to the customer reporting its success or failure.
+
+OPC provides the following interfaces, which are exposed as SOAP web services.
+OpcPurchaseOrderService, used to create a purchase order.
+OpcOrderTrackingService, used to track the status of a purchase order.
+WebServiceBroker, used by external suppliers to submit invoices back to OPC.
+
+OPC requires the following interfaces, which are provided by external partners as SOAP web services.
+CreditCardService, used to validate the credit card transaction with a bank.
+AirlinePOService, used to send purchase orders to external airline suppliers.
+LodgingPOService, used to send purchase orders to external lodging suppliers.
+ActivityPOService, used to send purchase orders to external activity suppliers.
+
+The UML activity diagram below shows the processing of a purchase order.
+It uses a split-and-join pattern when filling an order. 
+For simplicity, the diagram does not show interaction with a database.
+Following is the equivalent diagram using the BPMN notation.
+
+Adventure Catalog DB, this is a relational database that stores the adventure builder catalog containing various adventure packages. 
+It also stores information about users for user authentication and authorization. 
+The database server is MySQL Cluster 7.0 configured to use the InnoDB engine.
+
+Adventure OPC DB, this relational database stores purchase orders, invoices coming from the external suppliers and related information. 
+The database server is MySQL configured to use the InnoDB engine.
+The service registry is a data repository that works as a basic registry of the external services used by OPC. 
+More specifically, it has name, location and metadata about all the SOAP web services offered by the banks, 
+airline, lodging, and activity external partners, use a relational database or XML based files.
+
+SignOnFilter:
+This component is a Java EE Filter. 
+It intercepts all http requests (url pattern is "/*") and checks if the current user (if any) has authorization to perform the requested transaction (identified by the selected URL). 
+If an unsigned in user requested a page that requires a signed in user, the call is redirected to the sign in page.
+
+sign-on-config-xml:
+This xml file contains configurable information about the authentication and authorization constraints for specific URLs in the system. 
+It also has the URLs for the sign in page and sign in error page.
+
+MainServlet:
+This servlet is part of the WAF framework. It corresponds to the controller component in the MVC implementation within WAF. 
+It processes http requests to URLs that end with "do" and correspond to user clicks (eg, submit button on a form). 
+Internally, this servlet uses a configurable table loaded at initialization that maps each particular URL to the Consumer Website action class that will process that request. 
+These action classes extend HTMLActionSupport. 
+Each specific action class will instantiate specific POJOs and interact with specific facade session beans. 
+The URL mapping table is read from the mappings-xml file. 
+After the execution of the action class, the http request is forwarded to a URL that ends with "screen". 
+The mapping between specific actions and screens is also configurable and stored in mappings-xml. Calls to *screen are handled by TemplateServlet.
+MainServlet is also responsible for database transaction demarcation: if the requested user operation is transactional, 
+this component starts a transaction and calls commit or rollback when processing the request is finished. 
+MainServlet is also responsible for centralized exception handling in the Consumer Website application. 
+Exceptions that bubble up to MainServlet are caught and based on a mapping defined in mappings-xml, the http request is forwarded to a specific "screen" URL (typically an error page).
+
+mappings-xml.
+Simple xml file that contains the mappings of URLs (ending with "do") to: action classes (subclasses of HTMLActionSupport) and "screen" URLs. 
+This file also contains the mapping of Java exception classes to "screen" URLs.
+
+TemplateServlet.
+This servlet is also part of the WAF framework. During initialization, 
+this servlet retrieves the current locale and reads the proper i18n configurable data from screendefinitions-xml. 
+Other configurable parameters are defined in web-xml (not shown in the primary presentation). 
+When this servlet receives a forwarded http request from MainServlet, 
+it uses the mapping between screen names (URL ends with "screen") and JSP pages to once again forward the request to the appropriate JSP pages. 
+These JSP pages are called screen JSP.
+
+screendefinitions-xml.
+All screens in the website have the same structure: a title, a banner, a sidebar, a footer and the body. 
+The screendefinitions-xml file contains a configurable mapping between screen names and the set of JSP pages that compose the title, banner, sidebar, footer and body of that screen.
+
+screen-jsp:
+A regular JSP that corresponds to a (part of a) web screen. 
+The data required for filling up the fields in a screen JSP was set in the http request by MainServlet when the action was executed. 
+However, in some situations, a screen JSP makes calls to the facade session beans to retrieve additional data.
+
+index-jsp:
+This is the welcome page of the Consumer Website application. 
+It has basically links to sign in and other basic operations.
+
+SignOnNotifier:
+This component is a context listener. More specifically, it is a HttpSessionAttributeListener. 
+It is invoked by the container whenever an attribute in the http session changes. 
+When the signed in user attribute is removed because the user signed out or the http session expired, this component releases resources that were allocated for that user.
+
+OrderFacade:
+This stateless session bean is a lightweight implementation of the Session Facade pattern [Marinescu 2002]. 
+It provides operations that correspond to the business logic of use cases related to purchase order. More specifically, 
+it provides operations to place an order and track the status of a given order. 
+To carry on these operations, the session bean interacts with the OPC application via SOAP web services. 
+In addition, this session bean has operations to add and remove items to and from the user's shopping cart.
+
+CatalogFacade:
+This stateless session bean is a lightweight implementation of the Session Facade pattern [Marinescu 2002]. 
+It provides operations related to the catalog of adventure packages. 
+It allows browsing and searching the catalog, and looking at details of a given adventure travel package. 
+Internally, this session bean makes use of DAO classes to retrieve the information in Adventure Catalog DB.
+
+UserMgmtFacade:
+This stateless session bean also implements the Session Facade pattern [Marinescu 2002]. 
+It provides operations related to user management, which include: retrieving and updating user data,
+ validating user-ID/password sign on, blocking a user after a certain number of unsuccessful sign in attempts. 
+Internally, this session bean makes use of DAO classes to retrieve the information in Adventure Catalog DB.
+
+PoEndPointBean:
+This stateless session bean implements the SOAP web services interface called OpcPurchaseOrderService. 
+When a purchase order request arrives, it simply validates the order and, if OK, sends the order to the WorkFlowMgrQueue using JMS.
+
+OtEndPointBean:
+This stateless session bean implements the SOAP web services interface called OpcOrderTrackingService. 
+Requests for information about an order are handled by interacting with ProcessManagerBean. 
+Order information is retrieved using the PurchaseOrderBean entity bean.
+
+WorkFlowManagerBean:
+This message-driven bean is activated when there is a message in the WorkFlowMgrQueue. 
+purchase order message. When processing such messages, this component interacts with ProcessManagerBean to insert the order in the database in the Pending state. 
+Then it interacts synchronously with the Bank external service provider to validate and charge the customer's credit card. 
+If the credit card is OK, it sends a message to the OrderFillerQueue JMS queue to be processed by OrderFillerBean. 
+Finally, it sends another message to CRMQueue, which will be processed by CrmBean (send email to the customer informing the order is being processed).
+invoice message. This is a message that came from one of the external suppliers in response for a booking order. 
+When an invoice message is received, this component basically interacts with ProcessManagerBean to update the status of the corresponding order. 
+If the message confirms the last invoice that is part of a travel package order, WorkFlowManagerBean sends a JMS message to CrmBean to notify the customer via email.
+WorkFlowManagerBean also sets a timer with the EJB container so that it is activated periodically to check the status of all pending orders.
+WofkFlowManagerBean is one of the two components in the Adventure Builder system that act as service user of external services (the other is BrokerRequestorBean).
+The life cycle of a purchase order can be summarized by the following UML state machine diagram.
+
+Scalability:
+All the components that are SOAP web service providers in the Adventure Builder System are implemented using stateless session beans. 
+This type of EJB component can be replicated across machines in a cluster and each machine can also make available a pool of such EJBs. 
+This feature allows scaling of the number of requests it can handle. Horizontal scalability is achievable by adding more machines to the cluster. 
+Vertical scalability is also an option by increasing the capacity of any machine (and then increasing the number of EJB instances in each EJB pool). 
+See EJB configuration discussion in OPC C&C View#Variability Guide.
+Nevertheless, the transactions performed by these stateless session beans ultimately require access to the database. 
+The database cannot be easily replicated and may become a performance bottleneck if the number of calls increases beyond expectation.
+
+Deployment:
+The entire Adventure Builder system is deployed as two ear files (consumerwebsite-ear and opc-ear). 
+Having two separate ear files allows to deploy the two corresponding applications on different application server instances and different machines. 
+These separate target runtime environments can then be configured according with the processing and communication needs of each application. 
+TODO: why ProcessManagerBean and ManagerBean are deployed in a separate EJB jar file (processmanager-ejb)
+
+Coarse-grained granularity of service:
+Currently we only expose placing a purchase order as a single web service that includes placing orders for activities, transportation and lodging. 
+We don't provide separate operations to place an order only for flights, lodging or activities. 
+Therefore, this interface is less flexible in terms of composing different kinds of orders. 
+On the other hand, submitting a complete purchase order involves a single call.
+
+Using JAX-RPC for passing parameters:
+Since the consumer website and the order processing center reside in the same enterprise,
+we avoid using complex XML processing and pass parameters as Java objects. 
+It makes the interface slightly less interoperable but simplifies implementation.
+
+Publishing the web service as a WSDL:
+This web service is published as a WSDL in a well known location 
+(static web service instead of using a registry) since it is not available for general public use. 
+It is only used by the consumer website. The option to use SOAP instead of 
+Java RMI or direct EJB calls is motivated by the possibility of replacing the Consumer website implementation,
+with a different technology (e.g. NET); 
+SOAP can provide the required interoperability in that case.
+
+Using the EJB endpoint type:
+We chose the EJB endpoint type because the order processing center is implemented using a set of session beans.

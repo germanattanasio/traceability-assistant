@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>edu.isistan.carcha.concern.cdetectorTypeSystem</name>
+    <types>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.DesignDecision</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>kind</name>
+                    <description>kind</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+                <featureDescription>
+                    <name>typex</name>
+                    <description>type</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.availability</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.security</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.modifiability</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.performance</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.interoperability</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.testability</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.usability</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+                <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.faultDetection</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.faultPrevention</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.recoverFromFaults</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.detectAttacks</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.reactToAttacks</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.recoverFromAttacks</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.resistAttacks</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.deferBinding</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.increaseCohesion</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.reduceCoupling</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.reduceSizeOfAModule</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.controlResourceDemand</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.manageResources</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.locate</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.manageInterfaces</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.controlAndObserveSystemState</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.limitComplexity</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.supportSystemInitiative</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>edu.isistan.carcha.concern.cdetector.supportUserInitiative</name>
+            <description>Type defined in edu.isistan.carcha.concern.cdetector</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

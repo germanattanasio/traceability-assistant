@@ -1,0 +1,5435 @@
+{
+  "concerns": [
+    {
+      "label": "a - Hierarchy is currently being edited (only possible by the same user in a different session):",
+      "classification": "typeless",
+      "id": -246611641
+    },
+    {
+      "label": "a - Selected rule is being edited by another user or by the current user in another session:",
+      "classification": "typeless",
+      "id": 19233335
+    },
+    {
+      "label": "c - Selected rule is being edited by another user or by the current user in another session:",
+      "classification": "typeless",
+      "id": -9266955
+    },
+    {
+      "label": "System deselects the selected rule and displays an error message specifying that the rule is being edited by another user or by the current user in another session.",
+      "classification": "typeless",
+      "id": 1763353454
+    },
+    {
+      "label": "System displays an error message specifying that the selected rule cannot be deleted because it is currently edited by another user or by the current user in another session",
+      "classification": "typeless",
+      "id": 2124974019
+    },
+    {
+      "label": "System displays an error message specifying that the selected rule cannot be deleted because it is currently edited by another user or by the current user in another session.",
+      "classification": "typeless",
+      "id": -1593566297
+    },
+    {
+      "label": "System verified that the user is not editing the hierarchy in another session.",
+      "classification": "typeless",
+      "id": -1577930643
+    },
+    {
+      "label": "System verifies the hierarchy is not being edited by the same user in a different session.",
+      "classification": "typeless",
+      "id": 1744347641
+    },
+    {
+      "label": "System verifies the selected rule is not being edited by another user or by the current user in another session.",
+      "classification": "typeless",
+      "id": 746198643
+    },
+    {
+      "label": "a - A hierarchy with an identical name already exists:",
+      "classification": "typeless",
+      "id": -107764273
+    },
+    {
+      "label": "a - A hierarchy with an identical name already exists for the current user:",
+      "classification": "typeless",
+      "id": -1491447639
+    },
+    {
+      "label": "a - Alarm condition contains an error:",
+      "classification": "typeless",
+      "id": -494766088
+    },
+    {
+      "label": "a - Alarm Rule name or Alarm Name already exists:",
+      "classification": "typeless",
+      "id": -434482519
+    },
+    {
+      "label": "a - A logical node with the same name exists at the selected insertion point:",
+      "classification": "typeless",
+      "id": -1214413016
+    },
+    {
+      "label": "a - Command fails at the FSS level (either the COV is not received within a timeout period or the FSS sends back an exception for the command):",
+      "classification": "typeless",
+      "id": -34522626
+    },
+    {
+      "label": "a - Erroneous value entered:",
+      "classification": "typeless",
+      "id": 1049516902
+    },
+    {
+      "label": "An error could be invalid format or value for the property - in \"command value\".",
+      "classification": "typeless",
+      "id": 72935158
+    },
+    {
+      "label": "a - Rule name already exists:",
+      "classification": "typeless",
+      "id": 24906593
+    },
+    {
+      "label": "a - User has entered a wrong username.",
+      "classification": "typeless",
+      "id": 428724034
+    },
+    {
+      "label": "b - Alarm condition contains an error:",
+      "classification": "typeless",
+      "id": 1138037911
+    },
+    {
+      "label": "b - Logical condition contains an error:",
+      "classification": "typeless",
+      "id": -1387711073
+    },
+    {
+      "label": "b - Reaction contains an error:",
+      "classification": "typeless",
+      "id": -1726351720
+    },
+    {
+      "label": "b - User has entered a wrong password.",
+      "classification": "typeless",
+      "id": 780563132
+    },
+    {
+      "label": "c - Reaction contains an error:",
+      "classification": "typeless",
+      "id": -1375551783
+    },
+    {
+      "label": "d - MSLite server is not running (system cannot retrieve the Access Control component)",
+      "classification": "typeless",
+      "id": 790778198
+    },
+    {
+      "label": "System deselects the selected rule and displays an error message specifying that the rule is being edited by another user or by the current user in another session.",
+      "classification": "typeless",
+      "id": 1763353454
+    },
+    {
+      "label": "System display a corresponding error message stating that the user does not have adequate rights to edit the alarm rule",
+      "classification": "typeless",
+      "id": 187033981
+    },
+    {
+      "label": "System displays an error message asking the user to select a field object before using this button.",
+      "classification": "typeless",
+      "id": -149396835
+    },
+    {
+      "label": "System displays an error message mentioning that an Alarm rule or Alarm Name with the same name already exists.",
+      "classification": "typeless",
+      "id": -842285642
+    },
+    {
+      "label": "System displays an error message mentioning that an L&R rule with the same name already exists.",
+      "classification": "typeless",
+      "id": -1447007148
+    },
+    {
+      "label": "System displays an error message mentioning that it is impossible to dismiss unacknowledged alarms.",
+      "classification": "typeless",
+      "id": -1102834333
+    },
+    {
+      "label": "System displays an error message mentioning that the Alarm Condition contains error(s).",
+      "classification": "typeless",
+      "id": -186948545
+    },
+    {
+      "label": "System displays an error message mentioning that the Logical Condition contains error(s).",
+      "classification": "typeless",
+      "id": -244136953
+    },
+    {
+      "label": "System displays an error message mentioning that the MSLite might not be running.",
+      "classification": "typeless",
+      "id": 2036366206
+    },
+    {
+      "label": "System displays an error message mentioning that the Reaction contains error(s).",
+      "classification": "typeless",
+      "id": -1683306730
+    },
+    {
+      "label": "System displays an error message specifying that a hierarchy with an identical name already exists.",
+      "classification": "typeless",
+      "id": -1061575631
+    },
+    {
+      "label": "System displays an error message specifying that a logical node cannot contain duplicates of the same field object.",
+      "classification": "typeless",
+      "id": -218443938
+    },
+    {
+      "label": "System displays an error message specifying that a logical node with the same name already exists at the same location.",
+      "classification": "typeless",
+      "id": 323229673
+    },
+    {
+      "label": "System displays an error message specifying that the destination insertion point cannot be a field object.",
+      "classification": "typeless",
+      "id": -1831746282
+    },
+    {
+      "label": "System displays an error message specifying that the hierarchy is being edited, and therefore cannot be deleted.",
+      "classification": "typeless",
+      "id": -1183189754
+    },
+    {
+      "label": "System displays an error message specifying that the hierarchy is being edited, and therefore cannot be edited.",
+      "classification": "typeless",
+      "id": -1300218992
+    },
+    {
+      "label": "System displays an error message specifying that the selected button can remove field objects only.",
+      "classification": "typeless",
+      "id": 1930699402
+    },
+    {
+      "label": "System displays an error message specifying that the selected rule cannot be deleted because it is currently edited by another user or by the current user in another session.",
+      "classification": "typeless",
+      "id": -1593566297
+    },
+    {
+      "label": "System displays an error message specifying that the user doesn’t have enough access rights to add the select field object to the hierarchy.",
+      "classification": "typeless",
+      "id": -1984114484
+    },
+    {
+      "label": "System displays an error message specifying that the user doesn’t have sufficient access rights to delete the selected rule.",
+      "classification": "typeless",
+      "id": -900653241
+    },
+    {
+      "label": "System displays an error message to inform that the login failed.",
+      "classification": "typeless",
+      "id": -1291726184
+    },
+    {
+      "label": "System displays error message stating that the User does not have appropriate access rights to edit the rule.",
+      "classification": "typeless",
+      "id": 450916394
+    },
+    {
+      "label": "System notifies the user of command failure and reason of failure.",
+      "classification": "typeless",
+      "id": 296678110
+    },
+    {
+      "label": "System notifies the user of the incorrect value.",
+      "classification": "typeless",
+      "id": -1978773184
+    },
+    {
+      "label": "User corrects error(s) in the Alarm Condition.",
+      "classification": "typeless",
+      "id": -1690815694
+    },
+    {
+      "label": "User corrects error(s) in the Logical Condition.",
+      "classification": "typeless",
+      "id": -1681814022
+    },
+    {
+      "label": "User corrects error(s) in the Reaction.",
+      "classification": "typeless",
+      "id": 24760977
+    },
+    {
+      "label": "a - Command fails at the FSS level (either the COV is not received within a timeout period or the FSS sends back an exception for the command):",
+      "classification": "typeless",
+      "id": -34522626
+    },
+    {
+      "label": "A COV event is received successfully",
+      "classification": "typeless",
+      "id": -36830759
+    },
+    {
+      "label": "An additional FSS must be connected to MSLite to support another discipline.",
+      "classification": "typeless",
+      "id": -1631687843
+    },
+    {
+      "label": "FSS Sends a COV notification, confirming the success of the command.",
+      "classification": "typeless",
+      "id": -79088734
+    },
+    {
+      "label": "FSS sends notification of Change of Value for an object property.",
+      "classification": "typeless",
+      "id": 1579738551
+    },
+    {
+      "label": "MSLite is reconfigured off-line to support the additional FSS instance without development.",
+      "classification": "typeless",
+      "id": -1507812819
+    },
+    {
+      "label": "NFSS offers functionality comparable to FSS, but configuration information is in a different format and details of the interface (calling conventions, method names, etc.) are different.",
+      "classification": "typeless",
+      "id": 1113088235
+    },
+    {
+      "label": "System does not send the command to the FSS",
+      "classification": "typeless",
+      "id": 1512523769
+    },
+    {
+      "label": "System receives a COV event and positively evaluates condition of at least one Alarm rule.",
+      "classification": "typeless",
+      "id": -1776941126
+    },
+    {
+      "label": "System receives a COV event and positively evaluates condition of at least one Logical condition.",
+      "classification": "typeless",
+      "id": -1753861681
+    },
+    {
+      "label": "System transmits the command to the FSS.",
+      "classification": "typeless",
+      "id": 1022147064
+    },
+    {
+      "label": "a - New alarm is generated while the “Alarm Acknowledgment Request” is still displayed:",
+      "classification": "typeless",
+      "id": -633859243
+    },
+    {
+      "label": "a - Updated property is currently displayed in the work area:",
+      "classification": "typeless",
+      "id": -1946169061
+    },
+    {
+      "label": "If a hierarchy is selected / highlighted by a user, then the system displays the hierarchy name and the hierarchy description in the Work Area.",
+      "classification": "typeless",
+      "id": 852279531
+    },
+    {
+      "label": "If a logical node is selected / highlighted by a user, then the system displays the logical node name in the Work Area.",
+      "classification": "typeless",
+      "id": -1456538542
+    },
+    {
+      "label": "Object Browser: System displays the direct children of the expanded hierarchy and switches the “+” handle of the hierarchy name to a “-” handle.",
+      "classification": "typeless",
+      "id": -305768786
+    },
+    {
+      "label": "Object Browser: System displays the direct children of the expanded logical node and switches the “+” handle of the logical node to a “-” handle.",
+      "classification": "typeless",
+      "id": 2047026657
+    },
+    {
+      "label": "Object Browser: The Object Browser displays hierarchies (with parent logical nodes, children logical nodes and field objects for each logical node) that an authenticated User owns.",
+      "classification": "typeless",
+      "id": -1038693308
+    },
+    {
+      "label": "Only relevant GUI screens for these ‘m’ users will reflect the update within having received the notification from the FSS.",
+      "classification": "typeless",
+      "id": -861259294
+    },
+    {
+      "label": "System displays a confirmation dialog mentioning that all children of the logical node will be removed from the hierarchy.",
+      "classification": "typeless",
+      "id": -539987929
+    },
+    {
+      "label": "System displays a dialog asking for the new Logical Node name.",
+      "classification": "typeless",
+      "id": 46635308
+    },
+    {
+      "label": "System displays a hierarchy deletion confirmation dialog.",
+      "classification": "typeless",
+      "id": -1413617421
+    },
+    {
+      "label": "System displays “Alarm Acknowledgment Request” dialog for all logged in users with read access to the associated alarm property.",
+      "classification": "typeless",
+      "id": -1491409181
+    },
+    {
+      "label": "System displays a new alarm line with the status “Not Ack.” at the top of the Alarm Viewer for all logged in users with read access to the associated alarm property.",
+      "classification": "typeless",
+      "id": 1947869587
+    },
+    {
+      "label": "System displays multiple superimposed “Alarm Acknowledgment Request” dialogs, ordered in reverse chronological order with the dialog for the newest alarm on top.",
+      "classification": "typeless",
+      "id": 621525617
+    },
+    {
+      "label": "System displays only the properties of the selected object in the properties list that the user has read access to.",
+      "classification": "typeless",
+      "id": 1616509929
+    },
+    {
+      "label": "System displays the “Configure Alarm Rules” screen.",
+      "classification": "typeless",
+      "id": -69056658
+    },
+    {
+      "label": "System displays the “Configure Alarm Rules” screen, with the new rule added to the Alarm Rules list.",
+      "classification": "typeless",
+      "id": -1626491953
+    },
+    {
+      "label": "System displays the “Configure Alarm Rules” screen, with the updated rule name in the Alarm Rule list.",
+      "classification": "typeless",
+      "id": 1586258486
+    },
+    {
+      "label": "System displays the “Configure Hierarchies” screen.",
+      "classification": "typeless",
+      "id": -66631549
+    },
+    {
+      "label": "System displays the “Configure Hierarchies” screen and displays the edited hierarchy with its edited name / description / logical nodes / field objects in the hierarchies list.",
+      "classification": "typeless",
+      "id": -1291565774
+    },
+    {
+      "label": "System displays the “Configure Hierarchies” screen and displays the newly created hierarchy in the hierarchies list.",
+      "classification": "typeless",
+      "id": 910515083
+    },
+    {
+      "label": "System displays the “Create Alarm Rule” screen.",
+      "classification": "typeless",
+      "id": -233263443
+    },
+    {
+      "label": "System displays the “Create Hierarchy” screen.",
+      "classification": "typeless",
+      "id": -899447987
+    },
+    {
+      "label": "System displays the “Create L&R Rule” screen.",
+      "classification": "typeless",
+      "id": -960754380
+    },
+    {
+      "label": "System displays the description of the hierarchy in the Hierarchy Description box.",
+      "classification": "typeless",
+      "id": 829278136
+    },
+    {
+      "label": "System displays the “Edit Alarm Rule” screen.",
+      "classification": "typeless",
+      "id": 924467323
+    },
+    {
+      "label": "System displays the “Edit Hierarchy” screen.",
+      "classification": "typeless",
+      "id": -585007169
+    },
+    {
+      "label": "System displays the “Edit L&R Rule” screen.",
+      "classification": "typeless",
+      "id": 989051522
+    },
+    {
+      "label": "System displays the “Logic and Reaction Configuration” screen.",
+      "classification": "typeless",
+      "id": -1186553932
+    },
+    {
+      "label": "System displays the “Logic and Reaction Configuration” screen, with the new rule added to the L&R Rule list.",
+      "classification": "typeless",
+      "id": 1219841727
+    },
+    {
+      "label": "System displays the “Logic and Reaction Configuration” screen, with the updated rule name in the L&R Rule list.",
+      "classification": "typeless",
+      "id": 85939081
+    },
+    {
+      "label": "System displays the new property value in the Work Area.",
+      "classification": "typeless",
+      "id": -90608771
+    },
+    {
+      "label": "System displays the properties of the selected object in the properties list - only those that the user has write access to are displayed.",
+      "classification": "typeless",
+      "id": 1862936429
+    },
+    {
+      "label": "System displays the properties to which the user has read access of the selected field object in the Work Area.",
+      "classification": "typeless",
+      "id": -760548974
+    },
+    {
+      "label": "System displays the “Rule deletion confirmation” dialog.",
+      "classification": "typeless",
+      "id": 748988351
+    },
+    {
+      "label": "System updates the UI to reflect the new value of the property.",
+      "classification": "typeless",
+      "id": 331813695
+    },
+    {
+      "label": "The Alarm Viewer will still display the alarm with its state as \"Not Ack.\" for all viewers allowed to see the alarm, until some other user also seeing the request acknowledges the alarm.",
+      "classification": "typeless",
+      "id": -641459540
+    },
+    {
+      "label": "The deleted hierarchy name is not displayed in the hierarchies list.",
+      "classification": "typeless",
+      "id": -1989050699
+    },
+    {
+      "label": "The deleted rule name is not displayed in the Alarm Rules list.",
+      "classification": "typeless",
+      "id": -342310409
+    },
+    {
+      "label": "The deleted rule name is not displayed in the L&R Rule list.",
+      "classification": "typeless",
+      "id": 393765841
+    },
+    {
+      "label": "This dialog shows the following elements:",
+      "classification": "typeless",
+      "id": -1369979469
+    },
+    {
+      "label": "Work Area: System displays the field object name and the field object properties to which the user has at least read access in the work area.",
+      "classification": "typeless",
+      "id": -761821397
+    },
+    {
+      "label": "a - Multiple alarm rules are evaluated to a \"true\" value as a result of the COV:",
+      "classification": "typeless",
+      "id": -1875385168
+    },
+    {
+      "label": "a - Multiple logical conditions are evaluated to a \"true\" value as a result of the COV:",
+      "classification": "typeless",
+      "id": -1881145165
+    },
+    {
+      "label": "For each alarm rule evaluated to a \"true\" value, the system executes all steps of the main success scenario.",
+      "classification": "typeless",
+      "id": -1188547153
+    },
+    {
+      "label": "For each logical condition evaluated to a \"true\" value, the system executes all steps of the main sucess scenario.",
+      "classification": "typeless",
+      "id": -514088679
+    },
+    {
+      "label": "System creates a new alarm rule with the specified parameters and persists it in the database and in the cache for performance.",
+      "classification": "typeless",
+      "id": 291445553
+    },
+    {
+      "label": "System creates a new rule with the specified parameters and persists it in the database and in the cache for performance.",
+      "classification": "typeless",
+      "id": 2074060162
+    },
+    {
+      "label": "System receives a COV event and positively evaluates condition of at least one Alarm rule.",
+      "classification": "typeless",
+      "id": -1776941126
+    },
+    {
+      "label": "System receives a COV event and positively evaluates condition of at least one Logical condition.",
+      "classification": "typeless",
+      "id": -1753861681
+    },
+    {
+      "label": "The alarm is displayed on the user interfaces of all users that must receive the alarm within 3 seconds.",
+      "classification": "typeless",
+      "id": -409009168
+    },
+    {
+      "label": "The command that is configured in the reaction of the logical condition that evaluated to true will be executed.",
+      "classification": "typeless",
+      "id": 765225481
+    },
+    {
+      "label": "The order of execution of the rules is determined by their order in the \"Configure Alarm Rules\" screen.",
+      "classification": "typeless",
+      "id": -231330445
+    },
+    {
+      "label": "The order of execution of the rules is determined by their order in the \"Configure Logic & Reaction\" screen.",
+      "classification": "typeless",
+      "id": 882490532
+    },
+    {
+      "label": "The Time durations specified in this scenario are performance goals and are not to be taken as hard deadlines.",
+      "classification": "typeless",
+      "id": 1654840811
+    },
+    {
+      "label": "The value is updated on all user screens that display the old value within 3 seconds.",
+      "classification": "typeless",
+      "id": 1927112124
+    },
+    {
+      "label": "Use Case \"Manage Change of Value\" is executed successfully and triggers extension.",
+      "classification": "typeless",
+      "id": -871824511
+    },
+    {
+      "label": "All hierarchies are user specific and are persisted in the database.",
+      "classification": "typeless",
+      "id": 1040076746
+    },
+    {
+      "label": "If a logical nodel is deleted all its child logical nodes and / or field objects will be deleted as well.",
+      "classification": "typeless",
+      "id": -470220996
+    },
+    {
+      "label": "System adds the selected field object as a child node of the destination insertion point.",
+      "classification": "typeless",
+      "id": -1244100808
+    },
+    {
+      "label": "System assigns the user who acknowledged the alarm as the owner of the alarm and will update the database.",
+      "classification": "typeless",
+      "id": -635283544
+    },
+    {
+      "label": "System changes the status of the alarm to “Ack” in the Alarm Viewer for all users seeing it.",
+      "classification": "typeless",
+      "id": 1262184514
+    },
+    {
+      "label": "System creates a new alarm rule with the specified parameters and persists it in the database and in the cache for performance.",
+      "classification": "typeless",
+      "id": 291445553
+    },
+    {
+      "label": "System creates a new rule with the specified parameters and persists it in the database and in the cache for performance.",
+      "classification": "typeless",
+      "id": 2074060162
+    },
+    {
+      "label": "System deletes the alarm from the system database.",
+      "classification": "typeless",
+      "id": -201821906
+    },
+    {
+      "label": "System displays an error message specifying that the hierarchy is being edited, and therefore cannot be deleted.",
+      "classification": "typeless",
+      "id": -1183189754
+    },
+    {
+      "label": "System persists the alarm and all its attributes in the system database.",
+      "classification": "typeless",
+      "id": 998005727
+    },
+    {
+      "label": "System persists the hierarchy information in the database.",
+      "classification": "typeless",
+      "id": -182635755
+    },
+    {
+      "label": "System persists the hierarchy information in the MSLite database.",
+      "classification": "typeless",
+      "id": -2060281471
+    },
+    {
+      "label": "System removes the alarm from the Alarm List for all users seeing it.",
+      "classification": "typeless",
+      "id": -1405663364
+    },
+    {
+      "label": "System removes the deleted rule from its set of persisted rules.",
+      "classification": "typeless",
+      "id": 1718142875
+    },
+    {
+      "label": "System removes the logical node and its children from the “Hierarchy Tree Editor”.",
+      "classification": "typeless",
+      "id": -2120867806
+    },
+    {
+      "label": "System removes the selected Field Object from the hierarchy.",
+      "classification": "typeless",
+      "id": -1555478299
+    },
+    {
+      "label": "System updates the property value in its internal object model.",
+      "classification": "typeless",
+      "id": 578406400
+    },
+    {
+      "label": "System updates the state of the alarm in the system database.",
+      "classification": "typeless",
+      "id": 1458761624
+    },
+    {
+      "label": "User may modify the “Alarm Condition” part of the rule by modifying individual conditions.",
+      "classification": "typeless",
+      "id": -744779427
+    },
+    {
+      "label": "User may modify the “Alarm” (or reaction) part of the rule.",
+      "classification": "typeless",
+      "id": 1333132643
+    },
+    {
+      "label": "User may modify the hierarchy description.",
+      "classification": "typeless",
+      "id": 1186947408
+    },
+    {
+      "label": "User may modify the hierarchy name.",
+      "classification": "typeless",
+      "id": -987660287
+    },
+    {
+      "label": "User may modify the “Logical Condition” part of the rule by modifying individual conditions.",
+      "classification": "typeless",
+      "id": 216888533
+    },
+    {
+      "label": "User may modify the name of the Alarm Rule or may modify the Alarm Name.",
+      "classification": "typeless",
+      "id": 1265867032
+    },
+    {
+      "label": "User may modify the name of the L&R rule.",
+      "classification": "typeless",
+      "id": 1527060656
+    },
+    {
+      "label": "User may modify the “Reaction” part of the rule”",
+      "classification": "typeless",
+      "id": 1302154817
+    },
+    {
+      "label": "a - Command fails at the FSS level (either the COV is not received within a timeout period or the FSS sends back an exception for the command):",
+      "classification": "typeless",
+      "id": -34522626
+    },
+    {
+      "label": "FSS Sends a COV notification, confirming the success of the command.",
+      "classification": "typeless",
+      "id": -79088734
+    },
+    {
+      "label": "FSS sends notification of Change of Value for an object property.",
+      "classification": "typeless",
+      "id": 1579738551
+    },
+    {
+      "label": "Hence, no notifications or events can be lost.",
+      "classification": "typeless",
+      "id": 751498629
+    },
+    {
+      "label": "System receives a COV event and positively evaluates condition of at least one Alarm rule.",
+      "classification": "typeless",
+      "id": -1776941126
+    },
+    {
+      "label": "System receives a COV event and positively evaluates condition of at least one Logical condition.",
+      "classification": "typeless",
+      "id": -1753861681
+    },
+    {
+      "label": "System transmits the command to the FSS.",
+      "classification": "typeless",
+      "id": 1022147064
+    },
+    {
+      "label": "The MSLite system will preserve any notifications that are initiated from either the MSLite system or from the FSS.",
+      "classification": "typeless",
+      "id": 1472109963
+    },
+    {
+      "label": "A successfully logged in user has a UserToken associated with his session object.",
+      "classification": "typeless",
+      "id": -707064432
+    },
+    {
+      "label": "a - User does not have read access to any property of the selected field object:",
+      "classification": "typeless",
+      "id": 207011691
+    },
+    {
+      "label": "a - User has entered a wrong username.",
+      "classification": "typeless",
+      "id": 428724034
+    },
+    {
+      "label": "a - User has no read access to any one property in the Logical Condition section of the selected rule:",
+      "classification": "typeless",
+      "id": 917912382
+    },
+    {
+      "label": "a - User has no read access to a property in the Alarm Condition section of the selected rule or no write access to the associated alarm property:",
+      "classification": "typeless",
+      "id": -719344782
+    },
+    {
+      "label": "a - User has no read access to a property in the Logical Condition section of the selected rule:",
+      "classification": "typeless",
+      "id": -1042332755
+    },
+    {
+      "label": "a - User has no read access to a property in the Logical Condition section of the selected rule or no write access to the affected property in the Reaction section:",
+      "classification": "typeless",
+      "id": 1651187087
+    },
+    {
+      "label": "a - User has no write access to the selected property:",
+      "classification": "typeless",
+      "id": 1174053565
+    },
+    {
+      "label": "b - User has entered a wrong password.",
+      "classification": "typeless",
+      "id": 780563132
+    },
+    {
+      "label": "b - User has no write access to the selected property in the Reaction section:",
+      "classification": "typeless",
+      "id": -1323599740
+    },
+    {
+      "label": "Depending on the user's permissions for this field point MSLite grants or denies read and / or write access to this field point.",
+      "classification": "typeless",
+      "id": 852512249
+    },
+    {
+      "label": "Object Browser: The Object Browser displays hierarchies (with parent logical nodes, children logical nodes and field objects for each logical node) that an authenticated User owns.",
+      "classification": "typeless",
+      "id": -1038693308
+    },
+    {
+      "label": "System display a corresponding error message stating that the user does not have adequate rights to edit the alarm rule",
+      "classification": "typeless",
+      "id": 187033981
+    },
+    {
+      "label": "System displays “Alarm Acknowledgment Request” dialog for all logged in users with read access to the associated alarm property.",
+      "classification": "typeless",
+      "id": -1491409181
+    },
+    {
+      "label": "System displays an error message specifying that the user doesn’t have enough access rights to add the select field object to the hierarchy.",
+      "classification": "typeless",
+      "id": -1984114484
+    },
+    {
+      "label": "System displays an error message specifying that the user doesn’t have sufficient access rights to delete the selected rule.",
+      "classification": "typeless",
+      "id": -900653241
+    },
+    {
+      "label": "System displays a new alarm line with the status “Not Ack.” at the top of the Alarm Viewer for all logged in users with read access to the associated alarm property.",
+      "classification": "typeless",
+      "id": 1947869587
+    },
+    {
+      "label": "System displays error message stating that the User does not have appropriate access rights to edit the rule.",
+      "classification": "typeless",
+      "id": 450916394
+    },
+    {
+      "label": "System displays only the properties of the selected object in the properties list that the user has read access to.",
+      "classification": "typeless",
+      "id": 1616509929
+    },
+    {
+      "label": "System displays the properties of the selected object in the properties list - only those that the user has write access to are displayed.",
+      "classification": "typeless",
+      "id": 1862936429
+    },
+    {
+      "label": "System displays the properties to which the user has read access of the selected field object in the Work Area.",
+      "classification": "typeless",
+      "id": -760548974
+    },
+    {
+      "label": "System presents a screen containing username and password fields.",
+      "classification": "typeless",
+      "id": -856786595
+    },
+    {
+      "label": "System validates username and password through.",
+      "classification": "typeless",
+      "id": 310303613
+    },
+    {
+      "label": "System verifies the access rights of the user to the properties of the selected field object.",
+      "classification": "typeless",
+      "id": 2125370336
+    },
+    {
+      "label": "System verifies the user has read access to at least one property of the field object.",
+      "classification": "typeless",
+      "id": -1636827605
+    },
+    {
+      "label": "System Verifies user has read access to all properties in the Alarm condition of the rule and write access to the associated alarm property.",
+      "classification": "typeless",
+      "id": -1696130772
+    },
+    {
+      "label": "System Verifies user has read access to all properties in the logical condition of the rule and write access to the property affected by its reaction.",
+      "classification": "typeless",
+      "id": -1368086071
+    },
+    {
+      "label": "System verifies user has read access to all properties that are a part of the condition and write access to the associated alarm property.",
+      "classification": "typeless",
+      "id": -1585548746
+    },
+    {
+      "label": "System verifies user has read access to all properties that are a part of the condition and write access to the property affected by reaction of the rule.",
+      "classification": "typeless",
+      "id": -2005237041
+    },
+    {
+      "label": "System verifies user has write access to property and enables “Issue Command” button for those properties for which the user has write access.",
+      "classification": "typeless",
+      "id": -1889318628
+    },
+    {
+      "label": "System verifies user has write access to the property.",
+      "classification": "typeless",
+      "id": 1297966827
+    },
+    {
+      "label": "The Access Control must return a valid UserToken whenever the user credentials are valid.",
+      "classification": "typeless",
+      "id": -1685997076
+    },
+    {
+      "label": "There are ‘m’ users that have read privileges to field point ‘x’.",
+      "classification": "typeless",
+      "id": 1061117199
+    },
+    {
+      "label": "The user has read access to the associated alarm Property.",
+      "classification": "typeless",
+      "id": 675314804
+    },
+    {
+      "label": "The user is authenticated",
+      "classification": "typeless",
+      "id": 314358573
+    },
+    {
+      "label": "The user is logged in and read and / or write access to this field point might be restricted.",
+      "classification": "typeless",
+      "id": -1143643156
+    },
+    {
+      "label": "The username and password must be validated through the Access Control component.",
+      "classification": "typeless",
+      "id": 61591579
+    },
+    {
+      "label": "User enters his/her username and password.",
+      "classification": "typeless",
+      "id": 1708649510
+    },
+    {
+      "label": "User selects the “Associated Alarm Property” dropdown list - only those that the user has write access to are displayed.",
+      "classification": "typeless",
+      "id": 869239923
+    }
+  ],
+  "designDecisions": [
+    {
+      "label": "Configure access rights statically including persisting them in the database and in the cache.",
+      "classification": "tactic",
+      "id": 1579872571
+    },
+    {
+      "label": "Allow access to all MSLite, L&R and Alarm data based on user rights.",
+      "classification": "tactic",
+      "id": 1409923376
+    },
+    {
+      "label": "MSLite needs a way to authorize and authenticate users as they try to use MSLite and the data within MSLite.",
+      "classification": "tactic",
+      "id": 1021380338
+    },
+    {
+      "label": "The existence of Access Control introduces another computation in the processing of end-user data requests.",
+      "classification": "tactic",
+      "id": -1820260071
+    },
+    {
+      "label": "This directly affects computational performance of MSLite as authorization and authentication require their own processing time.",
+      "classification": "tactic",
+      "id": 886761325
+    },
+    {
+      "label": "Without the functional requirement to control access to data and the security concern of data access control, the AccessControl component could be removed and the speed of MSLite processing for data requests hence improved.",
+      "classification": "tactic",
+      "id": -641142757
+    },
+    {
+      "label": "Managing Alarms including persisting them in a local cache: create alarm rule, edit alarm rule, delete alarm rule.",
+      "classification": "tactic",
+      "id": 236947759
+    },
+    {
+      "label": "Trigger alarm rule including subscribing to COV events based on alarm rules, trigger Alarms, persist alarm.",
+      "classification": "tactic",
+      "id": -1801007387
+    },
+    {
+      "label": "Persist MSLite users and permissions in the database.",
+      "classification": "tactic",
+      "id": 824941711
+    },
+    {
+      "label": "L&R Managing L&R rules including persisting them in a local cache: create L&R rule, edit L&R rule, delete L&R rule, trigger L&R rule, subscribe to COVs, evaluate L&R rules.",
+      "classification": "tactic",
+      "id": 1634310513
+    },
+    {
+      "label": "Trigger reactions (equivalent to issuing commands and therefore referred to as MSLite L&R Commands).",
+      "classification": "tactic",
+      "id": -1959156016
+    },
+    {
+      "label": "MSLite Server Controls all of the Logic for: handling the Communication with the multiple FSSs.",
+      "classification": "tactic",
+      "id": -1981044612
+    },
+    {
+      "label": "Display alarm, remove request from other users screens, change alarm status in Alarm Viewer.",
+      "classification": "tactic",
+      "id": -1211152883
+    },
+    {
+      "label": "Issuing Commands including: user issues commands from UI, UI sends command to MSLite, UI reflect successful transmission of command to FSS, UI reflects failed transmission of command to FSS.",
+      "classification": "tactic",
+      "id": -349240184
+    },
+    {
+      "label": "UI shows current value - Subscribe to COV events based on displayed property values.",
+      "classification": "tactic",
+      "id": 1492700220
+    },
+    {
+      "label": "Read FSS configuration and store it in the MSLite database.",
+      "classification": "tactic",
+      "id": -1032997509
+    },
+    {
+      "label": "Read initial property values from the FSS and store them in the MSLite cache.",
+      "classification": "tactic",
+      "id": 1333617677
+    },
+    {
+      "label": "Requests the Alarm component to update the Alarm rules cache and subscriptions when a new Alarm rule has been created or an existing Alarm rule has been edited or deleted.",
+      "classification": "tactic",
+      "id": 1669424717
+    },
+    {
+      "label": "Retrieve Existing Runtime Alarms - retrieves the details of existing alarms that are persisted in the MSLite Database via the AccessControl.",
+      "classification": "tactic",
+      "id": -1414036172
+    },
+    {
+      "label": "Retrieve Alarm Viewing Rights - retrieves the users access rights of all alarms present in the system at runtime via the AccessControl.",
+      "classification": "tactic",
+      "id": 1224367055
+    },
+    {
+      "label": "Alarm Rules: Retrieve property values from the cache for comparison with Alarm rules when new COV events are received.",
+      "classification": "tactic",
+      "id": -858042349
+    },
+    {
+      "label": "Alarm Objects: When an Alarm condition evaluates to true a new Alarm Object is created by the Alarm Component and this connector persists the details of that Alarm in the Alarm Database.",
+      "classification": "tactic",
+      "id": 526263860
+    },
+    {
+      "label": "Alarm Subscribes to Events The Alarm component is subscribed to only those COV events for properties that are contained in its rule cache.",
+      "classification": "tactic",
+      "id": 1112136182
+    },
+    {
+      "label": "Cache Subscribes to Events The Cache is subscribed to all COV events (at startup) so that it can be up to date with the state of the FSS.",
+      "classification": "tactic",
+      "id": -599413204
+    },
+    {
+      "label": "All data to be persisted in the database will use this connector.",
+      "classification": "tactic",
+      "id": 785140924
+    },
+    {
+      "label": "FSS Events THIS IS EXTERNAL TO THE SYSTEM AND WILL NOT BE BUILT BY MSLite DEVELOPERS.",
+      "classification": "tactic",
+      "id": -1398254291
+    },
+    {
+      "label": "L&R Data Requests the L&R component to update the L&R rules cache and subscriptions when a new L&R rule has been created or an existing L&R rule has been edited or deleted.",
+      "classification": "tactic",
+      "id": 2041645425
+    },
+    {
+      "label": "Retrieves L&R rules at startup to store in the local rule cache.",
+      "classification": "tactic",
+      "id": 360799848
+    },
+    {
+      "label": "Property values for each property contained in each rule are also read and stored in a local property value cache.",
+      "classification": "tactic",
+      "id": -802737478
+    },
+    {
+      "label": "L&R Subscribes to Events The L&R component is subscribed to only those COV events for properties that are contained in its rule cache.",
+      "classification": "tactic",
+      "id": 285739286
+    },
+    {
+      "label": "Initial subscription is done at startup but is managed dynamically during runtime.",
+      "classification": "tactic",
+      "id": -287204642
+    },
+    {
+      "label": "MSLite Data For the manage hierarchy functionality: Retrieve hierarchies and field objects that are user specific.",
+      "classification": "tactic",
+      "id": -1689951964
+    },
+    {
+      "label": "Update and / or delete hierarchies as updated by the users.",
+      "classification": "tactic",
+      "id": 7628074
+    },
+    {
+      "label": "Retrieve property values from the cache.",
+      "classification": "tactic",
+      "id": -1669180637
+    },
+    {
+      "label": "Provide user access verification for all functionalities of the Presentation component.",
+      "classification": "tactic",
+      "id": 1834593460
+    },
+    {
+      "label": "MSLite L&R Commands When an L&R rule evaluates to true, a reactions is triggered - this is equivalent to a command issued by the user with the difference being that this reaction or command is triggered or issued automatically by the L&R component.",
+      "classification": "tactic",
+      "id": 652065369
+    },
+    {
+      "label": "MSLite User Commands Issue a user command to the FSS (via the Virtual FSS) to update a property value that a user has write access to.",
+      "classification": "tactic",
+      "id": 424807253
+    },
+    {
+      "label": "Presentation Subscribes to Events The Presentation component is subscribed to COV events for properties that are being viewed by the user and are therefore user specific.",
+      "classification": "tactic",
+      "id": -299304885
+    },
+    {
+      "label": "Important: These subscriptions are user specific.",
+      "classification": "tactic",
+      "id": -149235669
+    },
+    {
+      "label": "Publish Events to Alarm Publishes COV events to the Alarm component for the events that the Alarm component is subscribed to.",
+      "classification": "tactic",
+      "id": -192978947
+    },
+    {
+      "label": "Publish Events to Cache The Publish Subscribe Bus publishes COV events to the Cache that the Cache is subscribed to (so that it can be updated).",
+      "classification": "tactic",
+      "id": 780538954
+    },
+    {
+      "label": "Publish Events to L&R Publishes COV events to the L&R component for the events that the L&R component is subscribed to.",
+      "classification": "tactic",
+      "id": -1568349166
+    },
+    {
+      "label": "Publish Events to Presentation Publishes COV events to the Presentation component for events that the Presentation component has subscribed to.",
+      "classification": "tactic",
+      "id": -820928095
+    },
+    {
+      "label": "Important: These events are user specific.",
+      "classification": "tactic",
+      "id": 1723686718
+    },
+    {
+      "label": "Publish Subscribe; a publish-subscribe connector was used because: MSLite does not know subscribers to FSS events in advance and there can be dynamic subscribers.",
+      "classification": "tactic",
+      "id": 946790530
+    },
+    {
+      "label": "The events are stored in a first-in first-out (FIFO) buffer in the publish-subscribe.",
+      "classification": "tactic",
+      "id": 1836474484
+    },
+    {
+      "label": "MSLite Commands to FSS All MSLite Commands (L&R, User and later Alarm) are sent to the FSS - at this time all commands map to change in property values.",
+      "classification": "tactic",
+      "id": 246284030
+    },
+    {
+      "label": "Retrieve Object Data Retrieve the Object Data when requested (e.g. by the L&R and Alarm components to compare with L&R and Alarm rules respectively or by a user when the view in the UI changes).",
+      "classification": "tactic",
+      "id": -1900620326
+    },
+    {
+      "label": "Send Initial Property Values Retrieve the initial set of property values of the FSS and send it to the AccessControl to store them in the MSLite cache.",
+      "classification": "tactic",
+      "id": 1871491792
+    },
+    {
+      "label": "Store Initial Property Values Store the received initial set of property values of the FSS in the MSLite cache.",
+      "classification": "tactic",
+      "id": 1643105994
+    },
+    {
+      "label": "It is important to note that there can be multiple Presentation components depending on the number of logged on users in MSLite.",
+      "classification": "tactic",
+      "id": -1241065881
+    },
+    {
+      "label": "Stores events in a First In First Out (FIFO) queue.",
+      "classification": "tactic",
+      "id": 853307077
+    },
+    {
+      "label": "Upon receiving the first ever event from the Virtual FSS, the Buffer Receiver creates a thread called the Coordinator (Coordinator Component).",
+      "classification": "tactic",
+      "id": 669531370
+    },
+    {
+      "label": "The Buffer Receiver releases events one at a time only after the Publisher has completed publishing the previous event to its subscribed components.",
+      "classification": "tactic",
+      "id": -198668365
+    },
+    {
+      "label": "The storage mechanism for this buffer needs to be first-in first-out (FIFO).",
+      "classification": "tactic",
+      "id": -1153902496
+    },
+    {
+      "label": "The reason for the Buffer Receiver component is that MSLite needs to satisfy the reliability quality attribute (R1) that states that no events must be lost.",
+      "classification": "tactic",
+      "id": 1593179896
+    },
+    {
+      "label": "Buffering introduces performance degradation because events in the buffer do not get processed until all the components that used the prior event are finished processing.",
+      "classification": "tactic",
+      "id": -969768610
+    },
+    {
+      "label": "To address the issue of performance here, an alternative structure would be using local caches for components that need to process events.",
+      "classification": "tactic",
+      "id": -1794907165
+    },
+    {
+      "label": "Each of these local caches would need to subscribe for events of interest and do their processing.",
+      "classification": "tactic",
+      "id": 21125408
+    },
+    {
+      "label": "Note though that the possibility exists that these caches perform at different speeds and would hence impact the sequencing desired for alarm and rule evaluation.",
+      "classification": "tactic",
+      "id": -32565532
+    },
+    {
+      "label": "Coordinator: The Coordinator starts processing events one at a time by requesting a single MSLite event from the Buffer Receiver FIFO queue.",
+      "classification": "tactic",
+      "id": 1158545430
+    },
+    {
+      "label": "The Coordinator then proceeds to query the Subscription Manager to see who has subscribed (registered) for the event.",
+      "classification": "tactic",
+      "id": -906044073
+    },
+    {
+      "label": "Depending on the number of subscribers to the event, the Coordinator will create that exact number of threads called the Event Publisher(s) to send events to specific subscribers.",
+      "classification": "tactic",
+      "id": 1101081628
+    },
+    {
+      "label": "Only after the Coordinator receives acknowledgment from all created threads, will it then proceed to process the next event.",
+      "classification": "tactic",
+      "id": 5467491
+    },
+    {
+      "label": "The Event Publisher thread(s) will then terminate itself.",
+      "classification": "tactic",
+      "id": 2081039367
+    },
+    {
+      "label": "Note: The requirement for the coordinator to wait for an acknowledgment was dropped due the performance issues involved and the risk of certain threads hanging while publishing.",
+      "classification": "tactic",
+      "id": -384800626
+    },
+    {
+      "label": "A local buffer was instead placed on each publishing thread to ensure no events were lost.",
+      "classification": "tactic",
+      "id": -1974995966
+    },
+    {
+      "label": "Each Event Publisher thread will send completion acknowledgment to Coordinator.",
+      "classification": "tactic",
+      "id": -1871885568
+    },
+    {
+      "label": "Only after the Coordinator receives acknowledgment from all created threads, will it then proceed to process the next event.",
+      "classification": "tactic",
+      "id": 5467491
+    },
+    {
+      "label": "The Event Publisher thread(s) will then terminate itself.",
+      "classification": "tactic",
+      "id": 2081039367
+    },
+    {
+      "label": "Note: The requirement for the coordinator to wait for an acknowledgment was dropped due the performance issues involved and the risk of certain threads hanging while publishing.",
+      "classification": "tactic",
+      "id": -384800626
+    },
+    {
+      "label": "A local buffer was instead placed on each publishing thread to ensure no events were lost.",
+      "classification": "tactic",
+      "id": -1974995966
+    },
+    {
+      "label": "The existence of Event Publishers as threads was to achieve a performance gain to allow for parallel execution instead of blocking occurring every time an event is processed.",
+      "classification": "tactic",
+      "id": 1796956047
+    },
+    {
+      "label": "If threads were not used, the Coordinator component would be responsible for publishing events but this would be a sequential blocking operation.",
+      "classification": "tactic",
+      "id": -2146065616
+    },
+    {
+      "label": "Subscription Manager Maintains a list of events to which components can subscribe.",
+      "classification": "tactic",
+      "id": 533721618
+    },
+    {
+      "label": "Allows components to subscribe (register) to events.",
+      "classification": "tactic",
+      "id": 237921236
+    },
+    {
+      "label": "Maintains a list of which components subscribe to which events.",
+      "classification": "tactic",
+      "id": -1489281483
+    },
+    {
+      "label": "Cache, L&R, Presentation, Alarm Subscribe to (register) the Subscription Manager for events.",
+      "classification": "tactic",
+      "id": -103091642
+    },
+    {
+      "label": "Process events upon notification by Event Publisher threads.",
+      "classification": "tactic",
+      "id": 523948124
+    },
+    {
+      "label": "Retrieve MSLite Event The Coordinator starts processing events one at a time by requesting a single MSLite event from the Buffer Receivers FIFO queue.",
+      "classification": "tactic",
+      "id": 994138217
+    },
+    {
+      "label": "Spawn MSLite Event Thread Depending on the number of subscribers to the event, the Coordinator will spawn that exact number of threads called the Event Publisher(s) to send events to specific subscribers.",
+      "classification": "tactic",
+      "id": -913522794
+    },
+    {
+      "label": "For every FSS known to the Virtual FSS, there will exist one Adapter component that knows how to communicate with that FSS as well as know how to translate data from that FSS to the MSLite format.",
+      "classification": "tactic",
+      "id": 1001292962
+    },
+    {
+      "label": "This would increase the structural complexity of MSLite and increase the coupling between Adapter and the rest of MSLite.",
+      "classification": "tactic",
+      "id": -175393532
+    },
+    {
+      "label": "Read the initial property values for the FSS and store them in the MSLite cache on startup.",
+      "classification": "tactic",
+      "id": -1145165273
+    },
+    {
+      "label": "Read the MSLite configuration file to retrieve the Ids for each adapter.",
+      "classification": "tactic",
+      "id": 1301727027
+    },
+    {
+      "label": "Note: The Adapter Manager acts as a central component that interfaces communication between the various adapters and the rest of MSLite.",
+      "classification": "tactic",
+      "id": -1185368564
+    },
+    {
+      "label": "In this operating mode, MSLite is making sure that its state information is consistent with the information known about FSSs as described in the configuration file.",
+      "classification": "tactic",
+      "id": -768660153
+    },
+    {
+      "label": "It is important to note that synchronization does not occur more than once during the running time of MSLite.",
+      "classification": "tactic",
+      "id": 1555005618
+    },
+    {
+      "label": "The File Access connector is a simple I/O connector that reads data from the file.",
+      "classification": "tactic",
+      "id": -1762950291
+    },
+    {
+      "label": "Read the configuration file and store the information in the database and in the cache.",
+      "classification": "tactic",
+      "id": -547541073
+    },
+    {
+      "label": "Logon: Authenticates the users login credentials.",
+      "classification": "tactic",
+      "id": 1311768420
+    },
+    {
+      "label": "Creates each of the User Session Objects for the individual users presentation.",
+      "classification": "tactic",
+      "id": -1201035731
+    },
+    {
+      "label": "Alarm Manager: Retrieves all those alarms, from the database via access control, that are already existing when the presentation component is instantiated.",
+      "classification": "tactic",
+      "id": 1938820127
+    },
+    {
+      "label": "Retrieves the viewing rights of all of these alarms from the database via access control.",
+      "classification": "tactic",
+      "id": -631185870
+    },
+    {
+      "label": "Displays the appropriate alarms in the user sessions that have read access for them.",
+      "classification": "tactic",
+      "id": -1699049244
+    },
+    {
+      "label": "Displays the alarms in the appropriate user session.",
+      "classification": "tactic",
+      "id": 1193615381
+    },
+    {
+      "label": "Alarm Display: Displays all of the generated alarms that the particular user has read access to, in the order that they occurred.",
+      "classification": "tactic",
+      "id": -2073491802
+    },
+    {
+      "label": "Alarm Rule Manager: Allows the editing of any Alarm Rule that the user has write access to.",
+      "classification": "tactic",
+      "id": -653190853
+    },
+    {
+      "label": "Hierarchy Browser: Shows the Hierarchy of Field Objects that has been selected for viewing by the user.",
+      "classification": "tactic",
+      "id": 813462602
+    },
+    {
+      "label": "The hierarchy can be traversed by the user by selecting the different nodes to expand or contract.",
+      "classification": "tactic",
+      "id": 1637798067
+    },
+    {
+      "label": "Hierarchy Editor: Allows the editing an existing Hierarchy that the user has write access to.",
+      "classification": "tactic",
+      "id": 1068289840
+    },
+    {
+      "label": "Allows the user to create a new Hierarchy that can be viewed in the Hierarchy Browser.",
+      "classification": "tactic",
+      "id": -1247910795
+    },
+    {
+      "label": "LnR Rule Manager: Allows the editing of any Logic and Reaction Rule (LnR Rule) that the user has write access to.",
+      "classification": "tactic",
+      "id": 832903800
+    },
+    {
+      "label": "Allows the user to create new LnR Rules.",
+      "classification": "tactic",
+      "id": 1481169983
+    },
+    {
+      "label": "Once the user has selected the property of field object to be displayed: Retrieves the initial property value from the AccessControl.",
+      "classification": "tactic",
+      "id": 756392022
+    },
+    {
+      "label": "Subscribes the user to events generated for the particular property.",
+      "classification": "tactic",
+      "id": 2128685087
+    },
+    {
+      "label": "User Logon retrieves the users details from the database via the AccessControl so as to facilitate the authentication.",
+      "classification": "tactic",
+      "id": -1849261665
+    },
+    {
+      "label": "Create Logon creates a unique User Session Object for each of the users as they log into the MSLite Server.",
+      "classification": "tactic",
+      "id": -1980274527
+    },
+    {
+      "label": "Retrieve Alarms Viewing Rights The Alarm Manager retrieves the users access rights of all alarms present in the system at runtime via the AccessControl.",
+      "classification": "tactic",
+      "id": -997327976
+    },
+    {
+      "label": "Display Alarm The Alarm Manager sends the Alarm details to the Alarm Display of the User Session Object for the users that have read access for it.",
+      "classification": "tactic",
+      "id": -1050531170
+    },
+    {
+      "label": "Retrieve Hierarchy The Hierarchy Browser retrieves the details of the Hierarchy, which the user has chosen to view, from the Database via the AccessControl.",
+      "classification": "tactic",
+      "id": 931986960
+    },
+    {
+      "label": "Retrieve LnR Rules LnR Rule Editor retrieves the LnR rules from the database View Object The Hierarchy Browser sends the Property ID, of the Property that the user has chosen to view, to the Property Display.",
+      "classification": "tactic",
+      "id": 557276883
+    },
+    {
+      "label": "Property Display Subscribe to Events The Property Display subscribes to events from the FSS for the Property ID of the property it is displaying.",
+      "classification": "tactic",
+      "id": 1690030276
+    },
+    {
+      "label": "Publish Events to Property Display The PublishSubscribe publishes events generated by the FSS for the Property ID of the property that the Property Display is subscribed to.",
+      "classification": "tactic",
+      "id": -694607329
+    },
+    {
+      "label": "In this view, there is an extra subscribe connector but not in the high-level view.",
+      "classification": "tactic",
+      "id": -623412041
+    },
+    {
+      "label": "This two subscriptions form the single subscribe connector in the high-level view.",
+      "classification": "tactic",
+      "id": -1520432545
+    },
+    {
+      "label": "Rule Processor: Subscribe to receive COV events.",
+      "classification": "tactic",
+      "id": 2065669104
+    },
+    {
+      "label": "Evaluate the alarm rules based on COV events against property values in the cache and the alarm rules.",
+      "classification": "tactic",
+      "id": -685566990
+    },
+    {
+      "label": "Future extension: Subscribe to receive Alarm events.",
+      "classification": "tactic",
+      "id": -411564149
+    },
+    {
+      "label": "This includes generating alarms and issuing the appropriate commands to the Virtual FSS based on the users context.",
+      "classification": "tactic",
+      "id": 853154620
+    },
+    {
+      "label": "Javascript This thread is responsible for executing MSLite client-side javascript code that the MSLite system will call.",
+      "classification": "tactic",
+      "id": -1053010301
+    },
+    {
+      "label": "Important: The performance quality attribute of MSLite requires that the user interface be updated with alarm information within 3 seconds of the alarm occurring.",
+      "classification": "tactic",
+      "id": -370530511
+    },
+    {
+      "label": "Callbacks from the server are embedded in the client side and handled using JavaScript so that the relevant elements of the client-side DOM can be updated to provide asynchronously updated data.",
+      "classification": "tactic",
+      "id": 493665078
+    },
+    {
+      "label": "L&R This process is responsible for executing L&R rules and commands independently of the MSLite server.",
+      "classification": "tactic",
+      "id": -1171312221
+    },
+    {
+      "label": "Run-time integration of the components is made easier as long as they obey the interfaces to which they are bound.",
+      "classification": "tactic",
+      "id": 444746064
+    },
+    {
+      "label": "MSLite Server This process is responsible for the core functionality of the MSLite system.",
+      "classification": "tactic",
+      "id": -839888798
+    },
+    {
+      "label": "HTTP For communication between the web client and MSLite running on application servers, the normal web protocol of HTTP is used.",
+      "classification": "tactic",
+      "id": 2015272819
+    },
+    {
+      "label": "The Module view-type partitions the system into a unique non-overlapping set of hierarchically decomposable implementation units (modules).",
+      "classification": "tactic",
+      "id": 769853566
+    },
+    {
+      "label": "The goal is to show how the modules are decomposed, as well as the dependencies between modules.",
+      "classification": "tactic",
+      "id": -1281158233
+    },
+    {
+      "label": "This view-type was selected because it helps the following roles: The architect, who must define work assignments in such a way so as to minimize dependencies between the modules and assign priorities (or sequences) to modules to control existing dependencies.",
+      "classification": "tactic",
+      "id": 1173556296
+    },
+    {
+      "label": "The project manager, who must form teams, formulate project plans and schedule, knowing the individual priorities (or sequences) of these modules.",
+      "classification": "tactic",
+      "id": 1767976579
+    },
+    {
+      "label": "Testers who use the modules as their unit of work to create test cases and perform the tests.",
+      "classification": "tactic",
+      "id": 1833182588
+    },
+    {
+      "label": "Developers, who are required to implement the modules.",
+      "classification": "tactic",
+      "id": -790195029
+    },
+    {
+      "label": "Maintainers, who are tasked with modifying the software modules.",
+      "classification": "tactic",
+      "id": 928803207
+    },
+    {
+      "label": "The diagrams use UML 1.5 packages to depict modules.",
+      "classification": "tactic",
+      "id": -359567435
+    },
+    {
+      "label": "2 kinds of dependencies are included: a \"uses\" dependency between two modules A and B means that A cannot function correctly without a correct implementation of module B, whereas a regular dependency between modules A and B means that A calls B.\nFor a general introduction to module views see Clements02.",
+      "classification": "tactic",
+      "id": -919014849
+    },
+    {
+      "label": "Manage user interaction with MSLite, such as editing hierarchies, acknowledging alarms, displaying field object properties, etc.",
+      "classification": "tactic",
+      "id": 1874294386
+    },
+    {
+      "label": "The presentation module uses AJAX to asynchronously update the user interface.",
+      "classification": "tactic",
+      "id": 2035665628
+    },
+    {
+      "label": "Rules Create, Update and Delete L&R rules.",
+      "classification": "tactic",
+      "id": 2014994230
+    },
+    {
+      "label": "Publish Subscribe Hide details of event delivery: allow other modules to publish events (COV and alarm).",
+      "classification": "tactic",
+      "id": -2144743363
+    },
+    {
+      "label": "Allow other modules to subscribe to events.",
+      "classification": "tactic",
+      "id": -1928050220
+    },
+    {
+      "label": "Allow other modules to unsubscribed from events.",
+      "classification": "tactic",
+      "id": 724928912
+    },
+    {
+      "label": "Data Hide details of how data is persisted and accessed: manage all persistent data in MSLite and all data in the cache.",
+      "classification": "tactic",
+      "id": 292586231
+    },
+    {
+      "label": "The data module uses NHibernate to implement the mapping between objects in memory and tables in the database.",
+      "classification": "tactic",
+      "id": 418379534
+    },
+    {
+      "label": "The presentation module for MSLite is focused mainly on the user interface functionality for MSLite.",
+      "classification": "tactic",
+      "id": 1987345240
+    },
+    {
+      "label": "The presentation modules were created to accommodate the functional requirement and the constraint that MSLite be run as a web based application.",
+      "classification": "tactic",
+      "id": 1659594237
+    },
+    {
+      "label": "A module was created for each of these packages as the functionality they provide is independent of each other.",
+      "classification": "tactic",
+      "id": -843416413
+    },
+    {
+      "label": "Presentation modules have dark borders while modules with a light gray border, are external to Presentation.",
+      "classification": "tactic",
+      "id": 298651093
+    },
+    {
+      "label": "The light gray module are named with a prefix of the module they belong.",
+      "classification": "tactic",
+      "id": -880978988
+    },
+    {
+      "label": "This style denotes the external dependencies of the presentation modules.",
+      "classification": "tactic",
+      "id": 1128358176
+    },
+    {
+      "label": "Each presentation module includes ASPdotNET Web pages, C#-code that executes on the Web server in the Presentation process, and JavaScript code that executes on the client.",
+      "classification": "tactic",
+      "id": -39446129
+    },
+    {
+      "label": "Trigger Property Display if the user selects a field object in the hierarchy.",
+      "classification": "tactic",
+      "id": 58215549
+    },
+    {
+      "label": "All data access is done using the interface provided by the Data::Data Access module.",
+      "classification": "tactic",
+      "id": 2035550945
+    },
+    {
+      "label": "Display properties and their values of a field object (from the cache).",
+      "classification": "tactic",
+      "id": -2121380032
+    },
+    {
+      "label": "Data::Data Access to retrieve a list of properties for a field object the list will indicate if a user has read or write access to a property.",
+      "classification": "tactic",
+      "id": -1799637010
+    },
+    {
+      "label": "Each user must have an event handler to receive COV events.",
+      "classification": "tactic",
+      "id": -1451678242
+    },
+    {
+      "label": "All data access is done using the interface provided by the Data::Data Access module.",
+      "classification": "tactic",
+      "id": 2035550945
+    },
+    {
+      "label": "Initialize other presentation modules after successful logon.",
+      "classification": "tactic",
+      "id": -993360937
+    },
+    {
+      "label": "Store and maintain user sessions and pertinent session information.",
+      "classification": "tactic",
+      "id": -177487734
+    },
+    {
+      "label": "Each user will have its own session.",
+      "classification": "tactic",
+      "id": 11707155
+    },
+    {
+      "label": "Immediately update other user's UIs as soon a user acknowledges or dismisses an alarm.",
+      "classification": "tactic",
+      "id": 636463811
+    },
+    {
+      "label": "Avoid using popup windows to notify the users that a new alarm has been created.",
+      "classification": "tactic",
+      "id": -1818476569
+    },
+    {
+      "label": "All data access is done using the interface provided by the Data::Data Access module.",
+      "classification": "tactic",
+      "id": 2035550945
+    },
+    {
+      "label": "Popups windows do not fulfill the handle alarms requirement - any user viewing an  Alarm Acknowledgment Request  can acknowledge it.",
+      "classification": "tactic",
+      "id": -1254484109
+    },
+    {
+      "label": "After an user has acknowledged the alarm, the request should be removed from all users' screen.",
+      "classification": "tactic",
+      "id": -1238344283
+    },
+    {
+      "label": "The use of popup windows does not allow removing the rest of the acknowledgement requests.",
+      "classification": "tactic",
+      "id": 1229734796
+    },
+    {
+      "label": "Allow user to edit alarm rules and update them accordingly.",
+      "classification": "tactic",
+      "id": -368645979
+    },
+    {
+      "label": "Allow user to edit L&R rules and update them accordingly.",
+      "classification": "tactic",
+      "id": -1555132642
+    },
+    {
+      "label": "Module Level Rules: rules in MSLite consist of two parts, namely condition and action.",
+      "classification": "tactic",
+      "id": -722641968
+    },
+    {
+      "label": "The condition part of these two types of rules is the same; hence, the logic to evaluate a condition is the same and is implemented within the Condition Evaluation module.",
+      "classification": "tactic",
+      "id": -321715726
+    },
+    {
+      "label": "This module is used by both rules engines, Alarm and L&R.",
+      "classification": "tactic",
+      "id": -1769130242
+    },
+    {
+      "label": "To accommodate the extensibility scenario E3 for future iterations, the Alarm Processing module will also subscribe to alarm events created by the extended FSS through Publish Subscribe.",
+      "classification": "tactic",
+      "id": -1049561755
+    },
+    {
+      "label": "Condition Evaluation Evaluate Alarm & L&R rule conditions based on COV messages (and instructions received by the Alarm and L&R Engines respectively) and current property values - These checks will be made by comparing property values in the cache and the rules in the cache (and not the database) for performance reasons.",
+      "classification": "tactic",
+      "id": -938484194
+    },
+    {
+      "label": "These checks will be made by comparing property values in the cache and the rules in the cache (and not the database) for performance reasons.",
+      "classification": "tactic",
+      "id": 1673232857
+    },
+    {
+      "label": "This module represents code shared between the Alarm and L&R rule engines.",
+      "classification": "tactic",
+      "id": 170245368
+    },
+    {
+      "label": "Module Level1:Publish Subscribe.",
+      "classification": "tactic",
+      "id": -1321015209
+    },
+    {
+      "label": "The Publish Subscribe module contains functionality that allows events to be propagated from the FSS to MSLite.",
+      "classification": "tactic",
+      "id": -470355326
+    },
+    {
+      "label": "The realization of the Buffer Receiver, Subscription Manager, Coordinator, and Event Publisher are all contained in this module.",
+      "classification": "tactic",
+      "id": 434212263
+    },
+    {
+      "label": "An assumption made is that it is safe for a subscriber to subscribe to an event when there is no publisher for such an event and vice-versa.",
+      "classification": "tactic",
+      "id": -1450887070
+    },
+    {
+      "label": "Events The publish subscribe mechanism that will be implemented in this module will use structures that define Events.",
+      "classification": "tactic",
+      "id": -1726188114
+    },
+    {
+      "label": "An NCOV event provides error state information for circumstances when a command is issued to the FSS but the command was not actually executed.",
+      "classification": "tactic",
+      "id": -6047660
+    },
+    {
+      "label": "Components within MSLite are allowed to subscribe and unsubscribe for events during the running lifetime of the system.",
+      "classification": "tactic",
+      "id": -1735763686
+    },
+    {
+      "label": "Allow components to subscribe and unsubscribe to events.",
+      "classification": "tactic",
+      "id": -1771903335
+    },
+    {
+      "label": "The VirtualFSS contains two modules: The AdapaterManager and the FFSAdapter Each FSS interacts with the Adapter Manager through a FSS Adapter.",
+      "classification": "tactic",
+      "id": 2075391255
+    },
+    {
+      "label": "The Adapter Manager has a configuration file that contains all the information of FSS Adapters that are expected to interact with the MSLite system.",
+      "classification": "tactic",
+      "id": -887673672
+    },
+    {
+      "label": "The rationale for having a configuration file is to avoid changes in the Adapter Manager module for each addition or replacement of FSS Adapters.",
+      "classification": "tactic",
+      "id": 2024228339
+    },
+    {
+      "label": "The Adapter Manager will read its configuration file each time the system is restarted to register the FSS Adapters.",
+      "classification": "tactic",
+      "id": -1477708475
+    },
+    {
+      "label": "If there is a new FSS Adapter, it has to be added in the configuration file and the MSLite system must be restarted in order to recognize the new FSS Adapter.",
+      "classification": "tactic",
+      "id": -2110821248
+    },
+    {
+      "label": "Receive COV notifications from all FSS adapters and publish the corresponding MSLite COV events to Publish Subscribe.",
+      "classification": "tactic",
+      "id": -598446928
+    },
+    {
+      "label": "The Adapter Manager knows about the FSS Adapters because of the configuration file.",
+      "classification": "tactic",
+      "id": 788793224
+    },
+    {
+      "label": "This configuration file has the name of the main class, dll name, and identification number of each adapter.",
+      "classification": "tactic",
+      "id": 663695100
+    },
+    {
+      "label": "The Adapter Manager will instantiate FSS Adapters using the name of the main class stored in the configuration file.",
+      "classification": "tactic",
+      "id": 1666133172
+    },
+    {
+      "label": "The identification number must be a unique number within the configuration file.",
+      "classification": "tactic",
+      "id": -1676407730
+    },
+    {
+      "label": "When designing this module for the first time, the team has to think of a class template that has the back-end to interact with the Adapter Manager.",
+      "classification": "tactic",
+      "id": -1064140792
+    },
+    {
+      "label": "The configuration data for each FSS is provided in a FSS Configuration XML file.",
+      "classification": "tactic",
+      "id": -851872640
+    },
+    {
+      "label": "Detect failure of FSS to change a value as required by a command and send MSLite NCOV events.",
+      "classification": "tactic",
+      "id": 1759621144
+    },
+    {
+      "label": "Check if a user is an authorized user within MSLite for login purposes.",
+      "classification": "tactic",
+      "id": 7043429
+    },
+    {
+      "label": "Maintain list of currently logged on users and assign an authorization token to each user.",
+      "classification": "tactic",
+      "id": 1745440168
+    },
+    {
+      "label": "Allow other modules to check what kind of access a user has to a certain data element.",
+      "classification": "tactic",
+      "id": 1827252907
+    },
+    {
+      "label": "Allow users to retrieve data they have access to from the database and from the cache.",
+      "classification": "tactic",
+      "id": -1765373600
+    },
+    {
+      "label": "For communication between the web client and MSLite running on application servers, the normal web protocol of HTTP is used.",
+      "classification": "tactic",
+      "id": 72483547
+    },
+    {
+      "label": "The Allocation view type achieves this by showing the mapping from elements of either a module or a C&C style onto elements of the environment.",
+      "classification": "tactic",
+      "id": 1852336889
+    },
+    {
+      "label": "Developers and testers can adhere to the file system structure placed by the software architect in order to keep the control and integrity of the system in being deployed.",
+      "classification": "tactic",
+      "id": -1059667347
+    },
+    {
+      "label": "There will be some MSLite code in the form of Javascript in the browser and hence, the system boundary of MSLite includes some portion of the user's workstation browser.",
+      "classification": "tactic",
+      "id": -1266471484
+    },
+    {
+      "label": "These assemblies will be executed in the context of the Application Server in a dedicated ASPdotNET process.",
+      "classification": "tactic",
+      "id": -1447261804
+    },
+    {
+      "label": "It will communicate with the MSLite Server subsystem by means of dotNET remoting.",
+      "classification": "tactic",
+      "id": -898006789
+    },
+    {
+      "label": "It will communicate with the MSLite server and the database for rule operations as well as managing the lifecycle of an alarm object.",
+      "classification": "tactic",
+      "id": 1102370118
+    },
+    {
+      "label": "Future extension: It will issue Alarm Commands to the FSS through the MSLite Server L&R.",
+      "classification": "tactic",
+      "id": 1899538599
+    },
+    {
+      "label": "It will communicate with the MSLite server and the database for rule operations.",
+      "classification": "tactic",
+      "id": -436265225
+    },
+    {
+      "label": "It will issue L&R Commands to the FSS through the MSLite Server.",
+      "classification": "tactic",
+      "id": -1237625360
+    },
+    {
+      "label": "There will be a MySQL database which is accessible to the MSLite Server subsystem.",
+      "classification": "tactic",
+      "id": -1524816135
+    },
+    {
+      "label": "Other subsystems like L&R and Alarm will access the database through the MSLite Server.",
+      "classification": "tactic",
+      "id": -2105461603
+    },
+    {
+      "label": "Contains generated API documentation from dotNET projects.",
+      "classification": "tactic",
+      "id": 651805545
+    },
+    {
+      "label": "Contains miscellaneous documentation that cannot be categorized as API documentation.",
+      "classification": "tactic",
+      "id": 1363173148
+    },
+    {
+      "label": "Contains C# source code that is used to unit test projects for MSLite.",
+      "classification": "tactic",
+      "id": 786818276
+    },
+    {
+      "label": "This cross copying of files would be necessary because of the dependencies that exist between modules in MSLite.",
+      "classification": "tactic",
+      "id": -335010756
+    },
+    {
+      "label": "If there were no dependencies between modules, then each project could run independent of each other and contain their own output folder.",
+      "classification": "tactic",
+      "id": 1121824589
+    },
+    {
+      "label": "The sub-directories of this folder contain the individual projects that contain the implementation for the various modules of MSLite.",
+      "classification": "tactic",
+      "id": 1948462250
+    },
+    {
+      "label": "Folder names for projects reflect the namespace structure used for the MSLite modules.",
+      "classification": "tactic",
+      "id": 2117191676
+    },
+    {
+      "label": "The reason for this structure is that it immediately allows a developer to understand the structure of the software system by directly seeing a one-one mapping of modules to file structure.",
+      "classification": "tactic",
+      "id": 1118166840
+    },
+    {
+      "label": "When a developer needs to know where to find code for a module they depend on, they are immediately given a clue by looking on the file structure.",
+      "classification": "tactic",
+      "id": 1005381820
+    },
+    {
+      "label": "This directory contains unit tests for the MSLite modules.",
+      "classification": "tactic",
+      "id": -754368345
+    },
+    {
+      "label": "The reason for this is that unit tests are self-contained and should be specific to a module.",
+      "classification": "tactic",
+      "id": 260075156
+    },
+    {
+      "label": "MSLite module projects The modules identified in the module views of MSLite will be implemented in dotNET based projects.",
+      "classification": "tactic",
+      "id": -145338956
+    },
+    {
+      "label": "Each module will have functionality that exists in namespaces that reflect the logical structure from the module view.",
+      "classification": "tactic",
+      "id": 1768437888
+    },
+    {
+      "label": "Each project lives within a folder whose name is the namespace containing the module structure.",
+      "classification": "tactic",
+      "id": 1751231865
+    },
+    {
+      "label": "The functionality of the FSS can be implemented completely independently of the MSLite and its core modules.",
+      "classification": "tactic",
+      "id": -342428474
+    },
+    {
+      "label": "However, the MSlite core modules have a tighter coupling to the FSS as it uses information from the FSS.",
+      "classification": "tactic",
+      "id": 1208849645
+    },
+    {
+      "label": "The namespaces identified based on the module view of MSLite are: mslite adaptermanager, mslite data, mslite fssadapter, mslite presentation, mslite publishsubscribe, mslite rules.",
+      "classification": "tactic",
+      "id": -1260763897
+    },
+    {
+      "label": "As an example of a filesystem layout, we can view the file structure when the modules of MSLite are created on a filesystem using the Microsoft Windows operating system.",
+      "classification": "tactic",
+      "id": -1649277816
+    },
+    {
+      "label": "Be familiar with the MSLite Code Integration process and the MSLite Change Control process provided by Siemens.",
+      "classification": "tactic",
+      "id": 1266760438
+    },
+    {
+      "label": "The domain model comprises packages that allow MSLite to represent field systems and field system elements, users and permissions, as well as hierarchies.",
+      "classification": "tactic",
+      "id": -188593621
+    },
+    {
+      "label": "The users package contains all domain classes related to users and user preferences.",
+      "classification": "tactic",
+      "id": -2055071878
+    },
+    {
+      "label": "It is assumed that the user of a preference must know the type of the preference value in advance.",
+      "classification": "tactic",
+      "id": 1787241998
+    },
+    {
+      "label": "Each user object represents a user who is logged in.",
+      "classification": "tactic",
+      "id": 409025084
+    },
+    {
+      "label": "Users are uniquely identified by a user name.",
+      "classification": "tactic",
+      "id": -1628073224
+    },
+    {
+      "label": "The User class keeps track of username, systemid defining this user.",
+      "classification": "tactic",
+      "id": -376641862
+    },
+    {
+      "label": "This is a base class for other types of users to be used within tokens.",
+      "classification": "tactic",
+      "id": 56341892
+    },
+    {
+      "label": "Notice that preferences have been removed from the user model all together.",
+      "classification": "tactic",
+      "id": -422099070
+    },
+    {
+      "label": "A user group is a security mechanism which groups users together.",
+      "classification": "tactic",
+      "id": -1616594075
+    },
+    {
+      "label": "Associations between user and UserGroup are not maintained within this class currently.",
+      "classification": "tactic",
+      "id": 1575220191
+    },
+    {
+      "label": "Currently there is no need to be able to determine the users within a UserGroup without querying the database.",
+      "classification": "tactic",
+      "id": 1961544169
+    },
+    {
+      "label": "A system user is a user that will log in for a runtime component such as alarmrules engine.",
+      "classification": "tactic",
+      "id": -12165448
+    },
+    {
+      "label": "User encapsulated within a UserToken.",
+      "classification": "tactic",
+      "id": -793403899
+    },
+    {
+      "label": "A UIUser is a user that will log in from the presentation layer.",
+      "classification": "tactic",
+      "id": 171156943
+    },
+    {
+      "label": "Unique id identifying this user or usergroup.",
+      "classification": "tactic",
+      "id": -1514572819
+    },
+    {
+      "label": "All hierarchies are defined by the users.",
+      "classification": "tactic",
+      "id": 1219313752
+    },
+    {
+      "label": "A hierarchy references the user who created the hierarchy.",
+      "classification": "tactic",
+      "id": -43962237
+    },
+    {
+      "label": "This is the only user allowed to edit the hierarchy.",
+      "classification": "tactic",
+      "id": 1164912510
+    },
+    {
+      "label": "Field object instances can be presented to users in hierarchies.",
+      "classification": "tactic",
+      "id": 967115928
+    },
+    {
+      "label": "Once the alarm is acknowledged, it references the user who acknowledged the alarm.",
+      "classification": "tactic",
+      "id": -1795605603
+    },
+    {
+      "label": "Set the state of the alarm to ack and sets the user who acknowledged it.",
+      "classification": "tactic",
+      "id": -1245295129
+    },
+    {
+      "label": "The security package contains all domain classes related to user permissions.",
+      "classification": "tactic",
+      "id": -975627175
+    },
+    {
+      "label": "A user is authorized to access a data element if the user belongs to a user group that is authorized to access this data element.",
+      "classification": "tactic",
+      "id": 655251310
+    },
+    {
+      "label": "A user group is authorized to access an element if it has a permission for this element.",
+      "classification": "tactic",
+      "id": 1863003782
+    },
+    {
+      "label": "If a user or group has both read-only and read-write access for a data element this is equivalent to having read and write access for this data element.",
+      "classification": "tactic",
+      "id": 385895706
+    },
+    {
+      "label": "A user has access to an IDataElement, which in this instance is a PropertyInstance, if the userAccess is set to DataPermissionType READ or DataPermissionType READWRITE.",
+      "classification": "tactic",
+      "id": -904065368
+    },
+    {
+      "label": "Interface implemented by data resources which have restricted user access for hierarchies, alarms and l&r, currently only implemented by propertyinstance.",
+      "classification": "tactic",
+      "id": 138897451
+    },
+    {
+      "label": "A data element represents the finest level of access control supported for authorization.",
+      "classification": "tactic",
+      "id": -334815467
+    },
+    {
+      "label": "Any element in the domain model that is subject to authorization must be a subclass of this class.",
+      "classification": "tactic",
+      "id": -661705247
+    },
+    {
+      "label": "A user needs read permission to view the value of a property and write permission to edit it.",
+      "classification": "tactic",
+      "id": 716427691
+    },
+    {
+      "label": "The accessControlList class is a hash table storing SystemID (user and usergroup) and IDataPermission pairs.",
+      "classification": "tactic",
+      "id": 758071797
+    },
+    {
+      "label": "If a user or usergroup is not in the hashtable, the user or usergroup does not have access to the dataelement.",
+      "classification": "tactic",
+      "id": -1075977445
+    },
+    {
+      "label": "Unique id identifying this user or usergroup.",
+      "classification": "tactic",
+      "id": -1514572819
+    },
+    {
+      "label": "Such a function will typically be presented to a user in a menu or as a button.",
+      "classification": "tactic",
+      "id": 1628888571
+    },
+    {
+      "label": "Not every user will have permission to execute all functions of the system.",
+      "classification": "tactic",
+      "id": 886508064
+    },
+    {
+      "label": "For example, creating a user will be limited to administrative users.",
+      "classification": "tactic",
+      "id": 621965095
+    },
+    {
+      "label": "Currently, there are no restrictions on which MSLite functions a user is allowed to use.",
+      "classification": "tactic",
+      "id": 554077204
+    },
+    {
+      "label": "Should be encapsulated by a class called FunctionPermissions, implementing IFunctionPermission for use within an administrative interface.",
+      "classification": "tactic",
+      "id": 1905939393
+    },
+    {
+      "label": "This design methodology is used by database APIs to ensure that each result, no matter which data structures are returned by the database, is returned without necessitating user knowledge of all data structures, error possibilities, audit trails and meta data of all objects within data persistence.",
+      "classification": "tactic",
+      "id": 1610335035
+    },
+    {
+      "label": "This package provides the following capabilities: Encapsulation of all information contained within the Database or Value Cache into one consistent object.",
+      "classification": "tactic",
+      "id": -950893268
+    },
+    {
+      "label": "Enumerator interface to all information.",
+      "classification": "tactic",
+      "id": 1188563084
+    },
+    {
+      "label": "Retrieval of errors which occurred at the AccessControl.",
+      "classification": "tactic",
+      "id": 157134138
+    },
+    {
+      "label": "Because of this, Exceptions never need to be thrown over a dotNET remoting interface.",
+      "classification": "tactic",
+      "id": 999169269
+    },
+    {
+      "label": "Defines a data structure which is an enumerator, is enumerable, encapsulates exceptions thrown at the server, encapsulates an audit trail, provides a generic wrapper for any type of object or set of objects which are returned from the accesscontrol (regardless of which data store they are queried from), ensures all data within each row are a specified type, ensures each column has a name and provides valid meta data for the entire collection of objects.",
+      "classification": "tactic",
+      "id": 593649648
+    },
+    {
+      "label": "This ResultSet is intended to return a list of user preferences to User Interface Users.",
+      "classification": "tactic",
+      "id": -470726538
+    },
+    {
+      "label": "Prepare a hierarchy display for a logged-on user.",
+      "classification": "tactic",
+      "id": 83171871
+    },
+    {
+      "label": "This method prepares the object browser that displays the hierarchies owned by this user.",
+      "classification": "tactic",
+      "id": 556248979
+    },
+    {
+      "label": "It reconstructs the exact UI state from user preferences.",
+      "classification": "tactic",
+      "id": -974379155
+    },
+    {
+      "label": "This method must be called once for each user at logon.",
+      "classification": "tactic",
+      "id": 1923513397
+    },
+    {
+      "label": "Store the hierarchy display's UI state in the user's preferences.",
+      "classification": "tactic",
+      "id": 269499374
+    },
+    {
+      "label": "Prepare a hierarchy display for a logged-on user.",
+      "classification": "tactic",
+      "id": 83171871
+    },
+    {
+      "label": "This method creates a UI which displays the hierarchies owned by this user.",
+      "classification": "tactic",
+      "id": -1175036937
+    },
+    {
+      "label": "Displays a UI which allows a user to create hierarchies of Field Objects.",
+      "classification": "tactic",
+      "id": 1489946981
+    },
+    {
+      "label": "Prepare a property display for a newly logged-on user.",
+      "classification": "tactic",
+      "id": 2007603324
+    },
+    {
+      "label": "It reconstructs the exact UI state from user preferences.",
+      "classification": "tactic",
+      "id": -974379155
+    },
+    {
+      "label": "This method must be called once for each user at logon.",
+      "classification": "tactic",
+      "id": 1923513397
+    },
+    {
+      "label": "Store the property display's UI state in the user's preferences.",
+      "classification": "tactic",
+      "id": -1477114774
+    },
+    {
+      "label": "Prepare an alarm display for a newly logged-on user.",
+      "classification": "tactic",
+      "id": 1785206694
+    },
+    {
+      "label": "This method prepares the UI area that displays the alarms accessible to this user.",
+      "classification": "tactic",
+      "id": 1287231345
+    },
+    {
+      "label": "It reconstructs the exact UI state from user preferences.",
+      "classification": "tactic",
+      "id": -974379155
+    },
+    {
+      "label": "This method must be called once for each user at logon.",
+      "classification": "tactic",
+      "id": 1923513397
+    },
+    {
+      "label": "Store the alarm display's UI state in the user's preferences.",
+      "classification": "tactic",
+      "id": 1078483978
+    },
+    {
+      "label": "Displays the alarm received in the user's screen.",
+      "classification": "tactic",
+      "id": 1692486778
+    },
+    {
+      "label": "This method prepares the UI area that displays the alarm rules accessible to this user.",
+      "classification": "tactic",
+      "id": -543537041
+    },
+    {
+      "label": "This method must be called once when the user clicks the LnR tab for the first time.",
+      "classification": "tactic",
+      "id": 1595357396
+    },
+    {
+      "label": "This method prepares the UI area that displays the LnR rules accessible to this user.",
+      "classification": "tactic",
+      "id": 917028976
+    },
+    {
+      "label": "This method must be called once when the user clicks the LnR tab for the first time.",
+      "classification": "tactic",
+      "id": 1595357396
+    },
+    {
+      "label": "This interface is to manage the lifecycle of the runtime alarm objects.",
+      "classification": "tactic",
+      "id": -50373206
+    },
+    {
+      "label": "This interface is used to handle the subscription of events and cache of alarm rules.",
+      "classification": "tactic",
+      "id": 1067946632
+    },
+    {
+      "label": "Update event subscriptions and cache accordingly.",
+      "classification": "tactic",
+      "id": -2137353226
+    },
+    {
+      "label": "Update event subscriptions and cache accordingly.",
+      "classification": "tactic",
+      "id": -2137353226
+    },
+    {
+      "label": "Unsubscribe from events that are no longer relevant and remove rule from cache.",
+      "classification": "tactic",
+      "id": 1122521524
+    },
+    {
+      "label": "This interface is used to handle the subscription of events and cache of L&R rules.",
+      "classification": "tactic",
+      "id": -461192447
+    },
+    {
+      "label": "Update event subscriptions and cache accordingly.",
+      "classification": "tactic",
+      "id": -2137353226
+    },
+    {
+      "label": "Update event subscriptions and cache accordingly.",
+      "classification": "tactic",
+      "id": -2137353226
+    },
+    {
+      "label": "Unsubscribe from events that are no longer relevant and remove from cache.",
+      "classification": "tactic",
+      "id": 283917918
+    },
+    {
+      "label": "An NCOV event has as parameters the token of the user trying to change the property value and the property ID.",
+      "classification": "tactic",
+      "id": -1034406840
+    },
+    {
+      "label": "An object that implements the IEventHandler interface.",
+      "classification": "tactic",
+      "id": 584831129
+    },
+    {
+      "label": "It's handleEvent method is called if a subscribed event occurs.",
+      "classification": "tactic",
+      "id": 1770272177
+    },
+    {
+      "label": "Subscribe an event handler to events for a list of properties.",
+      "classification": "tactic",
+      "id": -910324244
+    },
+    {
+      "label": "A callback interface which event subscribers must implement to receive events.",
+      "classification": "tactic",
+      "id": 1938871375
+    },
+    {
+      "label": "This interface is a callback interface that the FSS Adapters call to notify MSLite.",
+      "classification": "tactic",
+      "id": -1571112321
+    },
+    {
+      "label": "An alarm call from the user to dismiss the alarm in the FSS.",
+      "classification": "tactic",
+      "id": -1650775310
+    },
+    {
+      "label": "This interface handles the configuration of the FSS Adapters and FSSs.",
+      "classification": "tactic",
+      "id": -1108824320
+    },
+    {
+      "label": "Prepare a command to change the value of a property in the context of the user.",
+      "classification": "tactic",
+      "id": -417072522
+    },
+    {
+      "label": "Callback interface from the FSS code to receive COV events.",
+      "classification": "tactic",
+      "id": 381500732
+    },
+    {
+      "label": "Note: The parameter \"token\" is always the user's authentication token.",
+      "classification": "tactic",
+      "id": 1610592762
+    },
+    {
+      "label": "All methods that take a token as a parameter have an exception condition \"invalid token\" which indicates that the user is not logged on.",
+      "classification": "tactic",
+      "id": 1292599993
+    },
+    {
+      "label": "Authenticate a user, assign an authentication token to the user, and store the user in a list of currently logged on users.",
+      "classification": "tactic",
+      "id": -1921666754
+    },
+    {
+      "label": "Remove the user from the list of logged on users and invalidate the authentication token.",
+      "classification": "tactic",
+      "id": 1041507864
+    },
+    {
+      "label": "A call to initialize the Data Access module during startup.",
+      "classification": "tactic",
+      "id": 210958344
+    },
+    {
+      "label": "Create or update a user preference in the database.",
+      "classification": "tactic",
+      "id": -1412401697
+    },
+    {
+      "label": "Get the names of all hierarchies of a user.",
+      "classification": "tactic",
+      "id": -521296504
+    },
+    {
+      "label": "Get a complete hierarchical view structure.",
+      "classification": "tactic",
+      "id": -1809901946
+    },
+    {
+      "label": "Get a list of all properties the user may access.",
+      "classification": "tactic",
+      "id": -162847312
+    },
+    {
+      "label": "Get a list of all field objects the user may access.",
+      "classification": "tactic",
+      "id": -507425133
+    },
+    {
+      "label": "Get the field object template for the field object with the given ID.",
+      "classification": "tactic",
+      "id": 562273153
+    },
+    {
+      "label": "Get the field object instance with the given ID.",
+      "classification": "tactic",
+      "id": -720178567
+    },
+    {
+      "label": "Get a list of alarms this user can acknowledge or dismiss.",
+      "classification": "tactic",
+      "id": -1293584907
+    },
+    {
+      "label": "Delete an alarm from the database.",
+      "classification": "tactic",
+      "id": -1688277340
+    },
+    {
+      "label": "Get all alarm rules from the database.",
+      "classification": "tactic",
+      "id": -1936304904
+    },
+    {
+      "label": "Get alarm rules that have the same condition as a given alarm rule.",
+      "classification": "tactic",
+      "id": -1875224181
+    },
+    {
+      "label": "Delete an alarm rule from the database.",
+      "classification": "tactic",
+      "id": 602005134
+    },
+    {
+      "label": "Get all L&R rules from the database.",
+      "classification": "tactic",
+      "id": 1806622001
+    },
+    {
+      "label": "Get L&R rules that have the same condition with the L&R rule.",
+      "classification": "tactic",
+      "id": 426270240
+    },
+    {
+      "label": "Delete an L&R rule from the database.",
+      "classification": "tactic",
+      "id": -1287923211
+    },
+    {
+      "label": "Get the user's permission for a specific property.",
+      "classification": "tactic",
+      "id": -1935117525
+    },
+    {
+      "label": "Clears all configuration in the Repository to avoid data redundancy.",
+      "classification": "tactic",
+      "id": -654374299
+    },
+    {
+      "label": "Configure the publish subscribe mechanism.",
+      "classification": "tactic",
+      "id": 1984572398
+    },
+    {
+      "label": "Save a property value in the cache.",
+      "classification": "tactic",
+      "id": -892767769
+    },
+    {
+      "label": "This method may change a value or create a new cache entry.",
+      "classification": "tactic",
+      "id": 509353711
+    },
+    {
+      "label": "Write an error entry in the logger with the default debug level (Informational).",
+      "classification": "tactic",
+      "id": 2113335568
+    },
+    {
+      "label": "Write an error entry in the logger with the debug level passed in as a parameter.",
+      "classification": "tactic",
+      "id": 1203808284
+    },
+    {
+      "label": "The table below shows which interfaces are used by which modules.",
+      "classification": "tactic",
+      "id": 1937457134
+    },
+    {
+      "label": "This is another view to help development teams to focus on specific interfaces that apply to their modules only.",
+      "classification": "tactic",
+      "id": 1410250035
+    },
+    {
+      "label": "UML 1.5 sequence diagrams have been used to document the behavior based on the module views from the Module view.",
+      "classification": "tactic",
+      "id": 640399571
+    },
+    {
+      "label": "The method calls shown in the diagrams are methods in the interfaces of the respective modules.",
+      "classification": "tactic",
+      "id": -1633048996
+    },
+    {
+      "label": "Only method calls between modules are shown and not internal method calls.",
+      "classification": "tactic",
+      "id": 1437879510
+    },
+    {
+      "label": "Where necessary, the internal processing inside a module is outlined in the accompanying description of the sequence diagram.",
+      "classification": "tactic",
+      "id": -262906182
+    },
+    {
+      "label": "UML 1.5 sequence diagrams have been used to document the behavior based on the module views from the Module view.",
+      "classification": "tactic",
+      "id": 640399571
+    },
+    {
+      "label": "The method calls shown in the diagrams are methods in the interfaces of the respective modules.",
+      "classification": "tactic",
+      "id": -1633048996
+    },
+    {
+      "label": "User interactions are indicated by pseudo method calls or textual description may indicate that the user has selected a field object on the UI and then clicked on a button to display this field object.",
+      "classification": "tactic",
+      "id": 328595004
+    },
+    {
+      "label": "Logon A user provides username and password as credentials.",
+      "classification": "tactic",
+      "id": -1312731230
+    },
+    {
+      "label": "If the credentials are valid the Data Access module adds the user to a list of logged on users and assigns the user a unique token.",
+      "classification": "tactic",
+      "id": -720129022
+    },
+    {
+      "label": "The presentation module stores the token for the lifetime of a user's session.",
+      "classification": "tactic",
+      "id": 2122950444
+    },
+    {
+      "label": "A user may be logged on in several sessions simultaneously.",
+      "classification": "tactic",
+      "id": -1434193892
+    },
+    {
+      "label": "This behavior is necessary to handle the case where a user closes the browser without logging out of MSLite.",
+      "classification": "tactic",
+      "id": 1941890663
+    },
+    {
+      "label": "When the session associated with the closed browser times out the presentation module logs the user out automatically.",
+      "classification": "tactic",
+      "id": 607341570
+    },
+    {
+      "label": "If a user logs on to MSLite the system performs the following initialization operations:, display all hierarchies of the user, restore the state of the object browser, restore the state of the work area, subscribe to events for currently displayed properties, show alarms currently in the system that the user can acknowledge.",
+      "classification": "tactic",
+      "id": -624533321
+    },
+    {
+      "label": "The Presentation module uses preference values to store all information needed to restore the user interface state.",
+      "classification": "tactic",
+      "id": -1236440512
+    },
+    {
+      "label": "The Presentation module provides an individual event handler object for each user logged on to the system.",
+      "classification": "tactic",
+      "id": 473737508
+    },
+    {
+      "label": "To display the property values in the work area correctly the Property Display module must access the field object template and instance to get meta data that is used to create the user interface components for the field object properties.",
+      "classification": "tactic",
+      "id": 448946974
+    },
+    {
+      "label": "For example, if the property value is a string with a number of allowed values the user interface should display a component that allows the user to select one of the values.",
+      "classification": "tactic",
+      "id": 336156795
+    },
+    {
+      "label": "Logoff When a user logs off, the Presentation module stores hierarchy and property display state as necessary.",
+      "classification": "tactic",
+      "id": 1615844332
+    },
+    {
+      "label": "In addition, Property Display unsubscribes the user's event handler from all events.",
+      "classification": "tactic",
+      "id": 1290734751
+    },
+    {
+      "label": "Finally, Data Access removes the user form the list of logged on users, thus invalidating the token.",
+      "classification": "tactic",
+      "id": -866902170
+    },
+    {
+      "label": "Editing a Hierarchy Here we assume a simple case where a user selects a hierarchy for editing from the list of their hierarchies.",
+      "classification": "tactic",
+      "id": 728000776
+    },
+    {
+      "label": "Once the user selects a hierarchy the editor displays the current hierarchy and a list of all field objects the user has access to.",
+      "classification": "tactic",
+      "id": 526480870
+    },
+    {
+      "label": "There is no need to lock a hierarchy during editing because only one user - the hierarchy owner - has access to any given hierarchy.",
+      "classification": "tactic",
+      "id": -596336674
+    },
+    {
+      "label": "View Properties Displaying the properties and property values of a field object is initiated when the user selects a field object in a hierarchical view in the object browser.",
+      "classification": "tactic",
+      "id": 1058982237
+    },
+    {
+      "label": "Property Display then updates event subscriptions for the user's session and reads property type data and current values from the repository.",
+      "classification": "tactic",
+      "id": 1562594964
+    },
+    {
+      "label": "The object template also contains access permissions for this user for each property in the field object.",
+      "classification": "tactic",
+      "id": 353682065
+    },
+    {
+      "label": "Issue Command This sequence starts with a user issuing a command to change a property value.",
+      "classification": "tactic",
+      "id": -1137123561
+    },
+    {
+      "label": "There is no need to check if the user has write access to the property because the UI evaluates the user's access rights and enables editing only for those properties the user is actually allowed to change.",
+      "classification": "tactic",
+      "id": 792486480
+    },
+    {
+      "label": "The Command Processing submodule in the adapter sends the command to the FSS using the simulator's protocol.",
+      "classification": "tactic",
+      "id": 2031915501
+    },
+    {
+      "label": "The only way to detect failures is to implement a timeout mechanism that detects if there is no matching COV notification for a command.",
+      "classification": "tactic",
+      "id": 370564439
+    },
+    {
+      "label": "The FSS sends explicit failure notifications.",
+      "classification": "tactic",
+      "id": -1133626413
+    },
+    {
+      "label": "In this scenario Command Processing must match the failure notification with the user token provided with the failed command.",
+      "classification": "tactic",
+      "id": 1135890531
+    },
+    {
+      "label": "For example, if FSS commands carry a sequence number that is returned with the success or failure notification the matching is very simple.",
+      "classification": "tactic",
+      "id": 1762674863
+    },
+    {
+      "label": "Alarm Rule The user initiates editing an alarm rule.",
+      "classification": "tactic",
+      "id": -810663784
+    },
+    {
+      "label": "The user requests to list all the alarms that he/she has access to.",
+      "classification": "tactic",
+      "id": -712898516
+    },
+    {
+      "label": "To retrieve the set of alarm rules, the user should have read access to all the properties in the rule and a write access to only the Associated Alarm Property.",
+      "classification": "tactic",
+      "id": -12533518
+    },
+    {
+      "label": "The Rule Editor is the module that handles all the functionality required to edit rules including alarm rules.",
+      "classification": "tactic",
+      "id": 103942241
+    },
+    {
+      "label": "The user when having a list of all alarms is now allowed to choose a specific rule for editing.",
+      "classification": "tactic",
+      "id": -562021303
+    },
+    {
+      "label": "The Rule Editor recognizes that the user wants to edit a rule and hence, retrieves all the properties based on the user's permissions.",
+      "classification": "tactic",
+      "id": 1760690174
+    },
+    {
+      "label": "The user performs all the necessary editing to the rule and then saves it.",
+      "classification": "tactic",
+      "id": 1625393799
+    },
+    {
+      "label": "After either of the operations, the user will get a confirmation that the rule has been edited.",
+      "classification": "tactic",
+      "id": -877165003
+    },
+    {
+      "label": "For the Alarm Rule Engine, the edited alarm rule triggers the system to subscribe or unsubscribe for specific COV events depending on the type of editing the user chose (creation, deletion, updating) and the properties involved in the rule.",
+      "classification": "tactic",
+      "id": 1850917724
+    },
+    {
+      "label": "To duplicate an rule, allows the user to change alarm property.",
+      "classification": "tactic",
+      "id": 1886426255
+    },
+    {
+      "label": "To check the datatypes of values entered by user, corresponding to the selected properties.",
+      "classification": "tactic",
+      "id": -1304366759
+    },
+    {
+      "label": "To display the appropriate conditional operators based on the property selected by the user.",
+      "classification": "tactic",
+      "id": -1177044163
+    },
+    {
+      "label": "To retrieve and display all the field objects to which the user has access.",
+      "classification": "tactic",
+      "id": 48984489
+    },
+    {
+      "label": "Function to retrieve and display the properties based on the field object selected by user.",
+      "classification": "tactic",
+      "id": 125050048
+    },
+    {
+      "label": "Function to continuously monitor for addition or deletion of rules (*All function of this class to be implemented using Ajax).",
+      "classification": "tactic",
+      "id": -713257845
+    },
+    {
+      "label": "To duplicate an rule, allows the user to change reaction.",
+      "classification": "tactic",
+      "id": -1430160694
+    },
+    {
+      "label": "To check the datatypes of values entered by user, corresponding to the selected properties.",
+      "classification": "tactic",
+      "id": -1304366759
+    },
+    {
+      "label": "To display the appropriate conditional operators based on the property selected by the user.",
+      "classification": "tactic",
+      "id": -1177044163
+    },
+    {
+      "label": "To retrieve and display all the field objects to which the user has access.",
+      "classification": "tactic",
+      "id": 48984489
+    },
+    {
+      "label": "Function to retrieve and display the properties based on the field object selected by user.",
+      "classification": "tactic",
+      "id": 125050048
+    },
+    {
+      "label": "Function to continuously monitor for addition or deletion of rules (*All function of this class to be implemented using Ajax).",
+      "classification": "tactic",
+      "id": -713257845
+    },
+    {
+      "label": "The COV Processing is the first module in MSLite that receives notifications from the FSS.",
+      "classification": "tactic",
+      "id": -1628687185
+    },
+    {
+      "label": "The COV Processing module performs translation of the FSS event to an MSLite notification.",
+      "classification": "tactic",
+      "id": -1264000011
+    },
+    {
+      "label": "This translation of the notification data structure is based on the interface that is in the Adapter Manager.",
+      "classification": "tactic",
+      "id": -1668217025
+    },
+    {
+      "label": "The Adapter Manager collects the information and then proceeds to prepare it for publishing to the Publish-Subscribe module of MSLite.",
+      "classification": "tactic",
+      "id": -291718147
+    },
+    {
+      "label": "The Publish-Subscribe module upon receiving the event will notify the appropriate subscribers of the event.",
+      "classification": "tactic",
+      "id": -72113913
+    },
+    {
+      "label": "The module will send all alarm rules with the property ID and the new value to Condition Evaluation to evaluate which rules need to be executed.",
+      "classification": "tactic",
+      "id": -1889843374
+    },
+    {
+      "label": "Alarm Display is responsible for displaying alarms to the user.",
+      "classification": "tactic",
+      "id": 1645383296
+    },
+    {
+      "label": "The FSS notifies MSLite that an alarm has been generated internally and wishes to show the alarm to the users.",
+      "classification": "tactic",
+      "id": 1610058817
+    },
+    {
+      "label": "The COV Processing is subscribed to receive this events from the FSS and hence gets notified of a new external alarm.",
+      "classification": "tactic",
+      "id": 617331486
+    },
+    {
+      "label": "This is done to allow communication between other modules in MSLite.",
+      "classification": "tactic",
+      "id": -500260955
+    },
+    {
+      "label": "The COV Processing forwards this externalAlarmObject to the Adapter Manager in which it then forwards it to the Publish-Subscribe module after creating the appropriate alarm event.",
+      "classification": "tactic",
+      "id": -1039006465
+    },
+    {
+      "label": "The Publish-Subscribe module notifies the Alarm Processing that a new alarm has been created in the FSS.",
+      "classification": "tactic",
+      "id": 867955157
+    },
+    {
+      "label": "The Alarm Display module proceeds to evaluate which users has access to the alarm by communicating with the Data Access module.",
+      "classification": "tactic",
+      "id": -1940229464
+    },
+    {
+      "label": "Acknowledge Alarm The user acknowledges a specific alarm.",
+      "classification": "tactic",
+      "id": -1295606529
+    },
+    {
+      "label": "The Alarm Display is responsible for taking in request from the user and thus sending an acknowledgement call to the AlarmManager with the user's valid token and the alarm object that is to be acknowledged.",
+      "classification": "tactic",
+      "id": -1602040204
+    },
+    {
+      "label": "Acknowledges the call from the user and persists it to the Repository by modifying the alarm state to \"acknowledged\".",
+      "classification": "tactic",
+      "id": -509101713
+    },
+    {
+      "label": "Internally, this is done by sending the command to the Adapter Manager which forwards it to the appropriate Command Processing module for preparation.",
+      "classification": "tactic",
+      "id": 751721703
+    },
+    {
+      "label": "Only after all acknowledgements are done(both in MSLite and in FSS), will the user get a confirmation message saying that the acknowledgement operation has completed successfully.",
+      "classification": "tactic",
+      "id": 1767599447
+    },
+    {
+      "label": "The AlarmManager module also update the user interfaces of all other users to show the alarm as acknowledged.",
+      "classification": "tactic",
+      "id": -132708976
+    },
+    {
+      "label": "Dismiss Alarm The user dismisses a specific alarm.",
+      "classification": "tactic",
+      "id": -1950101460
+    },
+    {
+      "label": "The Alarm Display is responsible for taking in request from the user and thus sending an dismiss call to the AlarmManager with the user's valid token and the alarm object that is to be removed.",
+      "classification": "tactic",
+      "id": -736649822
+    },
+    {
+      "label": "Checks whether the user has write access right to the alarm and the alarm is already acknowledged.",
+      "classification": "tactic",
+      "id": 701201192
+    },
+    {
+      "label": "Dismisses the call from the user and persists it to the Repository by removing the alarm from it.",
+      "classification": "tactic",
+      "id": -196219740
+    },
+    {
+      "label": "Internally, this is done by sending the command to the Adapter Manager which forwards it to the appropriate Command Processing module for preparation.",
+      "classification": "tactic",
+      "id": 751721703
+    },
+    {
+      "label": "Only after the dismiss process is done(both in MSLite and in FSS), will the user get a confirmation message saying that the dismissing operation has completed successfully.",
+      "classification": "tactic",
+      "id": -2030548033
+    },
+    {
+      "label": "The AlarmManager module also update the user interfaces of all other users to remove the alarm from the display.",
+      "classification": "tactic",
+      "id": 697293714
+    },
+    {
+      "label": "Before any synchronization occurs, MSLite will clear all configurations and hence will avoid any duplications or complexity in code to handle data redundancy.",
+      "classification": "tactic",
+      "id": 710371799
+    },
+    {
+      "label": "Retrieve all object templates that reside in the FSS configuration file via the Configuration module.",
+      "classification": "tactic",
+      "id": -1436935096
+    },
+    {
+      "label": "Retrieve property values from the FSS via the Configuration module.",
+      "classification": "tactic",
+      "id": 1249453208
+    },
+    {
+      "label": "It then saves all properties and their values to the Value Cache module.",
+      "classification": "tactic",
+      "id": -1740602333
+    },
+    {
+      "label": "We assume that the field system simulators, web server, and the database service are already running.",
+      "classification": "tactic",
+      "id": 1162204857
+    },
+    {
+      "label": "The first step is to start up the MSLite server process.",
+      "classification": "tactic",
+      "id": -535336245
+    },
+    {
+      "label": "Which initializes the adapter manager and value cache.",
+      "classification": "tactic",
+      "id": 1996046368
+    },
+    {
+      "label": "Initialization of the value cache includes that the value cache subscribes to all COV events for all properties.",
+      "classification": "tactic",
+      "id": -1196547473
+    },
+    {
+      "label": "Both processes retrieve the respective rules and subscribe to COV events for properties that occur in their respective rule sets.",
+      "classification": "tactic",
+      "id": -232203369
+    }
+  ],
+  "links": [
+    {
+      "concern": -246611641,
+      "designDecision": 1164912510,
+      "weight": 0.73
+    },
+    {
+      "concern": -9266955,
+      "designDecision": 11707155,
+      "weight": 0.71
+    },
+    {
+      "concern": 2124974019,
+      "designDecision": 1193615381,
+      "weight": 0.77
+    },
+    {
+      "concern": -1593566297,
+      "designDecision": 1193615381,
+      "weight": 0.77
+    },
+    {
+      "concern": -1577930643,
+      "designDecision": 1193615381,
+      "weight": 0.75
+    },
+    {
+      "concern": -1577930643,
+      "designDecision": -43962237,
+      "weight": 0.76
+    },
+    {
+      "concern": -1577930643,
+      "designDecision": 1164912510,
+      "weight": 0.77
+    },
+    {
+      "concern": 1744347641,
+      "designDecision": 1193615381,
+      "weight": 0.74
+    },
+    {
+      "concern": 1744347641,
+      "designDecision": 813462602,
+      "weight": 0.72
+    },
+    {
+      "concern": 1744347641,
+      "designDecision": -43962237,
+      "weight": 0.78
+    },
+    {
+      "concern": 1744347641,
+      "designDecision": 1164912510,
+      "weight": 0.77
+    },
+    {
+      "concern": 1744347641,
+      "designDecision": -596336674,
+      "weight": 0.71
+    },
+    {
+      "concern": 746198643,
+      "designDecision": 11707155,
+      "weight": 0.72
+    },
+    {
+      "concern": -434482519,
+      "designDecision": 602005134,
+      "weight": 0.75
+    },
+    {
+      "concern": -34522626,
+      "designDecision": -1133626413,
+      "weight": 0.71
+    },
+    {
+      "concern": 72935158,
+      "designDecision": -1137123561,
+      "weight": 0.86
+    },
+    {
+      "concern": 428724034,
+      "designDecision": -376641862,
+      "weight": 0.79
+    },
+    {
+      "concern": 428724034,
+      "designDecision": -1312731230,
+      "weight": 0.88
+    },
+    {
+      "concern": 428724034,
+      "designDecision": -1304366759,
+      "weight": 0.8
+    },
+    {
+      "concern": 428724034,
+      "designDecision": -1304366759,
+      "weight": 0.8
+    },
+    {
+      "concern": 780563132,
+      "designDecision": -1312731230,
+      "weight": 0.76
+    },
+    {
+      "concern": 187033981,
+      "designDecision": -810663784,
+      "weight": 0.74
+    },
+    {
+      "concern": -1593566297,
+      "designDecision": 1193615381,
+      "weight": 0.77
+    },
+    {
+      "concern": -1984114484,
+      "designDecision": 526480870,
+      "weight": 0.8
+    },
+    {
+      "concern": -900653241,
+      "designDecision": 1193615381,
+      "weight": 0.75
+    },
+    {
+      "concern": 450916394,
+      "designDecision": -1699049244,
+      "weight": 0.76
+    },
+    {
+      "concern": 296678110,
+      "designDecision": 1135890531,
+      "weight": 0.76
+    },
+    {
+      "concern": -1690815694,
+      "designDecision": 1785206694,
+      "weight": 0.75
+    },
+    {
+      "concern": -1690815694,
+      "designDecision": -1295606529,
+      "weight": 0.83
+    },
+    {
+      "concern": -1690815694,
+      "designDecision": -509101713,
+      "weight": 0.75
+    },
+    {
+      "concern": -1690815694,
+      "designDecision": -1950101460,
+      "weight": 0.83
+    },
+    {
+      "concern": 24760977,
+      "designDecision": -1430160694,
+      "weight": 0.78
+    },
+    {
+      "concern": -36830759,
+      "designDecision": -1451678242,
+      "weight": 0.74
+    },
+    {
+      "concern": -79088734,
+      "designDecision": 1759621144,
+      "weight": 0.75
+    },
+    {
+      "concern": -79088734,
+      "designDecision": 2031915501,
+      "weight": 0.82
+    },
+    {
+      "concern": -79088734,
+      "designDecision": 370564439,
+      "weight": 0.88
+    },
+    {
+      "concern": -79088734,
+      "designDecision": -1133626413,
+      "weight": 0.91
+    },
+    {
+      "concern": 1579738551,
+      "designDecision": 424807253,
+      "weight": 0.76
+    },
+    {
+      "concern": 1579738551,
+      "designDecision": 1759621144,
+      "weight": 0.75
+    },
+    {
+      "concern": 1579738551,
+      "designDecision": -417072522,
+      "weight": 0.85
+    },
+    {
+      "concern": 1579738551,
+      "designDecision": -1137123561,
+      "weight": 0.84
+    },
+    {
+      "concern": -1507812819,
+      "designDecision": -1032997509,
+      "weight": 0.79
+    },
+    {
+      "concern": -1507812819,
+      "designDecision": 1208849645,
+      "weight": 0.8
+    },
+    {
+      "concern": -1507812819,
+      "designDecision": -1571112321,
+      "weight": 0.79
+    },
+    {
+      "concern": 1512523769,
+      "designDecision": 1759621144,
+      "weight": 0.78
+    },
+    {
+      "concern": 1512523769,
+      "designDecision": 2031915501,
+      "weight": 0.8
+    },
+    {
+      "concern": 1022147064,
+      "designDecision": -349240184,
+      "weight": 0.71
+    },
+    {
+      "concern": 1022147064,
+      "designDecision": 2031915501,
+      "weight": 0.82
+    },
+    {
+      "concern": 1022147064,
+      "designDecision": -1133626413,
+      "weight": 0.84
+    },
+    {
+      "concern": -633859243,
+      "designDecision": -1211152883,
+      "weight": 0.81
+    },
+    {
+      "concern": -633859243,
+      "designDecision": -1238344283,
+      "weight": 0.8
+    },
+    {
+      "concern": -633859243,
+      "designDecision": -1245295129,
+      "weight": 0.75
+    },
+    {
+      "concern": -633859243,
+      "designDecision": -509101713,
+      "weight": 0.73
+    },
+    {
+      "concern": -633859243,
+      "designDecision": -1950101460,
+      "weight": 0.75
+    },
+    {
+      "concern": 852279531,
+      "designDecision": 526480870,
+      "weight": 0.77
+    },
+    {
+      "concern": -1038693308,
+      "designDecision": 556248979,
+      "weight": 0.8
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": -2073491802,
+      "weight": 0.87
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": -1050531170,
+      "weight": 0.8
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": -1238344283,
+      "weight": 0.75
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": 1785206694,
+      "weight": 0.73
+    },
+    {
+      "concern": 1947869587,
+      "designDecision": -1211152883,
+      "weight": 0.75
+    },
+    {
+      "concern": 1947869587,
+      "designDecision": 1692486778,
+      "weight": 0.75
+    },
+    {
+      "concern": 621525617,
+      "designDecision": 1692486778,
+      "weight": 0.72
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -1699049244,
+      "weight": 0.86
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -1050531170,
+      "weight": 0.75
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -904065368,
+      "weight": 0.75
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -162847312,
+      "weight": 0.84
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -507425133,
+      "weight": 0.79
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": 526480870,
+      "weight": 0.83
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": 792486480,
+      "weight": 0.73
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -712898516,
+      "weight": 0.77
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -12533518,
+      "weight": 0.76
+    },
+    {
+      "concern": -69056658,
+      "designDecision": 1692486778,
+      "weight": 0.86
+    },
+    {
+      "concern": -1626491953,
+      "designDecision": 1692486778,
+      "weight": 0.83
+    },
+    {
+      "concern": -1626491953,
+      "designDecision": -1875224181,
+      "weight": 0.75
+    },
+    {
+      "concern": -1291565774,
+      "designDecision": 813462602,
+      "weight": 0.75
+    },
+    {
+      "concern": -1291565774,
+      "designDecision": 526480870,
+      "weight": 0.81
+    },
+    {
+      "concern": 910515083,
+      "designDecision": 526480870,
+      "weight": 0.74
+    },
+    {
+      "concern": 829278136,
+      "designDecision": 526480870,
+      "weight": 0.75
+    },
+    {
+      "concern": 924467323,
+      "designDecision": -810663784,
+      "weight": 0.79
+    },
+    {
+      "concern": 924467323,
+      "designDecision": 103942241,
+      "weight": 0.72
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -1699049244,
+      "weight": 0.84
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -2073491802,
+      "weight": 0.75
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -1799637010,
+      "weight": 0.88
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -904065368,
+      "weight": 0.72
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -162847312,
+      "weight": 0.86
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -507425133,
+      "weight": 0.79
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 526480870,
+      "weight": 0.83
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 792486480,
+      "weight": 0.75
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -712898516,
+      "weight": 0.8
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": -760548974,
+      "designDecision": -1699049244,
+      "weight": 0.8
+    },
+    {
+      "concern": -760548974,
+      "designDecision": -1799637010,
+      "weight": 0.85
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 1058982237,
+      "weight": 0.73
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 353682065,
+      "weight": 0.82
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 48984489,
+      "weight": 0.78
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 48984489,
+      "weight": 0.78
+    },
+    {
+      "concern": 331813695,
+      "designDecision": -417072522,
+      "weight": 0.75
+    },
+    {
+      "concern": 331813695,
+      "designDecision": -892767769,
+      "weight": 0.75
+    },
+    {
+      "concern": -641459540,
+      "designDecision": -1211152883,
+      "weight": 0.85
+    },
+    {
+      "concern": -641459540,
+      "designDecision": 636463811,
+      "weight": 0.78
+    },
+    {
+      "concern": -641459540,
+      "designDecision": -1795605603,
+      "weight": 0.81
+    },
+    {
+      "concern": -641459540,
+      "designDecision": -1245295129,
+      "weight": 0.87
+    },
+    {
+      "concern": -641459540,
+      "designDecision": 1785206694,
+      "weight": 0.82
+    },
+    {
+      "concern": -641459540,
+      "designDecision": -1295606529,
+      "weight": 0.82
+    },
+    {
+      "concern": -641459540,
+      "designDecision": -132708976,
+      "weight": 0.75
+    },
+    {
+      "concern": -1989050699,
+      "designDecision": 728000776,
+      "weight": 0.82
+    },
+    {
+      "concern": -1989050699,
+      "designDecision": 526480870,
+      "weight": 0.73
+    },
+    {
+      "concern": -342310409,
+      "designDecision": 1669424717,
+      "weight": 0.75
+    },
+    {
+      "concern": -342310409,
+      "designDecision": 170245368,
+      "weight": 0.75
+    },
+    {
+      "concern": -342310409,
+      "designDecision": 602005134,
+      "weight": 0.79
+    },
+    {
+      "concern": -761821397,
+      "designDecision": -1699049244,
+      "weight": 0.78
+    },
+    {
+      "concern": -761821397,
+      "designDecision": -2073491802,
+      "weight": 0.71
+    },
+    {
+      "concern": -761821397,
+      "designDecision": 409025084,
+      "weight": 0.75
+    },
+    {
+      "concern": -761821397,
+      "designDecision": -162847312,
+      "weight": 0.75
+    },
+    {
+      "concern": -761821397,
+      "designDecision": -507425133,
+      "weight": 0.75
+    },
+    {
+      "concern": -761821397,
+      "designDecision": 448946974,
+      "weight": 0.75
+    },
+    {
+      "concern": -761821397,
+      "designDecision": 526480870,
+      "weight": 0.78
+    },
+    {
+      "concern": -761821397,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": -761821397,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": 291445553,
+      "designDecision": 602005134,
+      "weight": 0.8
+    },
+    {
+      "concern": -409009168,
+      "designDecision": -370530511,
+      "weight": 0.72
+    },
+    {
+      "concern": -409009168,
+      "designDecision": 636463811,
+      "weight": 0.83
+    },
+    {
+      "concern": -409009168,
+      "designDecision": -1238344283,
+      "weight": 0.82
+    },
+    {
+      "concern": -409009168,
+      "designDecision": -1245295129,
+      "weight": 0.75
+    },
+    {
+      "concern": -409009168,
+      "designDecision": 1692486778,
+      "weight": 0.72
+    },
+    {
+      "concern": -409009168,
+      "designDecision": -132708976,
+      "weight": 0.8
+    },
+    {
+      "concern": -409009168,
+      "designDecision": -196219740,
+      "weight": 0.74
+    },
+    {
+      "concern": -409009168,
+      "designDecision": 697293714,
+      "weight": 0.8
+    },
+    {
+      "concern": 1040076746,
+      "designDecision": -1689951964,
+      "weight": 0.75
+    },
+    {
+      "concern": 1040076746,
+      "designDecision": -1412401697,
+      "weight": 0.72
+    },
+    {
+      "concern": -1244100808,
+      "designDecision": 562273153,
+      "weight": 0.75
+    },
+    {
+      "concern": -1244100808,
+      "designDecision": 125050048,
+      "weight": 0.76
+    },
+    {
+      "concern": -1244100808,
+      "designDecision": 125050048,
+      "weight": 0.76
+    },
+    {
+      "concern": -635283544,
+      "designDecision": 636463811,
+      "weight": 0.82
+    },
+    {
+      "concern": -635283544,
+      "designDecision": -2105461603,
+      "weight": 0.75
+    },
+    {
+      "concern": -635283544,
+      "designDecision": -1795605603,
+      "weight": 0.84
+    },
+    {
+      "concern": -635283544,
+      "designDecision": -810663784,
+      "weight": 0.75
+    },
+    {
+      "concern": -635283544,
+      "designDecision": 1645383296,
+      "weight": 0.71
+    },
+    {
+      "concern": -635283544,
+      "designDecision": -509101713,
+      "weight": 0.78
+    },
+    {
+      "concern": -635283544,
+      "designDecision": -1950101460,
+      "weight": 0.8
+    },
+    {
+      "concern": -635283544,
+      "designDecision": 701201192,
+      "weight": 0.74
+    },
+    {
+      "concern": -635283544,
+      "designDecision": 697293714,
+      "weight": 0.75
+    },
+    {
+      "concern": 1262184514,
+      "designDecision": -1211152883,
+      "weight": 0.87
+    },
+    {
+      "concern": 1262184514,
+      "designDecision": -1795605603,
+      "weight": 0.75
+    },
+    {
+      "concern": 1262184514,
+      "designDecision": 1785206694,
+      "weight": 0.75
+    },
+    {
+      "concern": 1262184514,
+      "designDecision": 1692486778,
+      "weight": 0.81
+    },
+    {
+      "concern": 291445553,
+      "designDecision": 602005134,
+      "weight": 0.8
+    },
+    {
+      "concern": -201821906,
+      "designDecision": 1102370118,
+      "weight": 0.71
+    },
+    {
+      "concern": -201821906,
+      "designDecision": -1688277340,
+      "weight": 0.92
+    },
+    {
+      "concern": -201821906,
+      "designDecision": -1936304904,
+      "weight": 0.8
+    },
+    {
+      "concern": -201821906,
+      "designDecision": 602005134,
+      "weight": 0.86
+    },
+    {
+      "concern": 998005727,
+      "designDecision": -1688277340,
+      "weight": 0.9
+    },
+    {
+      "concern": 998005727,
+      "designDecision": -1936304904,
+      "weight": 0.77
+    },
+    {
+      "concern": 998005727,
+      "designDecision": 602005134,
+      "weight": 0.84
+    },
+    {
+      "concern": 998005727,
+      "designDecision": -196219740,
+      "weight": 0.8
+    },
+    {
+      "concern": -1405663364,
+      "designDecision": 636463811,
+      "weight": 0.81
+    },
+    {
+      "concern": -1405663364,
+      "designDecision": -1238344283,
+      "weight": 0.87
+    },
+    {
+      "concern": -1405663364,
+      "designDecision": -1245295129,
+      "weight": 0.75
+    },
+    {
+      "concern": 1718142875,
+      "designDecision": 2041645425,
+      "weight": 0.73
+    },
+    {
+      "concern": 1718142875,
+      "designDecision": 360799848,
+      "weight": 0.76
+    },
+    {
+      "concern": 1718142875,
+      "designDecision": -1875224181,
+      "weight": 0.78
+    },
+    {
+      "concern": 1718142875,
+      "designDecision": 602005134,
+      "weight": 0.75
+    },
+    {
+      "concern": 1718142875,
+      "designDecision": 426270240,
+      "weight": 0.78
+    },
+    {
+      "concern": 1718142875,
+      "designDecision": 103942241,
+      "weight": 0.76
+    },
+    {
+      "concern": -1555478299,
+      "designDecision": 813462602,
+      "weight": 0.88
+    },
+    {
+      "concern": -1555478299,
+      "designDecision": 58215549,
+      "weight": 0.82
+    },
+    {
+      "concern": -1555478299,
+      "designDecision": 1489946981,
+      "weight": 0.75
+    },
+    {
+      "concern": -1555478299,
+      "designDecision": 526480870,
+      "weight": 0.85
+    },
+    {
+      "concern": 578406400,
+      "designDecision": 756392022,
+      "weight": 0.85
+    },
+    {
+      "concern": 578406400,
+      "designDecision": 58215549,
+      "weight": 0.75
+    },
+    {
+      "concern": 578406400,
+      "designDecision": -2121380032,
+      "weight": 0.72
+    },
+    {
+      "concern": 578406400,
+      "designDecision": -417072522,
+      "weight": 0.75
+    },
+    {
+      "concern": 578406400,
+      "designDecision": -892767769,
+      "weight": 0.75
+    },
+    {
+      "concern": 1458761624,
+      "designDecision": 1692486778,
+      "weight": 0.75
+    },
+    {
+      "concern": 1458761624,
+      "designDecision": -1936304904,
+      "weight": 0.75
+    },
+    {
+      "concern": 1458761624,
+      "designDecision": -509101713,
+      "weight": 0.81
+    },
+    {
+      "concern": 1333132643,
+      "designDecision": -810663784,
+      "weight": 0.84
+    },
+    {
+      "concern": 1333132643,
+      "designDecision": 1625393799,
+      "weight": 0.75
+    },
+    {
+      "concern": 1333132643,
+      "designDecision": -1950101460,
+      "weight": 0.71
+    },
+    {
+      "concern": 1186947408,
+      "designDecision": -43962237,
+      "weight": 0.78
+    },
+    {
+      "concern": 1186947408,
+      "designDecision": -1434193892,
+      "weight": 0.75
+    },
+    {
+      "concern": -987660287,
+      "designDecision": 1164912510,
+      "weight": 0.71
+    },
+    {
+      "concern": 1265867032,
+      "designDecision": -810663784,
+      "weight": 0.85
+    },
+    {
+      "concern": 1265867032,
+      "designDecision": 1625393799,
+      "weight": 0.73
+    },
+    {
+      "concern": 1265867032,
+      "designDecision": 1886426255,
+      "weight": 0.76
+    },
+    {
+      "concern": 1302154817,
+      "designDecision": -1430160694,
+      "weight": 0.8
+    },
+    {
+      "concern": -79088734,
+      "designDecision": 1759621144,
+      "weight": 0.75
+    },
+    {
+      "concern": -79088734,
+      "designDecision": 2031915501,
+      "weight": 0.82
+    },
+    {
+      "concern": -79088734,
+      "designDecision": 370564439,
+      "weight": 0.88
+    },
+    {
+      "concern": 1579738551,
+      "designDecision": 1759621144,
+      "weight": 0.75
+    },
+    {
+      "concern": 1579738551,
+      "designDecision": -417072522,
+      "weight": 0.85
+    },
+    {
+      "concern": 1579738551,
+      "designDecision": -1137123561,
+      "weight": 0.84
+    },
+    {
+      "concern": 1022147064,
+      "designDecision": -349240184,
+      "weight": 0.71
+    },
+    {
+      "concern": 1022147064,
+      "designDecision": 2031915501,
+      "weight": 0.82
+    },
+    {
+      "concern": 1472109963,
+      "designDecision": -1398254291,
+      "weight": 0.91
+    },
+    {
+      "concern": 1472109963,
+      "designDecision": 1899538599,
+      "weight": 0.75
+    },
+    {
+      "concern": 1472109963,
+      "designDecision": -342428474,
+      "weight": 0.73
+    },
+    {
+      "concern": 1472109963,
+      "designDecision": -1571112321,
+      "weight": 0.75
+    },
+    {
+      "concern": -707064432,
+      "designDecision": -1201035731,
+      "weight": 0.72
+    },
+    {
+      "concern": -707064432,
+      "designDecision": -1980274527,
+      "weight": 0.73
+    },
+    {
+      "concern": -707064432,
+      "designDecision": 409025084,
+      "weight": 0.92
+    },
+    {
+      "concern": -707064432,
+      "designDecision": 2007603324,
+      "weight": 0.71
+    },
+    {
+      "concern": -707064432,
+      "designDecision": -507425133,
+      "weight": 0.73
+    },
+    {
+      "concern": -707064432,
+      "designDecision": -1434193892,
+      "weight": 0.74
+    },
+    {
+      "concern": -707064432,
+      "designDecision": 48984489,
+      "weight": 0.71
+    },
+    {
+      "concern": -707064432,
+      "designDecision": 48984489,
+      "weight": 0.71
+    },
+    {
+      "concern": 207011691,
+      "designDecision": -1699049244,
+      "weight": 0.78
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 756392022,
+      "weight": 0.87
+    },
+    {
+      "concern": 207011691,
+      "designDecision": -1050531170,
+      "weight": 0.8
+    },
+    {
+      "concern": 207011691,
+      "designDecision": -1799637010,
+      "weight": 0.95
+    },
+    {
+      "concern": 207011691,
+      "designDecision": -507425133,
+      "weight": 0.81
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 448946974,
+      "weight": 0.81
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 1058982237,
+      "weight": 0.82
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 792486480,
+      "weight": 0.75
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 48984489,
+      "weight": 0.88
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 125050048,
+      "weight": 0.84
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 48984489,
+      "weight": 0.88
+    },
+    {
+      "concern": 207011691,
+      "designDecision": 125050048,
+      "weight": 0.84
+    },
+    {
+      "concern": 428724034,
+      "designDecision": -1312731230,
+      "weight": 0.88
+    },
+    {
+      "concern": 917912382,
+      "designDecision": -1699049244,
+      "weight": 0.75
+    },
+    {
+      "concern": 917912382,
+      "designDecision": -1799637010,
+      "weight": 0.75
+    },
+    {
+      "concern": 917912382,
+      "designDecision": -12533518,
+      "weight": 0.82
+    },
+    {
+      "concern": -719344782,
+      "designDecision": -2073491802,
+      "weight": 0.82
+    },
+    {
+      "concern": -719344782,
+      "designDecision": -653190853,
+      "weight": 0.86
+    },
+    {
+      "concern": -719344782,
+      "designDecision": 832903800,
+      "weight": 0.78
+    },
+    {
+      "concern": -719344782,
+      "designDecision": -904065368,
+      "weight": 0.8
+    },
+    {
+      "concern": -719344782,
+      "designDecision": 716427691,
+      "weight": 0.81
+    },
+    {
+      "concern": -719344782,
+      "designDecision": -1075977445,
+      "weight": 0.75
+    },
+    {
+      "concern": -719344782,
+      "designDecision": 792486480,
+      "weight": 0.78
+    },
+    {
+      "concern": -719344782,
+      "designDecision": -12533518,
+      "weight": 0.94
+    },
+    {
+      "concern": -719344782,
+      "designDecision": 1886426255,
+      "weight": 0.82
+    },
+    {
+      "concern": -719344782,
+      "designDecision": 701201192,
+      "weight": 0.85
+    },
+    {
+      "concern": -1042332755,
+      "designDecision": -2073491802,
+      "weight": 0.72
+    },
+    {
+      "concern": -1042332755,
+      "designDecision": -653190853,
+      "weight": 0.75
+    },
+    {
+      "concern": -1042332755,
+      "designDecision": 832903800,
+      "weight": 0.75
+    },
+    {
+      "concern": -1042332755,
+      "designDecision": 716427691,
+      "weight": 0.79
+    },
+    {
+      "concern": -1042332755,
+      "designDecision": -12533518,
+      "weight": 0.84
+    },
+    {
+      "concern": 1651187087,
+      "designDecision": 832903800,
+      "weight": 0.8
+    },
+    {
+      "concern": 1651187087,
+      "designDecision": -12533518,
+      "weight": 0.84
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -1699049244,
+      "weight": 0.82
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -653190853,
+      "weight": 0.75
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -1050531170,
+      "weight": 0.75
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -1799637010,
+      "weight": 0.88
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": 385895706,
+      "weight": 0.8
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": 716427691,
+      "weight": 0.86
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -1075977445,
+      "weight": 0.85
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -162847312,
+      "weight": 0.78
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": 353682065,
+      "weight": 0.79
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": 792486480,
+      "weight": 0.86
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -712898516,
+      "weight": 0.76
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": -12533518,
+      "weight": 0.85
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": 1174053565,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": 780563132,
+      "designDecision": -1312731230,
+      "weight": 0.76
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": -1699049244,
+      "weight": 0.77
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": 832903800,
+      "weight": 0.79
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": -1799637010,
+      "weight": 0.82
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": 716427691,
+      "weight": 0.82
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": -1075977445,
+      "weight": 0.8
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": -162847312,
+      "weight": 0.74
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": 792486480,
+      "weight": 0.81
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": -712898516,
+      "weight": 0.72
+    },
+    {
+      "concern": -1323599740,
+      "designDecision": -12533518,
+      "weight": 0.82
+    },
+    {
+      "concern": 852512249,
+      "designDecision": -1799637010,
+      "weight": 0.79
+    },
+    {
+      "concern": 852512249,
+      "designDecision": 353682065,
+      "weight": 0.75
+    },
+    {
+      "concern": -1038693308,
+      "designDecision": 556248979,
+      "weight": 0.8
+    },
+    {
+      "concern": 187033981,
+      "designDecision": -810663784,
+      "weight": 0.74
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": -1211152883,
+      "weight": 0.71
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": -2073491802,
+      "weight": 0.87
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": -1050531170,
+      "weight": 0.8
+    },
+    {
+      "concern": -1491409181,
+      "designDecision": -1238344283,
+      "weight": 0.75
+    },
+    {
+      "concern": -1984114484,
+      "designDecision": 526480870,
+      "weight": 0.8
+    },
+    {
+      "concern": -900653241,
+      "designDecision": 1193615381,
+      "weight": 0.75
+    },
+    {
+      "concern": 1947869587,
+      "designDecision": -1211152883,
+      "weight": 0.75
+    },
+    {
+      "concern": 1947869587,
+      "designDecision": -2073491802,
+      "weight": 0.81
+    },
+    {
+      "concern": 1947869587,
+      "designDecision": 1692486778,
+      "weight": 0.75
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -1699049244,
+      "weight": 0.86
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -2073491802,
+      "weight": 0.76
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -1050531170,
+      "weight": 0.75
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -1799637010,
+      "weight": 0.88
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -904065368,
+      "weight": 0.75
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -162847312,
+      "weight": 0.84
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": -507425133,
+      "weight": 0.79
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": 526480870,
+      "weight": 0.83
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": 792486480,
+      "weight": 0.73
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": 48984489,
+      "weight": 0.77
+    },
+    {
+      "concern": 1616509929,
+      "designDecision": 48984489,
+      "weight": 0.77
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -1699049244,
+      "weight": 0.84
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -2073491802,
+      "weight": 0.75
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 1874294386,
+      "weight": 0.71
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -1799637010,
+      "weight": 0.88
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -162847312,
+      "weight": 0.86
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -507425133,
+      "weight": 0.79
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 526480870,
+      "weight": 0.83
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 792486480,
+      "weight": 0.75
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -712898516,
+      "weight": 0.8
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -1304366759,
+      "weight": 0.71
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": -1304366759,
+      "weight": 0.71
+    },
+    {
+      "concern": 1862936429,
+      "designDecision": 48984489,
+      "weight": 0.75
+    },
+    {
+      "concern": -760548974,
+      "designDecision": -1699049244,
+      "weight": 0.8
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 813462602,
+      "weight": 0.71
+    },
+    {
+      "concern": -760548974,
+      "designDecision": -1050531170,
+      "weight": 0.71
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 1874294386,
+      "weight": 0.72
+    },
+    {
+      "concern": -760548974,
+      "designDecision": -1799637010,
+      "weight": 0.85
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 556248979,
+      "weight": 0.72
+    },
+    {
+      "concern": -760548974,
+      "designDecision": -507425133,
+      "weight": 0.76
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 526480870,
+      "weight": 0.78
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 1058982237,
+      "weight": 0.73
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 353682065,
+      "weight": 0.82
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 48984489,
+      "weight": 0.78
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 125050048,
+      "weight": 0.81
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 48984489,
+      "weight": 0.78
+    },
+    {
+      "concern": -760548974,
+      "designDecision": 125050048,
+      "weight": 0.81
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": 756392022,
+      "weight": 0.78
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": -1050531170,
+      "weight": 0.75
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": -1075977445,
+      "weight": 0.75
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": -162847312,
+      "weight": 0.81
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": -507425133,
+      "weight": 0.81
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": 353682065,
+      "weight": 0.85
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": 792486480,
+      "weight": 0.74
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": -712898516,
+      "weight": 0.73
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": -1304366759,
+      "weight": 0.72
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": 48984489,
+      "weight": 0.84
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": 125050048,
+      "weight": 0.85
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": -1304366759,
+      "weight": 0.72
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": 48984489,
+      "weight": 0.84
+    },
+    {
+      "concern": 2125370336,
+      "designDecision": 125050048,
+      "weight": 0.85
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": -1699049244,
+      "weight": 0.78
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": 756392022,
+      "weight": 0.8
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": -1050531170,
+      "weight": 0.78
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": -1799637010,
+      "weight": 0.9
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": 409025084,
+      "weight": 0.75
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": -904065368,
+      "weight": 0.8
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": -1075977445,
+      "weight": 0.75
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": -507425133,
+      "weight": 0.76
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": 353682065,
+      "weight": 0.88
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": -12533518,
+      "weight": 0.78
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": 48984489,
+      "weight": 0.82
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": 125050048,
+      "weight": 0.76
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": 48984489,
+      "weight": 0.82
+    },
+    {
+      "concern": -1636827605,
+      "designDecision": 125050048,
+      "weight": 0.76
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": -1699049244,
+      "weight": 0.81
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": -2073491802,
+      "weight": 0.83
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": -653190853,
+      "weight": 0.87
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": -1799637010,
+      "weight": 0.81
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": 716427691,
+      "weight": 0.79
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": 792486480,
+      "weight": 0.8
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": -810663784,
+      "weight": 0.74
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": -12533518,
+      "weight": 0.95
+    },
+    {
+      "concern": -1696130772,
+      "designDecision": 701201192,
+      "weight": 0.85
+    },
+    {
+      "concern": -1368086071,
+      "designDecision": -1699049244,
+      "weight": 0.79
+    },
+    {
+      "concern": -1368086071,
+      "designDecision": 832903800,
+      "weight": 0.81
+    },
+    {
+      "concern": -1368086071,
+      "designDecision": -1799637010,
+      "weight": 0.81
+    },
+    {
+      "concern": -1368086071,
+      "designDecision": 716427691,
+      "weight": 0.79
+    },
+    {
+      "concern": -1368086071,
+      "designDecision": -1075977445,
+      "weight": 0.75
+    },
+    {
+      "concern": -1368086071,
+      "designDecision": -162847312,
+      "weight": 0.75
+    },
+    {
+      "concern": -1368086071,
+      "designDecision": -12533518,
+      "weight": 0.87
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": -1699049244,
+      "weight": 0.81
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": -2073491802,
+      "weight": 0.83
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": -653190853,
+      "weight": 0.83
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": -1050531170,
+      "weight": 0.79
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": -1799637010,
+      "weight": 0.83
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": 716427691,
+      "weight": 0.8
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": -1075977445,
+      "weight": 0.78
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": 792486480,
+      "weight": 0.8
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": 1886426255,
+      "weight": 0.75
+    },
+    {
+      "concern": -1585548746,
+      "designDecision": 701201192,
+      "weight": 0.85
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": -1699049244,
+      "weight": 0.79
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": -653190853,
+      "weight": 0.81
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": 1068289840,
+      "weight": 0.71
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": -1799637010,
+      "weight": 0.81
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": 385895706,
+      "weight": 0.72
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": 716427691,
+      "weight": 0.79
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": -162847312,
+      "weight": 0.78
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": -12533518,
+      "weight": 0.89
+    },
+    {
+      "concern": -2005237041,
+      "designDecision": 701201192,
+      "weight": 0.75
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": -1699049244,
+      "weight": 0.8
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": -653190853,
+      "weight": 0.75
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": 832903800,
+      "weight": 0.75
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": -1799637010,
+      "weight": 0.87
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": 385895706,
+      "weight": 0.74
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": 716427691,
+      "weight": 0.81
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": -1075977445,
+      "weight": 0.81
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": -162847312,
+      "weight": 0.78
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": 353682065,
+      "weight": 0.75
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": 792486480,
+      "weight": 0.88
+    },
+    {
+      "concern": -1889318628,
+      "designDecision": -12533518,
+      "weight": 0.83
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -1699049244,
+      "weight": 0.86
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -2073491802,
+      "weight": 0.79
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -653190853,
+      "weight": 0.79
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 1068289840,
+      "weight": 0.79
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -1799637010,
+      "weight": 0.87
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 1863003782,
+      "weight": 0.71
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 385895706,
+      "weight": 0.8
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 716427691,
+      "weight": 0.85
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -1075977445,
+      "weight": 0.85
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -162847312,
+      "weight": 0.78
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 353682065,
+      "weight": 0.77
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 792486480,
+      "weight": 0.87
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -712898516,
+      "weight": 0.77
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": -12533518,
+      "weight": 0.88
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 48984489,
+      "weight": 0.72
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 48984489,
+      "weight": 0.72
+    },
+    {
+      "concern": 1297966827,
+      "designDecision": 701201192,
+      "weight": 0.79
+    },
+    {
+      "concern": 1061117199,
+      "designDecision": 967115928,
+      "weight": 0.75
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -1699049244,
+      "weight": 0.8
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -2073491802,
+      "weight": 0.88
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -653190853,
+      "weight": 0.82
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -1050531170,
+      "weight": 0.86
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -1799637010,
+      "weight": 0.8
+    },
+    {
+      "concern": 675314804,
+      "designDecision": 385895706,
+      "weight": 0.74
+    },
+    {
+      "concern": 675314804,
+      "designDecision": 716427691,
+      "weight": 0.81
+    },
+    {
+      "concern": 675314804,
+      "designDecision": 2007603324,
+      "weight": 0.72
+    },
+    {
+      "concern": 675314804,
+      "designDecision": 792486480,
+      "weight": 0.79
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -712898516,
+      "weight": 0.71
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -12533518,
+      "weight": 0.94
+    },
+    {
+      "concern": 675314804,
+      "designDecision": 1886426255,
+      "weight": 0.8
+    },
+    {
+      "concern": 675314804,
+      "designDecision": -1940229464,
+      "weight": 0.73
+    },
+    {
+      "concern": 675314804,
+      "designDecision": 701201192,
+      "weight": 0.87
+    },
+    {
+      "concern": 314358573,
+      "designDecision": 813462602,
+      "weight": 0.75
+    },
+    {
+      "concern": 314358573,
+      "designDecision": 409025084,
+      "weight": 0.79
+    },
+    {
+      "concern": 314358573,
+      "designDecision": -793403899,
+      "weight": 0.72
+    },
+    {
+      "concern": 314358573,
+      "designDecision": -1075977445,
+      "weight": 0.75
+    },
+    {
+      "concern": 314358573,
+      "designDecision": -521296504,
+      "weight": 0.8
+    },
+    {
+      "concern": 314358573,
+      "designDecision": -507425133,
+      "weight": 0.75
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": -1699049244,
+      "weight": 0.83
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": -2073491802,
+      "weight": 0.73
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": 1068289840,
+      "weight": 0.72
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": 409025084,
+      "weight": 0.72
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": 385895706,
+      "weight": 0.81
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": -162847312,
+      "weight": 0.8
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": -507425133,
+      "weight": 0.81
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": 353682065,
+      "weight": 0.82
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": 792486480,
+      "weight": 0.75
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": -12533518,
+      "weight": 0.77
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": 48984489,
+      "weight": 0.8
+    },
+    {
+      "concern": -1143643156,
+      "designDecision": 48984489,
+      "weight": 0.8
+    },
+    {
+      "concern": 1708649510,
+      "designDecision": -376641862,
+      "weight": 0.82
+    },
+    {
+      "concern": 1708649510,
+      "designDecision": -1312731230,
+      "weight": 0.92
+    },
+    {
+      "concern": 1708649510,
+      "designDecision": -1304366759,
+      "weight": 0.75
+    },
+    {
+      "concern": 1708649510,
+      "designDecision": -1304366759,
+      "weight": 0.75
+    },
+    {
+      "concern": 869239923,
+      "designDecision": -1699049244,
+      "weight": 0.8
+    },
+    {
+      "concern": 869239923,
+      "designDecision": -2073491802,
+      "weight": 0.84
+    },
+    {
+      "concern": 869239923,
+      "designDecision": -653190853,
+      "weight": 0.86
+    },
+    {
+      "concern": 869239923,
+      "designDecision": 1068289840,
+      "weight": 0.75
+    },
+    {
+      "concern": 869239923,
+      "designDecision": 832903800,
+      "weight": 0.75
+    },
+    {
+      "concern": 869239923,
+      "designDecision": -1050531170,
+      "weight": 0.82
+    },
+    {
+      "concern": 869239923,
+      "designDecision": 716427691,
+      "weight": 0.8
+    },
+    {
+      "concern": 869239923,
+      "designDecision": 792486480,
+      "weight": 0.84
+    },
+    {
+      "concern": 869239923,
+      "designDecision": -712898516,
+      "weight": 0.81
+    },
+    {
+      "concern": 869239923,
+      "designDecision": -12533518,
+      "weight": 0.93
+    },
+    {
+      "concern": 869239923,
+      "designDecision": 1886426255,
+      "weight": 0.8
+    },
+    {
+      "concern": 869239923,
+      "designDecision": 701201192,
+      "weight": 0.89
+    }
+  ],
+  "tracedConcernCount": 44,
+  "untracedConcernCount": 149
+}

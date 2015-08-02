@@ -1,0 +1,1768 @@
+{
+  "concerns": [
+    {
+      "label": "User requests to see the travel packages",
+      "classification": "typeless",
+      "id": 527049223
+    },
+    {
+      "label": "System prompts the user for the place to travel.",
+      "classification": "typeless",
+      "id": -348637216
+    },
+    {
+      "label": "User inputs a place to travel",
+      "classification": "typeless",
+      "id": 1611901235
+    },
+    {
+      "label": "System retrieves the flies from the database.",
+      "classification": "typeless",
+      "id": 1770325300
+    },
+    {
+      "label": "System retrieves the activities from the database.",
+      "classification": "typeless",
+      "id": -423668058
+    },
+    {
+      "label": "System retrieves the lodging options from the database.",
+      "classification": "typeless",
+      "id": -1553852341
+    },
+    {
+      "label": "System build the travel packages based on the existing options.",
+      "classification": "typeless",
+      "id": -1599010129
+    },
+    {
+      "label": "System displays the catalog of travel packages.",
+      "classification": "typeless",
+      "id": 1143657886
+    },
+    {
+      "label": "The user can place an order for a vacation package.",
+      "classification": "typeless",
+      "id": -342186643
+    },
+    {
+      "label": "To process this order, the system has to interact with several external entities",
+      "classification": "typeless",
+      "id": -946220867
+    },
+    {
+      "label": "A bank will approve the customer payment, airline companies will provide the flights, lodging providers will book the hotel rooms, and businesses that provide vacation activities will schedule the activities selected by the customer.",
+      "classification": "typeless",
+      "id": 1016405730
+    },
+    {
+      "label": "User selects a travel package.",
+      "classification": "typeless",
+      "id": 548489887
+    },
+    {
+      "label": "The System retrieves the providers from the database.",
+      "classification": "typeless",
+      "id": 1425880756
+    },
+    {
+      "label": "The System books the fly by communicating with the airline.",
+      "classification": "typeless",
+      "id": -1562071774
+    },
+    {
+      "label": "The System books the hotel by communicating with the hotel.",
+      "classification": "typeless",
+      "id": -383860597
+    },
+    {
+      "label": "The System books the activities by communicating with the activity providers.",
+      "classification": "typeless",
+      "id": 1672049679
+    },
+    {
+      "label": "The System shows the bookings.",
+      "classification": "typeless",
+      "id": 967562727
+    },
+    {
+      "label": "The System creates the purchase order based on user information.",
+      "classification": "typeless",
+      "id": 812125864
+    },
+    {
+      "label": "The System prompts the user for payment method.",
+      "classification": "typeless",
+      "id": 1801247255
+    },
+    {
+      "label": "User inputs credit card information.",
+      "classification": "typeless",
+      "id": -1654869349
+    },
+    {
+      "label": "The System process and validates credit card payment.",
+      "classification": "typeless",
+      "id": 278230174
+    },
+    {
+      "label": "The System prompts the user for travel confirmation.",
+      "classification": "typeless",
+      "id": 1101356971
+    },
+    {
+      "label": "The system sends an email to the user confirming that the order was succesfully procesed.",
+      "classification": "typeless",
+      "id": -365684961
+    },
+    {
+      "label": "The system generates a message informing that the purchase order failed.",
+      "classification": "typeless",
+      "id": -316042125
+    },
+    {
+      "label": "System validation with the bank informs about an error with the payment information and shows a screen displaying this error.",
+      "classification": "typeless",
+      "id": -657029646
+    },
+    {
+      "label": "In order to be authorized the user must be logged in.",
+      "classification": "typeless",
+      "id": -1790680923
+    },
+    {
+      "label": "Error booking the fly.",
+      "classification": "typeless",
+      "id": 284385751
+    },
+    {
+      "label": "System retrieves alternative flies.",
+      "classification": "typeless",
+      "id": -1335762088
+    },
+    {
+      "label": "System prompts the user for alternative flies.",
+      "classification": "typeless",
+      "id": 924871737
+    },
+    {
+      "label": "User selects an alternative fly.",
+      "classification": "typeless",
+      "id": -1938972879
+    },
+    {
+      "label": "Error booking the hotel.",
+      "classification": "typeless",
+      "id": -123064010
+    },
+    {
+      "label": "System retrieves alternative hotels.",
+      "classification": "typeless",
+      "id": 368845744
+    },
+    {
+      "label": "System prompts the user for alternative hotels.",
+      "classification": "typeless",
+      "id": 1729017583
+    },
+    {
+      "label": "User selects an alternative hotel.",
+      "classification": "typeless",
+      "id": 2123005968
+    },
+    {
+      "label": "Error booking the activities.",
+      "classification": "typeless",
+      "id": -48660735
+    },
+    {
+      "label": "System retrieves alternative activities.",
+      "classification": "typeless",
+      "id": 1806741826
+    },
+    {
+      "label": "System prompts the user for alternative activities.",
+      "classification": "typeless",
+      "id": -21394175
+    },
+    {
+      "label": "User selects an alternative activities.",
+      "classification": "typeless",
+      "id": -1321572249
+    },
+    {
+      "label": "After an order is placed, the user can return to check the status of his/her order.",
+      "classification": "typeless",
+      "id": 679066173
+    },
+    {
+      "label": "This is necessary because some interactions with external entities are processed in the background and may take hours or days to complete.",
+      "classification": "typeless",
+      "id": -1743640136
+    },
+    {
+      "label": "System retrieves the order information from the database.",
+      "classification": "typeless",
+      "id": -27389429
+    },
+    {
+      "label": "System checks fly status by communicating with the airline.",
+      "classification": "typeless",
+      "id": 1632581483
+    },
+    {
+      "label": "System checks hotel status by communicating with the hotels.",
+      "classification": "typeless",
+      "id": -734263057
+    },
+    {
+      "label": "System shows order information to user.",
+      "classification": "typeless",
+      "id": 5472557
+    },
+    {
+      "label": "System doesn't find any result and shows an error screen displaying this error.",
+      "classification": "typeless",
+      "id": -411978199
+    },
+    {
+      "label": "Authorization, only a signed in user is authorized to call this operation. ",
+      "classification": "typeless",
+      "id": -1454889527
+    },
+    {
+      "label": "A customer user can only get information about orders he created. ",
+      "classification": "typeless",
+      "id": -1140996707
+    },
+    {
+      "label": "A sales representative user can get information about any order.",
+      "classification": "typeless",
+      "id": 1773424680
+    },
+    {
+      "label": "The internal system periodically interacts with its business partners (transportation, lodging, and activity providers) to update the catalog with the most recent offerings.",
+      "classification": "typeless",
+      "id": 1240682667
+    },
+    {
+      "label": "System receives an update event to update the catalog.",
+      "classification": "typeless",
+      "id": -639207603
+    },
+    {
+      "label": "System retrieves the providers from the database.",
+      "classification": "typeless",
+      "id": -2103131965
+    },
+    {
+      "label": "System retrieves the prices and offers from airlines.",
+      "classification": "typeless",
+      "id": -1741795708
+    },
+    {
+      "label": "System update prices and offers of flies in the database.",
+      "classification": "typeless",
+      "id": 1535189663
+    },
+    {
+      "label": "System retrieves the prices and offers from hotels.",
+      "classification": "typeless",
+      "id": -1729050182
+    },
+    {
+      "label": "System update prices and offers of hotels in the database.",
+      "classification": "typeless",
+      "id": 2131627167
+    },
+    {
+      "label": "System retrieves the prices and offers from activity providers.",
+      "classification": "typeless",
+      "id": -234543896
+    },
+    {
+      "label": "System update prices and offers of activity providers in the database.",
+      "classification": "typeless",
+      "id": -309965619
+    },
+    {
+      "label": "System refreshes travel packages based on the offers in the database.",
+      "classification": "typeless",
+      "id": -960577678
+    },
+    {
+      "label": "A new business partner (airline, lodging, or activity provider) that uses its own web services interface is added to the system in no more than 10 person-days of effort for the implementation.",
+      "classification": "typeless",
+      "id": -173554581
+    },
+    {
+      "label": "The business goal is easy integration with new business partners.",
+      "classification": "typeless",
+      "id": -103874437
+    },
+    {
+      "label": "The administrator adds a new business partner into the system",
+      "classification": "typeless",
+      "id": -643132417
+    },
+    {
+      "label": "The system adds the new business partner in less than 10 days.",
+      "classification": "typeless",
+      "id": -641567878
+    },
+    {
+      "label": "The User enter to the login screen.",
+      "classification": "typeless",
+      "id": -1834927149
+    },
+    {
+      "label": "The system will display the login screen.",
+      "classification": "typeless",
+      "id": 1840274752
+    },
+    {
+      "label": "The user enters a username and password.",
+      "classification": "typeless",
+      "id": -1446921460
+    },
+    {
+      "label": "The system will run the log-in process and verify the information such as username and password.",
+      "classification": "typeless",
+      "id": -217935791
+    },
+    {
+      "label": "The system will verify that the user is not sing-on in another session.",
+      "classification": "typeless",
+      "id": -514043776
+    },
+    {
+      "label": "The system will set access permissions.",
+      "classification": "typeless",
+      "id": 1962568874
+    },
+    {
+      "label": "The system will retrieve the user account information from the database.",
+      "classification": "typeless",
+      "id": 1663474417
+    },
+    {
+      "label": "The user account information was not identified by the system",
+      "classification": "typeless",
+      "id": 884365281
+    },
+    {
+      "label": "The system will display an error to the user and allow him to retry the authentication 3 more times.",
+      "classification": "typeless",
+      "id": -1566866366
+    },
+    {
+      "label": "The system will create a new session for the user.",
+      "classification": "typeless",
+      "id": 2040534058
+    },
+    {
+      "label": "The User enter to the create account screen.",
+      "classification": "typeless",
+      "id": -944730945
+    },
+    {
+      "label": "The system will display the login screen.",
+      "classification": "typeless",
+      "id": 1840274752
+    },
+    {
+      "label": "The user enters a username, password, first name, last name, address information, telephone, email, credit card information.",
+      "classification": "typeless",
+      "id": 690233282
+    },
+    {
+      "label": "The system will run the log-in process and verify the username is not already used.",
+      "classification": "typeless",
+      "id": -1131526652
+    },
+    {
+      "label": "The system will store the user account information into the database.",
+      "classification": "typeless",
+      "id": 1686511540
+    },
+    {
+      "label": "The system will display an error message mentioning that there is information missing.",
+      "classification": "typeless",
+      "id": 1141909881
+    },
+    {
+      "label": "The system will display an error message mentioning that the username is already taken.",
+      "classification": "typeless",
+      "id": -737267645
+    },
+    {
+      "label": "The user fills all the needed information.",
+      "classification": "typeless",
+      "id": 325742711
+    },
+    {
+      "label": "The system generates an message and store it on the database.",
+      "classification": "typeless",
+      "id": -1319173834
+    },
+    {
+      "label": "The user doesn't fill all the needed information, and the system shows an error informing this.",
+      "classification": "typeless",
+      "id": 1736124627
+    },
+    {
+      "label": "The system will sign out automatically the user after 30 min of inactivity.",
+      "classification": "typeless",
+      "id": -1015827252
+    },
+    {
+      "label": "The system will sign out the user after 30 min of inactivity.",
+      "classification": "typeless",
+      "id": 1257438767
+    },
+    {
+      "label": "The system will expire the HTTP session associed to the user.",
+      "classification": "typeless",
+      "id": 1019123692
+    },
+    {
+      "label": "The system will save the updated information into the database.",
+      "classification": "typeless",
+      "id": -1391067151
+    },
+    {
+      "label": "System receives a payment request.",
+      "classification": "typeless",
+      "id": -1046392219
+    },
+    {
+      "label": "System verifies and charges the payment by interacting synchronously with the Bank.",
+      "classification": "typeless",
+      "id": 1648308083
+    },
+    {
+      "label": "System Update payment  information in the database.",
+      "classification": "typeless",
+      "id": -1678665749
+    },
+    {
+      "label": "The Credit Cart System is not available.",
+      "classification": "typeless",
+      "id": 1855568621
+    },
+    {
+      "label": "System displays an error message that includes purchase order, user identifier and contact information. ",
+      "classification": "typeless",
+      "id": -1518275012
+    }
+  ],
+  "designDecisions": [
+    {
+      "label": "It uses web services to interact with external suppliers such as banks, airlines, hotels and adventure providers.",
+      "classification": "tactic",
+      "id": -13891232
+    },
+    {
+      "label": "Consumer Website, The web-based user interface of the Adventure Builder is implemented in this module.",
+      "classification": "tactic",
+      "id": 1052858171
+    },
+    {
+      "label": "The user interface lets the user browse the catalog of travel packages, place a new purchase order, and track the status of existing orders.",
+      "classification": "tactic",
+      "id": 968699199
+    },
+    {
+      "label": "This module creates the purchase orders based on user input and passes them to OpcApp for processing.",
+      "classification": "tactic",
+      "id": 901269928
+    },
+    {
+      "label": "It uses an implementation of the Model View Controller pattern called the Web Application Framework (waf).",
+      "classification": "tactic",
+      "id": -1171271356
+    },
+    {
+      "label": "The model is implemented using Entity beans, the controller is implemented using servlets, and the view is a collection of JSPs and static HTML pages.",
+      "classification": "tactic",
+      "id": -1226357895
+    },
+    {
+      "label": "The model is implemented using Entity beans, the controller is implemented using servlets, and the view is a collection of JSPs and static HTML pages.",
+      "classification": "tactic",
+      "id": -1226357895
+    },
+    {
+      "label": "Part of the client-facing code is implemented using the GWT framework.",
+      "classification": "tactic",
+      "id": -1942606608
+    },
+    {
+      "label": "The business logic of the Adventure Builder is implemented in this module.",
+      "classification": "tactic",
+      "id": 784808394
+    },
+    {
+      "label": "Upon completion of processing a purchase order, send an email to the customer of its success or failure.",
+      "classification": "tactic",
+      "id": 2009651581
+    },
+    {
+      "label": "A module decomposition refined view and a module uses refined view of OpcApp are available.",
+      "classification": "tactic",
+      "id": 1804383478
+    },
+    {
+      "label": "Utils, this module contains utilities used by the Adventure Builder system.",
+      "classification": "tactic",
+      "id": 968918014
+    },
+    {
+      "label": "The dao contains Data Access Object (DAO) utilities, such as a DAO factory.",
+      "classification": "tactic",
+      "id": -392277547
+    },
+    {
+      "label": "It does not contain the actual DAO classes that access the database\nthese classes are inside the ConsumerWebsite module.",
+      "classification": "tactic",
+      "id": 395602589
+    },
+    {
+      "label": "It does not contain the actual DAO classes that access the database\nthese classes are inside the ConsumerWebsite module.",
+      "classification": "tactic",
+      "id": 395602589
+    },
+    {
+      "label": "The logger contains tracing and debugging utilities.",
+      "classification": "tactic",
+      "id": -77769754
+    },
+    {
+      "label": "The servicelocator module is an implementation of the ServiceLocator design pattern.",
+      "classification": "tactic",
+      "id": -245203947
+    },
+    {
+      "label": "Google Web Toolkit (gwt) is an open source framework for development of rich internet applications based on Ajax.",
+      "classification": "tactic",
+      "id": 643393998
+    },
+    {
+      "label": "The GWT framework was chosen for the following reasons:\nIt is open source, which allows us to go under the hood and fix things when needed.",
+      "classification": "tactic",
+      "id": 1210217372
+    },
+    {
+      "label": "It provides a rich development environment with powerful trace/debug, IDE integration and build management.",
+      "classification": "tactic",
+      "id": 982734726
+    },
+    {
+      "label": "It integrates well with any other frontend technologies since it does not use proprietary standards.",
+      "classification": "tactic",
+      "id": -1293453795
+    },
+    {
+      "label": "Code is written in Java (and translated to JavaScript during build), which is an OO language that is familiar to the majority of the team.",
+      "classification": "tactic",
+      "id": -1198356425
+    },
+    {
+      "label": "Code is compiled into Javascript, which is available on a very high percentage of browsers.",
+      "classification": "tactic",
+      "id": -1711282966
+    },
+    {
+      "label": "It is a Model View Controller framework similar to Struts.",
+      "classification": "tactic",
+      "id": 172600550
+    },
+    {
+      "label": "The configuration file has the mapping of screens and actions to Java classes.",
+      "classification": "tactic",
+      "id": -518292730
+    },
+    {
+      "label": "The WAF framework was chosen because it facilitates the implementation of the Consumer Website code by providing template classes for using the MVC pattern.",
+      "classification": "tactic",
+      "id": -1078108957
+    },
+    {
+      "label": "For a given user operation, the developer implements an action class (controller) and JSP pages that correspond to the user screens (view).",
+      "classification": "tactic",
+      "id": 2069259387
+    },
+    {
+      "label": "The WAF infrastructure can then automatically take http requests and invoke the action classes and JSP screens.",
+      "classification": "tactic",
+      "id": -1985999361
+    },
+    {
+      "label": "This is the Customer Relationship Manager (CRM) module.",
+      "classification": "tactic",
+      "id": 2114430146
+    },
+    {
+      "label": "The job of this module is to send out an email once an order has been completely and successfully processed.",
+      "classification": "tactic",
+      "id": -1473702078
+    },
+    {
+      "label": "It is implemented as a message-driven bean.",
+      "classification": "tactic",
+      "id": -550917569
+    },
+    {
+      "label": "In the future this module can hold additional information about customers that could assist in providing the customers with a better experience.",
+      "classification": "tactic",
+      "id": 939893149
+    },
+    {
+      "label": "Mailer:\nThe mailer is a helper module and its primary responsibility is to send out emails using the Java Mail API.",
+      "classification": "tactic",
+      "id": -501626602
+    },
+    {
+      "label": "Mailer:\nThe mailer is a helper module and its primary responsibility is to send out emails using the Java Mail API.",
+      "classification": "tactic",
+      "id": -501626602
+    },
+    {
+      "label": "Mailer:\nThe mailer is a helper module and its primary responsibility is to send out emails using the Java Mail API.",
+      "classification": "tactic",
+      "id": -501626602
+    },
+    {
+      "label": "In the future this module will be moved to the utils package outside opc.",
+      "classification": "tactic",
+      "id": -1455502228
+    },
+    {
+      "label": "Financial:\nThe financial module is responsible for verifying and charging the customer's credit card.",
+      "classification": "tactic",
+      "id": 1121736154
+    },
+    {
+      "label": "For this purpose it calls the external web services provided by the bank.",
+      "classification": "tactic",
+      "id": 1947169469
+    },
+    {
+      "label": "The verification of the credit card happens in a synchronous manner and the OPC application waits for the external web service to reply before moving on.",
+      "classification": "tactic",
+      "id": 1782895554
+    },
+    {
+      "label": "The verification of the credit card happens in a synchronous manner and the OPC application waits for the external web service to reply before moving on.",
+      "classification": "tactic",
+      "id": 1782895554
+    },
+    {
+      "label": "Orderfiller:\nThis module reads an internal queue of order requests.",
+      "classification": "tactic",
+      "id": -436166342
+    },
+    {
+      "label": "Orderfiller:\nThis module reads an internal queue of order requests.",
+      "classification": "tactic",
+      "id": -436166342
+    },
+    {
+      "label": "These requests are sent in XML format to internal queues.",
+      "classification": "tactic",
+      "id": 1750632693
+    },
+    {
+      "label": "Powebservice:\nThis module provides a web service that is used by ConsumerWebsite to communicate the details of a purchase order to the OPC for processing.",
+      "classification": "tactic",
+      "id": -685210653
+    },
+    {
+      "label": "Powebservice:\nThis module provides a web service that is used by ConsumerWebsite to communicate the details of a purchase order to the OPC for processing.",
+      "classification": "tactic",
+      "id": -685210653
+    },
+    {
+      "label": "The web service interface is OpcPurchaseOrderService.",
+      "classification": "tactic",
+      "id": -1375971594
+    },
+    {
+      "label": "The web service interface is OpcPurchaseOrderService.",
+      "classification": "tactic",
+      "id": -1375971594
+    },
+    {
+      "label": "If there is some unforeseen error during the processing of the purchase order after this operation has returned to the caller, \nthe error is handled elsewhere and is not the responsibility of this interface.",
+      "classification": "tactic",
+      "id": 519802415
+    },
+    {
+      "label": "If there is some unforeseen error during the processing of the purchase order after this operation has returned to the caller, \nthe error is handled elsewhere and is not the responsibility of this interface.",
+      "classification": "tactic",
+      "id": 519802415
+    },
+    {
+      "label": "Error handling:\nInvalidPOException.",
+      "classification": "tactic",
+      "id": 2012095729
+    },
+    {
+      "label": "The service throws this exception if the purchase order is null, or if any of the components that make up the purchase order is null.",
+      "classification": "tactic",
+      "id": -1500062092
+    },
+    {
+      "label": "Otwebservice:\nThis module provides a web service that is used by ConsumerWebsite to query the status of an order by providing the order id.",
+      "classification": "tactic",
+      "id": -545627768
+    },
+    {
+      "label": "Otwebservice:\nThis module provides a web service that is used by ConsumerWebsite to query the status of an order by providing the order id.",
+      "classification": "tactic",
+      "id": -545627768
+    },
+    {
+      "label": "The exceptions raised by this interface are:\nOrderNotFoundException.",
+      "classification": "tactic",
+      "id": -1726607620
+    },
+    {
+      "label": "The exceptions raised by this interface are:\nOrderNotFoundException.",
+      "classification": "tactic",
+      "id": -1726607620
+    },
+    {
+      "label": "The service throws this exception if no purchase order with the given order id was found, or the orderId was null or ill-formed,\nRemoteException.",
+      "classification": "tactic",
+      "id": -870967628
+    },
+    {
+      "label": "The caller receives a RemoteException when there is a communication problem with the service provider implementing this interface.",
+      "classification": "tactic",
+      "id": -1605653000
+    },
+    {
+      "label": "The workflow manager mediates the interaction among the other internal modules of the OPC in such a manner that \nthey (other internal modules) are oblivious to each others existence.",
+      "classification": "tactic",
+      "id": 1263090847
+    },
+    {
+      "label": "For each data entity, there is a POJO and an entity bean.",
+      "classification": "tactic",
+      "id": 1606265644
+    },
+    {
+      "label": "For each data entity, there is a POJO and an entity bean.",
+      "classification": "tactic",
+      "id": 1606265644
+    },
+    {
+      "label": "The POJOs are used throughout the application as data transfer objects.",
+      "classification": "tactic",
+      "id": 188264113
+    },
+    {
+      "label": "Webservicebroker:\nThe webservicebroker is responsible for the interaction via web services with the airline, lodging and activity providers.",
+      "classification": "tactic",
+      "id": 1337552947
+    },
+    {
+      "label": "This module is divided into two sub-modules described below.",
+      "classification": "tactic",
+      "id": 2010708526
+    },
+    {
+      "label": "Requestor, contains classes that can invoke the external web services provided by airline, lodging and activity supplier partners.",
+      "classification": "tactic",
+      "id": 868950042
+    },
+    {
+      "label": "It also contains a message-driven bean that can receive messages sent through an internal queue.",
+      "classification": "tactic",
+      "id": 693452213
+    },
+    {
+      "label": "It also contains a message-driven bean that can receive messages sent through an internal queue.",
+      "classification": "tactic",
+      "id": 693452213
+    },
+    {
+      "label": "These messages contain exactly the requests to be sent to the external web services.",
+      "classification": "tactic",
+      "id": 1560293746
+    },
+    {
+      "label": "Provider:\nThis module provides a web service that is visible to airline, lodging and activity supplier partners.",
+      "classification": "tactic",
+      "id": -647628397
+    },
+    {
+      "label": "Provider:\nThis module provides a web service that is visible to airline, lodging and activity supplier partners.",
+      "classification": "tactic",
+      "id": -647628397
+    },
+    {
+      "label": "This web service is implemented in a session bean and is used by the external partners to submit the result of processing requests made to them.",
+      "classification": "tactic",
+      "id": 1126183359
+    },
+    {
+      "label": "This web service is implemented in a session bean and is used by the external partners to submit the result of processing requests made to them.",
+      "classification": "tactic",
+      "id": 1126183359
+    },
+    {
+      "label": "Calls to this web service are forwarded to an internal queue.",
+      "classification": "tactic",
+      "id": -923028108
+    },
+    {
+      "label": "Calls to this web service are forwarded to an internal queue.",
+      "classification": "tactic",
+      "id": -923028108
+    },
+    {
+      "label": "Processmanager:\nThe processmanager is used by the otwebservice module to retrieve from the database adventure package purchase orders and their updated status.",
+      "classification": "tactic",
+      "id": -906848500
+    },
+    {
+      "label": "This module contains the submodules described below.",
+      "classification": "tactic",
+      "id": 79470856
+    },
+    {
+      "label": "Ejb, contains a session bean that offers operations to retrieve orders and update the status of a \ngiven order (both the adventure purchase order and the orders placed with the partner suppliers).",
+      "classification": "tactic",
+      "id": 583658296
+    },
+    {
+      "label": "Manager-ejb:\nContains an entity bean to persist a purchase order.",
+      "classification": "tactic",
+      "id": -1773851958
+    },
+    {
+      "label": "The entity bean uses container-managed persistence (CMP).",
+      "classification": "tactic",
+      "id": 1929481580
+    },
+    {
+      "label": "PoEndPointBean:\nThis class is a stateless session bean.",
+      "classification": "tactic",
+      "id": 1122349832
+    },
+    {
+      "label": "It provides the implementation for the OpcPurchaseOrderService web service.",
+      "classification": "tactic",
+      "id": -1309863984
+    },
+    {
+      "label": "When it receives a purchase order, it checks that all arguments are valid and if ok dispatches the order to the workflowmanager sending a message to a JMS queue.",
+      "classification": "tactic",
+      "id": 2060832054
+    },
+    {
+      "label": "WorkFlowManagerBean:\nThis class is a message-driven bean.",
+      "classification": "tactic",
+      "id": -550559446
+    },
+    {
+      "label": "It is activated when there is a message in the queue.",
+      "classification": "tactic",
+      "id": -860049996
+    },
+    {
+      "label": "WorkFlowManagerBean calls the InvoiceHandler class to take care of this messages.",
+      "classification": "tactic",
+      "id": -9442714
+    },
+    {
+      "label": "WorkFlowManagerBean also sets a timer with the EJB container so that it is activated periodically to check the status of all pending orders.",
+      "classification": "tactic",
+      "id": 221231666
+    },
+    {
+      "label": "It acts as a delegate of the WorkFlowManagerBean class to handle any purchase order request.",
+      "classification": "tactic",
+      "id": -442980024
+    },
+    {
+      "label": "Then it calls CreditCardVerifier synchronously to charge the customer's credit card.",
+      "classification": "tactic",
+      "id": 1785502450
+    },
+    {
+      "label": "If the credit card is OK, \nit sends a message to a JMS queue to be processed by OrderFillerBean.",
+      "classification": "tactic",
+      "id": 1476446952
+    },
+    {
+      "label": "If the credit card is OK, \nit sends a message to a JMS queue to be processed by OrderFillerBean.",
+      "classification": "tactic",
+      "id": 1476446952
+    },
+    {
+      "label": "Finally, it sends another JMS message to CrmBean, which will create and send an email to the customer informing about the status of his order.",
+      "classification": "tactic",
+      "id": -2018081120
+    },
+    {
+      "label": "It acts as a delegate of the WorkflowManagerBean class to handle any invoice it receives from any of the suppliers.",
+      "classification": "tactic",
+      "id": 2067846685
+    },
+    {
+      "label": "When InvoiceHandler receives the last invoice confirming completion of the reservation, it sends a JMS message to CrmBean to notify the customer via email.",
+      "classification": "tactic",
+      "id": 2136730880
+    },
+    {
+      "label": "CrmBean:\nThis class is a message-driven bean.",
+      "classification": "tactic",
+      "id": -673870790
+    },
+    {
+      "label": "It contacts an external web service to get the banking related information for the credit card number specified.",
+      "classification": "tactic",
+      "id": 1404045151
+    },
+    {
+      "label": "OrderFillerBean:\nThis class is a message-driven bean.",
+      "classification": "tactic",
+      "id": -269846342
+    },
+    {
+      "label": "POReceiver:\nThe purchase order receiver's responsibility is to create a purchase order entity bean and persist it in a relational database.",
+      "classification": "tactic",
+      "id": -2076982594
+    },
+    {
+      "label": "The POReceiver is implemented as a Java class and it creates a PurchaseOrder entity bean.",
+      "classification": "tactic",
+      "id": -117125433
+    },
+    {
+      "label": "The POReceiver is implemented as a Java class and it creates a PurchaseOrder entity bean.",
+      "classification": "tactic",
+      "id": -117125433
+    },
+    {
+      "label": "SMTP host, message body contents, subject, sender address and reply-to address for all \nemail messages sent by CrmBean are configurable via text files that can be changed at run time, \nbut require re-initialization of the application to take effect.",
+      "classification": "tactic",
+      "id": -2073868336
+    },
+    {
+      "label": "SMTP host, message body contents, subject, sender address and reply-to address for all \nemail messages sent by CrmBean are configurable via text files that can be changed at run time, \nbut require re-initialization of the application to take effect.",
+      "classification": "tactic",
+      "id": -2073868336
+    },
+    {
+      "label": "These files are implemented using standard Java i18n support.",
+      "classification": "tactic",
+      "id": 1524610627
+    },
+    {
+      "label": "Web browser:\nThis component represents the user interface of the application running on a web browser.",
+      "classification": "tactic",
+      "id": -1191077117
+    },
+    {
+      "label": "Consumer Website is a Web 2.0 application implemented using GWT.",
+      "classification": "tactic",
+      "id": -1707808037
+    },
+    {
+      "label": "Therefore, in addition to HTML, \nthe web browser runs JavaScript code that uses Ajax to communicate with the server.",
+      "classification": "tactic",
+      "id": 762800506
+    },
+    {
+      "label": "Therefore, in addition to HTML, \nthe web browser runs JavaScript code that uses Ajax to communicate with the server.",
+      "classification": "tactic",
+      "id": 762800506
+    },
+    {
+      "label": "Therefore, in addition to HTML, \nthe web browser runs JavaScript code that uses Ajax to communicate with the server.",
+      "classification": "tactic",
+      "id": 762800506
+    },
+    {
+      "label": "Consumer Website:\nThe ConsumerWebsite is a multi-tier application implemented using Java EE technology.",
+      "classification": "tactic",
+      "id": 1575353663
+    },
+    {
+      "label": "It is implemented using GWT code, a number of JSP and html pages, and standard components of the WAF framework.",
+      "classification": "tactic",
+      "id": -163981801
+    },
+    {
+      "label": "Its primary responsibility is to process the http requests coming from customers browsing the catalog or placing/tracking orders.",
+      "classification": "tactic",
+      "id": -485423149
+    },
+    {
+      "label": "Requests to place or track orders are relayed to the OPC application via SOAP web services.",
+      "classification": "tactic",
+      "id": -2100059867
+    },
+    {
+      "label": "It's a Java EE application that communicates with external components using SOAP web services.",
+      "classification": "tactic",
+      "id": -1368441694
+    },
+    {
+      "label": "Internally, it consists of loosely coupled EJBs that communicate with each other using primarily asynchronous messaging.",
+      "classification": "tactic",
+      "id": -1962570030
+    },
+    {
+      "label": "Internally, it consists of loosely coupled EJBs that communicate with each other using primarily asynchronous messaging.",
+      "classification": "tactic",
+      "id": -1962570030
+    },
+    {
+      "label": "The core functionality of the Adventure Builder is implemented in this module.",
+      "classification": "tactic",
+      "id": -1930350506
+    },
+    {
+      "label": "Provide a mechanism for the Consumer Website to query the current status of a purchase order,\nUpon completion of processing a purchase order, send an email to the customer reporting its success or failure.",
+      "classification": "tactic",
+      "id": 1635754908
+    },
+    {
+      "label": "OPC provides the following interfaces, which are exposed as SOAP web services.",
+      "classification": "tactic",
+      "id": 1190123067
+    },
+    {
+      "label": "OPC provides the following interfaces, which are exposed as SOAP web services.",
+      "classification": "tactic",
+      "id": 1190123067
+    },
+    {
+      "label": "WebServiceBroker, used by external suppliers to submit invoices back to OPC.",
+      "classification": "tactic",
+      "id": 351132158
+    },
+    {
+      "label": "OPC requires the following interfaces, which are provided by external partners as SOAP web services.",
+      "classification": "tactic",
+      "id": 2136480267
+    },
+    {
+      "label": "OPC requires the following interfaces, which are provided by external partners as SOAP web services.",
+      "classification": "tactic",
+      "id": 2136480267
+    },
+    {
+      "label": "CreditCardService, used to validate the credit card transaction with a bank.",
+      "classification": "tactic",
+      "id": -1637837724
+    },
+    {
+      "label": "It also stores information about users for user authentication and authorization.",
+      "classification": "tactic",
+      "id": 1399766234
+    },
+    {
+      "label": "The database server is MySQL Cluster 7.0 configured to use the InnoDB engine.",
+      "classification": "tactic",
+      "id": -755661794
+    },
+    {
+      "label": "The database server is MySQL Cluster 7.0 configured to use the InnoDB engine.",
+      "classification": "tactic",
+      "id": -755661794
+    },
+    {
+      "label": "The database server is MySQL configured to use the InnoDB engine.",
+      "classification": "tactic",
+      "id": -782475119
+    },
+    {
+      "label": "The database server is MySQL configured to use the InnoDB engine.",
+      "classification": "tactic",
+      "id": -782475119
+    },
+    {
+      "label": "More specifically, it has name, location and metadata about all the SOAP web services offered by the banks, \nairline, lodging, and activity external partners, use a relational database or XML based files.",
+      "classification": "tactic",
+      "id": -1746129405
+    },
+    {
+      "label": "SignOnFilter:\nThis component is a Java EE Filter.",
+      "classification": "tactic",
+      "id": -1222819799
+    },
+    {
+      "label": "It intercepts all http requests (url pattern is \"/*\") and checks if the current user (if any) has authorization to perform the requested transaction (identified by the selected URL).",
+      "classification": "tactic",
+      "id": 63483935
+    },
+    {
+      "label": "It intercepts all http requests (url pattern is \"/*\") and checks if the current user (if any) has authorization to perform the requested transaction (identified by the selected URL).",
+      "classification": "tactic",
+      "id": 63483935
+    },
+    {
+      "label": "It intercepts all http requests (url pattern is \"/*\") and checks if the current user (if any) has authorization to perform the requested transaction (identified by the selected URL).",
+      "classification": "tactic",
+      "id": 63483935
+    },
+    {
+      "label": "sign-on-config-xml:\nThis xml file contains configurable information about the authentication and authorization constraints for specific URLs in the system.",
+      "classification": "tactic",
+      "id": 1206691670
+    },
+    {
+      "label": "It also has the URLs for the sign in page and sign in error page.",
+      "classification": "tactic",
+      "id": 1013323871
+    },
+    {
+      "label": "It corresponds to the controller component in the MVC implementation within WAF.",
+      "classification": "tactic",
+      "id": 95159534
+    },
+    {
+      "label": "It processes http requests to URLs that end with \"do\" and correspond to user clicks (eg, submit button on a form).",
+      "classification": "tactic",
+      "id": 1877185927
+    },
+    {
+      "label": "Each specific action class will instantiate specific POJOs and interact with specific facade session beans.",
+      "classification": "tactic",
+      "id": 1440418125
+    },
+    {
+      "label": "Each specific action class will instantiate specific POJOs and interact with specific facade session beans.",
+      "classification": "tactic",
+      "id": 1440418125
+    },
+    {
+      "label": "Each specific action class will instantiate specific POJOs and interact with specific facade session beans.",
+      "classification": "tactic",
+      "id": 1440418125
+    },
+    {
+      "label": "After the execution of the action class, the http request is forwarded to a URL that ends with \"screen\".",
+      "classification": "tactic",
+      "id": -1032233482
+    },
+    {
+      "label": "MainServlet is also responsible for database transaction demarcation: if the requested user operation is transactional, \nthis component starts a transaction and calls commit or rollback when processing the request is finished.",
+      "classification": "tactic",
+      "id": 1931873516
+    },
+    {
+      "label": "MainServlet is also responsible for database transaction demarcation: if the requested user operation is transactional, \nthis component starts a transaction and calls commit or rollback when processing the request is finished.",
+      "classification": "tactic",
+      "id": 1931873516
+    },
+    {
+      "label": "MainServlet is also responsible for database transaction demarcation: if the requested user operation is transactional, \nthis component starts a transaction and calls commit or rollback when processing the request is finished.",
+      "classification": "tactic",
+      "id": 1931873516
+    },
+    {
+      "label": "MainServlet is also responsible for centralized exception handling in the Consumer Website application.",
+      "classification": "tactic",
+      "id": 1033650979
+    },
+    {
+      "label": "Exceptions that bubble up to MainServlet are caught and based on a mapping defined in mappings-xml, the http request is forwarded to a specific \"screen\" URL (typically an error page).",
+      "classification": "tactic",
+      "id": -1040656992
+    },
+    {
+      "label": "Exceptions that bubble up to MainServlet are caught and based on a mapping defined in mappings-xml, the http request is forwarded to a specific \"screen\" URL (typically an error page).",
+      "classification": "tactic",
+      "id": -1040656992
+    },
+    {
+      "label": "Exceptions that bubble up to MainServlet are caught and based on a mapping defined in mappings-xml, the http request is forwarded to a specific \"screen\" URL (typically an error page).",
+      "classification": "tactic",
+      "id": -1040656992
+    },
+    {
+      "label": "This file also contains the mapping of Java exception classes to \"screen\" URLs.",
+      "classification": "tactic",
+      "id": -1644634335
+    },
+    {
+      "label": "This file also contains the mapping of Java exception classes to \"screen\" URLs.",
+      "classification": "tactic",
+      "id": -1644634335
+    },
+    {
+      "label": "When this servlet receives a forwarded http request from MainServlet, \nit uses the mapping between screen names (URL ends with \"screen\") and JSP pages to once again forward the request to the appropriate JSP pages.",
+      "classification": "tactic",
+      "id": -785813289
+    },
+    {
+      "label": "The data required for filling up the fields in a screen JSP was set in the http request by MainServlet when the action was executed.",
+      "classification": "tactic",
+      "id": -1006259125
+    },
+    {
+      "label": "However, in some situations, a screen JSP makes calls to the facade session beans to retrieve additional data.",
+      "classification": "tactic",
+      "id": -1300627484
+    },
+    {
+      "label": "However, in some situations, a screen JSP makes calls to the facade session beans to retrieve additional data.",
+      "classification": "tactic",
+      "id": -1300627484
+    },
+    {
+      "label": "More specifically, it is a HttpSessionAttributeListener.",
+      "classification": "tactic",
+      "id": 1101878732
+    },
+    {
+      "label": "It is invoked by the container whenever an attribute in the http session changes.",
+      "classification": "tactic",
+      "id": -140899235
+    },
+    {
+      "label": "When the signed in user attribute is removed because the user signed out or the http session expired, this component releases resources that were allocated for that user.",
+      "classification": "tactic",
+      "id": -694470493
+    },
+    {
+      "label": "OrderFacade:\nThis stateless session bean is a lightweight implementation of the Session Facade pattern [Marinescu 2002].",
+      "classification": "tactic",
+      "id": 1224600881
+    },
+    {
+      "label": "OrderFacade:\nThis stateless session bean is a lightweight implementation of the Session Facade pattern [Marinescu 2002].",
+      "classification": "tactic",
+      "id": 1224600881
+    },
+    {
+      "label": "To carry on these operations, the session bean interacts with the OPC application via SOAP web services.",
+      "classification": "tactic",
+      "id": -1884114853
+    },
+    {
+      "label": "To carry on these operations, the session bean interacts with the OPC application via SOAP web services.",
+      "classification": "tactic",
+      "id": -1884114853
+    },
+    {
+      "label": "In addition, this session bean has operations to add and remove items to and from the user's shopping cart.",
+      "classification": "tactic",
+      "id": -1384773469
+    },
+    {
+      "label": "CatalogFacade:\nThis stateless session bean is a lightweight implementation of the Session Facade pattern [Marinescu 2002].",
+      "classification": "tactic",
+      "id": 1459998342
+    },
+    {
+      "label": "CatalogFacade:\nThis stateless session bean is a lightweight implementation of the Session Facade pattern [Marinescu 2002].",
+      "classification": "tactic",
+      "id": 1459998342
+    },
+    {
+      "label": "Internally, this session bean makes use of DAO classes to retrieve the information in Adventure Catalog DB.",
+      "classification": "tactic",
+      "id": 820692548
+    },
+    {
+      "label": "Internally, this session bean makes use of DAO classes to retrieve the information in Adventure Catalog DB.",
+      "classification": "tactic",
+      "id": 820692548
+    },
+    {
+      "label": "UserMgmtFacade:\nThis stateless session bean also implements the Session Facade pattern [Marinescu 2002].",
+      "classification": "tactic",
+      "id": -1834254768
+    },
+    {
+      "label": "UserMgmtFacade:\nThis stateless session bean also implements the Session Facade pattern [Marinescu 2002].",
+      "classification": "tactic",
+      "id": -1834254768
+    },
+    {
+      "label": "Internally, this session bean makes use of DAO classes to retrieve the information in Adventure Catalog DB.",
+      "classification": "tactic",
+      "id": 820692548
+    },
+    {
+      "label": "Internally, this session bean makes use of DAO classes to retrieve the information in Adventure Catalog DB.",
+      "classification": "tactic",
+      "id": 820692548
+    },
+    {
+      "label": "PoEndPointBean:\nThis stateless session bean implements the SOAP web services interface called OpcPurchaseOrderService.",
+      "classification": "tactic",
+      "id": -1722795189
+    },
+    {
+      "label": "PoEndPointBean:\nThis stateless session bean implements the SOAP web services interface called OpcPurchaseOrderService.",
+      "classification": "tactic",
+      "id": -1722795189
+    },
+    {
+      "label": "PoEndPointBean:\nThis stateless session bean implements the SOAP web services interface called OpcPurchaseOrderService.",
+      "classification": "tactic",
+      "id": -1722795189
+    },
+    {
+      "label": "When a purchase order request arrives, it simply validates the order and, if OK, sends the order to the WorkFlowMgrQueue using JMS.",
+      "classification": "tactic",
+      "id": -176411087
+    },
+    {
+      "label": "OtEndPointBean:\nThis stateless session bean implements the SOAP web services interface called OpcOrderTrackingService.",
+      "classification": "tactic",
+      "id": -1286046327
+    },
+    {
+      "label": "OtEndPointBean:\nThis stateless session bean implements the SOAP web services interface called OpcOrderTrackingService.",
+      "classification": "tactic",
+      "id": -1286046327
+    },
+    {
+      "label": "OtEndPointBean:\nThis stateless session bean implements the SOAP web services interface called OpcOrderTrackingService.",
+      "classification": "tactic",
+      "id": -1286046327
+    },
+    {
+      "label": "Requests for information about an order are handled by interacting with ProcessManagerBean.",
+      "classification": "tactic",
+      "id": -1402430415
+    },
+    {
+      "label": "Order information is retrieved using the PurchaseOrderBean entity bean.",
+      "classification": "tactic",
+      "id": 283094848
+    },
+    {
+      "label": "WorkFlowManagerBean:\nThis message-driven bean is activated when there is a message in the WorkFlowMgrQueue.",
+      "classification": "tactic",
+      "id": 411205784
+    },
+    {
+      "label": "WorkFlowManagerBean:\nThis message-driven bean is activated when there is a message in the WorkFlowMgrQueue.",
+      "classification": "tactic",
+      "id": 411205784
+    },
+    {
+      "label": "When processing such messages, this component interacts with ProcessManagerBean to insert the order in the database in the Pending state.",
+      "classification": "tactic",
+      "id": -1195268819
+    },
+    {
+      "label": "Then it interacts synchronously with the Bank external service provider to validate and charge the customer's credit card.",
+      "classification": "tactic",
+      "id": 248696146
+    },
+    {
+      "label": "If the credit card is OK, it sends a message to the OrderFillerQueue JMS queue to be processed by OrderFillerBean.",
+      "classification": "tactic",
+      "id": 1317883193
+    },
+    {
+      "label": "If the credit card is OK, it sends a message to the OrderFillerQueue JMS queue to be processed by OrderFillerBean.",
+      "classification": "tactic",
+      "id": 1317883193
+    },
+    {
+      "label": "Finally, it sends another message to CRMQueue, which will be processed by CrmBean (send email to the customer informing the order is being processed).",
+      "classification": "tactic",
+      "id": -1802048285
+    },
+    {
+      "label": "When an invoice message is received, this component basically interacts with ProcessManagerBean to update the status of the corresponding order.",
+      "classification": "tactic",
+      "id": 1105122409
+    },
+    {
+      "label": "If the message confirms the last invoice that is part of a travel package order, WorkFlowManagerBean sends a JMS message to CrmBean to notify the customer via email.",
+      "classification": "tactic",
+      "id": 128842748
+    },
+    {
+      "label": "WorkFlowManagerBean also sets a timer with the EJB container so that it is activated periodically to check the status of all pending orders.",
+      "classification": "tactic",
+      "id": 221231666
+    },
+    {
+      "label": "WofkFlowManagerBean is one of the two components in the Adventure Builder system that act as service user of external services (the other is BrokerRequestorBean).",
+      "classification": "tactic",
+      "id": -584604829
+    },
+    {
+      "label": "WofkFlowManagerBean is one of the two components in the Adventure Builder system that act as service user of external services (the other is BrokerRequestorBean).",
+      "classification": "tactic",
+      "id": -584604829
+    },
+    {
+      "label": "Scalability:\nAll the components that are SOAP web service providers in the Adventure Builder System are implemented using stateless session beans.",
+      "classification": "tactic",
+      "id": -377716562
+    },
+    {
+      "label": "Scalability:\nAll the components that are SOAP web service providers in the Adventure Builder System are implemented using stateless session beans.",
+      "classification": "tactic",
+      "id": -377716562
+    },
+    {
+      "label": "This type of EJB component can be replicated across machines in a cluster and each machine can also make available a pool of such EJBs.",
+      "classification": "tactic",
+      "id": 2007198833
+    },
+    {
+      "label": "Vertical scalability is also an option by increasing the capacity of any machine (and then increasing the number of EJB instances in each EJB pool).",
+      "classification": "tactic",
+      "id": 216550777
+    },
+    {
+      "label": "See EJB configuration discussion in OPC C&C View#Variability Guide.",
+      "classification": "tactic",
+      "id": 1230841846
+    },
+    {
+      "label": "Nevertheless, the transactions performed by these stateless session beans ultimately require access to the database.",
+      "classification": "tactic",
+      "id": 1842413536
+    },
+    {
+      "label": "Nevertheless, the transactions performed by these stateless session beans ultimately require access to the database.",
+      "classification": "tactic",
+      "id": 1842413536
+    },
+    {
+      "label": "Having two separate ear files allows to deploy the two corresponding applications on different application server instances and different machines.",
+      "classification": "tactic",
+      "id": -20817328
+    },
+    {
+      "label": "Having two separate ear files allows to deploy the two corresponding applications on different application server instances and different machines.",
+      "classification": "tactic",
+      "id": -20817328
+    },
+    {
+      "label": "TODO: why ProcessManagerBean and ManagerBean are deployed in a separate EJB jar file (processmanager-ejb)\n\nCoarse-grained granularity of service:\nCurrently we only expose placing a purchase order as a single web service that includes placing orders for activities, transportation and lodging.",
+      "classification": "tactic",
+      "id": -1482106929
+    },
+    {
+      "label": "TODO: why ProcessManagerBean and ManagerBean are deployed in a separate EJB jar file (processmanager-ejb)\n\nCoarse-grained granularity of service:\nCurrently we only expose placing a purchase order as a single web service that includes placing orders for activities, transportation and lodging.",
+      "classification": "tactic",
+      "id": -1482106929
+    },
+    {
+      "label": "Therefore, this interface is less flexible in terms of composing different kinds of orders.",
+      "classification": "tactic",
+      "id": -770963642
+    },
+    {
+      "label": "Using JAX-RPC for passing parameters:\nSince the consumer website and the order processing center reside in the same enterprise,\nwe avoid using complex XML processing and pass parameters as Java objects.",
+      "classification": "tactic",
+      "id": 1022396356
+    },
+    {
+      "label": "It makes the interface slightly less interoperable but simplifies implementation.",
+      "classification": "tactic",
+      "id": -1453295740
+    },
+    {
+      "label": "Publishing the web service as a WSDL:\nThis web service is published as a WSDL in a well known location \n(static web service instead of using a registry) since it is not available for general public use.",
+      "classification": "tactic",
+      "id": 969728724
+    },
+    {
+      "label": "The option to use SOAP instead of \nJava RMI or direct EJB calls is motivated by the possibility of replacing the Consumer website implementation,\nwith a different technology (e.g. NET); \nSOAP can provide the required interoperability in that case.",
+      "classification": "tactic",
+      "id": 840593494
+    },
+    {
+      "label": "The option to use SOAP instead of \nJava RMI or direct EJB calls is motivated by the possibility of replacing the Consumer website implementation,\nwith a different technology (e.g. NET); \nSOAP can provide the required interoperability in that case.",
+      "classification": "tactic",
+      "id": 840593494
+    },
+    {
+      "label": "Using the EJB endpoint type:\nWe chose the EJB endpoint type because the order processing center is implemented using a set of session beans.",
+      "classification": "tactic",
+      "id": -1588978897
+    }
+  ],
+  "links": [
+    {
+      "concern": -423668058,
+      "designDecision": -906848500,
+      "weight": 0.64
+    },
+    {
+      "concern": -946220867,
+      "designDecision": -685210653,
+      "weight": 0.65
+    },
+    {
+      "concern": -946220867,
+      "designDecision": -2076982594,
+      "weight": 0.7
+    },
+    {
+      "concern": -946220867,
+      "designDecision": 283094848,
+      "weight": 0.7
+    },
+    {
+      "concern": 1016405730,
+      "designDecision": 1337552947,
+      "weight": 0.64
+    },
+    {
+      "concern": 1016405730,
+      "designDecision": -647628397,
+      "weight": 0.61
+    },
+    {
+      "concern": 1672049679,
+      "designDecision": -13891232,
+      "weight": 0.69
+    },
+    {
+      "concern": 1672049679,
+      "designDecision": 1337552947,
+      "weight": 0.71
+    },
+    {
+      "concern": 1672049679,
+      "designDecision": 868950042,
+      "weight": 0.67
+    },
+    {
+      "concern": 812125864,
+      "designDecision": 901269928,
+      "weight": 0.85
+    },
+    {
+      "concern": 812125864,
+      "designDecision": -906848500,
+      "weight": 0.67
+    },
+    {
+      "concern": 812125864,
+      "weight": 0.62
+    },
+    {
+      "concern": 812125864,
+      "designDecision": -2076982594,
+      "weight": 0.72
+    },
+    {
+      "concern": 812125864,
+      "weight": 0.72
+    },
+    {
+      "concern": 812125864,
+      "weight": 0.73
+    },
+    {
+      "concern": -1654869349,
+      "designDecision": 1121736154,
+      "weight": 0.62
+    },
+    {
+      "concern": -1654869349,
+      "designDecision": 1404045151,
+      "weight": 0.68
+    },
+    {
+      "concern": 278230174,
+      "designDecision": 1121736154,
+      "weight": 0.77
+    },
+    {
+      "concern": 278230174,
+      "designDecision": 1785502450,
+      "weight": 0.81
+    },
+    {
+      "concern": 278230174,
+      "designDecision": 1476446952,
+      "weight": 0.72
+    },
+    {
+      "concern": 278230174,
+      "designDecision": -1637837724,
+      "weight": 0.83
+    },
+    {
+      "concern": 278230174,
+      "designDecision": 248696146,
+      "weight": 0.75
+    },
+    {
+      "concern": -365684961,
+      "designDecision": -1473702078,
+      "weight": 0.76
+    },
+    {
+      "concern": -365684961,
+      "designDecision": 1635754908,
+      "weight": 0.66
+    },
+    {
+      "concern": -316042125,
+      "weight": 0.75
+    },
+    {
+      "concern": -316042125,
+      "designDecision": 283094848,
+      "weight": 0.71
+    },
+    {
+      "concern": 679066173,
+      "designDecision": -906848500,
+      "weight": 0.61
+    },
+    {
+      "concern": -27389429,
+      "designDecision": -906848500,
+      "weight": 0.79
+    },
+    {
+      "concern": -27389429,
+      "weight": 0.72
+    },
+    {
+      "concern": -27389429,
+      "designDecision": 283094848,
+      "weight": 0.77
+    },
+    {
+      "concern": 5472557,
+      "weight": 0.62
+    },
+    {
+      "concern": -1454889527,
+      "designDecision": 1206691670,
+      "weight": 0.61
+    },
+    {
+      "concern": -1454889527,
+      "designDecision": 1206691670,
+      "weight": 0.61
+    },
+    {
+      "concern": -1140996707,
+      "designDecision": 283094848,
+      "weight": 0.62
+    },
+    {
+      "concern": 1240682667,
+      "designDecision": 1337552947,
+      "weight": 0.71
+    },
+    {
+      "concern": 1240682667,
+      "designDecision": 868950042,
+      "weight": 0.7
+    },
+    {
+      "concern": 1240682667,
+      "designDecision": -647628397,
+      "weight": 0.74
+    },
+    {
+      "concern": -639207603,
+      "weight": 0.61
+    },
+    {
+      "concern": -234543896,
+      "designDecision": -647628397,
+      "weight": 0.62
+    },
+    {
+      "concern": -960577678,
+      "designDecision": -906848500,
+      "weight": 0.65
+    },
+    {
+      "concern": -173554581,
+      "designDecision": -13891232,
+      "weight": 0.78
+    },
+    {
+      "concern": -173554581,
+      "designDecision": 1337552947,
+      "weight": 0.82
+    },
+    {
+      "concern": -173554581,
+      "designDecision": 868950042,
+      "weight": 0.82
+    },
+    {
+      "concern": -173554581,
+      "designDecision": -647628397,
+      "weight": 0.88
+    },
+    {
+      "concern": -173554581,
+      "designDecision": 1126183359,
+      "weight": 0.69
+    },
+    {
+      "concern": -173554581,
+      "designDecision": 1190123067,
+      "weight": 0.72
+    },
+    {
+      "concern": -173554581,
+      "designDecision": -1746129405,
+      "weight": 0.75
+    },
+    {
+      "concern": 1686511540,
+      "designDecision": 1399766234,
+      "weight": 0.71
+    },
+    {
+      "concern": 1257438767,
+      "designDecision": -694470493,
+      "weight": 0.64
+    },
+    {
+      "concern": 1019123692,
+      "designDecision": -140899235,
+      "weight": 0.61
+    },
+    {
+      "concern": 1019123692,
+      "designDecision": -694470493,
+      "weight": 0.75
+    },
+    {
+      "concern": 1648308083,
+      "designDecision": 1121736154,
+      "weight": 0.73
+    },
+    {
+      "concern": 1648308083,
+      "designDecision": 1785502450,
+      "weight": 0.77
+    },
+    {
+      "concern": 1648308083,
+      "designDecision": -1637837724,
+      "weight": 0.67
+    },
+    {
+      "concern": 1855568621,
+      "designDecision": -1637837724,
+      "weight": 0.64
+    }
+  ],
+  "tracedConcernCount": 0,
+  "untracedConcernCount": 91
+}

@@ -1,0 +1,7 @@
+orchestrate
+tailor interface
+data access object
+dao
+smtp
+simple mail transfer protocol
+facade

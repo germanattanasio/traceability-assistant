@@ -1,0 +1,186 @@
+PetStore ArchitectureBackground.
+
+Contents:
+1 Architecture Background.
+2 Problem Background.
+2.1 System Overview.
+2.2 Context and Scope.
+2.3 Driving Requirements of the petstore.
+2.3.1 Categories and description.
+2.3.2 Shopping cart.
+2.3.3 User information.
+2.3.4 Interaction with the Order Processsing Center.
+2.3.5 Purchasing.
+3 Solution Background.
+3.1 Architectural Approaches to the Petstore.
+3.2 Analysis Results.
+3.3 Mapping Requirements to Architecture.
+
+The application can be divided into modules based on functionality, such separation reduces the dependency between modules and allows them to be developed independently. 
+In addition, identifying interfaces between modules enables modules to be developed by third-party component providers.
+In this view, the application is divided into these modules.
+A control module to create and maintain user account information, which includes a user identifier, billing, and contact information. 
+This information is maintained in a database. 
+The control module also creates and manages the user's shopping cart and controls the interactions with the user.
+A sign-on module to handle the user log-in process and security, such as verifying a user identifier and password.
+A product catalog module that returns product information from the catalog based on a user's search criteria.
+A customer module that manages a user's purchasing process and maintains account records for a customer.
+A messaging module that enables the application to send and receive asynchronous messages containing purchase orders.
+
+Architectural Approaches to the Petstore use of an MVC framework, functional separation makes applications more reliable and easier to maintain and extend. 
+Application components developed for a MVC framework are often more reusable, as well.
+Separation of web and business logic. The application will use enterprise beans to have scalability, reliability, a component-based development model, and common horizontal services such as persistence, asynchronous communication,and declarative transaction and security control.
+Local bean logic. The Pet Store site uses enterprise beans that reside on the same machine, and JVM, as their clients. 
+This approach "improves performance and simplifies development". 
+When enterprise beans are distributed among several machines the communication between components is done through remote interfaces. 
+This "improve(s) scalability and availability, but the high cost of remote communication makes them appropriate mostly for granularity operations".
+
+The Java Pet Store website uses both synchronous and asynchronous communication. 
+It "accesses its catalog synchronously, because accessing a catalog is a fast operation. 
+It transmits purchase orders asynchronously because orders may take a long while to complete, and the order processing center may not always be available."
+
+Browse catalog, will be addressed by several modules and views.
+Data model view: The petstoredb view describes the elements that will be exposed.
+Runtime view: Browse catalog works just like any other HTTP request from the user.
+Module view: The catalog package (from the components package) directly addresses the Browse catalog use case.
+
+Similar to Browse catalog there are elements in the different views that deal with this use case.
+Runtime view: Manage account works just like any other HTTP request from the user.
+Module view: The following packages from the components package address the Manage account use case: signon, cart, customer, contactInfo, and address.
+
+Receive customer order status. This use case is addressed by the OPC application.
+Runtime view: Place orders works just like any other HTTP request from the user.
+Module view: The supplierpo and purchaseorder packages from the components package address the place orders use case.
+
+The WAF, Web Application Framework, provides the framework for a Model-View representation of the application.
+The waf controller web package is the view, and the waf controller ejb package is the model, they interact in several ways:
+direct invocation and indirect invocation.
+The model uses the waf event package to receive and send messages to the view.
+
+Events and actions are closely related: HTMLActions create Events, each HTMLAction creates one type of event.
+Events carry information about the phenomena, events do not know about actions.
+For every type of Event there can be just one unique type of EJBAction that uses it as input.
+This separation promotes flexibility and scalability as it reduces the cohesion between classes and it even allows classes from other packages to "hear" this events, without changing any code in the model.
+
+Administration application: Corresponds to a Java rich client application that is launched via Java Web Start, it allows an administrator user to review and modify orders submitted by Pet Store clients.
+Order Processing Center: It consists of server-side components that asynchronously receive and process orders submitted byusers through "app" petstore.
+
+E-commerce application: It is a web application that allows Internet users to register, browse the catalog and place oders for pets.
+Web Application Framework (waf): Library that provides a facade to petstore to manipulate events, user actions and application controllers.
+Address: Package that contains an entity bean and auxiliary classes that represent the address of the user.
+asyncsender: Package that contains a session bean and auxiliary classes that handle the connection to the Order Processing Center component using asynchronous communication.
+cart: Package that contains a session bean and auxiliary classes that represent the shopping cart.
+catalog: Package that contains an entity bean and auxiliary classes that represent the product catalog.
+components: Library that provides the core (shared) components for the applications. Refinement view available.
+contactinfo: Package that contains an entity bean and auxiliary classes that represent the contact information of the user.
+creditcard: Package that contains an entity bean and auxiliary classes that represent credit card information.
+customer: Package that contains three entity beans and auxiliary classes that represent information about a customer (includes contact information and credit card)
+Encondingfilter web: Package that contains a servlet filter responsible for setting the character encoding defined in the configuration for http requests.
+lineitem: Package that contains an entity bean and auxiliary classes that represent information of one item of an order.
+mailer: Package that contains a message-driven bean and auxiliary classes used to send emails.
+processmanager: Package that contains a session bean, an entity bean and auxiliary classes that are responsible for managing the workflow process that takes place when a new purchase order is received.
+purchaseorder: Package that contains an entity bean and auxiliary classes that represent information about a purchase order.
+servicelocator: Package that contains classes that implement the Service Locator pattern, used to lookup resources such as EJB homes and JMS destinations.
+signon: Package that contains a session bean, an entity bean, a servlet, a servlet filter and auxiliary classes that are responsible for authentication of web users (sign-on).
+supplierpo: Package that contains an entity bean and auxiliary classes that represent the information related to a processing order for the supplier.
+uidgen: Package that contains a session bean and an entity bean that are responsible for generation of unique identifiers for rows in database tables.
+util-tracer: Package with utility functionality to debug and trace.
+xmldocuments: Package with utility functionality to transform XML documents.
+
+address ejb: Entity bean that tracks two lines of street address, state, zip code, and country.
+asyncsender ejb: Contains a stateless session bean that converts shopping cart contents and customer data into an XML message representing an order, and sends the message to the Order Processing Center.
+cart ejb: Contains a stateful session bean that maintains the contents of an individual user’s virtual shopping cart.
+cart item: Represents an individual line item of the shopping cart, used by the cart ejb session bean to find the subtotal in the cart and to create a list of items in the shopping cart.
+
+client CatalogHelper: Makes calls to the local Catalog EJB or access the catalog directly over JDBC.
+CatalogDAO: Interface which will be implemented by database specific code, this class encapsulates all the SQL calls made by Catalog EJB.
+CatalogDAOFactory: Factory for objects that implement CatalogDAO, Uses the deployment descriptor to know what class to create.
+GenericCatalogDAO: This class implements CatalogDAO for pointbase DB.
+CatalogDAO class encapsulates all the SQL calls made by Catalog EJB.
+CatalogDAO layer maps the relational data stored in the database to the objects needed by Catalog EJB.
+PointBaseCatalogDAO: This class implements CatalogDAO for pointbase DB, this class encapsulates all the SQL calls made by Catalog EJB.
+PointBaseCatalogDAO: layer maps the relational data stored in the database to the objects needed by Catalog EJB.
+CatalogEJB: Session Bean implementation of CatalogDAO.
+model Category: This class represents different categories of pets in the Java Pet Store demo, each category can have one or more products under it and each product in turn can have one or more inventory items under it. For example, the Java Pet Store Demo currently has five categories: birds, cats, dogs, fish, and reptiles.
+
+contactinfo ejb: Entity bean that tracks family and given name, telephone, email, and address, uses Container-managed persistence.
+creditcard ejb: Entity bean that tracks card number, card type, and expiration date. Uses Container-managed persistence. Uses Container-managed persistence.
+customer account ejb: Entity bean that tracks account status, credit card, and contact info, uses Container-managed persistence.
+customer ejb: Entity bean that tracks customer ID (primary key), account, and profile, uses Container-managed persistence.
+customer profile ejb: Entity bean that tracks preferred language, category, list preference, and banner preference, uses Container-managed persistence.
+customer profile ejb: Class contains the same profile information that ProfileEJB, it is used by the actions and events classes.
+encodingfilter: Ensures that every page the pet store serves to browsers has the appropriate encoding.
+lineitem ejb: Entity bean that tracks each line of products in a cart: category ID, product ID, item ID, quantity and unit price, uses Container-managed persistence
+mail ejb: Takes the messages that arrive in the mailer queue, transforms them to email objects and sends them.
+mail ejb: Represents the message in an email (to, from, cc, bcc, subject, body), a helper class to create and send mail. Creates an email message and sends it using the J2EE mail services.
+processmanager ejb
+Handles the workflow process to fullfil an order. Further refinement is available.
+purchaseorder ejb "SessionBean"PurchaseOrderEJB
+Session bean that keeps the information related a purchase order: localization, order ID, user ID, email ID;, order date, shipping info, billing info, total price, credit card and the corresponding line items. By default the localization is set to american English.
+servicelocator
+Implements the Service Locator pattern. It is used to looukup resources such as EJBHomes, JMS Destinations, etc. Uses the singleton strategy and also the caching strategy. Has to implementations: one to be used by the EJB tier and another one intended to be used on the web tier.
+signon ejb: Package that contains a session bean, an entity bean, a servlet, a servlet filter and auxiliary classes that are responsible for authentication of web users (sign-on).
+supplier ejb: Entity bean that tracks supplier order information: Order Id, order date, shipping info, and corresponding line items.
+uidgen ejb: Contains a stateless session bean that creates globally unique object identifiers.
+
+There is a one-to-one mapping from tables in the petstoredb to entity beans in the components group. Furthermore the entity beans that do not map the petstoredb map to the (so far undocumented data views) opcdb and supplierdb.
+
+The lack of documentation is almost the rule in the source code, most of the descriptions have been gathered from Sun's architectural documentation and educated assumptions from the authors of this architecture document.
+ProfileInfo: There is no information in the source code on why this is done but it is infered that is chosen to simplify interaction with other classes, in particular with the customer related classes in the petstore controller space (ejb CustomerEJBAction, web CustomerHTMLAction, events CustomerEvent).
+
+The Java Pet Store sample application application resembles a business-to-consumer ecommerce website and the enterprise information systems (EISs) behind it. The Java Pet Store has a decoupled enterprise architecture that can interoperate with existing data sources and business partners’ systems, all built on top of the J2EE platform. This application comprises four separate sub-applications that cooperate to fulfill the enterprise’s business needs, each of which is a J2EE application: pet store e-commerce Web site (“petstore”). A Web application which shoppers use to purchase merchandise through a Web browser pet store administration application (“petstoreadmin”). A Web application that enterprise administrators use to view sales statistics and manually accept or reject orders. While petstoreadmin is a Web application, its user interface is a rich client that uses XML messaging, rather than an HTML Web browser order processing center (“OPC”). A process-oriented application that manages order fulfillment by providing the following services to other enterprise participants: receives and processes XML documents, via JMS, containing orders from the petstore provides petstoreadmin application with order data using XML messaging over HTTP sends email to customers acknowledging orders using JavaMail. sends XML order documents to suppliers via JMS maintains purchase order database supplier. A process-oriented application that manages shipping products to customers by providing the following services: receives XML order documents from opc via JMS ships products to customers provides manual inventory management through a Web-based interface maintains inventory database.
+
+In the Web tier, the template service assembles multiple JSP pages and Web resources into a single composite view. Much of the data in application views is generated by custom tags, which in turn use data resources such as entity beans with CMP, JDBC connections, connectors, or JMS providers. To ensure isolation, all access to such data resources for a single composite view must occur under the scope of a transaction.
+There is no way to automatically start a transaction in response to executing a Web-tier method, as can be done with an enterprise bean method. Therefore, the pet store uses programmatic transaction control in the template service servlet TemplateServlet. TemplateServlet begins a UserTransaction before it forwards a request to the template JSP page, and ends the transaction after the forward has completed.
+
+EJBController: Interprets and executes events as EJB actions in the EJB tier, events and EJB actions make it easy to add new business logic while maintaining a clear design.
+Front Controller: Receives and processes every HTTP request (except those intercepted by servlet filters), the Front Controller servlet coordinates all other control components to dispatch requests and to select and generate views. Because it is a servlet, it can create content of any type, including binary content types.
+petstoredb: Database for the Petstore ecommerce application.
+Request Processor: Maps request URLs to actions in the Web tier.Web-tier action classes make it easy for developers to addWeb-tier functionality incrementally, while maintaining an easy-to-understand application design.
+Screen Flow Manager: Determines what screen to display after each request is serviced, Screen flow control is defined declaratively in an XML configuration file, so new views and screen flows are easy to add.
+Servlet Filters: May be placed in front of the Front Controller servlet to add functionality that applies to all requests.
+Template Service: A servlet that "assembles multiple content sources, often JSP pages, into a template that provides a common look and feel to all views, using JSP pages to create most content makes new views easy to construct.
+
+AccountEJBTable: Contains information about user accounts: status, a reference to contact information, a reference to credit card information, and a reference to its corresponding customer information, if any.
+AddressEJBTable: full streetName, city, state, country, zipCode, and the a reference to its corresponding contact information, if any.
+
+CATEGORY_DETAILS: Includes all the information about a category: category ID, name of the category, the path to an image, category description, and localization information (language-country).
+ContactInfoEJBTable: Contains the contact information for a customer: a reference to its address, email, full name (given name and family name), telephone, and a reference to its account information, if any.
+CounterEJBTable: Represents a counter with a specific prefix; used only by UniqueIdGeneratorEJB to manage series of unique numbers, keeps the counter for each table, this follows the Counter EJB Pattern (see reference). It has the current counter, and the name of the table.
+CreditCardEJBTable: Contains the credit card information: card number, card type, expiration date and reference to its corresponding account information.
+CustomerEJBTable: Contains profile and account information about a customer, it includes the user ID of the customer and its corresponding account and profile information. The user IDs are not restricted to be the same names used in the UserEJBTable.
+ITEM: Contains the item's ID and the ID of the product it is classified as.
+ITEM_DETAILS: Includes all the information about an item: ID, list price, unit cost, localization information (language and country that the currency is in), path to the item's image, a description of the item and 5 custom attributes.
+PRODUCT: This table includes the product's ID and the ID of the category it belongs to.
+PRODUCT_DETAILS: Includes all the information about a product: ID, name of the product, path to its image, and a description of the product, and localization information (language and country that the product name and description are in).
+ProfileEJBTable: Contains profile information code for the banner preference, the code of the list preference, any language preference -language and country format is expected but this format is not enforced-, a reference to the customer information it refers to (if any) and, the name of the favorite category -not restricted to the CATEGORY_DETAILS names-, if any.
+UserEJBTable: Contains log-in information: username and password. The usernames are not restricted to be the same used in the CustomerEJBTable.
+
+To add internationalization support to the catalog items a separation is established. A table will have an ID and another table will have the localization details for that ID. For example, the CATEGORY table includes a category ID, "FISH", the CATEGORY_DETAILS table will have several entries for "FISH", one per language: English from the US (en_US), Spanish from Colombia (sp_CO), etc.
+Other Information
+
+Double linked tables: In order to improve performance tables will have column that points back to the record that is using them. For example, CustomerEJBTable has the ID of ProfileEJBTable as a foreign key. ProfileEJBTable has a "reverse_profile_userId" column that links back to the record in CustomerEJBTable that is using it. This relation works because a customer can only have 1 profile.
+The information in this architectural diagram represents the information in the code. There are missing constraints that can improve the quality of the data.
+Restrict the userIds of CustomerEJBTable to the ones that exist in the UserEJBTable.
+Restrict the favoriteCategory of ProfileEJBTable to the ones in CATEGORY.
+Create a table to enumerate the possible account status. (AccountEJBTable)
+Create a table to enumerate the possible list and banner preferences (ProfileEJBTable).
+
+Account EJB: Tracks account status, credit card, and contact info, entity bean, belongs to customer-ejb-jar.
+Address EJB: Tracks two lines of street address, state, zip code, and countryEntity bean that keeps the information related to address from the customer.
+Catalog EJB: Session Bean implementation of Catalog, belongs to catalog-ejb-jar.
+Credit Card EJB: Tracks card number, card type, and expiration date. 
+ContactInfo EJB: Tracks family and given name, telephone, email, and address, entity bean, belongs to customer-ejb-jar.
+Counter EJB: represents a counter with a specific prefix; used only by UniqueIdGeneratorEJB to manage series of unique numbers, session bean, belongs to uidgen-ejb-jar.
+CustomerInfo EJB: Tracks customer ID (primary key), account, and profile, entity bean, belongs to customer-ejb-jar.
+Profile EJB: tracks preferred language, category, list preference, and banner preference, entity bean, belongs to customer-ejb-jar.
+ShoppingCartLocal EJB: This class represents the implementation of shopping cart as a session EJB, belongs to cart-ejb-jar.
+ShoppingClientFacadeLocal EJB: Provides a façade to all of the ejbs related to a shopping client, it is part of petstore-ejb-jar.
+ShoppingController EJB: Session Bean implementation for EJBController EJB. See the StateMachine for more details, belongs to petstore-ejb-jar.
+Signon: Checks if a user is allowed to sign on or to create new users,entity bean, belongs to signon-ejb-jar.
+User EJB: Represents a user who may sign on to the system; tracks a user name and password, session bean, belongs to signon-ejb-jar.
+StateMachine: Responsible for processing Events received from the client tier. As part of the WAF framework the events are generated by web actions.
+The State Machine ties all EJB components together dynamically at runtime thus providing support for reusable components.
+The mapping of the event names to handlers is mangaged by the JNDI key contained in Event:getEventName() which is looked up from an environment entry located in the EJB Deployment descriptor of the EJBClientController. A second option to event handling is to do so in the XML file.
+
+An alternative could be to have separate files for each jar file, allowing the application to be more distributed in more machines. On the other hand, having them in one file promotes performance since then connection time between beans from different libraries will be saved. This interaction is frequent and would create a big overhead.

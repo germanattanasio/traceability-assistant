@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>org.cleartk.ClearTKTypeSystem</name>
+  <description/>
+  <version>1.0</version>
+  <vendor/>
+  <imports>
+    <import location="ne/type/Ace2005Document.xml"/>
+    <import location="ne/type/Chunk.xml"/>
+    <import location="ne/type/GazetteerNamedEntityMention.xml"/>
+    <import location="ne/type/NamedEntity.xml"/>
+    <import location="ne/type/NamedEntityClass.xml"/>
+    <import location="ne/type/NamedEntityMention.xml"/>
+    
+    <import location="syntax/constituent/type/TreebankNode.xml"/>
+    <import location="syntax/constituent/type/TopTreebankNode.xml"/>
+    <import location="syntax/constituent/type/TerminalTreebankNode.xml"/>
+    
+    <import location="syntax/dependency/type/DependencyNode.xml"/>
+    <import location="syntax/dependency/type/DependencyRelation.xml"/>
+    <import location="syntax/dependency/type/TopDependencyNode.xml"/>
+    
+    <import location="timeml/type/Anchor.xml"/>
+    <import location="timeml/type/Event.xml"/>
+    <import location="timeml/type/TemporalLink.xml"/>
+    <import location="timeml/type/Text.xml"/>
+    <import location="timeml/type/Time.xml"/>
+    <import location="timeml/type/DocumentCreationTime.xml"/>
+    
+    <import location="token/type/Token.xml"/>
+    <import location="token/type/Sentence.xml"/>
+    <import location="token/type/Subtoken.xml"/>
+    
+    <import location="util/type/Parenthetical.xml"/>
+  </imports>
+</typeSystemDescription>

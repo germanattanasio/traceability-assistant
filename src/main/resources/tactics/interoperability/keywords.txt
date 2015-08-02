@@ -1,0 +1,20 @@
+json
+soap
+rest
+rpc
+protocol
+http
+wsdl
+decorator
+mediator
+intermediate
+gwt
+google web toolkit
+jvm
+jdbc
+pojo
+pojos
+java
+javascript
+web service
+web services

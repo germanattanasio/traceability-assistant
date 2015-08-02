@@ -1,0 +1,1162 @@
+This document is intended to describe the architecture for the MSLite system.
+The MSLite system was developed by multiple universities worldwide under the sponsorship of Siemens.
+The architecture description is copied verbatim from the project Wiki.
+The following are the different sections of the architecture and their respective descriptions: The Component & Connector (C&C) view-type partitions the system into components that have some runtime presence such as processes, objects, data stores and connectors or that represent pathways of communication such as information flows, and access to shared storage.
+These components and connectors are the elements represented in the view-types.
+The software architect and project manager can argue and reason about architectural properties and quality attribute requirements that the system must adhere to.
+The software architect, programmer and tester can infer progression of data through the system and how the structure of the system changes as it executes.
+External stakeholders like customers, project evaluators can understand the systems principal executing components (including the major shared data sources) and their interactions therefore serving as a means for verification and validation of system properties.
+Maintainers of the project can get an overview of the system as a starting point of future extensions and / or modifications.
+The view-type has been represented using a combination of the call-return and publish-subscribe styles because separating these two predominant styles into different views would have reduced the understandability of the system as a whole.
+The interactions of the different components in this view-type warrant the combination of the styles and they individually adhere to the rules of the aforementioned styles.
+The view shows a high level run time view of the MSLite system in terms of indicating what entities are responsible for what functionalities, where MSLite information is stored and how commands and events travel in MSLite.
+Configure access rights statically including persisting them in the database and in the cache.
+Allow access to all MSLite, L&R and Alarm data based on user rights.
+MSLite needs a way to authorize and authenticate users as they try to use MSLite and the data within MSLite.
+The existence of Access Control introduces another computation in the processing of end-user data requests.
+This directly affects computational performance of MSLite as authorization and authentication require their own processing time.
+Without the functional requirement to control access to data and the security concern of data access control, the AccessControl component could be removed and the speed of MSLite processing for data requests hence improved.
+This is a trade-off between performance and security for MSLite.
+An increase in security decreases performance and vice versa.
+The Alarm component handles the entire lifecycle of alarms within MSLite.
+Managing Alarms including persisting them in a local cache: create alarm rule, edit alarm rule, delete alarm rule.
+Notify Presentation of newly generated alarms including: Display alarm.
+Trigger alarm rule including subscribing to COV events based on alarm rules, trigger Alarms, persist alarm.
+Future Extension: Subscribe to all alarm events generated from the FSS.
+Future Extension: Send alarm acknowledgment to FSS.
+Store field object property values for easy access.
+Persist all hierarchy information.
+Configure access rights statically.
+Persist MSLite users and permissions in the database.
+Persist L&R rules in the database for, create L&R rule, edit L&R rule, delete L&R rule.
+Persist alarm rules in the database for: create alarm rule, edit alarm rule, delete alarm rule, persist alarm.
+Synchronize MSLite with FSS configuration - Persist FSS configuration (using field object templates and instances).
+Persist hierarchies in the database for Managing Hierarchies including: create hierarchy, edit hierarchy.
+Publish all FSS (COV) Events.
+Execute all commands specified by MSLite.
+Provide initial property values to MSLite.
+Read FSS configuration.
+Provide FSS configuration to both the FSS and to MSLite.
+Note: There can be multiple FSS Configuration files - one for each FSS.
+L&R Managing L&R rules including persisting them in a local cache: create L&R rule, edit L&R rule, delete L&R rule, trigger L&R rule, subscribe to COVs, evaluate L&R rules.
+Trigger reactions (equivalent to issuing commands and therefore referred to as MSLite L&R Commands).
+MSLite Server Controls all of the Logic for: handling the Communication with the multiple FSSs.
+Storage and retrieval of the Object Data to and from the Cache and the Database.
+Handling the Subscription and Publication of all Events in the System.
+Handling the Events triggered from the FSSs (including COVs, NCOVs and Alarms).
+To perform these operations it contains the: Virtual FSS.
+Presentation Responsible for the following UI elements: work Area.
+Object Browser including: Display hierarchies.
+L&R including: including persisting L&R rules to the database: create L&R rule, edit L&R rule, delete L&R rule.
+Alarms including: including persisting Alarm rules to the database: create alarm rule, edit alarm rule, delete alarm rule.
+Display alarm, remove request from other users screens, change alarm status in Alarm Viewer.
+Dismiss Alarm, managing Hierarchies including: create hierarchy, edit hierarchy, rename hierarchy or hierarchy description, delete hierarchy.
+Managing Logical nodes including: add logical nodes, rename logical nodes, delete logical nodes.
+Managing field objects including: add field objects, remove field objects.
+Issuing Commands including: user issues commands from UI, UI sends command to MSLite, UI reflect successful transmission of command to FSS, UI reflects failed transmission of command to FSS.
+UI shows current value - Subscribe to COV events based on displayed property values.
+Virtual FSS Publish all COV events to MSLite.
+Execute all commands specified from MSLite.
+Read FSS configuration and store it in the MSLite database.
+Read initial property values from the FSS and store them in the MSLite cache.
+Future Extension: Publish all Alarm events to MSLite.
+Requests the Alarm component to update the Alarm rules cache and subscriptions when a new Alarm rule has been created or an existing Alarm rule has been edited or deleted.
+Acknowledge Alarm - sends alarm acknowledgments to the Access Control to be send to the database.
+Note: The Alarm Acknowledge may also be routed through the Alarm Components since there is an extensibility requirement to require for FSS to have alarm events and alarm acknowledgments to be sent directly to the FSS.
+At the moment this functionality is not supported.
+Dismiss Alarm - Notify the AccessControl about the dismissal of an alarm.
+Retrieve Existing Runtime Alarms - retrieves the details of existing alarms that are persisted in the MSLite Database via the AccessControl.
+Retrieve Alarm Viewing Rights - retrieves the users access rights of all alarms present in the system at runtime via the AccessControl.
+Alarm Notification Notify the Presentation component of a newly generated alarm so that the Presentation component can display an alarm acknowledgment request and display the details of the alarm to be displayed on the Alarm Viewer.
+Alarm Rules & Object Alarm Rules: Store Alarm rules data in the database when Alarm rules are created, edited or deleted by the Presentation component.
+Alarm Rules: Retrieve property values from the cache for comparison with Alarm rules when new COV events are received.
+Alarm Objects: When an Alarm condition evaluates to true a new Alarm Object is created by the Alarm Component and this connector persists the details of that Alarm in the Alarm Database.
+Alarm Subscribes to Events The Alarm component is subscribed to only those COV events for properties that are contained in its rule cache.
+Initial subscription is done at startup but is managed dynamically during runtime.
+Cache Subscribes to Events The Cache is subscribed to all COV events (at startup) so that it can be up to date with the state of the FSS.
+All data to be persisted in the database will use this connector.
+FSS Events THIS IS EXTERNAL TO THE SYSTEM AND WILL NOT BE BUILT BY MSLite DEVELOPERS.
+The FSS notifies MSLite of all COV events occurring within the FSS.
+L&R Data Requests the L&R component to update the L&R rules cache and subscriptions when a new L&R rule has been created or an existing L&R rule has been edited or deleted.
+L&R Rules Store L&R data in the database when L&R rules are created, edited or deleted by the Presentation component.
+Retrieves L&R rules at startup to store in the local rule cache.
+Property values for each property contained in each rule are also read and stored in a local property value cache.
+L&R Subscribes to Events The L&R component is subscribed to only those COV events for properties that are contained in its rule cache.
+Initial subscription is done at startup but is managed dynamically during runtime.
+MSLite Alarm Commands THIS IS A FUTURE EXTENSION.
+Issue a command to either dismiss or acknowledge an alarm in the FSS (When the FSS supports alarms).
+This command is routed through the AccessControl Component to Manage the Access Rights of the FSS.
+MSLite Data For the manage hierarchy functionality: Retrieve hierarchies and field objects that are user specific.
+Update and / or delete hierarchies as updated by the users.
+Retrieve property values from the cache.
+For the manage alarms functionality: retrieve alarm rules for editing, retrieve alarms and their details to be displayed in the Alarm Viewer.
+For the manage L&R functionality: retrieve L&R rules for editing.
+Provide user access verification for all functionalities of the Presentation component.
+MSLite L&R Commands When an L&R rule evaluates to true, a reactions is triggered - this is equivalent to a command issued by the user with the difference being that this reaction or command is triggered or issued automatically by the L&R component.
+This command is routed through the AccessControl Component to Manage the Access Rights of the FSS.
+MSLite User Commands Issue a user command to the FSS (via the Virtual FSS) to update a property value that a user has write access to.
+This command is routed through the AccessControl Component to Manage the Access Rights of the FSS.
+Presentation Subscribes to Events The Presentation component is subscribed to COV events for properties that are being viewed by the user and are therefore user specific.
+Important: These subscriptions are user specific.
+Publish Events to Alarm Publishes COV events to the Alarm component for the events that the Alarm component is subscribed to.
+Publish Events to Bus When the Virtual FSS receives a FSS Event (COV) it publishes this event to the Publish Subscribe Bus.
+Publish Events to Cache The Publish Subscribe Bus publishes COV events to the Cache that the Cache is subscribed to (so that it can be updated).
+Publish Events to L&R Publishes COV events to the L&R component for the events that the L&R component is subscribed to.
+Publish Events to Presentation Publishes COV events to the Presentation component for events that the Presentation component has subscribed to.
+Important: These events are user specific.
+Publish Subscribe; a publish-subscribe connector was used because: MSLite does not know subscribers to FSS events in advance and there can be dynamic subscribers.
+Events from the FSS are asynchronous.
+Not all components interested in the same events.
+When 3 subscribers are registered to receive a certain COV event, they will all receive their events synchronously.
+The events are stored in a first-in first-out (FIFO) buffer in the publish-subscribe.
+Only one event is released at a time and it is sent to all subscribers concurrently.
+There are currently 2 kinds of event that flows through the publish-subscribe connector.
+Future Extension: The Publish Subscribe Connector can be used to manage Alarm Events as well.
+MSLite Commands to FSS All MSLite Commands (L&R, User and later Alarm) are sent to the FSS - at this time all commands map to change in property values.
+Read Initial Property Values Retrieve the initial set of property values of the FSS.
+Retrieve Object Data Retrieve the Object Data when requested (e.g. by the L&R and Alarm components to compare with L&R and Alarm rules respectively or by a user when the view in the UI changes).
+Read FSS Configuration from FSS Configuration Retrieve the FSS Configuration.
+Send FSS Configuration Retrieve the FSS Configuration and send it to the AccessControl so it can be instantiated it in the MSLite Cache.
+Send Initial Property Values Retrieve the initial set of property values of the FSS and send it to the AccessControl to store them in the MSLite cache.
+Store FSS Configuration Store the received FSS Configuration details in the Cache.
+Store Initial Property Values Store the received initial set of property values of the FSS in the MSLite cache.
+This view shows a C&C decomposition of the publish-subscribe connector.
+During startup and execution of MSLite, all subscribers will register with the Subscription Manager for the appropriate events they would like to receive.
+An assumptions made is that all rule condition evaluations are fast enough to not impact the performance quality attribute (P1).
+It is important to note that there can be multiple Presentation components depending on the number of logged on users in MSLite.
+This can be seen in the diagram.
+Buffer Receiver: Receive events from the Virtual FSS.
+Stores events in a First In First Out (FIFO) queue.
+Upon receiving the first ever event from the Virtual FSS, the Buffer Receiver creates a thread called the Coordinator (Coordinator Component).
+The Buffer Receiver releases events one at a time only after the Publisher has completed publishing the previous event to its subscribed components.
+Note: The functionality of the Buffer Receiver runtime component is important.
+This is a buffering mechanism that allows events from the FSS to be processed in the order in which they were received.
+The storage mechanism for this buffer needs to be first-in first-out (FIFO).
+The reason for the Buffer Receiver component is that MSLite needs to satisfy the reliability quality attribute (R1) that states that no events must be lost.
+Another reason for this component is that we want to make sure that events are captured in the order they were received from the FSS.
+The use of both the Buffer Receiver and the Coordinator allow MSLite to do proper rule processing which is necessary for handling alarms and the execution of logic and reactions.
+Buffering introduces performance degradation because events in the buffer do not get processed until all the components that used the prior event are finished processing.
+To address the issue of performance here, an alternative structure would be using local caches for components that need to process events.
+Each of these local caches would need to subscribe for events of interest and do their processing.
+Note though that the possibility exists that these caches perform at different speeds and would hence impact the sequencing desired for alarm and rule evaluation.
+Coordinator: The Coordinator starts processing events one at a time by requesting a single MSLite event from the Buffer Receiver FIFO queue.
+The Coordinator then proceeds to query the Subscription Manager to see who has subscribed (registered) for the event.
+Depending on the number of subscribers to the event, the Coordinator will create that exact number of threads called the Event Publisher(s) to send events to specific subscribers.
+The Event Publisher(s) will notify their subscribers concurrently.
+Only after the Coordinator receives acknowledgment from all created threads, will it then proceed to process the next event.
+The Event Publisher thread(s) will then terminate itself.
+Note: The requirement for the coordinator to wait for an acknowledgment was dropped due the performance issues involved and the risk of certain threads hanging while publishing.
+A local buffer was instead placed on each publishing thread to ensure no events were lost.
+Note: The use of both the Buffer Receiver and the Coordinator allow MSLite to do proper rule processing which is necessary for handling alarms and the execution of logic and reactions.
+The Event Publisher sends the event notification to one subscriber.
+The Event Publisher waits until processing of the event is complete in the respective subscriber before communicating it back to the Coordinator.
+Each Event Publisher thread will send completion acknowledgment to Coordinator.
+Only after the Coordinator receives acknowledgment from all created threads, will it then proceed to process the next event.
+The Event Publisher thread(s) will then terminate itself.
+Note: The requirement for the coordinator to wait for an acknowledgment was dropped due the performance issues involved and the risk of certain threads hanging while publishing.
+A local buffer was instead placed on each publishing thread to ensure no events were lost.
+Note: Event Publishers and the Subscription Manager are necessary to allow for the sequencing of events.
+Sequencing is accomplished by having all subscribers to an event signal that they are done processing.
+On that signal, the next buffered event is processed.
+The call-return connectors only return once all property values used have been accessed.
+The execution of a rules action is independent of its conditions evaluation and as such calls return immediately after a rules condition is evaluated.
+The existence of Event Publishers as threads was to achieve a performance gain to allow for parallel execution instead of blocking occurring every time an event is processed.
+If threads were not used, the Coordinator component would be responsible for publishing events but this would be a sequential blocking operation.
+Subscription Manager Maintains a list of events to which components can subscribe.
+Allows components to subscribe (register) to events.
+Maintains a list of which components subscribe to which events.
+Cache, L&R, Presentation, Alarm Subscribe to (register) the Subscription Manager for events.
+Process events upon notification by Event Publisher threads.
+Publish Events to Bus Refer to C&C Level 1 Publish Events to Bus Connector.
+Retrieve MSLite Event The Coordinator starts processing events one at a time by requesting a single MSLite event from the Buffer Receivers FIFO queue.
+Retrieve Event Subscriber List The Coordinator queries the Subscription Manager to retrieve a list of subscribers for a specific event.
+Spawn MSLite Event Thread Depending on the number of subscribers to the event, the Coordinator will spawn that exact number of threads called the Event Publisher(s) to send events to specific subscribers.
+The Event Publisher(s) will notify their subscribers concurrently.
+This view describes the detail C&C decomposition of the Virtual FSS.
+The main reason for the existence of the Virtual FSS is the extensibility quality attribute concern of support for multiple FSS (E1).
+To accommodate this quality attribute without making the internal structure of MSLite complex, the Virtual FSS component was created.
+Multiple FSSs can exist and be very different in operation.
+For this reason, the Virtual FSS needs a way to communicate with each FSS.
+This is accomplished by having a one-one mapping of Adapter to FSS.
+For every FSS known to the Virtual FSS, there will exist one Adapter component that knows how to communicate with that FSS as well as know how to translate data from that FSS to the MSLite format.
+With the existence of these different adapters for each FSS, there needs to be a control mechanism that knows how to delegate and administer communication between MSLite and the various FSSs.
+This is the reason for the existence of the Adapter Manager, whose functionality is described in the element catalog above.
+Without the Adapter Manager, internal components of MSLite would have to be knowledgeable of every single Adapter that would be created for each new FSS brought into operation.
+This would increase the structural complexity of MSLite and increase the coupling between Adapter and the rest of MSLite.
+Adapter Manager Receive FSS (COV) events and publish all events to the Publish Subscribe Bus.
+Read the FSS Configuration and store it in MSLite database on startup.
+Read the initial property values for the FSS and store them in the MSLite cache on startup.
+Read the MSLite configuration file to retrieve the Ids for each adapter.
+Send MSLite commands to the appropriate FSS Adapters.
+Note: The Adapter Manager acts as a central component that interfaces communication between the various adapters and the rest of MSLite.
+The Adapter Manager receives all commands from MSLite and then proceeds to send it to the appropriate Adapter which in turn sends it to the FSS.
+The Adapter Manager will be responsible for receiving all events and then publishing it to MSLite via the publish-subscribe connector.
+The Adapter Manager has to keep a list of all the Adapters in order to determine the origin and destination of events or commands.
+The mapping to an adapter and an FSS is a one-to-one.
+The Adapter will translate all MSLite commands to the format that FSS can understand and vice-versa.
+The communication between the Adapter and the FSS is done via a dotNET remoting call-return connector.
+Adapter Translate FSS messages to MSLite messages and vice-versa.
+Issue MSLite commands to the FSS.
+Send all FSS events to the Adapter Manager.
+Read the FSS Configuration and transmit it to the Adapter Manager.
+Read the initial property values for the FSS and transmit them to the Adapter Manager.
+Read FSS Configuration from Adapter The Adapter Manager reads the FSS Configuration from the Adapter of each FSS.
+Read Initial Property Values from Adapter The Adapter Manager reads the initial property values from the Adapter of each FSS.
+MSLite Commands to Adapter The Adapter Manager transmits the MSLite commands to the Adapter of the specific FSS for which the command is meant.
+FSS Events from Adapter The Adapter transmits the FSS Events to the Adapter Manager when it receives the FSS (COV) events form the FSS.
+Configuration synchronization is a runtime behavior that is done when MSLite starts executing.
+In this operating mode, MSLite is making sure that its state information is consistent with the information known about FSSs as described in the configuration file.
+The internal components of the Adapter are Communicator and Configurator.
+These are two separate components because they are concerned with different aspects of configuration synchronization.
+One aspect is to read structural information an the other is to read value information for properties of these structures.
+It is important to note that synchronization does not occur more than once during the running time of MSLite.
+This decision was taken to reduce the complexity of the system.
+To accommodate constant configuration synchronization (i.e.
+synchronization after MSLite has started), the following concerns have to be addressed: Handle a new adapter for a new FSS.
+Frequency of polling configuration file for changes.
+Handle existence of property value for a non-existent FSS structure and vice-versa.
+The Configuration File and the FSS are external to the MSLite system.
+Call-return connectors were used because of the nature of the data exchange.
+The File Access connector is a simple I/O connector that reads data from the file.
+And the call-return connector used between the Communicator and the FSS is done using dotNET remoting.
+Read the configuration file and store the information in the database and in the cache.
+Communicator Read the initial property values of the FSS.
+Transmit all MSLite Commands to the FSS.
+Receive and publish all FSS (COV) events.
+All Connectors Refer to C&C Level 1 Virtual FSS Connector Catalog.
+Logon: Authenticates the users login credentials.
+Creates each of the User Session Objects for the individual users presentation.
+Alarm Manager: Retrieves all those alarms, from the database via access control, that are already existing when the presentation component is instantiated.
+Retrieves the viewing rights of all of these alarms from the database via access control.
+Displays the appropriate alarms in the user sessions that have read access for them.
+Handles each of the notifications of all generated alarms by the Alarm Component.
+Displays the alarms in the appropriate user session.
+Notifies AccessControl about acknowledged / dismissed alarms.
+Alarm Display: Displays all of the generated alarms that the particular user has read access to, in the order that they occurred.
+Alarm Rule Manager: Allows the editing of any Alarm Rule that the user has write access to.
+Allows the user to create new Alarm Rules.
+Sends these changes to the Alarm Component.
+Allows the management of Alarm Rules.
+Hierarchy Browser: Shows the Hierarchy of Field Objects that has been selected for viewing by the user.
+The hierarchy can be traversed by the user by selecting the different nodes to expand or contract.
+Hierarchy Editor: Allows the editing an existing Hierarchy that the user has write access to.
+Allows the user to create a new Hierarchy that can be viewed in the Hierarchy Browser.
+Sends these changes to the Database via the AccessControl.
+LnR Rule Manager: Allows the editing of any Logic and Reaction Rule (LnR Rule) that the user has write access to.
+Allows the user to create new LnR Rules.
+Sends these changes to the LnR Component.
+Allows the management of LnR Rules.
+Property Display.
+Once the user has selected the property of field object to be displayed: Retrieves the initial property value from the AccessControl.
+Subscribes the user to events generated for the particular property.
+Handles all events published to the PublishSubscribe Component relating to this property.
+Displays received change of values for the property.
+The Web Browser sends the Users Logon Credentials to the Logon Component for Authentication.
+User Logon retrieves the users details from the database via the AccessControl so as to facilitate the authentication.
+Create Logon creates a unique User Session Object for each of the users as they log into the MSLite Server.
+Retrieve Existing Runtime Alarms The Alarm Manager retrieves the details of existing alarms that are persisted in the MSLite Database via the AccessControl.
+Retrieve Alarms Viewing Rights The Alarm Manager retrieves the users access rights of all alarms present in the system at runtime via the AccessControl.
+Display Alarm The Alarm Manager sends the Alarm details to the Alarm Display of the User Session Object for the users that have read access for it.
+Alarm Acknowledge The Alarm Manager notifies the AccessControl about acknowledged alarms.
+Alarm Dismiss The Alarm Manager requests the AccessControl the dismissing of an already acknowledged alarm.
+Alarm Notification The Alarm Component sends notification of each alarm to the Alarm Manager once they are generated. Store Runtime Alarm Rules The Alarm Rule sends the Updated or New Alarm Rules to the Alarm Component which looks after all of their handling issues (e.g. persistence in the database).
+Retrieve Alarm Rules Alarm Rule retrieves the Alarm rules from the database.
+Retrieve Hierarchy The Hierarchy Browser retrieves the details of the Hierarchy, which the user has chosen to view, from the Database via the AccessControl.
+Persist Hierarchy The Hierarchy Editor sends the Updated or New Hierarchy to the Access Control that will handle its persistence in the Database.
+Store Runtime LnR Rules The LnR Rule Editor sends the Updated or New LnR Rules to the LnR Component which looks after all of their handling issues (e.g. persistence in the database).
+Retrieve LnR Rules LnR Rule Editor retrieves the LnR rules from the database View Object The Hierarchy Browser sends the Property ID, of the Property that the user has chosen to view, to the Property Display.
+Retrieve Initial Property Values The Property Display retrieves the initial property value for the Field Object Property that is to be displayed from the AccessControl, which has been received from the relevant FSS and stored in the Value Cache.
+Property Display Subscribe to Events The Property Display subscribes to events from the FSS for the Property ID of the property it is displaying.
+Publish Events to Property Display The PublishSubscribe publishes events generated by the FSS for the Property ID of the property that the Property Display is subscribed to.
+Asynchronous Update The Property Display asynchronously updates the Web Browser with any new property values when they are received as published events from the PublishSubscribe.
+The Rule Processor and Alarm Processor are the two components that make up the Alarm component.
+Three important differences between this detailed view (Level 1 Alarm) and the high-level view (Level 1) are: In this view, there are two call-return connectors where the Presentation is the caller.
+However, in the high-level view, there is only one connector.
+Hence, the two connectors shown here make up the single call-return connector in the High-Level view.
+In this view, there are multiple call-return connectors from the Rule and Alarm processor to the Repository.
+However, in the high-level view, there is only one.
+Hence, these multiple call-return connectors make up the single connector in the high-level view.
+In this view, there is an extra subscribe connector but not in the high-level view.
+This two subscriptions form the single subscribe connector in the high-level view.
+This extra connector is to support the extensibility scenario E3 whereby alarms will be originating from an external source.
+Rule Processor: Subscribe to receive COV events.
+Evaluate the alarm rules based on COV events against property values in the cache and the alarm rules.
+Forward alarm rule information (if alarm condition evaluates to true) to Alarm Processor to generate alarm.
+Note: The Alarm Processor and Rule Processor components are separate components mainly because determining whether an alarm should be created is different from actually creating an alarm and the functionality of each of these actions can be cleanly separated.
+The Rule Processor deals with all the alarm rules meaning, it registers for COV events, executes the rules.
+The Rule Processor needs to know only about the conditions and actions that should be done based on the condition evaluation.
+The Rule Processor does not need to be concerned with actually creating alarms.
+It is only concerned with making sure that it makes the correct evaluation based on the conditions it knows of.
+Because of the clean separation in functionality displayed here, these two components were split.
+This makes the design more extensible even though extensibility with a concern for alarm functionality was not an explicit quality attribute.
+Alarm Processor: Generate alarm objects.
+Notify Presentation of new alarm objects.
+Future extension: Subscribe to receive Alarm events.
+Future extension: Issue commands to the FSS for dismissing or acknowledging alarms.
+Note: The Alarm Processor and Rule Processor components are separate components mainly because determining whether an alarm should be created is different from actually creating an alarm and the functionality of each of these actions can be cleanly separated.
+The Alarm Processor handles all processing that deals with runtime alarm objects in MSlite.
+This includes generating alarms and issuing the appropriate commands to the Virtual FSS based on the users context.
+The Alarm Processor is concerned with actually doing something with the information it gets from the Rule Processor.
+Because of the clean separation in functionality displayed here, these two components were split.
+This makes the design more extensible even though extensibility with a concern for alarm functionality was not an explicit quality attribute.
+Alarm Rule Information: When an alarm evaluates to true the Alarm Process must be informed so that is can generate an alarm in the system.
+This connector is responsible for informing the Alarm Processor and passing on all relevant information about the alarm to be generated.
+TRACEABILITY MATRIX Reading the Traceability Matrix.
+These are traces for the following: First the traces for all components to their respective modules.
+Then the traces from the connectors (organized by each view) to their respective modules and later the sequence diagrams.
+The X indicates that this trace is not required.
+The Process View is the runtime representation of the processes involved in executing MSLite.
+The run time elements from C&C Level 1 view (components) are further described in the process view indicating how the different processes communicate with one another.
+Browser This process represents the clients browser used to access the MSLite system.
+Javascript This thread is responsible for executing MSLite client-side javascript code that the MSLite system will call.
+e.g. new alarm and property values notification.
+Important: The performance quality attribute of MSLite requires that the user interface be updated with alarm information within 3 seconds of the alarm occurring.
+To accommodate this requirement, asynchronous updates of the client-side have to be done.
+Callbacks from the server are embedded in the client side and handled using JavaScript so that the relevant elements of the client-side DOM can be updated to provide asynchronously updated data.
+Presentation This process is responsible for storing the web-page files as well as other client-side resources.
+L&R This process is responsible for executing L&R rules and commands independently of the MSLite server.
+It acts upon receiving COV events from the FSS.
+It also helps the presentation add, edit and delete L&R rules.
+Important: It was decided to have L&R and Alarm execute in their own process and as such this needed to be communicated clearly.
+This is done by having individual processes for these components.
+Both Alarm and L&R components gain the following advantages when they are able to execute as separate processes in MSLite: It is easier to test and support the independent development.
+Run-time integration of the components is made easier as long as they obey the interfaces to which they are bound.
+Alarm This process is responsible for executing Alarm rules and generation of alarm objects.
+It acts upon receiving Alarm and COV events from the FSS.
+It also helps the presentation add, edit and delete Alarm rules.
+Important: It was decided to have L&R and Alarm execute in their own process and as such this needed to be communicated clearly.
+This is done by having individual processes for these components.
+Both Alarm and L&R components gain the following advantages when they are able to execute as separate processes in MSLite: It is easier to test and support the independent development.
+Run-time integration of the components is made easier as long as they obey the interfaces to which they are bound.
+MSLite Server This process is responsible for the core functionality of the MSLite system.
+It acts as an intermediate to allow communication between the different processes.
+Database This process is required to run the MSLite database.
+dotNET remoting The dotNET framework provides dotNET remoting to allow objects living in different processes to communicate with each other.
+This was a natural fit for the MSLite architecture as several processes are involved with its operation and communication is necessary between the different process as shown in the process view.
+HTTP For communication between the web client and MSLite running on application servers, the normal web protocol of HTTP is used.
+The Module view-type partitions the system into a unique non-overlapping set of hierarchically decomposable implementation units (modules).
+The goal is to show how the modules are decomposed, as well as the dependencies between modules.
+This view-type was selected because it helps the following roles: The architect, who must define work assignments in such a way so as to minimize dependencies between the modules and assign priorities (or sequences) to modules to control existing dependencies.
+The project manager, who must form teams, formulate project plans and schedule, knowing the individual priorities (or sequences) of these modules.
+Testers who use the modules as their unit of work to create test cases and perform the tests.
+The configuration manager who is in charge of maintaining current and past versions of the units in consistent and functional package-able assemblies, being able to produce a running version of the system.
+Developers, who are required to implement the modules.
+Maintainers, who are tasked with modifying the software modules.
+In this section the implementation units of MSLite and how they depend on each other are documented .
+The diagrams use UML 1.5 packages to depict modules.
+2 kinds of dependencies are included: a "uses" dependency between two modules A and B means that A cannot function correctly without a correct implementation of module B, whereas a regular dependency between modules A and B means that A calls B.
+For a general introduction to module views see Clements02.
+Manage user interaction with MSLite, such as editing hierarchies, acknowledging alarms, displaying field object properties, etc.
+The presentation module uses AJAX to asynchronously update the user interface.
+Rules Create, Update and Delete L&R rules.
+Create, Update and Delete Alarm rules.
+Execute L&R rules and issue L&R commands.
+Execute alarm rules and generate alarms.
+Facilitate Alarm acknowledgment.
+Future Extension - Issue Alarm Commands.
+Publish Subscribe Hide details of event delivery: allow other modules to publish events (COV and alarm).
+Allow other modules to subscribe to events.
+Allow other modules to unsubscribed from events.
+Deliver published events to all subscribers.
+Adapter Manager Hide the fact that there are (potentially) many FSS connected to MSLite: direct commands to the correct FSS adapter.
+Receive COV notifications from all FSS adapters and publish the corresponding MSLite COV events to the Publish Subscribe Bus.
+Coordinate configuration of MSLite according to individual FSS configurations (including reading their initial property values).
+Data Hide details of how data is persisted and accessed: manage all persistent data in MSLite and all data in the cache.
+Control access to data.
+Maintain consistent snapshots of property values.
+The data module uses NHibernate to implement the mapping between objects in memory and tables in the database.
+FSS Adapter Hide details of configuration of and communication with an FSS: translate commands between MSLite and FSS.
+Translate COV notifications between FSS and MSLite.
+Read configuration data for a single FSS (including reading their initial property values).
+Future Extension: Translate alarm notifications between FSS and MSLite The adapter is specific to the kind of FSS.
+The presentation module for MSLite is focused mainly on the user interface functionality for MSLite.
+The presentation modules were created to accommodate the functional requirement and the constraint that MSLite be run as a web based application.
+MSLite needs to display information from the FSS to its end-users and also allow those end-users to create L&R rules, login to the software system, and view and manipulate alarms.
+A module was created for each of these packages as the functionality they provide is independent of each other.
+Presentation modules have dark borders while modules with a light gray border, are external to Presentation.
+The light gray module are named with a prefix of the module they belong.
+This style denotes the external dependencies of the presentation modules.
+Each presentation module includes ASPdotNET Web pages, C#-code that executes on the Web server in the Presentation process, and JavaScript code that executes on the client.
+Trigger Property Display if the user selects a field object in the hierarchy.
+Use Data::Data Access to retrieve and update hierarchies.
+All data access is done using the interface provided by the Data::Data Access module.
+We assume that editing hierarchies and displaying hierarchies for browsing can potentially share some code.
+Display properties and their values of a field object (from the cache).
+Update UI as soon as a property value changes.
+Allow editing of changeable property values (this is the issue command functionality).
+Send commands to Adapter Manager and displays the result of the command execution.
+Data::Data Access to retrieve a list of properties for a field object the list will indicate if a user has read or write access to a property.
+Each user must have an event handler to receive COV events.
+All data access is done using the interface provided by the Data::Data Access module.
+Initialize other presentation modules after successful logon.
+Store and maintain user sessions and pertinent session information.
+Provide logoff functionality.
+Each user will have its own session.
+Retrieve alarm information from the database.
+Display current alarms.
+Update UI as soon as a new alarm occurs.
+Allow user to acknowledge alarms.
+Allow user to dismiss alarms.
+Display alarm list to user.
+Immediately update other user's UIs as soon a user acknowledges or dismisses an alarm.
+There is one shared handler for alarm notifications.
+Avoid using popup windows to notify the users that a new alarm has been created.
+All data access is done using the interface provided by the Data::Data Access module.
+Popups windows do not fulfill the handle alarms requirement - any user viewing an  Alarm Acknowledgment Request  can acknowledge it.
+After an user has acknowledged the alarm, the request should be removed from all users' screen.
+The use of popup windows does not allow removing the rest of the acknowledgement requests.
+Allow user to edit alarm rules and update them accordingly.
+Allow user to edit L&R rules and update them accordingly.
+Use Data::Data Access to retrieve rules from the database.
+Rule editors should share code to edit the condition part of a rule.
+Module Level Rules: rules in MSLite consist of two parts, namely condition and action.
+Alarm and L&R rules are the two types of rules in MSLite.
+The condition part of these two types of rules is the same; hence, the logic to evaluate a condition is the same and is implemented within the Condition Evaluation module.
+This module is used by both rules engines, Alarm and L&R.
+The L&R Rule Engine issues a command to the Adapter Manager whenever a L&R rule condition evaluates to true.
+The Alarm Rule Engine notifies the Alarm Processing that the condition for creating an alarm is met.
+Then, Alarm Processing will create a new alarm, publish it, and handle its lifecycle.
+To accommodate the extensibility scenario E3 for future iterations, the Alarm Processing module will also subscribe to alarm events created by the extended FSS through Publish Subscribe.
+By then, Alarm Processing will create an alarm whenever it is created in the extended FSS.
+This new type of alarms will be handle as any other alarm created within MSLite.
+When an alarm is acknowledged, Alarm Processing will notify the Adapter Manager to change the alarm status in the extended FSS.
+Condition Evaluation Evaluate Alarm & L&R rule conditions based on COV messages (and instructions received by the Alarm and L&R Engines respectively) and current property values - These checks will be made by comparing property values in the cache and the rules in the cache (and not the database) for performance reasons.
+These checks will be made by comparing property values in the cache and the rules in the cache (and not the database) for performance reasons.
+This module represents code shared between the Alarm and L&R rule engines.
+Handle alarm lifecycles (including alarm acknowledgement).
+Persist all alarms in the database.
+Future Extensions: Subscribe to alarm events from extended FSS through Publish Subscribe.
+Notify Adapter Manager when an alarm has been acknowledged .
+Issue Alarm Commands to the Adapter Manager.
+Module Level1:Publish Subscribe.
+The Publish Subscribe module contains functionality that allows events to be propagated from the FSS to MSLite.
+The realization of the Buffer Receiver, Subscription Manager, Coordinator, and Event Publisher are all contained in this module.
+An assumption made is that it is safe for a subscriber to subscribe to an event when there is no publisher for such an event and vice-versa.
+Events The publish subscribe mechanism that will be implemented in this module will use structures that define Events.
+An event provides several pieces of information about an occurrence of some action in a FSS.
+Here we discuss some important issues with Events.
+Event Structure: Event definition.
+There are three fixed types of events defined for MSLite.
+COV events provide information on a change of property value that occurs in a FSS.
+An NCOV event provides error state information for circumstances when a command is issued to the FSS but the command was not actually executed.
+An Alarm event is also defined to accommodate the extensibility concern of support for extended FSS (E3).
+Each event will have a unique identifier and a set of parameters containing information about the event.
+The number of parameters is fixed and contains information specific to the event.
+Components within MSLite are allowed to subscribe and unsubscribe for events during the running lifetime of the system.
+Because of this, events will need to be bound to components dynamically to support subscribing and unsubscribing.
+Allow components to subscribe and unsubscribe to events.
+To accommodate the Extensibility scenarios, the VirtualFSS was incorporated in the architecture to allow the addition and replacement of FSS without requiring changes in MSLite.
+The VirtualFSS contains two modules: The AdapaterManager and the FFSAdapter Each FSS interacts with the Adapter Manager through a FSS Adapter.
+There is one FSS Adapter for each FSS.
+The Adapter Manager has a configuration file that contains all the information of FSS Adapters that are expected to interact with the MSLite system.
+The rationale for having a configuration file is to avoid changes in the Adapter Manager module for each addition or replacement of FSS Adapters.
+The Adapter Manager will read its configuration file each time the system is restarted to register the FSS Adapters.
+If there is a new FSS Adapter, it has to be added in the configuration file and the MSLite system must be restarted in order to recognize the new FSS Adapter.
+Direct commands to the correct FSS adapter.
+Receive COV notifications from all FSS adapters and publish the corresponding MSLite COV events to Publish Subscribe.
+Coordinate configuration of MSLite according to individual FSS configurations.
+The Adapter Manager knows about the FSS Adapters because of the configuration file.
+This configuration file has the name of the main class, dll name, and identification number of each adapter.
+The Adapter Manager will instantiate FSS Adapters using the name of the main class stored in the configuration file.
+No recompilation should be needed for the Adapter Manager to incorporate or replace FSS Adapters.
+The identification number must be a unique number within the configuration file.
+This number is stored in the internal_id field from the ObjetcID class of the Base Package in the Domain Model.
+This mechanism serves to identify to which FSS an object, such as field objet and property value, belongs to.
+Each FSS maintains its own identification numbers which can be stored in the external_id field of the ObjectID class.
+The internal_id and external_id form a unique pair of identifiers that the Adapter Manager uses to send and retrieve information from FSS Adapters.
+For each FSS there will be an Adapter to accommodate the functionality and interaction with an FSS, such as translate commands, COVs, and alarm events from the corresponding FSS to MSLite and vice versa.
+Although there will be an Adapter for every FSS, all the Adapters interact with the Adapter Manager; hence, they have a common back-end to allow for this communication.
+When designing this module for the first time, the team has to think of a class template that has the back-end to interact with the Adapter Manager.
+This template should be reused when creating a new Adapter.
+In this way, all the FSS Adapters will have the same back-end and a different front-end specific to a particular FSS.
+Create or update MSLite configuration based on FSS configuration data.
+Read initial set of values at system start up time.
+The configuration data for each FSS is provided in a FSS Configuration XML file.
+Translate from MSLite commands to FSS commands.
+Detect failure of FSS to change a value as required by a command and send MSLite NCOV events.
+Translate from FSS COV event to MSLite COV notification.
+Notify Adapter Manager to publish MSLite COV notification.
+The purpose of the Value Cache is to maintain the property values in memory and give a snapshot of these values at the time an event is generated.
+That is, the Value Cache keeps a copy of value of the properties in the FSS, and updates the values one by one per COV event.
+The Rules::Condition Evaluation submodule reads the property values in the Value Cache indirectly when evaluating the condition of a rule.
+This is done indirectly because Value Cache can only be accessed through Data Access which checks the permission first.
+For example, there is a L&R rule that triggers an action when property A is and property B is 2.
+These two properties changed almost at the same time in the FSS.
+Property A changed to and later B changed to 1.
+As a consequence, two COV events are generated within MSLite but they are handle one by one in the order they happened.
+L&R Rule Engine is notified that property A changed to 4 and checks for the value of B at the time A changed by reading the Value Cache.
+The value of B in the Value Cache is still 2 because it is a snapshot of all property values when A changed.
+Hence, L&R Rule Engine triggers the action because the condition of that rule is met.
+Check if a user is an authorized user within MSLite for login purposes.
+Maintain list of currently logged on users and assign an authorization token to each user.
+Allow other modules to check what kind of access a user has to a certain data element.
+Allow users to retrieve data they have access to from the database and from the cache.
+Persist data in the database.
+Store and update the data in the cache.
+A system token is used by the L&R and Alarm components to indicate that no permission is required to access the information.
+The data types that are used in the Data Access are according to the Field Objects and Object Types packages found in the domain model.
+Hibernate is used as a dotNET based object persistence library for relational databases.
+Store all property values.
+Update values based on COV messages.
+The dotNET framework provides dotNET remoting to allow objects living in different processes to communicate with each other.
+This was a natural fit for the MSLite architecture as several processes are involved with its operation and communication is necessary between the different process as shown in the process view.
+For communication between the web client and MSLite running on application servers, the normal web protocol of HTTP is used.
+Allocation Architectural view External environments such as hardware, file systems, and team structures all interact with the software architecture and hence, this interaction must also be documented.
+The Allocation view type achieves this by showing the mapping from elements of either a module or a C&C style onto elements of the environment.
+This view-type was selected because it helps the following roles.
+The project manager can view the assignment of software units to development teams in order to identify the work breakdown structures and for detailed budget and schedule estimates.
+The software architect can place some development constraints on the software units based on hardware specifications to meet certain quality attributes.
+Developers and testers can adhere to the file system structure placed by the software architect in order to keep the control and integrity of the system in being deployed.
+External stakeholders like customers can know the type of hardware configurations they are expected to have in order to use the system.
+Maintainers of the project can get an understanding of the type of environment that the system is being deployed on and hence, keep the same infrastructure regardless of the iteration of the system.
+The view-types has been represented using a number of styles.
+Deployment Style: Mapping of the software architecture to the hardware configurations.
+Implementation Style: Mapping of the software architecture to the implementation infrastructure of the system.
+Work Assignment Style: Mapping of the software architecture in terms of software units to the development teams.
+The Deployment view presents the mapping from the elements from the C&C style on to the elements of the environment (Clements 02).
+It illustrates the different subsystems of MSLite and how they are distributed across different machines.
+It also describes the communication between each subsystem in a machine will interact with other subsystems in their respective machines.
+The deployment diagram shown is not the only option that is available in deploying the MSLite system.
+There are other scenarios such as: FSS being deployed on a separate machine, Presentation being deployed on a separate machine.
+There will be some MSLite code in the form of Javascript in the browser and hence, the system boundary of MSLite includes some portion of the user's workstation browser.
+This contains one or more dotNET assemblies for the webpage and other client-side resources.
+These assemblies will be executed in the context of the Application Server in a dedicated ASPdotNET process.
+It will communicate with the MSLite Server subsystem by means of dotNET remoting.
+This subsytem will be executed in a dotNET executable as a separate process.
+This is the main subsystem that acts as a middle subsystem | Database.
+The Alarm executable will also be executed as a separate process in MSLite.
+It will communicate with the MSLite server and the database for rule operations as well as managing the lifecycle of an alarm object.
+Future extension: It will issue Alarm Commands to the FSS through the MSLite Server L&R.
+The L&R executable will also be executed as a separate process in MSLite.
+It will communicate with the MSLite server and the database for rule operations.
+It will issue L&R Commands to the FSS through the MSLite Server.
+There will be a MySQL database which is accessible to the MSLite Server subsystem.
+Other subsystems like L&R and Alarm will access the database through the MSLite Server.
+The MSLite system will interact with the FSS system by means of dotNET remoting.
+This architectural view of MSLite focuses on the structure of the project on the file-system that will be used by developers of the project.
+This file system view contains elements that represent directories that exist on a hard drive and the relationships represent the parent-child relationship between directories.
+Child elements are sub-directories contained within the parent directory.
+Top-level directory that contains all files and folders with information concerning MSLite project.
+Contains instruction oriented documentation created by stakeholders (i.e. developers, architects, managers).
+Contains generated API documentation from dotNET projects.
+This directory is to be referenced from the dotNET projects created for MSLite other.
+Contains miscellaneous documentation that cannot be categorized as API documentation.
+Contains binaries generated from the compile of the dotNET projects along with any other binaries necessary for software system execution.
+All dotNET projects will have this directory as the output directory.
+Contains debug version of binaries generated from compile of projects.
+Contains release version of binaries generated from compile of projects.
+Contains C# source code for all projects created for MSLite.
+Projects will live in sub-directories within this folder.
+Contains C# source code that constitutes the core set of functionality for MSLite.
+Contains C# source code that is used to unit test projects for MSLite.
+The output of these unit tests is the MSLite/bin directory.
+Contains C# source code for the Field System Simulator (FSS).
+Since this application is external to the MSLite system boundary, its source is kept separate from MSLite's core.
+Contains source code and documentation for third-party libraries used during the development of MSLite.
+Any projects that use these third-party libraries must reference them using this directory.
+Contains source code and documentation for a particular third-party library.
+Each third-party library is stored in its own sub-directory of the MSLite/libs directory.
+Contains scripts used to build MSLite, configure the environment, or perform administrative tasks for MSLite.
+Contains build scripts for MSLite project.
+Contains configuration scripts for MSLite.
+Contains administration scripts for MSLite.
+Binary output directory The MSLite/bin folder is the target folder for all output from compilation.
+The reason for this structure is that it allows all the different distributed projects to have a common area for execution.
+If each project had its own output folder, developers would have to copy files across projects to get a running executable.
+This cross copying of files would be necessary because of the dependencies that exist between modules in MSLite.
+If there were no dependencies between modules, then each project could run independent of each other and contain their own output folder.
+Source directory The MSLite/src folder contains all source code written for MSLite.
+The sub-directories of this folder contain the individual projects that contain the implementation for the various modules of MSLite.
+Folder names for projects reflect the namespace structure used for the MSLite modules.
+The reason for this structure is that it immediately allows a developer to understand the structure of the software system by directly seeing a one-one mapping of modules to file structure.
+When a developer needs to know where to find code for a module they depend on, they are immediately given a clue by looking on the file structure.
+A caveat with this structure however, is that the file structure names can become verbose depending on the naming scheme used for namespaces.
+The source folder also contains a tests sub-directory.
+This directory contains unit tests for the MSLite modules.
+The structure of this sub-directory reflects the structure of the core and fss directories.
+The reason for this is that unit tests are self-contained and should be specific to a module.
+MSLite module projects The modules identified in the module views of MSLite will be implemented in dotNET based projects.
+Each module will have functionality that exists in namespaces that reflect the logical structure from the module view.
+Each project lives within a folder whose name is the namespace containing the module structure.
+The top level namespaces are as follows: mslite, fss , mslite tests core , mslite testsfss.
+The two top-level namespaces for MSLite are mslite and fss because the FSS is external to the MSLite system boundary.
+The functionality of the FSS can be implemented completely independently of the MSLite and its core modules.
+However, the MSlite core modules have a tighter coupling to the FSS as it uses information from the FSS.
+Because this dependency is not bi-directional, there can be two separate top-level namespaces to logically organize the development of these systems.
+The namespaces identified based on the module view of MSLite are: mslite adaptermanager, mslite data, mslite fssadapter, mslite presentation, mslite publishsubscribe, mslite rules.
+As an example of a filesystem layout, we can view the file structure when the modules of MSLite are created on a filesystem using the Microsoft Windows operating system.
+Project references The file structure in this view allows the MSLite project structure to be portable.
+The top-level MSLite directory acts as a starting point for referencing material within the project space.
+All projects, scripts, and binary references must use relative paths.
+The use of relative paths allows the MSlite project structure to be distributable in the sense that the entire project structure can be transferred to different machines without the need for reconfiguring references throughout the project.
+If absolute paths were used for file and folder references, then the absolute path would have to be mirrored on any file system that the project is transferred to.
+Assumptions made during the discussion of the architecture background are mainly concerned with the development teams tasked with building the MSLite software system.
+The development teams are assumed to: have access to a central version controlled repository provided by Siemens to do their development.
+Be comfortable with using the Microsoft Visual StudiodotNET 2003 IDE for development and know how to change project settings.
+Be aware of their assigned modules from the MSLite architecture.
+Be familiar with the MSLite Code Integration process and the MSLite Change Control process provided by Siemens.
+Be familiar with constructing and using unit tests.
+The domain model comprises packages that allow MSLite to represent field systems and field system elements, users and permissions, as well as hierarchies.
+In addition there are provisions to model alarms and preferences.
+This model represents the objects that will be kept in memory.
+At runtime, each object is identified by a pair of unique identifiers.
+Identifiers are of type ObjectID.
+Object identifiers can be compared for equality.
+Several associations model one-to-many relationships.
+In all these cases the elements at the multiplicity many end are ordered.
+UML 1.5 class diagrams are used to represent the domain model.
+In the class diagrams, abstract classes are shown in grey.
+The base package contains all domain classes that are globally used(inherited) by other domain classes.
+Every object and property stored in the system will have both its ID's filled in.
+This is important because, the system should be able to identify which objects originated from which external systems.
+The id attribute represented in this class is inherited by all objects.
+It will represent a set of unique identifiers.
+The 'id' attribute is derived from the datatype class called ObjectID.
+Every field object or property will have a set of two unique identifiers.
+external_ID - This attribute represents the id of the external system.
+internal_ID - This attribute represents the id of the object/property stored in the external system.
+This attribute represents the id of the external system.
+This attribute represents the id of the object/property stored in the external system.
+The users package contains all domain classes related to users and user preferences.
+The domain model does not allow the declaration of types for preference values.
+It is assumed that the user of a preference must know the type of the preference value in advance.
+This is different from the template/instance mechanism where clients cannot know the types of properties in advance.
+Interface implemented by all user classes.
+Each user object represents a user who is logged in.
+Users are uniquely identified by a user name.
+The User class keeps track of username, systemid defining this user.
+This is a base class for other types of users to be used within tokens.
+Notice that preferences have been removed from the user model all together.
+A user group is a security mechanism which groups users together.
+Associations between user and UserGroup are not maintained within this class currently.
+Currently there is no need to be able to determine the users within a UserGroup without querying the database.
+User encapsulated within a SystemToken.
+A system user is a user that will log in for a runtime component such as alarmrules engine.
+User encapsulated within a UserToken.
+A UIUser is a user that will log in from the presentation layer.
+Unique id identifying this user or usergroup.
+This value is globally unique and in time will be retrieved from the database.
+At this point the default constructor will be removed.
+The hierarchy package contains all domain classes related to hierarchical structuring of data.
+A hierarchy can be used to overlay an arbitrary tree structure on object instances in the MSLite system.
+This package addresses the functional requirement about browsing the available data from the FSS in multiple hierarchical views (F3).
+A hierarchy root contains all metadata for a hierarchy.
+A hierarchy is to be referenced only through the root.
+All hierarchies are defined by the users.
+A hierarchy references the user who created the hierarchy.
+This is the only user allowed to edit the hierarchy.
+Hierarchy nodes define the tree structure through an association to other hierarchy nodes.
+This class represents all nodes in the tree.
+Leaves do not have any references to other child hierarchy nodes.
+Hierarchy nodes can be of two types namely structural node or object reference.
+A structural node is a node in the hierarchy that does not represent any object related to field systems.
+A structural node is used to define arbitrary groupings in the hierarchy, such as building, floor, or room.
+Structural nodes are composed by Hierarchy Nodes.
+An object reference inserts a reference to a field system object into a hierarchy.
+The referenced object instance represents a concrete field system or field system element that is managed by MSLite.
+This additional level of indirection permits, as an extension, to attach hierarchy-specific properties to the object reference.
+The objects package contains domain classes related to object templates and object instances.
+The design closely follows the ideas from the BACnet specification in that field systems and points are modeled as objects that have a fixed set of typed properties.
+See chapter 12 and appendix D of [ASHRAE 01] for a details and examples.
+Object templates define the names and types of properties of an object (i.e.
+metadata of object instances), whereas object instances contain the values of these properties at run-time.
+A template is similar to a class, whereas an instance is similar to an object in an object-oriented programming language,.
+The objects package provides a generic template-instance structure for reuse in concrete contexts, for example, to define field objects.
+There are some constraints, an object instance must contain exactly one property value for each property definition contained in the referenced object template.
+All property values must match the type in the referenced property definition.
+An object template defines a particular type of object.
+An object template is identified by a name and it contains the definition of object properties.
+This class represents a property that has a name and a type.
+A property may be read-only or read-write.
+Represents a property access enumerated type.
+Defines the set of values a property may assume.
+Subclasses can be added here to extend the domain model, e.g., with complex or collection types from BACnet.
+A simple type has values with no internal sub-structure accessible to a client.
+An object instance contains the run-time values for all the properties defined in an object template.
+Each instance has exactly one template.
+The reference to the template cannot change.
+Each object instance is uniquely identified by its name.
+An property instance contains the run-time value a property defined in an object template.
+Each instance references a property definition.
+This association can be used to obtain type information for the value.
+The base class of all property values.
+Each property value is contained in a property instance.
+Subclasses can be added here to extend the domain model with, e.g., complex and collection values from BACnet.
+This is the base class for all simple, unstructured property values.
+This package contains the simple, non-composite, property types and values.
+The constraints in types are meant as a hint to the presentation subsystem, in particular the list of allowed values in the string type.
+A simple type has values with no internal sub-structure accessible to a client.
+Scalar types are self contained in that they do not reference other objects.
+These types reference objects in the domain model.
+An arbitrary-length sequence of characters.
+The length and allowed values can be constrained in the type.
+If minLength > maxLength then there is no length constraint.
+The list of allowed values can be used to simulate enumerations.
+If the list is empty any value is allowed, if the list is not empty a length constraint is ignored.
+The range may be constrained in the type.
+If minValue > maxValue then there is no constraint.
+The range may be constrained in the type.
+If minValue > maxValue then there is no constraint.
+A property of this type can have date (and time) as its value.
+Blobs are arbitrary length sequences of bytes.
+The idea is that a blob can hold an arbitrary serialized object.
+A property of this type can have values true or false.
+It is not yet known if there will be an actual use for this.
+References to property values will be used to model commands that change values of properties.
+Field objects model field systems devices.
+Field object instances can be presented to users in hierarchies.
+Field object templates and corresponding instances are created in the domain model based on configuration information from field systems.
+For example, a HVAC system has many temperature sensors SS..., Sn of the same type T.
+In this case the domain model will contain one object template that describes T and n object instances, one for each sensor.
+The template may have a property definition for the current temperature of type integer, and each instance will have an integer value that contains the current temperature reading of this sensor.
+There are the following constraints: the template of a field object instance must be a field object template.
+A field object template defines a type of field object which can have multiple identical instances, for example, a type of temperature sensor.
+The template defines which property values each of its instances will provide at run-time.
+A field object instance models a physical field system device.
+For example, a temperature sensor in room 12 in a particular building.
+There may be many identical temperature sensors in a particular site.
+However, the sensor reading can be different for each of these sensors.
+Instances store these different readings as property values.
+This class provides an unique identifier to the alarm class.
+Every time a new object is instanced, a unique string ID is assigned to it.
+The class allows comparing equality of objects via this ID.
+Counter used to assign unique identifiers to each instance of the class.
+This is a container class representing an alarm in the MSLite System.
+Each alarm has an associated property value that triggers the creation of the alarm.
+An alarm contains an identifier, a name, the time when it was created, the status (new, acknowledged or dismissed), and the value of the property at the time the alarm was created.
+It also references the associated property instance that always contains the current value of the property.
+Once the alarm is acknowledged, it references the user who acknowledged the alarm.
+Set the state of the alarm to ack and sets the user who acknowledged it.
+One alarm can only be acknowledged when its state is set to new.
+Further acknowledgements don't make anything .
+Set the state of the alarm to dismissed.
+One alarm can only be acknowledged when its state is set to ack.
+Calls in other states don't do anything.
+The security package contains all domain classes related to user permissions.
+This package addresses the functional requirement about control access to data (F8).
+A user is authorized to access a data element if the user belongs to a user group that is authorized to access this data element.
+A user group is authorized to access an element if it has a permission for this element.
+If a user or group has both read-only and read-write access for a data element this is equivalent to having read and write access for this data element.
+A user has access to an IDataElement, which in this instance is a PropertyInstance, if the userAccess is set to DataPermissionType READ or DataPermissionType READWRITE.
+Interface defining permissions for functions and data.
+Interface defining data permissions.
+Interface used to define permissions for actions such as adduser, updateusergroiup, not yet implemented.
+Defines DataPermissions, ensures data permission type conformance.
+Interface implemented by data resources which have restricted user access for hierarchies, alarms and l&r, currently only implemented by propertyinstance.
+A data element represents the finest level of access control supported for authorization.
+Any element in the domain model that is subject to authorization must be a subclass of this class.
+Currently, only PropertyInstance by virtue of IPropertyInstance is a subclass of the IDataElement class.
+A user needs read permission to view the value of a property and write permission to edit it.
+Permission to objects are derived from the permission to its property values.
+Interface implements IDataElement and is implemented by PropertyInstance.
+Implements IPropertyInstance, IDataElement.
+AccessControlList is added as an attribute.
+Interface specifying the methods implemented by an accesscontrollist.
+The accessControlList class is a hash table storing SystemID (user and usergroup) and IDataPermission pairs.
+If a user or usergroup is not in the hashtable, the user or usergroup does not have access to the dataelement.
+Unique id identifying this user or usergroup.
+This value is globally unique and in time will be retrieved from the database.
+At this point the default constructor will be removed.
+A function permission represents the right to execute a function in MSLite.
+Such a function will typically be presented to a user in a menu or as a button.
+Not every user will have permission to execute all functions of the system.
+For example, creating a user will be limited to administrative users.
+Currently, there are no restrictions on which MSLite functions a user is allowed to use.
+This can be extended for future iterations.
+This will implement MSLite Interfaces ObjectModel Security IFunctionPermissions.
+Carries the Data Permission Types of READ, READWRITE, UNAUTHORIZED.
+Encapsulated by DataPermissions.
+Carries the Function Permission Types.
+The requirements for this are not well defined.
+Current class specifications may be changed.
+Should be encapsulated by a class called FunctionPermissions, implementing IFunctionPermission for use within an administrative interface.
+The ResultSet package is a package with the intention of ensuring Information Hiding and proper Encapsulation within a distributed computing environment.
+This package is used to make the AccessControl component return the same object no matter what function is called.
+This design methodology is used by database APIs to ensure that each result, no matter which data structures are returned by the database, is returned without necessitating user knowledge of all data structures, error possibilities, audit trails and meta data of all objects within data persistence.
+This package provides the following capabilities: Encapsulation of all information contained within the Database or Value Cache into one consistent object.
+Retrieval of meta data information including column names and column types.
+Enumerator interface to all information.
+Guarantee all columns within the AccessControlResultSet are of the same types as specified by the meta data.
+Guarantee that each object returned is not null.
+Retrieval of errors which occurred at the AccessControl.
+Because of this, Exceptions never need to be thrown over a dotNET remoting interface.
+Retrieval of Auditing information and audit trails including Add number, Remove Number, Update Number.
+Defines methods which the AccessControlResultSet must implement.
+Defines methods which the ILogonAccessControlResultSet must implement.
+Defines a data structure which is an enumerator, is enumerable, encapsulates exceptions thrown at the server, encapsulates an audit trail, provides a generic wrapper for any type of object or set of objects which are returned from the accesscontrol (regardless of which data store they are queried from), ensures all data within each row are a specified type, ensures each column has a name and provides valid meta data for the entire collection of objects.
+Performs all functions of AccessControlResultSet but also adds token access for logon and logoffs.
+This ResultSet is intended to return a list of user preferences to User Interface Users.
+Row of data within AccessControlResultSet.
+Must be filled to capacity in order to be added to the AccessControlResultSet.
+MetaData which includes column names and column types of all objects within an AccessControlResultSet.
+Column names within an AccessControlResultSet.
+Column types within an AccessControlResultSet.
+AccessControl ensures that each row added adheres to the column types specified in the types listing.
+Rule Objects Package.
+The whole deal here is based around the MSLiteRule class.
+There are two kinds of MSLite Rules; L&R and Alarm rules.
+These classes are all bundled together at the top and handle the creation, editing and deletion of the different types of rule.
+An rule consists of a number of items, one of the main ones being the expression.
+This can be simple or complex.
+A single statement expression is considered simple.
+A longer one consisting of multiple parts, AND/OR's and multiple nested parentheses.
+This is currently undergoing review at the moment.
+Specifies the contract for all rule based objects.
+Implements common functionality used by the LnR and Alarm rule classes which are derived from it.
+It provides container capability for Expression objects and its derivatives.
+It exhibits the IMSLiteRule interface.
+This is the Alarm Rule class, which manage MSLite Alarm rules.
+This manages the creation, modification and deletion of any MSLite Alarm rule.
+It is a specialisation of the MSLiteRule class.
+This is the LNR Rule class, which manage MSLite L&R rules.
+This manages the creation, modification and deletion of any MSLite L&R rule.
+It is a specialization of the MSLiteRule class.
+Associated with the AlarmRule class.
+It contains an object reference and a property on that object which is to be displayed in the event of an alarm condition.
+Associated with the LNRRule class.
+It consists of an object reference and a property on that object which is to receive a new value in the event of a successful logic rule evaluation.
+This class is the main class for managing Expressions.
+An expression can consist of a simple statement or it can be a complex parenthesized expression with many parts.
+Typically each of the parts will be connected by logical connector delimiters.
+This class provides basic behavior to chain expressions together by means of LogicalConnector objects.
+Concrete specializations of this class include: ParenExpression - A container for a sub-expression affording precedence in evaluating the sub-expression vis-a-vis the surrounding expression.
+BinaryExpression - An expression consisting of a relational comparison of two operands.
+UnaryExpression - An expression consisting of a single operand that is tested for true/false status.
+A connector allowing two expressions to be chained together by means of a logical conditional operator ( e.g. AND, OR, AND NOT, OR NOT).
+This class allows the system to handle complex expressions involving multiple simple expressions connected by logical delimiters and separated with parentheses.
+A concrete specialization of the abstract Expression class.
+It facilitates capture of expressions that are a comparison of two operands by means of a relational operation ( e.g. operand-a rel-op operand-b).
+A concrete specialization of the abstract Expression class.
+It facilitates capture of expressions that are logical tests on a single operand ( e.g. operand [IsTrue|IsFalse]).
+Abstract class acting as a placeholder for a value supplied to an expression.
+There are two concrete specializations: PropertyRef - A reference to an external field object and the property on that object which together supply the value.
+Literal - A constant value that is supplied to the expression.
+A concrete specialization of the Operand abstract class.
+It permits property on external field objects to participate within expression evaluations.
+This class manages literal values i.e.
+numbers, with are one of the two kinds of operand involved in a MSLiteRule Expression.
+Greater Than, Less Than, Greater Than or Equals, Less Than or Equals, Equals, Not Equals.
+The following is an illustration of the expression representation and how the various classes relate to each other for the expression D1 Closed True And (FD1 Trig True Or FD2 Trig True).
+All expressions are represented as a chain of specialist expression objects navigated from left to right.
+This confers an efficiency bias in favor of left to right rule evaluation.
+In this case, the expression is comprised of two component expressions; D1 Closed = true conjoined with a compound expression embedded in parenthesis.
+Both are connected by a LogicalConnector using AND associative logic.
+The first component is a BinaryExpression composed of two operands which participate in a relational comparison operation in this case equals (could also be not equals, greater than etc...).
+The second component is a ParentheticalExpression acting as a container for a sub-expression, guaranteeing atomic evaluation of that sub-expression w.r.t.
+the container's surroundings.
+The sub-expression referenced can be a single BinaryExpression, or a chain of BinaryExpression objects and/or compound expressions.
+In this instance it is a chain of two BinaryExpression objects separated by an OR LogicalConnector.
+Both BinaryExpression and ParentheticalExpression types are specializations of the abstract Expression class.
+The Expression class is responsible for providing the ability for chaining expressions together by means of LogicalConnector objects.
+Prepare a hierarchy display for a logged-on user.
+This method prepares the object browser that displays the hierarchies owned by this user.
+It reconstructs the exact UI state from user preferences.
+This method must be called once for each user at logon.
+Store the hierarchy display's UI state in the user's preferences.
+Prepare a hierarchy display for a logged-on user.
+This method creates a UI which displays the hierarchies owned by this user.
+It displays the hierarchies in the order which they were persisted to the db.
+Displays a UI which allows a user to create hierarchies of Field Objects.
+Prepare a property display for a newly logged-on user.
+This method prepares the workspace that displays the properties of a field object selected in the hierarchy browser.
+It reconstructs the exact UI state from user preferences.
+This method must be called once for each user at logon.
+Store the property display's UI state in the user's preferences.
+Display a field object's properties and property values.
+This method uses the field object's template and instance to create the appropriate visual components for each property.
+Prepare an alarm display for a newly logged-on user.
+This method prepares the UI area that displays the alarms accessible to this user.
+It reconstructs the exact UI state from user preferences.
+This method must be called once for each user at logon.
+Store the alarm display's UI state in the user's preferences.
+Displays the alarm received in the user's screen.
+There are 3 possible cases.
+Alarm not ack: The alarm is a newly generated one.
+A new line with its info should be shown, and a popup window should appear to request acknowledgement.
+Alarm ack: The alarm is acknowledged.
+Its status should be changed.
+The remaining popup windows should be closed.
+Alarm dismissed: The alarm is eliminated.
+Its line should be removed from the alarm viewer.
+Used by the Web Frontend to notify the component that the changes since the last refresh are already consulted.
+Used by the Web Frontend to request an acknowledge operation for an alarm.
+Used by the Web Frontend to request a dismiss operation for an alarm.
+Register one display to receive notifications.
+The AlarmManager retrieves all the existing alarms from the AccessControl, and returns a list of the valid alarms.
+It also saves the display to deliver it further alarms.
+Checks which displays have access rights to this alarm and call the DisplayAlarm method for every one of them.
+Dismiss an alarm and delete it from the database.
+Prepare an alarm rule display when the Alarm tab is selected.
+This method prepares the UI area that displays the alarm rules accessible to this user.
+This method must be called once when the user clicks the LnR tab for the first time.
+Prepare an LnR rule display when the LnR tab is selected.
+This method prepares the UI area that displays the LnR rules accessible to this user.
+This method must be called once when the user clicks the LnR tab for the first time.
+This interface is to manage the lifecycle of the runtime alarm objects.
+register an alarm handler that will be called back when new alarms are created.
+This method is called from Presentation::Alarm Display.
+This interface is used to handle the subscription of events and cache of alarm rules.
+Notification that an alarm rule has been created.
+Update event subscriptions and cache accordingly.
+Notification that an alarm rule has been edited.
+Update event subscriptions and cache accordingly.
+Notification that an alarm rule has been deleted.
+Unsubscribe from events that are no longer relevant and remove rule from cache.
+Evaluation of alarm rules or L&R rules based on a property and the supplied property value.
+This interface is used to handle the subscription of events and cache of L&R rules.
+Notification that an L&R rule has been created.
+Update event subscriptions and cache accordingly.
+Notification that an L&R rule has been edited.
+Update event subscriptions and cache accordingly.
+Notification that an L&R rule has been deleted.
+Unsubscribe from events that are no longer relevant and remove from cache.
+The event to publish.
+Currently the event can be either of type COV or NCOV.
+A COV events has as parameters the property ID and the new property value.
+An NCOV event has as parameters the token of the user trying to change the property value and the property ID.
+In case of a future extension to support alarms generated by the FSS there is a third event type ALARM with a propertyID (of the associated alarm property) and current property value as parameter.
+An object that implements the IEventHandler interface.
+It's handleEvent method is called if a subscribed event occurs.
+Subscribe an event handler to events for a list of properties.
+Unsubscribe an event handler from events for a list of properties.
+Unsubscribe an event handler from all events of a given type.
+A callback interface which event subscribers must implement to receive events.
+This interface is a callback interface that the FSS Adapters call to notify MSLite.
+Notification of a property value change from the FSS.
+Notification that the FSS did not change a property according to an issued command.
+A call to indicate to the Adapter Manager that an alarm event has been generated from an external system(e.g. FSS).
+A call issue an acknowledgement command to the FSS.
+An alarm call from the user to dismiss the alarm in the FSS.
+A call to initialize the Adapter Manager during startup.
+This interface handles the configuration of the FSS Adapters and FSSs.
+Retrieve the list of object templates from the initial structure of the FSS.
+Create and retrieve the list of object instances based on the initial structure of the FSS.
+To retrieve the set of initial property values from the FSS.
+Prepare a command to change the value of a property in the context of the user.
+acknowledge an alarm that originated in the FSS.
+Depending on the FSS this mthod may do nothing.
+Register a callback handler (the adapter manager) to receive COV notifications.
+Notification of a property value change from the FSS.
+Command processing may use this method to match commands and resulting value changes.
+Register a callback handler (the adapter manager) to receive COV notifications.
+Callback interface from the FSS code to receive COV events.
+Module Level1 Data.
+Note: The parameter "token" is always the user's authentication token.
+All methods that take a token as a parameter have an exception condition "invalid token" which indicates that the user is not logged on.
+Authenticate a user, assign an authentication token to the user, and store the user in a list of currently logged on users.
+The valid token is needed to access data.
+Remove the user from the list of logged on users and invalidate the authentication token.
+The token can no longer be used to access data.
+A call to initialize the Data Access module during startup.
+Create or update a user preference in the database.
+Get the names of all hierarchies of a user.
+Get a complete hierarchical view structure.
+Create or update a hierarchical view structure in the database.
+Get a list of all properties the user may access.
+Get a list of all field objects the user may access.
+Get the field object template for the field object with the given ID.
+Get the field object instance with the given ID.
+Get a list of alarms this user can acknowledge or dismiss.
+Get a specific alarm object.
+Create or update an alarm in the database.
+Delete an alarm from the database.
+Get all alarm rules from the database.
+Get a specific alarm rule.
+Get alarm rules that have the same condition as a given alarm rule.
+Create or update an alarm rule in the database.
+Delete an alarm rule from the database.
+Get all L&R rules from the database.
+Get a specific L&R rule.
+Get L&R rules that have the same condition with the L&R rule.
+Create or update an L&R rule in the database.
+Delete an L&R rule from the database.
+Get the user's permission for a specific property.
+A call to change the value of a property in a specific FSS.
+Forwards request to VirtualFSS AdapterManager.
+Clears all configuration in the Repository to avoid data redundancy.
+Create a field object template in memory.
+Create a field object instance in memory.
+Save the list of property values in memory.
+Configure the publish subscribe mechanism.
+A call to initialize the Value Cache during startup of MSLite.
+Save a property value in the cache.
+This method may change a value or create a new cache entry.
+Write an error entry in the logger with the default debug level (Informational).
+Write an error entry in the logger with the debug level passed in as a parameter.
+Write an audit entry in the logger with the default debug level.
+The audits include any events or service.
+Write an audit entry in the logger with the debug level passed in as a parameter.
+The audits include any.
+Sets the debug level for which the amount of information will be displayed in the log.
+The table below shows which interfaces are used by which modules.
+This is another view to help development teams to focus on specific interfaces that apply to their modules only.
+Behavioral view The behavioral specification specifies how the proposed architecture fulfills the functional requirements.
+UML 1.5 sequence diagrams have been used to document the behavior based on the module views from the Module view.
+The method calls shown in the diagrams are methods in the interfaces of the respective modules.
+Only method calls between modules are shown and not internal method calls.
+Where necessary, the internal processing inside a module is outlined in the accompanying description of the sequence diagram.
+Some sequence diagrams show interactions between FSS Adapter submodules and the FSS, but note that the details of these interactions are FSS specific.
+Arch/Behavioral Specification This section documents how the proposed architecture fulfills the functional requirements.
+UML 1.5 sequence diagrams have been used to document the behavior based on the module views from the Module view.
+The method calls shown in the diagrams are methods in the interfaces of the respective modules.
+Notes: Some sequence diagrams show interactions between FSS Adapter submodules and the FSS, but note that the details of these interactions are FSS specific.
+User interactions are indicated by pseudo method calls or textual description may indicate that the user has selected a field object on the UI and then clicked on a button to display this field object.
+Logon A user provides username and password as credentials.
+If the credentials are valid the Data Access module adds the user to a list of logged on users and assigns the user a unique token.
+This token is used during further operation to check permissions.
+The presentation module stores the token for the lifetime of a user's session.
+A user may be logged on in several sessions simultaneously.
+This behavior is necessary to handle the case where a user closes the browser without logging out of MSLite.
+When the session associated with the closed browser times out the presentation module logs the user out automatically.
+If a user logs on to MSLite the system performs the following initialization operations:, display all hierarchies of the user, restore the state of the object browser, restore the state of the work area, subscribe to events for currently displayed properties, show alarms currently in the system that the user can acknowledge.
+The Presentation module uses preference values to store all information needed to restore the user interface state.
+The Presentation module provides an individual event handler object for each user logged on to the system.
+To display the property values in the work area correctly the Property Display module must access the field object template and instance to get meta data that is used to create the user interface components for the field object properties.
+For example, if the property value is a string with a number of allowed values the user interface should display a component that allows the user to select one of the values.
+The allowed values are stored in the in the field object template.
+Logoff When a user logs off, the Presentation module stores hierarchy and property display state as necessary.
+The preference key-value pairs to store this information are to be defined in the Presentation submodules.
+In addition, Property Display unsubscribes the user's event handler from all events.
+Finally, Data Access removes the user form the list of logged on users, thus invalidating the token.
+Editing a Hierarchy Here we assume a simple case where a user selects a hierarchy for editing from the list of their hierarchies.
+Once the user selects a hierarchy the editor displays the current hierarchy and a list of all field objects the user has access to.
+There is no need to lock a hierarchy during editing because only one user - the hierarchy owner - has access to any given hierarchy.
+View Properties Displaying the properties and property values of a field object is initiated when the user selects a field object in a hierarchical view in the object browser.
+Property Display then updates event subscriptions for the user's session and reads property type data and current values from the repository.
+COV and NCOV subscriptions are for the same set of properties.
+Property type information is retrieved in the field object template data structure and current values are retrieved in the field object instance data structure.
+Property Display creates UI elements based on the property type information.
+The object template also contains access permissions for this user for each property in the field object.
+Issue Command This sequence starts with a user issuing a command to change a property value.
+There is no need to check if the user has write access to the property because the UI evaluates the user's access rights and enables editing only for those properties the user is actually allowed to change.
+The adapter manager forwards the command to the correct adapter.
+It does this by evaluating the property ID and maps the ID to the appropriate adapter.
+The Command Processing submodule in the adapter sends the command to the FSS using the simulator's protocol.
+After the value has changed the adapter manager creates an MSLite COV event from the COV notification and publishes that event.
+Depending on the FSS there are several options how the adapter can detect if a value change command is successful or not.
+The FSS responds with a change notification after the command has been executed successfully and does nothing if the command fails.
+This is the case shown in the previous diagram.
+It is the responsibility of Command Processing to match COV notifications and commands.
+The only way to detect failures is to implement a timeout mechanism that detects if there is no matching COV notification for a command.
+The FSS sends explicit failure notifications.
+This is shown in the sequence diagram below.
+In this scenario Command Processing must match the failure notification with the user token provided with the failed command.
+Depending on the FSS this matching process may be more or less complex.
+For example, if FSS commands carry a sequence number that is returned with the success or failure notification the matching is very simple.
+The Adapter Manager then creates the corresponding NCOV event.
+COV notifications are always send from COV Processing and NCOV notifications are always sent from Command processing.
+Alarm Rule The user initiates editing an alarm rule.
+The user requests to list all the alarms that he/she has access to.
+To retrieve the set of alarm rules, the user should have read access to all the properties in the rule and a write access to only the Associated Alarm Property.
+The Rule Editor is the module that handles all the functionality required to edit rules including alarm rules.
+The user when having a list of all alarms is now allowed to choose a specific rule for editing.
+The Rule Editor recognizes that the user wants to edit a rule and hence, retrieves all the properties based on the user's permissions.
+The user performs all the necessary editing to the rule and then saves it.
+The Rule Editor will perform two operations.
+Save the new alarm rule to the Repository.
+Notify the Alarm Rule Engine that a rule has been edited.
+After either of the operations, the user will get a confirmation that the rule has been edited.
+For the Alarm Rule Engine, the edited alarm rule triggers the system to subscribe or unsubscribe for specific COV events depending on the type of editing the user chose (creation, deletion, updating) and the properties involved in the rule.
+A list of all the rule objects in the system.
+Function to change the status (active/inactive) of rule.
+Function to delete the rule from the system.
+To duplicate an rule, allows the user to change alarm property.
+Function to initialize the display.
+An alarm rule object to store the created rule.
+Function to persist the alarm rule once validated by the system.
+To validate the syntax of rule.
+To check the datatypes of values entered by user, corresponding to the selected properties.
+To check whether the particular rule is not being edited in some other session.
+To display the appropriate conditional operators based on the property selected by the user.
+To retrieve and display all the field objects to which the user has access.
+Function to retrieve and display the properties based on the field object selected by user.
+Function to continuously monitor for addition or deletion of rules (*All function of this class to be implemented using Ajax).
+A list of all the rule objects in the system.
+Function to change the status(active/inactive) of rule.
+To duplicate an rule, allows the user to change reaction.
+Function to initialize the display.
+An LnR rule object to store the created rule.
+Function to persist the LnR rule once validated by the system.
+To validate the syntax of rule.
+To check the datatypes of values entered by user, corresponding to the selected properties.
+To check whether the particular rule is not being edited in some other session.
+To display the appropriate conditional operators based on the property selected by the user.
+To retrieve and display all the field objects to which the user has access.
+Function to retrieve and display the properties based on the field object selected by user.
+Function to continuously monitor for addition or deletion of rules (*All function of this class to be implemented using Ajax).
+The FSS notifies MSlite of a change of value on a property.
+The COV Processing is the first module in MSLite that receives notifications from the FSS.
+The COV Processing module performs translation of the FSS event to an MSLite notification.
+This translation of the notification data structure is based on the interface that is in the Adapter Manager.
+It then proceeds to notify the Adapter Manager that the FSS has notified MSLite of a value change in the property.
+The Adapter Manager collects the information and then proceeds to prepare it for publishing to the Publish-Subscribe module of MSLite.
+The Publish-Subscribe module upon receiving the event will notify the appropriate subscribers of the event.
+For this sequence diagram, all 4 subscribers(Property Display, Value Cache, Alarm Rule Engine, and L&R Rule Engine) get notified concurrently.
+The Publish-Subscribe notifies the Alarm Rule Engine that a new COV event has been sent from the FSS to MSLite.
+The Alarm Rule Engine receives the COV event and inspects the message that identifies the property that had its value changed.
+The module will send all alarm rules with the property ID and the new value to Condition Evaluation to evaluate which rules need to be executed.
+Based on the number of properties that exist in a single rule, the Condition Evaluation will request a value for the properties from the Value Cache.
+After evaluating all the alarm rules, the Condition Evaluation will send back a set of rules that have to be executed in MSLite.
+Upon receiving the list of alarms to be executed, the Alarm Rule Engine then sends one rule at a time to the Alarm Processing.
+The Alarm Processing will then perform two operations in sequence.
+Generate alarm objects that will be persisted to the Repository.
+Notify the AlarmManager about these new alarm objects.
+The Alarm Rule Engine will continue to supply these rules to the Alarm Processing until there is no more alarms to be notified.
+The Alarm Manager notifies every Alarm Display with access rights the new generated alarm object.
+Alarm Display is responsible for displaying alarms to the user.
+The above behavior does not include the extensibility scenario whereby an FSS can generate alarms(E3).
+See the following diagram for this case.
+Based on FSS Alarms This behavior shows the actions taken by the MSLite system when the alarm is created from the FSS.
+The FSS notifies MSLite that an alarm has been generated internally and wishes to show the alarm to the users.
+The COV Processing is subscribed to receive this events from the FSS and hence gets notified of a new external alarm.
+It then translates the FSS alarm to an MSLite external alarm object.
+This is done to allow communication between other modules in MSLite.
+The COV Processing forwards this externalAlarmObject to the Adapter Manager in which it then forwards it to the Publish-Subscribe module after creating the appropriate alarm event.
+The Publish-Subscribe module notifies the Alarm Processing that a new alarm has been created in the FSS.
+It receives this alarm event and does two operations in sequence.
+Saves the alarm to the Repository.
+Notifies the Alarm Display that a new alarm has been created.
+The Alarm Display module proceeds to evaluate which users has access to the alarm by communicating with the Data Access module.
+This behavior is created to address the Extensibility Scenario - Extended FSS with Alarm and Function Commands (E3).
+Acknowledge Alarm The user acknowledges a specific alarm.
+The Alarm Display is responsible for taking in request from the user and thus sending an acknowledgement call to the AlarmManager with the user's valid token and the alarm object that is to be acknowledged.
+The AlarmManager does two operations in sequence.
+Acknowledges the call from the user and persists it to the Repository by modifying the alarm state to "acknowledged".
+Sends an acknowledgement command to the FSS if the alarm was originating from the FSS instead of MSLite.
+Internally, this is done by sending the command to the Adapter Manager which forwards it to the appropriate Command Processing module for preparation.
+It then proceeds to issue the alarm command to the FSS.
+This operation is only possible if the FSS handles alarms and hence, addresses the Extensibility Scenario(E3).
+Only after all acknowledgements are done(both in MSLite and in FSS), will the user get a confirmation message saying that the acknowledgement operation has completed successfully.
+The AlarmManager module also update the user interfaces of all other users to show the alarm as acknowledged.
+Dismiss Alarm The user dismisses a specific alarm.
+The Alarm Display is responsible for taking in request from the user and thus sending an dismiss call to the AlarmManager with the user's valid token and the alarm object that is to be removed.
+The AlarmManager does three operations in sequence.
+Checks whether the user has write access right to the alarm and the alarm is already acknowledged.
+Dismisses the call from the user and persists it to the Repository by removing the alarm from it.
+Sends an dismiss command to the FSS if the alarm was originating from the FSS instead of MSLite.
+Internally, this is done by sending the command to the Adapter Manager which forwards it to the appropriate Command Processing module for preparation.
+It then proceeds to issue the alarm command to the FSS.
+This operation is only possible if the FSS handles alarms and hence, addresses the Extensibility Scenario(E3).
+Only after the dismiss process is done(both in MSLite and in FSS), will the user get a confirmation message saying that the dismissing operation has completed successfully.
+The AlarmManager module also update the user interfaces of all other users to remove the alarm from the display.
+Configuration Synchronization During startup of MSLite, the system has to be synchronized with the FSSs in terms of the field objects and their respective property values.
+Before any synchronization occurs, MSLite will clear all configurations and hence will avoid any duplications or complexity in code to handle data redundancy.
+One requirement for MSLite is to know exactly where the Adapters in MSLite reside.
+For synchronization the steps are.
+Retrieve all object templates that reside in the FSS configuration file via the Configuration module.
+Persist these templates into the database.
+Retrieve all object instances based on the object templates via the Configuration Module.
+This includes all properties for the associated object instance.
+Retrieve property values from the FSS via the Configuration module.
+It then saves all properties and their values to the Value Cache module.
+This behavior is a prerequisite for running the system.
+MSLite Startup This diagram shows what happens when an administrator starts MSLite.
+We assume that the field system simulators, web server, and the database service are already running.
+We assume further that it is preferable to manually start the executables for the processes that make up MSLite to have more control over the system.
+The first step is to start up the MSLite server process.
+Which initializes the adapter manager and value cache.
+The adapter manager instantiates adapters for each FSS according to the system configuration.
+This also includes reading the FSS configuration into MSLite as shown in the previous section Configuration.
+Initialization of the value cache includes that the value cache subscribes to all COV events for all properties.
+Next the Alarm and L&R processes are started.
+Both processes retrieve the respective rules and subscribe to COV events for properties that occur in their respective rule sets.

@@ -1,0 +1,15 @@
+identify actors
+authenticate actors
+authorize actors
+limit access
+DMZ
+limit exposure
+encrypt data
+VPN
+virtual private network
+SSL
+secure sockets layer
+public key
+private key
+separate entities
+change default settings

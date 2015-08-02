@@ -1,0 +1,7 @@
+target
+.settings
+.classpath
+src/test/resources/lsa/2traceability
+src/test/resources/lsa/1corpus
+src/test/resources/ddd/2annotated/
+.DS_Store

@@ -1,0 +1,17 @@
+cohesion
+coupling
+externalizing the change
+broker
+proxy
+mvc
+model-view
+Model View Controller
+model view
+pipe and filter
+layers
+map reduce
+client server
+peer to peer
+p2p
+cloud
+extensibility

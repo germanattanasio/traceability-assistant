@@ -1,0 +1,22 @@
+cold spare
+warm spare
+hot spare
+software upgrade
+retry
+ignore faulty behavior
+degradation
+reconfiguration
+state resynchronization
+checksum
+checkpoint
+escalating restart
+nsf
+non-stop forwarding
+reconfiguration
+rollback
+issu
+preparation and repair
+reintroduction
+class patch
+function patch
+data replication		

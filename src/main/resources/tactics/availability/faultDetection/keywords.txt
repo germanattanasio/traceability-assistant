@@ -1,0 +1,16 @@
+timestamp
+heartbeat
+ping
+echo
+process monitor
+watchdog
+sanity checking
+condition monitoring
+checksum
+exception detection
+system exception
+parameter fence
+parameter typing
+congestion network
+round trip delay
+reachability

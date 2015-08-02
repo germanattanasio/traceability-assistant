@@ -1,0 +1,6 @@
+manage sampling rate
+limit event response
+prioritize events
+reduce computational overhead
+bound execution time
+increase efficiency

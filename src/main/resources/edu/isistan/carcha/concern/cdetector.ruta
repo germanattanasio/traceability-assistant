@@ -1,0 +1,251 @@
+PACKAGE edu.isistan.carcha.concern;
+
+TYPESYSTEM org.cleartk.ClearTKTypeSystem; 
+//tactic
+DECLARE Annotation DesignDecision(STRING kind,STRING typex);
+
+//--------------- AVAILABILITY ---------------
+DECLARE availability;
+WORDLIST availabilityKeywordList = 'tactics/availability/keywords.txt';
+WORDLIST availabilityLemmaList = 'tactics/availability/lemma.txt';
+WORDLIST availabilityStemList = 'tactics/availability/stem.txt'; 
+
+Document{-> MARKFAST(availability, availabilityKeywordList,true)};
+Token{INLIST(availabilityStemList, Token.stem) -> MARK(availability)};
+Token{INLIST(availabilityLemmaList, Token.lemma) -> MARK(availability)};
+
+Token.lemma == "client" % Token.lemma == "server" {->MARK(availability)};
+Token{AND(FEATURE("lemma","voting"),FEATURE("pos","NN")) -> MARK(availability)};
+
+Sentence{CONTAINS(availability) -> 
+            CREATE(DesignDecision, "kind" = "Availability", "typex" = "availability") };
+
+availability { -> UNMARK (availability)};
+
+DECLARE faultDetection;
+WORDLIST faultDetectionList = 'tactics/availability/faultDetection/keywords.txt';
+Document{-> MARKFAST(faultDetection, faultDetectionList,true)};
+Sentence{CONTAINS(faultDetection) ->  CREATE(DesignDecision, "kind" = "Availability", "typex" = "fault detection") };
+faultDetection { -> UNMARK (faultDetection)};
+
+DECLARE faultPrevention;
+WORDLIST faultPreventionList = 'tactics/availability/faultPrevention/keywords.txt';
+Document{-> MARKFAST(faultPrevention, faultPreventionList,true)};
+Sentence{CONTAINS(faultPrevention) -> 
+            CREATE(DesignDecision, "kind" = "Availability", "typex" = "fault prevention") };
+faultPrevention { -> UNMARK (faultPrevention)};
+
+DECLARE recoverFromFaults;
+WORDLIST recoverFromFaultsList = 'tactics/availability/recoverFromFaults/keywords.txt';
+Document{-> MARKFAST(recoverFromFaults, recoverFromFaultsList,true)};
+Sentence{CONTAINS(recoverFromFaults) -> 
+            CREATE(DesignDecision, "kind" = "Availability", "typex" = "recover from faults") };
+recoverFromFaults { -> UNMARK (recoverFromFaults)};
+
+//--------------- SECURITY ---------------
+
+WORDLIST securityKeywordList = 'tactics/security/keywords.txt';
+WORDLIST securityLemmaList = 'tactics/security/lemma.txt';
+WORDLIST securityStemList = 'tactics/security/stem.txt';
+DECLARE security;
+
+Document{-> MARKFAST(security, securityKeywordList,true)};
+Token{INLIST(securityStemList, Token.stem) -> MARK(security)};
+Token{INLIST(securityLemmaList, Token.lemma) -> MARK(security)};
+
+Token.lemma == "digital" % Token.lemma == "certificate" {->MARK(security)};
+Token.lemma == "authenticate" % Token.lemma == "user" {->MARK(security)};
+Token.lemma == "throw" % Token.lemma == "exception" {->MARK(security)};
+
+Sentence{CONTAINS(security) -> CREATE(DesignDecision, "kind" = "Security", "typex" = "security") };
+security { -> UNMARK (security)};
+
+DECLARE detectAttacks;
+WORDLIST detectAttacksList = 'tactics/security/detectAttacks/keywords.txt';
+Document{-> MARKFAST(detectAttacks, detectAttacksList,true)};
+Sentence{CONTAINS(detectAttacks) -> 
+            CREATE(DesignDecision, "kind" = "Security", "typex" = "detect attacks") };
+detectAttacks { -> UNMARK (detectAttacks)};
+
+DECLARE reactToAttacks;
+WORDLIST reactToAttacksList = 'tactics/security/reactToAttacks/keywords.txt';
+Document{-> MARKFAST(reactToAttacks, reactToAttacksList,true)};
+Sentence{CONTAINS(reactToAttacks) -> 
+            CREATE(DesignDecision, "kind" = "Security", "typex" = "react to attacks") };
+reactToAttacks { -> UNMARK (reactToAttacks)};
+
+DECLARE recoverFromAttacks;
+WORDLIST recoverFromAttacksList = 'tactics/security/recoverFromAttacks/keywords.txt';
+Document{-> MARKFAST(recoverFromAttacks, recoverFromAttacksList,true)};
+Sentence{CONTAINS(recoverFromAttacks) -> 
+            CREATE(DesignDecision, "kind" = "Security", "typex" = "recover from faults") };
+recoverFromAttacks { -> UNMARK (recoverFromAttacks)};
+
+DECLARE resistAttacks;
+WORDLIST resistAttacksList = 'tactics/security/resistAttacks/keywords.txt';
+Document{-> MARKFAST(resistAttacks, resistAttacksList,true)};
+Sentence{CONTAINS(resistAttacks) -> 
+            CREATE(DesignDecision, "kind" = "Security", "typex" = "resist attacks") };
+resistAttacks { -> UNMARK (resistAttacks)};
+
+//--------------- MODIFIABILITY ---------------  
+
+WORDLIST modifiabilityKeywordList = 'tactics/modifiability/keywords.txt';
+WORDLIST modifiabilityLemmaList = 'tactics/modifiability/lemma.txt';
+WORDLIST modifiabilityStemList = 'tactics/modifiability/stem.txt';
+DECLARE modifiability;
+
+Document{-> MARKFAST(modifiability, modifiabilityKeywordList,true)};
+Token{INLIST(modifiabilityStemList, Token.stem) -> MARK(modifiability)};
+Token{INLIST(modifiabilityLemmaList, Token.lemma) -> MARK(modifiability)};
+
+Token.lemma == "model" % Token.lemma == "view" % Token.lemma == "controller" {-> MARK(modifiability)};
+Token.lemma == "client" % Token.lemma == "server" {->MARK(modifiability)};
+Token.lemma == "publish" % Token.lemma == "subscribe" {->MARK(modifiability)};
+
+Sentence{CONTAINS(modifiability) -> CREATE(DesignDecision, "kind" = "Modifiability", "typex" = "modifiability") };
+modifiability { -> UNMARK (modifiability)};
+
+DECLARE deferBinding;
+WORDLIST deferBindingList = 'tactics/modifiability/deferBinding/keywords.txt';
+Document{-> MARKFAST(deferBinding, deferBindingList,true)};
+Sentence{CONTAINS(detectAttacks) -> 
+            CREATE(DesignDecision, "kind" = "Modifiability", "typex" = "defer binding") };
+deferBinding { -> UNMARK (deferBinding)};
+
+DECLARE increaseCohesion;
+WORDLIST increaseCohesionList = 'tactics/modifiability/increaseCohesion/keywords.txt';
+Document{-> MARKFAST(increaseCohesion, increaseCohesionList,true)};
+Sentence{CONTAINS(increaseCohesion) -> 
+            CREATE(DesignDecision, "kind" = "Modifiability", "typex" = "increaseCohesion") };
+increaseCohesion { -> UNMARK (increaseCohesion)};
+
+DECLARE reduceCoupling;
+WORDLIST reduceCouplingList = 'tactics/modifiability/reduceCoupling/keywords.txt';
+Document{-> MARKFAST(reduceCoupling, reduceCouplingList,true)};
+Sentence{CONTAINS(reduceCoupling) -> 
+            CREATE(DesignDecision, "kind" = "Modifiability", "typex" = "reduce coupling") };
+reduceCoupling { -> UNMARK (reduceCoupling)};
+
+DECLARE reduceSizeOfAModule;
+WORDLIST reduceSizeOfAModuleList = 'tactics/modifiability/reduceSizeOfAModule/keywords.txt';
+Document{-> MARKFAST(reduceSizeOfAModule, reduceSizeOfAModuleList,true)};
+Sentence{CONTAINS(reduceSizeOfAModule) -> 
+            CREATE(DesignDecision, "kind" = "Modifiability", "typex" = "reduce size of a module") };
+reduceSizeOfAModule { -> UNMARK (reduceSizeOfAModule)};
+//--------------- PERFORMANCE ---------------
+
+WORDLIST performanceKeywordList = 'tactics/performance/keywords.txt';
+WORDLIST performanceLemmaList = 'tactics/performance/lemma.txt';
+WORDLIST performanceStemList = 'tactics/performance/stem.txt';
+DECLARE performance;
+
+Document{-> MARKFAST(performance, performanceKeywordList,true)};
+Token{INLIST(performanceStemList, Token.stem) -> MARK(performance)};
+Token{INLIST(performanceLemmaList, Token.lemma) -> MARK(performance)};
+
+Sentence{CONTAINS(performance) -> CREATE(DesignDecision, "kind" = "Performance", "typex" = "performance") };
+
+performance { ->UNMARK(performance)};
+
+DECLARE controlResourceDemand;
+WORDLIST controlResourceDemandList = 'tactics/performance/controlResourceDemand/keywords.txt';
+Document{-> MARKFAST(controlResourceDemand, controlResourceDemandList,true)};
+Sentence{CONTAINS(controlResourceDemand) -> 
+            CREATE(DesignDecision, "kind" = "Performance", "typex" = "control resource demand") };
+controlResourceDemand { -> UNMARK (controlResourceDemand)};
+
+DECLARE manageResources;
+WORDLIST manageResourcesList = 'tactics/performance/manageResources/keywords.txt';
+Document{-> MARKFAST(manageResources, manageResourcesList,true)};
+Sentence{CONTAINS(reduceSizeOfAModule) -> 
+            CREATE(DesignDecision, "kind" = "Performance", "typex" = "manage resources") };
+manageResources { -> UNMARK (manageResources)};
+//--------------- INTEROPERABILITY ---------------
+
+WORDLIST interoperabilityKeywordList = 'tactics/interoperability/keywords.txt';
+WORDLIST interoperabilityLemmaList = 'tactics/interoperability/lemma.txt';
+WORDLIST interoperabilityStemList = 'tactics/interoperability/stem.txt';
+DECLARE interoperability;
+
+Document{-> MARKFAST(interoperability, interoperabilityKeywordList,true)};
+Token{INLIST(interoperabilityStemList, Token.stem) -> MARK(interoperability)};
+Token{INLIST(interoperabilityLemmaList, Token.lemma) -> MARK(interoperability)};
+Sentence{CONTAINS(interoperability) -> CREATE(DesignDecision, "kind" = "Interoperability", "typex" = "interoperability") };
+
+interoperability { ->UNMARK(interoperability)};
+
+DECLARE locate;
+WORDLIST locateList = 'tactics/interoperability/locate/keywords.txt';
+Document{-> MARKFAST(locate, locateList,true)};
+Sentence{CONTAINS(locate) -> 
+            CREATE(DesignDecision, "kind" = "Interoperability", "typex" = "locate") };
+locate { -> UNMARK (locate)};
+
+DECLARE manageInterfaces;
+WORDLIST manageInterfacesList = 'tactics/interoperability/manageInterfaces/keywords.txt';
+Document{-> MARKFAST(manageInterfaces, manageInterfacesList,true)};
+Sentence{CONTAINS(manageInterfaces) -> 
+            CREATE(DesignDecision, "kind" = "Interoperability", "typex" = "manage intefaces") };
+manageInterfaces { -> UNMARK (manageInterfaces)};
+
+
+//--------------- TESTABILITY ---------------
+
+WORDLIST testabilityKeywordList = 'tactics/testability/keywords.txt';
+WORDLIST testabilityLemmaList = 'tactics/testability/lemma.txt';
+WORDLIST testabilityStemList = 'tactics/testability/stem.txt';
+DECLARE testability;
+
+Document{-> MARKFAST(testability, testabilityKeywordList,true)};
+Token{INLIST(testabilityStemList, Token.stem) -> MARK(testability)};
+Token{INLIST(testabilityLemmaList, Token.lemma) -> MARK(testability)};
+
+Sentence{CONTAINS(testability) -> CREATE(DesignDecision, "kind" = "Testability", "typex" = "testability") };
+
+testability { ->UNMARK(testability)};
+
+DECLARE controlAndObserveSystemState;
+WORDLIST controlAndObserveSystemStateList = 'tactics/testability/controlAndObserveSystemState/keywords.txt';
+Document{-> MARKFAST(controlAndObserveSystemState, controlAndObserveSystemStateList,true)};
+Sentence{CONTAINS(controlAndObserveSystemState) -> 
+            CREATE(DesignDecision, "kind" = "Testability", "typex" = "control and observe system state") };
+controlAndObserveSystemState { -> UNMARK (controlAndObserveSystemState)};
+
+DECLARE limitComplexity;
+WORDLIST limitComplexityList = 'tactics/testability/limitComplexity/keywords.txt';
+Document{-> MARKFAST(limitComplexity, limitComplexityList,true)};
+Sentence{CONTAINS(limitComplexity) -> 
+            CREATE(DesignDecision, "kind" = "Testability", "typex" = "limit complexity") };
+limitComplexity { -> UNMARK (limitComplexity)};
+
+
+//--------------- USABILITY ---------------
+
+WORDLIST usabilityKeywordList = 'tactics/usability/keywords.txt';
+WORDLIST usabilityLemmaList = 'tactics/usability/lemma.txt';
+WORDLIST usabilityStemList = 'tactics/usability/stem.txt';
+DECLARE usability;
+
+Document{-> MARKFAST(usability, usabilityKeywordList,true)};
+Token{INLIST(usabilityStemList, Token.stem) -> MARK(usability)};
+Token{INLIST(usabilityLemmaList, Token.lemma) -> MARK(usability)};
+
+Sentence{CONTAINS(usability) -> CREATE(DesignDecision, "kind" = "Usability", "typex" = "usability") };
+
+usability { ->UNMARK(usability)};
+
+DECLARE supportSystemInitiative;
+WORDLIST supportSystemInitiativeList = 'tactics/usability/supportSystemInitiative/keywords.txt';
+Document{-> MARKFAST(supportSystemInitiative, supportSystemInitiativeList,true)};
+Sentence{CONTAINS(supportSystemInitiative) -> 
+            CREATE(DesignDecision, "kind" = "Usability", "typex" = "support system initiative") };
+supportSystemInitiative { -> UNMARK (supportSystemInitiative)};
+
+DECLARE supportUserInitiative;
+WORDLIST supportUserInitiativeList = 'tactics/usability/supportUserInitiative/keywords.txt';
+Document{-> MARKFAST(supportUserInitiative, supportUserInitiativeList,true)};
+Sentence{CONTAINS(supportUserInitiative) -> 
+            CREATE(DesignDecision, "kind" = "Usability", "typex" = "support user initiative") };
+supportUserInitiative { -> UNMARK (supportUserInitiative)};
+

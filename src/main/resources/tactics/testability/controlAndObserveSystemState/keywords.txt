@@ -1,0 +1,6 @@
+specialize interface
+record/playback
+localize state storage
+bstract data sources
+sandbox
+executable assertions

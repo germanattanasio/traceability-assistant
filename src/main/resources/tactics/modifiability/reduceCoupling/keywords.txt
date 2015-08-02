@@ -1,0 +1,11 @@
+encapsulate
+API
+application programming interface
+intermediary
+wrapper	
+restrict dependencies
+refactor
+abstract common services
+bean
+beans
+ejb

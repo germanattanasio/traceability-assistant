@@ -1,0 +1,1425 @@
+{
+  "concerns": [
+    {
+      "label": "The Java Pet Store sample application application resembles a business-to-consumer ecommerce website and the enterprise information systems (EISs) behind it.",
+      "classification": "typeless",
+      "id": -1870973797
+    },
+    {
+      "label": "The Java Pet Store has a decoupled enterprise architecture that can interoperate with existing data sources and business partners’ systems, all built on top of the J2EE platform.",
+      "classification": "typeless",
+      "id": 2131471522
+    },
+    {
+      "label": "This application comprises four separate sub-applications that cooperate to fulfill the enterprise’s business needs, each of which is a J2EE application",
+      "classification": "typeless",
+      "id": -582800063
+    },
+    {
+      "label": "A user browses a the catalog in the Pet Store Website using the browser.",
+      "classification": "typeless",
+      "id": -876325204
+    },
+    {
+      "label": "User requests to see the pet store website catalog.",
+      "classification": "typeless",
+      "id": 1485586594
+    },
+    {
+      "label": "System uses synchronous communication to retrieve the catalog since its a fast operation.",
+      "classification": "typeless",
+      "id": 29294019
+    },
+    {
+      "label": "System sends the pet store catalog to the user.",
+      "classification": "typeless",
+      "id": -1712015111
+    },
+    {
+      "label": "User selects the \"Login\" button on the web page.",
+      "classification": "typeless",
+      "id": 1355813421
+    },
+    {
+      "label": "System displays the \"Login\" screen.",
+      "classification": "typeless",
+      "id": -440849186
+    },
+    {
+      "label": "User enters username and password.",
+      "classification": "typeless",
+      "id": -322512354
+    },
+    {
+      "label": "System verifies username and password and assign a session to the user.",
+      "classification": "typeless",
+      "id": -119854780
+    },
+    {
+      "label": "User select edit \"user account information\".",
+      "classification": "typeless",
+      "id": -1065215623
+    },
+    {
+      "label": "System displays the \"User account information\" screen.",
+      "classification": "typeless",
+      "id": 1427382137
+    },
+    {
+      "label": "User enters user account information.",
+      "classification": "typeless",
+      "id": -1418221208
+    },
+    {
+      "label": "System persists the ser account information in the database.",
+      "classification": "typeless",
+      "id": 613224989
+    },
+    {
+      "label": "User select the purchase orders screen.",
+      "classification": "typeless",
+      "id": -1856621866
+    },
+    {
+      "label": "System sends an asynchronous message to the order processing center to retrieve the purchase orders.",
+      "classification": "typeless",
+      "id": -372872186
+    },
+    {
+      "label": "System displays the puchase orders to the user.",
+      "classification": "typeless",
+      "id": -1290077356
+    },
+    {
+      "label": "Receive Customer Order Status.",
+      "classification": "typeless",
+      "id": 1384078099
+    },
+    {
+      "label": "This use case starts when the User wishes to add, change, and/or delete purchase order information from the system.",
+      "classification": "typeless",
+      "id": -1263715656
+    },
+    {
+      "label": "User enters order id number.",
+      "classification": "typeless",
+      "id": -495224304
+    },
+    {
+      "label": "System retrieves the order from the database.",
+      "classification": "typeless",
+      "id": 2055087895
+    },
+    {
+      "label": "System checks order status by communicating with the  Order Processsing Center (OPC).",
+      "classification": "typeless",
+      "id": -422455796
+    },
+    {
+      "label": "System shows order information to user.",
+      "classification": "typeless",
+      "id": 5472557
+    },
+    {
+      "label": "Place Order.",
+      "classification": "typeless",
+      "id": 1674692199
+    },
+    {
+      "label": "This Use Case describes the process by which orders are entered into the order processing system.",
+      "classification": "typeless",
+      "id": -955742832
+    },
+    {
+      "label": "Orders are palced via asynchronous communication with the order processing center.",
+      "classification": "typeless",
+      "id": 69255863
+    },
+    {
+      "label": "The user will provide the account information, billing, address and contact information to receive the products.",
+      "classification": "typeless",
+      "id": -960273272
+    },
+    {
+      "label": "User selects the \"Shop\" button on the web page.",
+      "classification": "typeless",
+      "id": 1630440758
+    },
+    {
+      "label": "System displays the \"Shop\" screen.",
+      "classification": "typeless",
+      "id": -504094681
+    },
+    {
+      "label": "User sign-on as customer enters a query with articles he wants to buy.",
+      "classification": "typeless",
+      "id": 28358694
+    },
+    {
+      "label": "System uses an asynchronous communication to the database and retrieve the available products.",
+      "classification": "typeless",
+      "id": 2029171898
+    },
+    {
+      "label": "System displays the items to buy from the database.",
+      "classification": "typeless",
+      "id": -920383986
+    },
+    {
+      "label": "The user will enter product codes for products they wish to order.",
+      "classification": "typeless",
+      "id": -1472797016
+    },
+    {
+      "label": "System prompts the user for billing and contact information.",
+      "classification": "typeless",
+      "id": -444448679
+    },
+    {
+      "label": "System verifies user has credit to buy the product and reserve the product the user is trying to buy.",
+      "classification": "typeless",
+      "id": 1739632186
+    },
+    {
+      "label": "User enters billing and contact information including contactinfo and address.",
+      "classification": "typeless",
+      "id": -597697552
+    },
+    {
+      "label": "System validates payment information with the module Credit Card Service.",
+      "classification": "typeless",
+      "id": 600337597
+    },
+    {
+      "label": "System prompts the user for order confirmation.",
+      "classification": "typeless",
+      "id": 1205310170
+    },
+    {
+      "label": "User confirms order information.",
+      "classification": "typeless",
+      "id": 1964563258
+    },
+    {
+      "label": "System sends a purchase meesage asynchronously to the order processing center.",
+      "classification": "typeless",
+      "id": -875011242
+    },
+    {
+      "label": "The asynchronous communication fail so the system start a transaction to retrieve the items to buy.",
+      "classification": "typeless",
+      "id": -774950335
+    },
+    {
+      "label": "The system verifies that the transaction finish after forward the response to the user.",
+      "classification": "typeless",
+      "id": 1323294020
+    },
+    {
+      "label": "Pack and Ship and Order.",
+      "classification": "typeless",
+      "id": 153678603
+    },
+    {
+      "label": "User selects the \"Orders to process\" button on the web page.",
+      "classification": "typeless",
+      "id": 251190193
+    },
+    {
+      "label": "System retrieves the orders to process from the database.",
+      "classification": "typeless",
+      "id": 1582176672
+    },
+    {
+      "label": "System displays the \"Orders to process\" screen.",
+      "classification": "typeless",
+      "id": -1398919582
+    },
+    {
+      "label": "User enters order id number to process.",
+      "classification": "typeless",
+      "id": -1032847938
+    },
+    {
+      "label": "System updates the order by creating a single transaction that modify the status in the database.",
+      "classification": "typeless",
+      "id": -1358135084
+    },
+    {
+      "label": "Process Credit Card Payment.",
+      "classification": "typeless",
+      "id": 1109536944
+    },
+    {
+      "label": "System receives a payment request.",
+      "classification": "typeless",
+      "id": -1046392219
+    },
+    {
+      "label": "System verifies the payment by communicating with the Credit Cart System.",
+      "classification": "typeless",
+      "id": 34729347
+    },
+    {
+      "label": "System Update payment status by creating a single transaction that modify the payment information in the database.",
+      "classification": "typeless",
+      "id": 1932085008
+    },
+    {
+      "label": "The Credit Cart System is not available.",
+      "classification": "typeless",
+      "id": 1855568621
+    },
+    {
+      "label": "System displays an error message that includes purchase order, user identifier and contact information.",
+      "classification": "typeless",
+      "id": -643543872
+    },
+    {
+      "label": "Login",
+      "classification": "typeless",
+      "id": 604535191
+    },
+    {
+      "label": "This Use Case describes the process by which users log into the order processing system (OPS).",
+      "classification": "typeless",
+      "id": -936172433
+    },
+    {
+      "label": "It also sets up access permissions for various categories of users.",
+      "classification": "typeless",
+      "id": 586165827
+    },
+    {
+      "label": "The User enter to the login screen.",
+      "classification": "typeless",
+      "id": -1834927149
+    },
+    {
+      "label": "The system will display the login screen.",
+      "classification": "typeless",
+      "id": 1840274752
+    },
+    {
+      "label": "The user enters a username and password.",
+      "classification": "typeless",
+      "id": -1446921460
+    },
+    {
+      "label": "The system will run the log-in process and verify the information such as username and password.",
+      "classification": "typeless",
+      "id": -217935791
+    },
+    {
+      "label": "The system will verify that the user is not sing-on in another session.",
+      "classification": "typeless",
+      "id": -514043776
+    },
+    {
+      "label": "The system will set access permissions.",
+      "classification": "typeless",
+      "id": 1962568874
+    },
+    {
+      "label": "The system will retrieve the user account information from the database.",
+      "classification": "typeless",
+      "id": 1663474417
+    },
+    {
+      "label": "The system will display an error message mentioning that the OPC is unavailable.",
+      "classification": "typeless",
+      "id": -1215356150
+    },
+    {
+      "label": "The user account information was not identified by the system.",
+      "classification": "typeless",
+      "id": -1397731511
+    },
+    {
+      "label": "The system will display an error to the user and allow him to retry the authentication 3 more times.",
+      "classification": "typeless",
+      "id": -1566866366
+    },
+    {
+      "label": "Sign up.",
+      "classification": "typeless",
+      "id": 905373310
+    },
+    {
+      "label": "This Use Case describes the process by which users create an account into the order processing system (OPS).",
+      "classification": "typeless",
+      "id": 267346505
+    },
+    {
+      "label": "The User enter to the create account screen.",
+      "classification": "typeless",
+      "id": -944730945
+    },
+    {
+      "label": "The system will display the login screen.",
+      "classification": "typeless",
+      "id": 1840274752
+    },
+    {
+      "label": "The user enters a username, password, first name, last name, address information, telephone, email, credit card information.",
+      "classification": "typeless",
+      "id": 690233282
+    },
+    {
+      "label": "The system will run the log-in process and verify the username is not already used.",
+      "classification": "typeless",
+      "id": -1131526652
+    },
+    {
+      "label": "The system will store the user account information into the database.",
+      "classification": "typeless",
+      "id": 1686511540
+    },
+    {
+      "label": "The system will display an error message mentioning that there is information missing.",
+      "classification": "typeless",
+      "id": 1141909881
+    },
+    {
+      "label": "The system will display an error message mentioning that the username is already taken.",
+      "classification": "typeless",
+      "id": -737267645
+    },
+    {
+      "label": "Add item to catalog.",
+      "classification": "typeless",
+      "id": -267002438
+    },
+    {
+      "label": "The administrator enters the update the catalog screen.",
+      "classification": "typeless",
+      "id": 2054842069
+    },
+    {
+      "label": "The administrator selects the \"add item\" button.",
+      "classification": "typeless",
+      "id": 1285740338
+    },
+    {
+      "label": "The administrator enter the values for the new item.",
+      "classification": "typeless",
+      "id": -1339144450
+    },
+    {
+      "label": "The system will store the item information into the database.",
+      "classification": "typeless",
+      "id": -1496868327
+    },
+    {
+      "label": "Add item to shopping cart",
+      "classification": "typeless",
+      "id": -93036721
+    },
+    {
+      "label": "The user select \"add to cart\" button in item.",
+      "classification": "typeless",
+      "id": -204404996
+    },
+    {
+      "label": "The system will update the user's shopping cart.",
+      "classification": "typeless",
+      "id": -987163277
+    },
+    {
+      "label": "The system will save the updated shopping cart in the database",
+      "classification": "typeless",
+      "id": 1672614976
+    },
+    {
+      "label": "Remove item from catalog",
+      "classification": "typeless",
+      "id": -1710475422
+    },
+    {
+      "label": "The administrator enters the update the catalog screen.",
+      "classification": "typeless",
+      "id": 2054842069
+    },
+    {
+      "label": "The administrator selects the item to remove.",
+      "classification": "typeless",
+      "id": -1829239610
+    },
+    {
+      "label": "The system will remove the item from the database.",
+      "classification": "typeless",
+      "id": 1812882730
+    },
+    {
+      "label": "Log CRUD Operations",
+      "classification": "typeless",
+      "id": 1038098304
+    },
+    {
+      "label": "Logging is important for monitoring performance and stability of the system as well as for ensuring appropriate attribution is given to contributors of content. ",
+      "classification": "typeless",
+      "id": 1996180217
+    },
+    {
+      "label": "This use case describes the action of logging a user request for content.",
+      "classification": "typeless",
+      "id": -1286471931
+    },
+    {
+      "label": "The user realizes any operation that require access to the database.",
+      "classification": "typeless",
+      "id": 1410564415
+    },
+    {
+      "label": "The system will save a log of the operation realized by the user.",
+      "classification": "typeless",
+      "id": -472977844
+    },
+    {
+      "label": "The user realizes any operation that require access to the database.",
+      "classification": "typeless",
+      "id": 1410564415
+    },
+    {
+      "label": "The system will save a log of the operation realized by the user.",
+      "classification": "typeless",
+      "id": -472977844
+    },
+    {
+      "label": "User has authenticated, and is authorized for requested operation.",
+      "classification": "typeless",
+      "id": -2077659938
+    },
+    {
+      "label": "Problem Statement",
+      "classification": "typeless",
+      "id": -959549636
+    },
+    {
+      "label": "The Java Pet Store sample application is a working application.",
+      "classification": "typeless",
+      "id": 1661035289
+    },
+    {
+      "label": "This Wiki is an overview of how an a-priori architectural documentation would have looked like.",
+      "classification": "typeless",
+      "id": -1954477880
+    },
+    {
+      "label": "This Wiki concentrates on the architecture of the petstore.",
+      "classification": "typeless",
+      "id": 1141509960
+    },
+    {
+      "label": "Future additions will offer more in-depth explanation of the other sub-applications.",
+      "classification": "typeless",
+      "id": -2132466095
+    }
+  ],
+  "designDecisions": [
+    {
+      "label": "The application can be divided into modules based on functionality, such separation reduces the dependency between modules and allows them to be developed independently.",
+      "classification": "tactic",
+      "id": 932306757
+    },
+    {
+      "label": "In addition, identifying interfaces between modules enables modules to be developed by third-party component providers.",
+      "classification": "tactic",
+      "id": 144813882
+    },
+    {
+      "label": "In this view, the application is divided into these modules.",
+      "classification": "tactic",
+      "id": -758179999
+    },
+    {
+      "label": "A control module to create and maintain user account information, which includes a user identifier, billing, and contact information.",
+      "classification": "tactic",
+      "id": 1771076527
+    },
+    {
+      "label": "The control module also creates and manages the user's shopping cart and controls the interactions with the user.",
+      "classification": "tactic",
+      "id": -1522467463
+    },
+    {
+      "label": "A sign-on module to handle the user log-in process and security, such as verifying a user identifier and password.",
+      "classification": "tactic",
+      "id": 1461054421
+    },
+    {
+      "label": "A sign-on module to handle the user log-in process and security, such as verifying a user identifier and password.",
+      "classification": "tactic",
+      "id": 1461054421
+    },
+    {
+      "label": "A product catalog module that returns product information from the catalog based on a user's search criteria.",
+      "classification": "tactic",
+      "id": 1434395364
+    },
+    {
+      "label": "A customer module that manages a user's purchasing process and maintains account records for a customer.",
+      "classification": "tactic",
+      "id": 27681038
+    },
+    {
+      "label": "A messaging module that enables the application to send and receive asynchronous messages containing purchase orders.",
+      "classification": "tactic",
+      "id": -1591711167
+    },
+    {
+      "label": "A messaging module that enables the application to send and receive asynchronous messages containing purchase orders.",
+      "classification": "tactic",
+      "id": -1591711167
+    },
+    {
+      "label": "Architectural Approaches to the Petstore use of an MVC framework, functional separation makes applications more reliable and easier to maintain and extend.",
+      "classification": "tactic",
+      "id": 644422020
+    },
+    {
+      "label": "Application components developed for a MVC framework are often more reusable, as well.",
+      "classification": "tactic",
+      "id": 90998947
+    },
+    {
+      "label": "The application will use enterprise beans to have scalability, reliability, a component-based development model, and common horizontal services such as persistence, asynchronous communication,and declarative transaction and security control.",
+      "classification": "tactic",
+      "id": 51555576
+    },
+    {
+      "label": "The application will use enterprise beans to have scalability, reliability, a component-based development model, and common horizontal services such as persistence, asynchronous communication,and declarative transaction and security control.",
+      "classification": "tactic",
+      "id": 51555576
+    },
+    {
+      "label": "The application will use enterprise beans to have scalability, reliability, a component-based development model, and common horizontal services such as persistence, asynchronous communication,and declarative transaction and security control.",
+      "classification": "tactic",
+      "id": 51555576
+    },
+    {
+      "label": "The application will use enterprise beans to have scalability, reliability, a component-based development model, and common horizontal services such as persistence, asynchronous communication,and declarative transaction and security control.",
+      "classification": "tactic",
+      "id": 51555576
+    },
+    {
+      "label": "Local bean logic.",
+      "classification": "tactic",
+      "id": -618453196
+    },
+    {
+      "label": "The Pet Store site uses enterprise beans that reside on the same machine, and JVM, as their clients.",
+      "classification": "tactic",
+      "id": 1072887097
+    },
+    {
+      "label": "The Pet Store site uses enterprise beans that reside on the same machine, and JVM, as their clients.",
+      "classification": "tactic",
+      "id": 1072887097
+    },
+    {
+      "label": "When enterprise beans are distributed among several machines the communication between components is done through remote interfaces.",
+      "classification": "tactic",
+      "id": -1765994734
+    },
+    {
+      "label": "When enterprise beans are distributed among several machines the communication between components is done through remote interfaces.",
+      "classification": "tactic",
+      "id": -1765994734
+    },
+    {
+      "label": "This \"improve(s) scalability and availability, but the high cost of remote communication makes them appropriate mostly for granularity operations\".",
+      "classification": "tactic",
+      "id": 702697083
+    },
+    {
+      "label": "The Java Pet Store website uses both synchronous and asynchronous communication.",
+      "classification": "tactic",
+      "id": -239809638
+    },
+    {
+      "label": "The Java Pet Store website uses both synchronous and asynchronous communication.",
+      "classification": "tactic",
+      "id": -239809638
+    },
+    {
+      "label": "It \"accesses its catalog synchronously, because accessing a catalog is a fast operation.",
+      "classification": "tactic",
+      "id": 937574795
+    },
+    {
+      "label": "It transmits purchase orders asynchronously because orders may take a long while to complete, and the order processing center may not always be available.\"",
+      "classification": "tactic",
+      "id": 859411410
+    },
+    {
+      "label": "Browse catalog, will be addressed by several modules and views.",
+      "classification": "tactic",
+      "id": 1908340197
+    },
+    {
+      "label": "Data model view: The petstoredb view describes the elements that will be exposed.",
+      "classification": "tactic",
+      "id": -761143009
+    },
+    {
+      "label": "Runtime view: Browse catalog works just like any other HTTP request from the user.",
+      "classification": "tactic",
+      "id": -27890193
+    },
+    {
+      "label": "Module view: The catalog package (from the components package) directly addresses the Browse catalog use case.",
+      "classification": "tactic",
+      "id": 688212105
+    },
+    {
+      "label": "Runtime view: Manage account works just like any other HTTP request from the user.",
+      "classification": "tactic",
+      "id": -1269933410
+    },
+    {
+      "label": "Module view: The following packages from the components package address the Manage account use case: signon, cart, customer, contactInfo, and address.",
+      "classification": "tactic",
+      "id": 1843515659
+    },
+    {
+      "label": "Runtime view: Place orders works just like any other HTTP request from the user.",
+      "classification": "tactic",
+      "id": 971532298
+    },
+    {
+      "label": "Module view: The supplierpo and purchaseorder packages from the components package address the place orders use case.",
+      "classification": "tactic",
+      "id": -15197130
+    },
+    {
+      "label": "The WAF, Web Application Framework, provides the framework for a Model-View representation of the application.",
+      "classification": "tactic",
+      "id": 1776949219
+    },
+    {
+      "label": "The waf controller web package is the view, and the waf controller ejb package is the model, they interact in several ways:\ndirect invocation and indirect invocation.",
+      "classification": "tactic",
+      "id": 13865570
+    },
+    {
+      "label": "The waf controller web package is the view, and the waf controller ejb package is the model, they interact in several ways:\ndirect invocation and indirect invocation.",
+      "classification": "tactic",
+      "id": 13865570
+    },
+    {
+      "label": "This separation promotes flexibility and scalability as it reduces the cohesion between classes and it even allows classes from other packages to \"hear\" this events, without changing any code in the model.",
+      "classification": "tactic",
+      "id": 1267221788
+    },
+    {
+      "label": "Administration application: Corresponds to a Java rich client application that is launched via Java Web Start, it allows an administrator user to review and modify orders submitted by Pet Store clients.",
+      "classification": "tactic",
+      "id": -300714242
+    },
+    {
+      "label": "Order Processing Center: It consists of server-side components that asynchronously receive and process orders submitted byusers through \"app\" petstore.",
+      "classification": "tactic",
+      "id": -211374624
+    },
+    {
+      "label": "Web Application Framework (waf): Library that provides a facade to petstore to manipulate events, user actions and application controllers.",
+      "classification": "tactic",
+      "id": 1778752410
+    },
+    {
+      "label": "Web Application Framework (waf): Library that provides a facade to petstore to manipulate events, user actions and application controllers.",
+      "classification": "tactic",
+      "id": 1778752410
+    },
+    {
+      "label": "Address: Package that contains an entity bean and auxiliary classes that represent the address of the user.",
+      "classification": "tactic",
+      "id": -1087534951
+    },
+    {
+      "label": "asyncsender: Package that contains a session bean and auxiliary classes that handle the connection to the Order Processing Center component using asynchronous communication.",
+      "classification": "tactic",
+      "id": 1335237791
+    },
+    {
+      "label": "asyncsender: Package that contains a session bean and auxiliary classes that handle the connection to the Order Processing Center component using asynchronous communication.",
+      "classification": "tactic",
+      "id": 1335237791
+    },
+    {
+      "label": "cart: Package that contains a session bean and auxiliary classes that represent the shopping cart.",
+      "classification": "tactic",
+      "id": -714655741
+    },
+    {
+      "label": "catalog: Package that contains an entity bean and auxiliary classes that represent the product catalog.",
+      "classification": "tactic",
+      "id": -1000364627
+    },
+    {
+      "label": "contactinfo: Package that contains an entity bean and auxiliary classes that represent the contact information of the user.",
+      "classification": "tactic",
+      "id": -1891416613
+    },
+    {
+      "label": "creditcard: Package that contains an entity bean and auxiliary classes that represent credit card information.",
+      "classification": "tactic",
+      "id": 1805225651
+    },
+    {
+      "label": "customer: Package that contains three entity beans and auxiliary classes that represent information about a customer (includes contact information and credit card)\nEncondingfilter web: Package that contains a servlet filter responsible for setting the character encoding defined in the configuration for http requests.",
+      "classification": "tactic",
+      "id": -530248336
+    },
+    {
+      "label": "customer: Package that contains three entity beans and auxiliary classes that represent information about a customer (includes contact information and credit card)\nEncondingfilter web: Package that contains a servlet filter responsible for setting the character encoding defined in the configuration for http requests.",
+      "classification": "tactic",
+      "id": -530248336
+    },
+    {
+      "label": "lineitem: Package that contains an entity bean and auxiliary classes that represent information of one item of an order.",
+      "classification": "tactic",
+      "id": -533880818
+    },
+    {
+      "label": "mailer: Package that contains a message-driven bean and auxiliary classes used to send emails.",
+      "classification": "tactic",
+      "id": 308700620
+    },
+    {
+      "label": "processmanager: Package that contains a session bean, an entity bean and auxiliary classes that are responsible for managing the workflow process that takes place when a new purchase order is received.",
+      "classification": "tactic",
+      "id": -1713749961
+    },
+    {
+      "label": "purchaseorder: Package that contains an entity bean and auxiliary classes that represent information about a purchase order.",
+      "classification": "tactic",
+      "id": -1160570017
+    },
+    {
+      "label": "servicelocator: Package that contains classes that implement the Service Locator pattern, used to lookup resources such as EJB homes and JMS destinations.",
+      "classification": "tactic",
+      "id": 686247011
+    },
+    {
+      "label": "signon: Package that contains a session bean, an entity bean, a servlet, a servlet filter and auxiliary classes that are responsible for authentication of web users (sign-on).",
+      "classification": "tactic",
+      "id": -1862167664
+    },
+    {
+      "label": "supplierpo: Package that contains an entity bean and auxiliary classes that represent the information related to a processing order for the supplier.",
+      "classification": "tactic",
+      "id": 148510769
+    },
+    {
+      "label": "uidgen: Package that contains a session bean and an entity bean that are responsible for generation of unique identifiers for rows in database tables.",
+      "classification": "tactic",
+      "id": 155934196
+    },
+    {
+      "label": "util-tracer: Package with utility functionality to debug and trace.",
+      "classification": "tactic",
+      "id": -1486030878
+    },
+    {
+      "label": "address ejb: Entity bean that tracks two lines of street address, state, zip code, and country.",
+      "classification": "tactic",
+      "id": 1430345913
+    },
+    {
+      "label": "asyncsender ejb: Contains a stateless session bean that converts shopping cart contents and customer data into an XML message representing an order, and sends the message to the Order Processing Center.",
+      "classification": "tactic",
+      "id": -1031715131
+    },
+    {
+      "label": "cart ejb: Contains a stateful session bean that maintains the contents of an individual user’s virtual shopping cart.",
+      "classification": "tactic",
+      "id": -2075856409
+    },
+    {
+      "label": "cart item: Represents an individual line item of the shopping cart, used by the cart ejb session bean to find the subtotal in the cart and to create a list of items in the shopping cart.",
+      "classification": "tactic",
+      "id": 2037049463
+    },
+    {
+      "label": "client CatalogHelper: Makes calls to the local Catalog EJB or access the catalog directly over JDBC.",
+      "classification": "tactic",
+      "id": 1847286128
+    },
+    {
+      "label": "client CatalogHelper: Makes calls to the local Catalog EJB or access the catalog directly over JDBC.",
+      "classification": "tactic",
+      "id": 1847286128
+    },
+    {
+      "label": "CatalogDAO: Interface which will be implemented by database specific code, this class encapsulates all the SQL calls made by Catalog EJB.",
+      "classification": "tactic",
+      "id": -1732282949
+    },
+    {
+      "label": "CatalogDAO: Interface which will be implemented by database specific code, this class encapsulates all the SQL calls made by Catalog EJB.",
+      "classification": "tactic",
+      "id": -1732282949
+    },
+    {
+      "label": "CatalogDAOFactory: Factory for objects that implement CatalogDAO, Uses the deployment descriptor to know what class to create.",
+      "classification": "tactic",
+      "id": -229792284
+    },
+    {
+      "label": "GenericCatalogDAO: This class implements CatalogDAO for pointbase DB.",
+      "classification": "tactic",
+      "id": 1988388728
+    },
+    {
+      "label": "CatalogDAO class encapsulates all the SQL calls made by Catalog EJB.",
+      "classification": "tactic",
+      "id": -491307911
+    },
+    {
+      "label": "CatalogDAO class encapsulates all the SQL calls made by Catalog EJB.",
+      "classification": "tactic",
+      "id": -491307911
+    },
+    {
+      "label": "CatalogDAO layer maps the relational data stored in the database to the objects needed by Catalog EJB.",
+      "classification": "tactic",
+      "id": -720616538
+    },
+    {
+      "label": "CatalogDAO layer maps the relational data stored in the database to the objects needed by Catalog EJB.",
+      "classification": "tactic",
+      "id": -720616538
+    },
+    {
+      "label": "PointBaseCatalogDAO: This class implements CatalogDAO for pointbase DB, this class encapsulates all the SQL calls made by Catalog EJB.",
+      "classification": "tactic",
+      "id": -2091674585
+    },
+    {
+      "label": "PointBaseCatalogDAO: This class implements CatalogDAO for pointbase DB, this class encapsulates all the SQL calls made by Catalog EJB.",
+      "classification": "tactic",
+      "id": -2091674585
+    },
+    {
+      "label": "PointBaseCatalogDAO: layer maps the relational data stored in the database to the objects needed by Catalog EJB.",
+      "classification": "tactic",
+      "id": -375589427
+    },
+    {
+      "label": "PointBaseCatalogDAO: layer maps the relational data stored in the database to the objects needed by Catalog EJB.",
+      "classification": "tactic",
+      "id": -375589427
+    },
+    {
+      "label": "CatalogEJB: Session Bean implementation of CatalogDAO.",
+      "classification": "tactic",
+      "id": 1346340423
+    },
+    {
+      "label": "CatalogEJB: Session Bean implementation of CatalogDAO.",
+      "classification": "tactic",
+      "id": 1346340423
+    },
+    {
+      "label": "model Category: This class represents different categories of pets in the Java Pet Store demo, each category can have one or more products under it and each product in turn can have one or more inventory items under it.",
+      "classification": "tactic",
+      "id": -329278394
+    },
+    {
+      "label": "For example, the Java Pet Store Demo currently has five categories: birds, cats, dogs, fish, and reptiles.",
+      "classification": "tactic",
+      "id": 744334955
+    },
+    {
+      "label": "contactinfo ejb: Entity bean that tracks family and given name, telephone, email, and address, uses Container-managed persistence.",
+      "classification": "tactic",
+      "id": 686322966
+    },
+    {
+      "label": "creditcard ejb: Entity bean that tracks card number, card type, and expiration date.",
+      "classification": "tactic",
+      "id": -243651088
+    },
+    {
+      "label": "customer account ejb: Entity bean that tracks account status, credit card, and contact info, uses Container-managed persistence.",
+      "classification": "tactic",
+      "id": -1098792004
+    },
+    {
+      "label": "customer ejb: Entity bean that tracks customer ID (primary key), account, and profile, uses Container-managed persistence.",
+      "classification": "tactic",
+      "id": 566116952
+    },
+    {
+      "label": "customer profile ejb: Entity bean that tracks preferred language, category, list preference, and banner preference, uses Container-managed persistence.",
+      "classification": "tactic",
+      "id": -149785577
+    },
+    {
+      "label": "customer profile ejb: Class contains the same profile information that ProfileEJB, it is used by the actions and events classes.",
+      "classification": "tactic",
+      "id": -1354483492
+    },
+    {
+      "label": "lineitem ejb: Entity bean that tracks each line of products in a cart: category ID, product ID, item ID, quantity and unit price, uses Container-managed persistence\nmail ejb: Takes the messages that arrive in the mailer queue, transforms them to email objects and sends them.",
+      "classification": "tactic",
+      "id": -477389285
+    },
+    {
+      "label": "lineitem ejb: Entity bean that tracks each line of products in a cart: category ID, product ID, item ID, quantity and unit price, uses Container-managed persistence\nmail ejb: Takes the messages that arrive in the mailer queue, transforms them to email objects and sends them.",
+      "classification": "tactic",
+      "id": -477389285
+    },
+    {
+      "label": "mail ejb: Represents the message in an email (to, from, cc, bcc, subject, body), a helper class to create and send mail.",
+      "classification": "tactic",
+      "id": -1477140828
+    },
+    {
+      "label": "processmanager ejb\nHandles the workflow process to fullfil an order.",
+      "classification": "tactic",
+      "id": 837639760
+    },
+    {
+      "label": "purchaseorder ejb \"SessionBean\"PurchaseOrderEJB\nSession bean that keeps the information related a purchase order: localization, order ID, user ID, email ID;, order date, shipping info, billing info, total price, credit card and the corresponding line items.",
+      "classification": "tactic",
+      "id": -2098732354
+    },
+    {
+      "label": "Uses the singleton strategy and also the caching strategy.",
+      "classification": "tactic",
+      "id": -735741959
+    },
+    {
+      "label": "Has to implementations: one to be used by the EJB tier and another one intended to be used on the web tier.",
+      "classification": "tactic",
+      "id": 1002513947
+    },
+    {
+      "label": "signon ejb: Package that contains a session bean, an entity bean, a servlet, a servlet filter and auxiliary classes that are responsible for authentication of web users (sign-on).",
+      "classification": "tactic",
+      "id": 1488733683
+    },
+    {
+      "label": "supplier ejb: Entity bean that tracks supplier order information: Order Id, order date, shipping info, and corresponding line items.",
+      "classification": "tactic",
+      "id": -1632046789
+    },
+    {
+      "label": "uidgen ejb: Contains a stateless session bean that creates globally unique object identifiers.",
+      "classification": "tactic",
+      "id": -77533184
+    },
+    {
+      "label": "There is a one-to-one mapping from tables in the petstoredb to entity beans in the components group.",
+      "classification": "tactic",
+      "id": -1639534778
+    },
+    {
+      "label": "Furthermore the entity beans that do not map the petstoredb map to the (so far undocumented data views) opcdb and supplierdb.",
+      "classification": "tactic",
+      "id": 557624413
+    },
+    {
+      "label": "The lack of documentation is almost the rule in the source code, most of the descriptions have been gathered from Sun's architectural documentation and educated assumptions from the authors of this architecture document.",
+      "classification": "tactic",
+      "id": -1488029402
+    },
+    {
+      "label": "ProfileInfo: There is no information in the source code on why this is done but it is infered that is chosen to simplify interaction with other classes, in particular with the customer related classes in the petstore controller space (ejb CustomerEJBAction, web CustomerHTMLAction, events CustomerEvent).",
+      "classification": "tactic",
+      "id": 1682806295
+    },
+    {
+      "label": "ProfileInfo: There is no information in the source code on why this is done but it is infered that is chosen to simplify interaction with other classes, in particular with the customer related classes in the petstore controller space (ejb CustomerEJBAction, web CustomerHTMLAction, events CustomerEvent).",
+      "classification": "tactic",
+      "id": 1682806295
+    },
+    {
+      "label": "The Java Pet Store sample application application resembles a business-to-consumer ecommerce website and the enterprise information systems (EISs) behind it.",
+      "classification": "tactic",
+      "id": 341316566
+    },
+    {
+      "label": "The Java Pet Store has a decoupled enterprise architecture that can interoperate with existing data sources and business partners’ systems, all built on top of the J2EE platform.",
+      "classification": "tactic",
+      "id": 48794589
+    },
+    {
+      "label": "While petstoreadmin is a Web application, its user interface is a rich client that uses XML messaging, rather than an HTML Web browser order processing center (“OPC”).",
+      "classification": "tactic",
+      "id": 1860500879
+    },
+    {
+      "label": "A process-oriented application that manages order fulfillment by providing the following services to other enterprise participants: receives and processes XML documents, via JMS, containing orders from the petstore provides petstoreadmin application with order data using XML messaging over HTTP sends email to customers acknowledging orders using JavaMail.",
+      "classification": "tactic",
+      "id": -44661135
+    },
+    {
+      "label": "A process-oriented application that manages shipping products to customers by providing the following services: receives XML order documents from opc via JMS ships products to customers provides manual inventory management through a Web-based interface maintains inventory database.",
+      "classification": "tactic",
+      "id": -1184007409
+    },
+    {
+      "label": "Much of the data in application views is generated by custom tags, which in turn use data resources such as entity beans with CMP, JDBC connections, connectors, or JMS providers.",
+      "classification": "tactic",
+      "id": 973931742
+    },
+    {
+      "label": "Much of the data in application views is generated by custom tags, which in turn use data resources such as entity beans with CMP, JDBC connections, connectors, or JMS providers.",
+      "classification": "tactic",
+      "id": 973931742
+    },
+    {
+      "label": "To ensure isolation, all access to such data resources for a single composite view must occur under the scope of a transaction.",
+      "classification": "tactic",
+      "id": 722204216
+    },
+    {
+      "label": "There is no way to automatically start a transaction in response to executing a Web-tier method, as can be done with an enterprise bean method.",
+      "classification": "tactic",
+      "id": -475019420
+    },
+    {
+      "label": "There is no way to automatically start a transaction in response to executing a Web-tier method, as can be done with an enterprise bean method.",
+      "classification": "tactic",
+      "id": -475019420
+    },
+    {
+      "label": "Therefore, the pet store uses programmatic transaction control in the template service servlet TemplateServlet.",
+      "classification": "tactic",
+      "id": 1831125964
+    },
+    {
+      "label": "TemplateServlet begins a UserTransaction before it forwards a request to the template JSP page, and ends the transaction after the forward has completed.",
+      "classification": "tactic",
+      "id": 1945886785
+    },
+    {
+      "label": "EJBController: Interprets and executes events as EJB actions in the EJB tier, events and EJB actions make it easy to add new business logic while maintaining a clear design.",
+      "classification": "tactic",
+      "id": 1008723156
+    },
+    {
+      "label": "Front Controller: Receives and processes every HTTP request (except those intercepted by servlet filters), the Front Controller servlet coordinates all other control components to dispatch requests and to select and generate views.",
+      "classification": "tactic",
+      "id": 1236548342
+    },
+    {
+      "label": "Front Controller: Receives and processes every HTTP request (except those intercepted by servlet filters), the Front Controller servlet coordinates all other control components to dispatch requests and to select and generate views.",
+      "classification": "tactic",
+      "id": 1236548342
+    },
+    {
+      "label": "Servlet Filters: May be placed in front of the Front Controller servlet to add functionality that applies to all requests.",
+      "classification": "tactic",
+      "id": 554077438
+    },
+    {
+      "label": "CounterEJBTable: Represents a counter with a specific prefix; used only by UniqueIdGeneratorEJB to manage series of unique numbers, keeps the counter for each table, this follows the Counter EJB Pattern (see reference).",
+      "classification": "tactic",
+      "id": -1808829309
+    },
+    {
+      "label": "UserEJBTable: Contains log-in information: username and password.",
+      "classification": "tactic",
+      "id": -1598164664
+    },
+    {
+      "label": "Other Information\n\nDouble linked tables: In order to improve performance tables will have column that points back to the record that is using them.",
+      "classification": "tactic",
+      "id": 1973865414
+    },
+    {
+      "label": "Account EJB: Tracks account status, credit card, and contact info, entity bean, belongs to customer-ejb-jar.",
+      "classification": "tactic",
+      "id": 1322220462
+    },
+    {
+      "label": "Address EJB: Tracks two lines of street address, state, zip code, and countryEntity bean that keeps the information related to address from the customer.",
+      "classification": "tactic",
+      "id": 1077499355
+    },
+    {
+      "label": "Catalog EJB: Session Bean implementation of Catalog, belongs to catalog-ejb-jar.",
+      "classification": "tactic",
+      "id": 1274558833
+    },
+    {
+      "label": "Credit Card EJB: Tracks card number, card type, and expiration date.",
+      "classification": "tactic",
+      "id": 1233218800
+    },
+    {
+      "label": "ContactInfo EJB: Tracks family and given name, telephone, email, and address, entity bean, belongs to customer-ejb-jar.",
+      "classification": "tactic",
+      "id": 1468712060
+    },
+    {
+      "label": "Counter EJB: represents a counter with a specific prefix; used only by UniqueIdGeneratorEJB to manage series of unique numbers, session bean, belongs to uidgen-ejb-jar.",
+      "classification": "tactic",
+      "id": 246793802
+    },
+    {
+      "label": "CustomerInfo EJB: Tracks customer ID (primary key), account, and profile, entity bean, belongs to customer-ejb-jar.",
+      "classification": "tactic",
+      "id": -1005509704
+    },
+    {
+      "label": "Profile EJB: tracks preferred language, category, list preference, and banner preference, entity bean, belongs to customer-ejb-jar.",
+      "classification": "tactic",
+      "id": -533337391
+    },
+    {
+      "label": "ShoppingCartLocal EJB: This class represents the implementation of shopping cart as a session EJB, belongs to cart-ejb-jar.",
+      "classification": "tactic",
+      "id": 1998531805
+    },
+    {
+      "label": "ShoppingClientFacadeLocal EJB: Provides a façade to all of the ejbs related to a shopping client, it is part of petstore-ejb-jar.",
+      "classification": "tactic",
+      "id": -1741528550
+    },
+    {
+      "label": "ShoppingClientFacadeLocal EJB: Provides a façade to all of the ejbs related to a shopping client, it is part of petstore-ejb-jar.",
+      "classification": "tactic",
+      "id": -1741528550
+    },
+    {
+      "label": "ShoppingController EJB: Session Bean implementation for EJBController EJB.",
+      "classification": "tactic",
+      "id": -167304665
+    },
+    {
+      "label": "See the StateMachine for more details, belongs to petstore-ejb-jar.",
+      "classification": "tactic",
+      "id": 911465710
+    },
+    {
+      "label": "Signon: Checks if a user is allowed to sign on or to create new users,entity bean, belongs to signon-ejb-jar.",
+      "classification": "tactic",
+      "id": -927136768
+    },
+    {
+      "label": "User EJB: Represents a user who may sign on to the system; tracks a user name and password, session bean, belongs to signon-ejb-jar.",
+      "classification": "tactic",
+      "id": 1772047491
+    },
+    {
+      "label": "User EJB: Represents a user who may sign on to the system; tracks a user name and password, session bean, belongs to signon-ejb-jar.",
+      "classification": "tactic",
+      "id": 1772047491
+    },
+    {
+      "label": "The State Machine ties all EJB components together dynamically at runtime thus providing support for reusable components.",
+      "classification": "tactic",
+      "id": 1895038492
+    },
+    {
+      "label": "The mapping of the event names to handlers is mangaged by the JNDI key contained in Event:getEventName() which is looked up from an environment entry located in the EJB Deployment descriptor of the EJBClientController.",
+      "classification": "tactic",
+      "id": 1038639043
+    },
+    {
+      "label": "On the other hand, having them in one file promotes performance since then connection time between beans from different libraries will be saved.",
+      "classification": "tactic",
+      "id": 1672699618
+    }
+  ],
+  "links": [
+    {
+      "concern": -1870973797,
+      "designDecision": 1072887097,
+      "weight": 0.74
+    },
+    {
+      "concern": 2131471522,
+      "designDecision": 48794589,
+      "weight": 1
+    },
+    {
+      "concern": -876325204,
+      "designDecision": -239809638,
+      "weight": 0.75
+    },
+    {
+      "concern": 1485586594,
+      "designDecision": -239809638,
+      "weight": 0.75
+    },
+    {
+      "concern": 29294019,
+      "designDecision": 937574795,
+      "weight": 0.76
+    },
+    {
+      "concern": -322512354,
+      "designDecision": 1461054421,
+      "weight": 0.82
+    },
+    {
+      "concern": -322512354,
+      "designDecision": -1598164664,
+      "weight": 0.82
+    },
+    {
+      "concern": -119854780,
+      "designDecision": 1461054421,
+      "weight": 0.78
+    },
+    {
+      "concern": -119854780,
+      "designDecision": -1598164664,
+      "weight": 0.8
+    },
+    {
+      "concern": -1065215623,
+      "designDecision": 1771076527,
+      "weight": 0.92
+    },
+    {
+      "concern": 1427382137,
+      "designDecision": 1771076527,
+      "weight": 0.81
+    },
+    {
+      "concern": -1418221208,
+      "designDecision": 1771076527,
+      "weight": 0.9
+    },
+    {
+      "concern": -372872186,
+      "designDecision": 859411410,
+      "weight": 0.79
+    },
+    {
+      "concern": -495224304,
+      "designDecision": -2098732354,
+      "weight": 0.85
+    },
+    {
+      "concern": 69255863,
+      "designDecision": 859411410,
+      "weight": 0.78
+    },
+    {
+      "concern": 69255863,
+      "designDecision": -211374624,
+      "weight": 0.76
+    },
+    {
+      "concern": -960273272,
+      "designDecision": 1771076527,
+      "weight": 0.86
+    },
+    {
+      "concern": 28358694,
+      "designDecision": 1461054421,
+      "weight": 0.72
+    },
+    {
+      "concern": -444448679,
+      "designDecision": 1771076527,
+      "weight": 0.89
+    },
+    {
+      "concern": -597697552,
+      "designDecision": 1771076527,
+      "weight": 0.79
+    },
+    {
+      "concern": 1964563258,
+      "designDecision": 1771076527,
+      "weight": 0.73
+    },
+    {
+      "concern": -875011242,
+      "designDecision": 859411410,
+      "weight": 0.85
+    },
+    {
+      "concern": -875011242,
+      "designDecision": -211374624,
+      "weight": 0.76
+    },
+    {
+      "concern": -1032847938,
+      "designDecision": -1632046789,
+      "weight": 0.72
+    },
+    {
+      "concern": 1109536944,
+      "designDecision": 1233218800,
+      "weight": 0.8
+    },
+    {
+      "concern": -1446921460,
+      "designDecision": 1461054421,
+      "weight": 0.82
+    },
+    {
+      "concern": -1446921460,
+      "designDecision": -1598164664,
+      "weight": 0.82
+    },
+    {
+      "concern": -217935791,
+      "designDecision": 1461054421,
+      "weight": 0.74
+    },
+    {
+      "concern": -217935791,
+      "designDecision": -1598164664,
+      "weight": 0.83
+    },
+    {
+      "concern": -1397731511,
+      "designDecision": 1771076527,
+      "weight": 0.84
+    },
+    {
+      "concern": 905373310,
+      "designDecision": -927136768,
+      "weight": 0.78
+    },
+    {
+      "concern": -944730945,
+      "designDecision": 1771076527,
+      "weight": 0.83
+    },
+    {
+      "concern": 690233282,
+      "designDecision": -1598164664,
+      "weight": 0.73
+    },
+    {
+      "concern": -93036721,
+      "designDecision": -2075856409,
+      "weight": 0.75
+    },
+    {
+      "concern": -93036721,
+      "designDecision": 2037049463,
+      "weight": 0.84
+    },
+    {
+      "concern": -987163277,
+      "designDecision": -1522467463,
+      "weight": 0.74
+    },
+    {
+      "concern": -987163277,
+      "designDecision": -2075856409,
+      "weight": 0.72
+    },
+    {
+      "concern": 1661035289,
+      "designDecision": 1072887097,
+      "weight": 0.77
+    }
+  ],
+  "tracedConcernCount": 2,
+  "untracedConcernCount": 101
+}
