@@ -14,7 +14,7 @@ TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover
 
 1. Download the code:
 
-    git clone git@github.com:germanattanasio/traceability-assistant.git
+        git clone git@github.com:germanattanasio/traceability-assistant.git
 
 1. Install the [SVD](https://github.com/lucasmaystre/svdlibc) library. 
 2. Open a terminal and type `svd`. 
