@@ -1,3 +1,18 @@
+/**
+ * Copyright 2015 UNICEN. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package edu.isistan.carcha.lsa;
 
 import java.io.File;
@@ -27,6 +42,7 @@ public class LSARunnerTest {
 	/** The corpus folder. */
 	private final String CORPUS_DDD_FOLDER = "src/test/resources/ddd/2annotated/";
 
+	/** The corpus ccc folder. */
 	private final String CORPUS_CCC_FOLDER = "src/test/resources/lsa/1corpus/ccc/";
 	
 	/** The golden folder. */
@@ -38,6 +54,7 @@ public class LSARunnerTest {
 	/** The tra. */
 	private final String TRA = ".tra";
 
+	/** The gephi. */
 	@SuppressWarnings("unused")
 	private final String GEPHI = ".gexf";
 
@@ -50,12 +67,17 @@ public class LSARunnerTest {
 	/** The ccc. */
 	private final String CCC = ".ccc";
 
+	/** The dimensions. */
 	private final Integer []dimensions = {60}; //{ 30, 45, 60, 75};
+	
+	/** The test files. */
 	private String[] testFiles = {
 			//"adventure_builder", 
 			//"mslite",
 			"pet_store"
 			};
+	
+	/** The threshold. */
 	private final Double []threshold = { 0.20, 0.30, 0.40, 0.45, 0.50, 0.55, 0.60, 0.63, 0.66, 0.69, 0.71,0.73, 0.75, 0.77, 0.79, 0.81, 0.83, 0.85, 0.87, 0.89, 0.92 };
 	
 	/**

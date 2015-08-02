@@ -1,3 +1,18 @@
+/**
+ * Copyright 2015 UNICEN. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package edu.isistan.carcha.util;
 
 import java.io.File;
@@ -36,11 +51,13 @@ import edu.isistan.carcha.lsa.model.TraceabilityDocument;
 import edu.isistan.carcha.lsa.model.TraceabilityLink;
 
 /**
- * @author germanattanasio
+ * The Class Utils.
  *
+ * @author germanattanasio
  */
 public class Utils {
 	
+	/** The Constant CARCHA_TYPE_SYSTEM. */
 	private static final String CARCHA_TYPE_SYSTEM = "TypeSystem";
 
 	/** The Constant TMP. */
@@ -104,7 +121,10 @@ public class Utils {
 	/**
 	 * Extracts annotations from a DXMI file.
 	 *
+	 * @param <T> the generic type
 	 * @param dxmiFile the dxmi filename from where the annotation will be extracted
+	 * @param Annotation the annotation
+	 * @param typeLess the type less
 	 * @return the annotation list extracted from the dxmiFile
 	 */
 	public static <T extends Annotation> List<Entity> annotationAsList(String dxmiFile,Class<T> Annotation, boolean typeLess) {
@@ -158,8 +178,8 @@ public class Utils {
 	 * @param traceabilityFile the traceability file path
 	 * @return the traceability document
 	 * @throws ClassNotFoundException the class not found exception
-	 * @throws FileNotFoundException
-	 * @throws IOException
+	 * @throws FileNotFoundException the file not found exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public static TraceabilityDocument readTraceabilityFromFile(String traceabilityFile) 
 			throws ClassNotFoundException, FileNotFoundException, IOException {
@@ -170,7 +190,7 @@ public class Utils {
 	}
 
 	/**
-	 * Calculate true negatives
+	 * Calculate true negatives.
 	 *
 	 * @param golden the golden results
 	 * @param result the result
@@ -209,8 +229,10 @@ public class Utils {
 	/**
 	 * Extract the T annotation as a String list and remove duplicates.
 	 *
+	 * @param <T> the generic type
 	 * @param filename the filename
 	 * @param tsd the TypeSystems
+	 * @param type the type
 	 * @return the string list of coveredtext by the T annotations without duplicates
 	 * @throws UIMAException the uIMA exception
 	 * @throws IOException Signals that an I/O exception has occurred.
@@ -228,6 +250,12 @@ public class Utils {
 		 return ret;
 	}
 
+	/**
+	 * Write traceability to gephi.
+	 *
+	 * @param result the result
+	 * @param filename the filename
+	 */
 	public static void writeTraceabilityToGephi(TraceabilityDocument result, String filename) {
 		GephiTraceability gephi = new GephiTraceability(filename);
 		
@@ -243,6 +271,12 @@ public class Utils {
 		gephi.saveGraph();
 	}
 
+	/**
+	 * Write matrix.
+	 *
+	 * @param result the result
+	 * @param filename the filename
+	 */
 	public static void writeMatrix(TraceabilityDocument result, String filename) {
         try {
         	PrintStream writer = new PrintStream(new File(filename));
@@ -268,6 +302,12 @@ public class Utils {
 		}
     }
 	
+	/**
+	 * Write concerns.
+	 *
+	 * @param entities the entities
+	 * @param filename the filename
+	 */
 	public static void writeConcerns(List<Entity> entities, String filename) {
         try {
         	PrintStream writer = new PrintStream(new File(filename));

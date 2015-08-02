@@ -1,3 +1,18 @@
+/**
+ * Copyright 2015 UNICEN. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package edu.isistan.carcha;
 
 import java.io.IOException;
@@ -23,7 +38,9 @@ import edu.isistan.carcha.util.Utils;
 public class CarchaPipelineTest {
 	
 	/** The logger. */
-	private Log logger = LogFactory.getLog(CarchaPipelineTest.class);
+	private static final Log logger = LogFactory.getLog(CarchaPipelineTest.class);
+	
+	/** The tsd. */
 	// it Auto-detect our TypeSystem, COOl don't you think ?
 	private final TypeSystemDescription tsd = TypeSystemDescriptionFactory.createTypeSystemDescription("TypeSystem"); 
 
@@ -36,16 +53,19 @@ public class CarchaPipelineTest {
 	/** The annotated folder. */
 	private final String ANNOTATED_FOLDER = "src/test/resources/ddd/2annotated/";
 	
+	/** The sentence folder. */
 	private final String SENTENCE_FOLDER = "src/test/resources/ddd/4sentences/";
 
 	
+	/** The xmi. */
 	private final String XMI = ".xmi";
 	
 	
 	/**
-	 * Ejecuta una evaluacion entre los golden y los documentos que anota carcha
-	 * @throws IOException 
-	 * @throws UIMAException 
+	 * Ejecuta una evaluacion entre los golden y los documentos que anota carcha.
+	 *
+	 * @throws UIMAException the UIMA exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	@Test
 	public final void testExecuteUIMAAnnotator() throws UIMAException, IOException {
@@ -67,8 +87,9 @@ public class CarchaPipelineTest {
 	/**
 	 * Marca las sentencias en los documentos para la evaluacion del 
 	 * detector de decisiones de diseno sobre todo los doc. de arq.
-	 * @throws IOException 
-	 * @throws UIMAException 
+	 *
+	 * @throws UIMAException the UIMA exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	@Test
 	public final void testExecuteSentenceAnnotator() throws UIMAException, IOException {
@@ -83,13 +104,14 @@ public class CarchaPipelineTest {
 			pipeline.executeSentenceAnnotator(input,output);			
 		}
 	}
+	
 	/**
 	 * Test calculate metrics.
 	 *
 	 * @param output the result file from executing the annotator
 	 * @param golden the golden file annotated by experts
-	 * @throws IOException 
-	 * @throws UIMAException 
+	 * @throws UIMAException the UIMA exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private void testCalculateMetrics(String output, String golden) throws UIMAException, IOException {
 

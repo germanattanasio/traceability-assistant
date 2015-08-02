@@ -1,3 +1,18 @@
+/**
+ * Copyright 2015 UNICEN. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package edu.isistan.carcha.lsa;
 
 import it.uniroma1.dis.wsngroup.gexf4j.core.Edge;
@@ -27,7 +42,7 @@ import java.util.Set;
 import edu.isistan.carcha.lsa.model.Entity;
 
 /**
- * The Class GephiTraceability
+ * The Class GephiTraceability.
  */
 public class GephiTraceability {
     
@@ -40,13 +55,17 @@ public class GephiTraceability {
 	/** The node map. */
 	private Map<String,Node> nodeMap;
 	
+	/** The edges. */
 	private Set<String> edges;
 
 	
+	/** The filename. */
 	private String filename;
 	
 	/**
 	 * Instantiates a new gephi traceability.
+	 *
+	 * @param filename the filename
 	 */
 	public GephiTraceability(String filename) {
 		this.nodeMap = new HashMap<String,Node>();
@@ -56,6 +75,12 @@ public class GephiTraceability {
 	}
 
 
+	/**
+	 * Adds the node.
+	 *
+	 * @param concern the concern
+	 * @return the string
+	 */
 	public String addNode(Entity concern) {
 		//create a unique hash code based on node features
 		int hashCode = concern.hashCode();
@@ -77,6 +102,14 @@ public class GephiTraceability {
 	}
 
 	
+	/**
+	 * Adds the edge.
+	 *
+	 * @param fromId the from id
+	 * @param toId the to id
+	 * @param linkWeight the link weight
+	 * @return the string
+	 */
 	public String addEdge(int fromId, int toId, Double linkWeight) {
 		String edgeString = fromId+"-"+toId;
 		if (edges.contains(edgeString)) {
@@ -95,6 +128,9 @@ public class GephiTraceability {
 		return edge.getId();
 	}
 
+	/**
+	 * Inits the.
+	 */
 	private void init() {
 		gexf = new GexfImpl();
 		Calendar date = Calendar.getInstance();
@@ -120,6 +156,11 @@ public class GephiTraceability {
 		graph.getAttributeLists().add(edgeAttrList);
 	}
 
+	/**
+	 * Save graph.
+	 *
+	 * @return the string
+	 */
 	public String saveGraph() {
 		File f = new File(filename);
 		try {

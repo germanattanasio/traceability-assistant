@@ -1,3 +1,18 @@
+/**
+ * Copyright 2015 UNICEN. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package edu.isistan.carcha;
 
 import java.io.File;
@@ -42,16 +57,20 @@ public class CarchaPipeline {
   /** The Constant UIMA_RUTA_SCRIPT. */
   private static final String UIMA_RUTA_SCRIPT = "edu.isistan.carcha.concern.cdetectorEngine";
 
-  private Log logger = LogFactory.getLog(CarchaPipeline.class);
+  /** The Constant logger. */
+  private static final Log logger = LogFactory.getLog(CarchaPipeline.class);
 
+/** The stanford nlp. */
 private AnalysisEngineDescription stanfordNLP;
   
+  /**
+   * Instantiates a new carcha pipeline.
+   */
   public CarchaPipeline() {
 	try {
 		this.stanfordNLP = StanfordCoreNLPAnnotator.getDescription();
 	} catch (ResourceInitializationException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		logger.error("Error loading the standford annotators", e);
 	}
 }
   /**
@@ -77,7 +96,7 @@ private AnalysisEngineDescription stanfordNLP;
     else
     	carcha.executeUIMAAnnotator(inputDirectory,output);    	
     sw.stop();
-    sw.prettyPrint();
+    logger.info(sw.prettyPrint());
   }
       
   /**
@@ -142,8 +161,8 @@ private AnalysisEngineDescription createAEDescription(String script) throws Inva
  * Execute Stanford annotators.
  * The annotators are: Tokenize, SSplit, POS, Lemma, NER, Parse, Dcoref + Snowball Stemmer
  *
- * @param _inputDirectory the _input directory
- * @param _uimaFile the _uima file
+ * @param _inputFile the _input file
+ * @param _outputFile the _output file
  */
 public void executeUIMAAnnotator(String _inputFile, String _outputFile) {
 	logger.info("Running executeUIMAAnnotator with: "+_inputFile+" and "+_outputFile);  
@@ -170,6 +189,12 @@ public void executeUIMAAnnotator(String _inputFile, String _outputFile) {
     logger.info("executeUIMAAnnotator took: " + stopwatch); // formatted string like "12.3 ms"
 }
  
+/**
+ * Execute sentence annotator.
+ *
+ * @param _inputFile the _input file
+ * @param _outputFile the _output file
+ */
 public void executeSentenceAnnotator(String _inputFile, String _outputFile) {
 	logger.info("Running executeSentenceAnnotator with: "+_inputFile+" and "+_outputFile);  
 	File file = new File(_inputFile);

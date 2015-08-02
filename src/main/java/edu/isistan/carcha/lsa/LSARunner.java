@@ -1,3 +1,18 @@
+/**
+ * Copyright 2015 UNICEN. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package edu.isistan.carcha.lsa;
 
 import java.io.BufferedReader;
@@ -24,16 +39,40 @@ import edu.ucla.sspace.vector.CompactSparseVector;
 import edu.ucla.sspace.vector.DoubleVector;
 
 
+/**
+ * The Class LSARunner.
+ */
 public class LSARunner {
 
+	/** The Constant SSPACE. */
 	private static final String SSPACE = ".sspace";
+	
+	/** The concerns. */
 	private List<Entity> concerns;
+	
+	/** The design decision. */
 	private List<Entity> designDecision;
+	
+	/** The dimension. */
 	private int dimension;
+	
+	/** The threshold. */
 	private double threshold;
 	
+	/** The logger. */
 	private static Log logger = LogFactory.getLog(LSARunner.class);
+	
+	/** The sspace. */
 	private File sspace;
+	
+	/**
+	 * Instantiates a new LSA runner.
+	 *
+	 * @param concerns the concerns
+	 * @param designDecision the design decision
+	 * @param dimension the dimension
+	 * @param threshold the threshold
+	 */
 	public LSARunner(List<Entity> concerns, List<Entity> designDecision,int dimension, double threshold) {
 		this.concerns = concerns;
 		this.designDecision = designDecision;
@@ -42,6 +81,13 @@ public class LSARunner {
 	}
 
 	
+	/**
+	 * Gets the traceability.
+	 *
+	 * @return the traceability
+	 * @throws IllegalArgumentException the illegal argument exception
+	 * @throws RuntimeException the runtime exception
+	 */
 	public TraceabilityDocument getTraceability() throws IllegalArgumentException, RuntimeException{
 		
 		if (designDecision == null || designDecision.isEmpty())
@@ -92,6 +138,13 @@ public class LSARunner {
 		return ret;
     }
 
+	/**
+	 * Discover traceability.
+	 *
+	 * @param sspaceFile the sspace file
+	 * @return the traceability document
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	private TraceabilityDocument discoverTraceability(File sspaceFile) throws IOException {
 			
 			TraceabilityDocument ret = new TraceabilityDocument(concerns,designDecision);
@@ -138,6 +191,13 @@ public class LSARunner {
 			return ret;
 	}
 
+	/**
+	 * Prints the vector.
+	 *
+	 * @param vector1 the vector1
+	 * @param size the size
+	 * @return the string
+	 */
 	@SuppressWarnings("unused")
 	private String printVector(final DoubleVector vector1, final int size) {
 		String value = "";
@@ -148,10 +208,16 @@ public class LSARunner {
 	}
 
 
+	/**
+	 * Creates the lsa space.
+	 *
+	 * @param documentsFile the documents file
+	 * @return the file
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	private File createLsaSpace(File documentsFile) throws IOException {
 		File sspaceFile = File.createTempFile("sspace_", SSPACE);
 		
-		//XXX:FIXME:TODO: add the stopwords!!!
     	String []params = {
     			"-d" , documentsFile.getAbsolutePath(),
     			"-n" , String.valueOf(dimension),
@@ -167,6 +233,12 @@ public class LSARunner {
 		return sspaceFile;
 	}
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 * @throws Exception the exception
+	 */
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws Exception {
 		List<Entity> testConcerns = Utils.transformedList(FileUtils.readLines(new File(args[0])), new String2Concern(true));
