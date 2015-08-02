@@ -8,10 +8,10 @@ When updateing the rules make sure you don't:
   ```
   cdetector.ruta
   ```
-* Avoid the use of Token and use `org.cleartk.token.type.Token`:
-  e.g: `Token{FEATURE("lemma","storage") -> MARK(persistence)};`
-  vs  
-  `org.cleartk.token.type.Token{FEATURE("lemma","storage") -> MARK(persistence)};`
+* Avoid the use of Token and use `org.cleartk.token.type.Token`:  
+    e.g: `Token{FEATURE("lemma","storage") -> MARK(persistence)};`  
+    vs  
+    `org.cleartk.token.type.Token{FEATURE("lemma","storage") -> MARK(persistence)};`
 
 ## Steps
 
