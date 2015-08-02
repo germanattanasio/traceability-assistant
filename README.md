@@ -1,16 +1,16 @@
-# Traceability Assistant - core #
+# Traceability Assistant
 
 TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover traceability links between requirements documents described as use cases and architectural documents.
 
-### How do I get set up? ###
+## How do I get set up? ###
 
-** Assumptions **
+### Assumptions
 
  * You have eclipse installed. See https://eclipse.org/downloads/
  * You have maven installed. See https://maven.apache.org/
  * You have UIMA RUTA installed. Update site: http://www.apache.org/dist/uima/eclipse-update-site
 
-** Steps **
+### Steps
 
 1. Download the code:
 
@@ -20,16 +20,16 @@ TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover
 2. Open a terminal and type `svd`. 
 3. If you get `command not found`, export the library folder to your PATH.
 
-    export PATH=$PATH:/path/to/svdlibc/directory
+        export PATH=$PATH:/path/to/svdlibc/directory
 
-e.g: `/Users/foo/svdlibc` that way the runtime can find the svd command.
+    e.g: `/Users/foo/svdlibc` that way the runtime can find the svd command.
 
-If you are using eclipse you need to look at the environment. You may need to add the path variable in  your run configuration and include the path to `svd`as showed above.
-You can also follow the instructions in this [blog](http://architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/#.UtSw2vbVVyo)
+    If you are using eclipse you need to look at the environment. You may need to add the path variable in  your run configuration and include the path to `svd`as showed above.
+    You can also follow the instructions in this [blog](http://architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/#.UtSw2vbVVyo)
 
 4. Open a terminal and type:
 
-    mvn clean compile eclipse:eclipse
+        mvn clean compile eclipse:eclipse
 
 5. Open eclipse, import the project and refresh the workspace.
 
