@@ -2,6 +2,8 @@
 
 TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover traceability links between requirements documents described as use cases and architectural documents.
 
+The project is distributed as a jar file. See the [release](/releases/latest). section.
+
 ## How do I get set up? ###
 
 ### Assumptions
@@ -32,6 +34,7 @@ TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover
         mvn clean compile eclipse:eclipse
 
 5. Open eclipse, import the project and refresh the workspace.
+
 
 
 ## License
