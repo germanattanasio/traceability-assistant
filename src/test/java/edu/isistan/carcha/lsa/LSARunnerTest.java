@@ -170,7 +170,7 @@ public class LSARunnerTest {
 			String input_ccc = CORPUS_CCC_FOLDER + testFile + CCC;
 
 			List<Entity> ccc = Utils.transformedList(FileUtils.readLines(new File(input_ccc)),new String2Concern(true));
-			List<Entity> ddd = Utils.annotationAsList(input_ddd, DesignDecision.class,true);
+			List<Entity> ddd = Utils.annotationAsList(input_ddd, DesignDecision.class, true);
 
 			logger.info("Calculate Metrics for: " + testFile);
 			testGenerateTraceabilityResults(ccc, ddd, golden, output);

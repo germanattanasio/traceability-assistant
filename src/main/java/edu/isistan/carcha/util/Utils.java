@@ -317,7 +317,7 @@ public class Utils {
 			}
 			writer.close();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error writing the concerns", e);
 		}
     }	
 }

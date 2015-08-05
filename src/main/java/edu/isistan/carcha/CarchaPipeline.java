@@ -82,7 +82,7 @@ private AnalysisEngineDescription stanfordNLP;
   public static void main(String[] args) throws Exception {
     String inputDirectory = args[0];
     String output = args[1];
-    //TODO: check args to have input and output defined.
+
     CarchaPipeline carcha = new CarchaPipeline();
     StopWatch sw = new StopWatch();
     sw.start("executeStanfordAnnotators");

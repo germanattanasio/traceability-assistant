@@ -182,7 +182,7 @@ public class LSARunner {
 		    	} 
 		    }
 	  		sw.stop();
-			//logger.info(sw.shortSummary());
+			logger.info(sw.shortSummary());
 			
 			//save the traceability results like: untraced count, links, traced count, etc...
 			ret.setLinks(links);
