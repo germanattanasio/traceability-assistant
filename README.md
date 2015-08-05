@@ -4,6 +4,8 @@ TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover
 
 The project is distributed as a jar file. See the [release](https://github.com/germanattanasio/traceability-assistant/releases/latest) section.
 
+If you are interested in the eclipse plugins go to: http://traceability-assistant.mybluemix.net/
+
 ## How do I get set up? ###
 
 ### Assumptions
