@@ -66,7 +66,7 @@ public class Entity {
 	}
 	
 	/** The classification. */
-	private String label,classification;
+	private String label, classification;
 	
 	/** The space label. */
 	private transient String spaceLabel;

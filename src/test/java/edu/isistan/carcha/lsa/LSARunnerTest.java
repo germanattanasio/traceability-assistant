@@ -15,7 +15,6 @@
  */
 package edu.isistan.carcha.lsa;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -23,15 +22,12 @@ import java.text.NumberFormat;
 import java.util.List;
 
 import org.apache.commons.collections.ListUtils;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 
-import edu.isistan.carcha.concern.cdetector.DesignDecision;
 import edu.isistan.carcha.lsa.model.Entity;
 import edu.isistan.carcha.lsa.model.TraceabilityDocument;
-import edu.isistan.carcha.util.String2Concern;
 import edu.isistan.carcha.util.Utils;
 
 /**
@@ -160,7 +156,6 @@ public class LSARunnerTest {
 	 * @throws ClassNotFoundException the class not found exception
 	 */
 	@Test
-	@SuppressWarnings("unchecked")
 	public void testTraceability() throws IOException, ClassNotFoundException {
 
 		for (String testFile : testFiles) {
@@ -169,8 +164,8 @@ public class LSARunnerTest {
 			String input_ddd = CORPUS_DDD_FOLDER + testFile + XMI;
 			String input_ccc = CORPUS_CCC_FOLDER + testFile + CCC;
 
-			List<Entity> ccc = Utils.transformedList(FileUtils.readLines(new File(input_ccc)),new String2Concern(true));
-			List<Entity> ddd = Utils.annotationAsList(input_ddd, DesignDecision.class, true);
+			List<Entity> ccc = Utils.extractCrosscuttingConcernsFromTextFile(input_ccc);
+			List<Entity> ddd = Utils.extractDesignDecisionsAsList(input_ddd);
 
 			logger.info("Calculate Metrics for: " + testFile);
 			testGenerateTraceabilityResults(ccc, ddd, golden, output);

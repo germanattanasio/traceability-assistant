@@ -15,26 +15,101 @@
  */
 package edu.isistan.carcha.lsa.model;
 
+
 /**
  * The Class TraceabilityLink.
  */
+/**
+ * @author German Attanasio Ruiz <germanatt@us.ibm.com>
+ *
+ */
 public class TraceabilityLink {
 	
-	/** The concern. */
-	private int concern;
+	/**  The concern id. */
+	private int concernId;
 	
-	/** The design decision. */
-	private int designDecision;
+	/**  The design decision id. */
+	private int designDecisionId;
 	
 	/** The weight. */
 	private double weight;
+
+	/** The concern. */
+	private transient Entity concern;
+
+	/** The design decision. */
+	private transient Entity designDecision;
+
+	
+	/**
+	 * Gets the concern id.
+	 *
+	 * @return the concern id
+	 */
+	public int getConcernId() {
+		return concernId;
+	}
+
+	/**
+	 * Sets the concern id.
+	 *
+	 * @param concernId the new concern id
+	 */
+	public void setConcernId(int concernId) {
+		this.concernId = concernId;
+	}
+
+	/**
+	 * Gets the design decision id.
+	 *
+	 * @return the design decision id
+	 */
+	public int getDesignDecisionId() {
+		return designDecisionId;
+	}
+
+	/**
+	 * Sets the design decision id.
+	 *
+	 * @param designDecisionId the new design decision id
+	 */
+	public void setDesignDecisionId(int designDecisionId) {
+		this.designDecisionId = designDecisionId;
+	}
+
+	/**
+	 * Sets the weight.
+	 *
+	 * @param weight the new weight
+	 */
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	/**
+	 * Sets the concern.
+	 *
+	 * @param concern the new concern
+	 */
+	public void setConcern(Entity concern) {
+		this.concern = concern;
+	}
+
+	/**
+	 * Sets the design decision.
+	 *
+	 * @param designDecision the new design decision
+	 */
+	public void setDesignDecision(Entity designDecision) {
+		this.designDecision = designDecision;
+	}
 
 	/**
 	 * Gets the concern.
 	 *
 	 * @return the concern
 	 */
-	public int getConcern() {
+	public Entity getConcern() {
 		return concern;
 	}
 
@@ -43,7 +118,7 @@ public class TraceabilityLink {
 	 *
 	 * @return the design decision
 	 */
-	public int getDesignDecision() {
+	public Entity getDesignDecision() {
 		return designDecision;
 	}
 
@@ -59,14 +134,14 @@ public class TraceabilityLink {
 	/**
 	 * Instantiates a new traceability link.
 	 *
-	 * @param concern the concern
-	 * @param designDecision the design decision
+	 * @param ccId the concern hascode
+	 * @param ddId the design decision hashcode
 	 * @param weight the weight
 	 */
-	private TraceabilityLink(int concern, int designDecision, double weight) {
+	private TraceabilityLink(int ccId, int ddId, double weight) {
 		super();
-		this.concern = concern;
-		this.designDecision = designDecision;
+		this.concernId = ccId;
+		this.designDecisionId = ddId;
 		this.weight = weight;
 	}
 
@@ -79,6 +154,8 @@ public class TraceabilityLink {
 	 */
 	public TraceabilityLink(Entity concern, Entity designDecision, Double linkWeight) {
 		this(concern.hashCode(),designDecision.hashCode(),linkWeight);
+		this.concern = concern;
+		this.designDecision = designDecision;
 	}
 
 	/* (non-Javadoc)
@@ -88,8 +165,8 @@ public class TraceabilityLink {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + concern;
-		result = prime * result + designDecision;
+		result = prime * result + concernId;
+		result = prime * result + designDecisionId;
 		return result;
 	}
 
@@ -105,9 +182,9 @@ public class TraceabilityLink {
 		if (getClass() != obj.getClass())
 			return false;
 		TraceabilityLink other = (TraceabilityLink) obj;
-		if (concern != other.concern)
+		if (concernId != other.concernId)
 			return false;
-		if (designDecision != other.designDecision)
+		if (designDecisionId != other.designDecisionId)
 			return false;
 		return true;
 	}
@@ -119,9 +196,9 @@ public class TraceabilityLink {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("TraceabilityLink [concern=");
-		builder.append(concern);
+		builder.append(concernId);
 		builder.append(", designDecision=");
-		builder.append(designDecision);
+		builder.append(designDecisionId);
 		builder.append(", weight=");
 		builder.append(weight);
 		builder.append("]");

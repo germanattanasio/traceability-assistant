@@ -25,6 +25,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.util.StopWatch;
 
 import edu.isistan.carcha.lsa.model.Entity;
@@ -39,6 +41,9 @@ import edu.ucla.sspace.vector.DoubleVector;
  * The Class GephiTraceabilityComparator.
  */
 public abstract class TraceabilityComparator {
+
+	/** The logger. */
+	private static Log logger = LogFactory.getLog(TraceabilityComparator.class);
 	
 	/** The Constant GRAPH. */
 	private static final String GRAPH = "gexf";
@@ -262,7 +267,7 @@ public abstract class TraceabilityComparator {
 	    	} 
 	    }
   		sw.stop();
-		System.out.println(sw.shortSummary());
+  		logger.info(sw.shortSummary());
 		String filename = saveGraph();
 	}
 

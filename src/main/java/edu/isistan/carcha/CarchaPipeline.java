@@ -87,7 +87,7 @@ private AnalysisEngineDescription stanfordNLP;
     StopWatch sw = new StopWatch();
     sw.start("executeStanfordAnnotators");
     if (args.length > 2 && args[2].equals("write")) {
-    	System.out.println("Write Design Decision to file");
+    	logger.info("Write Design Decision to file");
     	carcha.writeAnnotations(inputDirectory, output);
     } else if (args.length > 2 && args[2].equals("sentence"))
     	carcha.writeSentences(inputDirectory, output);

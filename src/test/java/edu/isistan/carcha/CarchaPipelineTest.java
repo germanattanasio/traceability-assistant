@@ -24,8 +24,6 @@ import org.apache.commons.collections.ListUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.uima.UIMAException;
-import org.apache.uima.fit.factory.TypeSystemDescriptionFactory;
-import org.apache.uima.resource.metadata.TypeSystemDescription;
 import org.cleartk.token.type.Sentence;
 import org.junit.Test;
 
@@ -40,10 +38,6 @@ public class CarchaPipelineTest {
 	/** The logger. */
 	private static final Log logger = LogFactory.getLog(CarchaPipelineTest.class);
 	
-	/** The tsd. */
-	// it Auto-detect our TypeSystem, COOl don't you think ?
-	private final TypeSystemDescription tsd = TypeSystemDescriptionFactory.createTypeSystemDescription("TypeSystem"); 
-
 	/** The golden folder. */
 	private final String GOLDEN_FOLDER = "src/test/resources/ddd/0golden/";
 	
@@ -71,7 +65,7 @@ public class CarchaPipelineTest {
 	public final void testExecuteUIMAAnnotator() throws UIMAException, IOException {
 		CarchaPipeline pipeline = new CarchaPipeline();
 		
-		String [] testFiles = {"adventure_builder","pet_store","mslite"};
+		String [] testFiles = {"adventure_builder", "pet_store","mslite"};
 		
 		for (String testFile : testFiles) {
 			String golden = GOLDEN_FOLDER+testFile+XMI;
@@ -115,11 +109,11 @@ public class CarchaPipelineTest {
 	 */
 	private void testCalculateMetrics(String output, String golden) throws UIMAException, IOException {
 
-		List<String> goldenDesignDecisions     = Utils.extractAnnotations(golden,tsd,DesignDecision.class);
-		List<String> goldenSentences           = Utils.extractAnnotations(golden,tsd,Sentence.class);
+		List<String> goldenDesignDecisions     = Utils.extractCoveredTextAnnotations(golden,DesignDecision.class);
+		List<String> goldenSentences           = Utils.extractCoveredTextAnnotations(golden,Sentence.class);
 		
-		List<String> discoveredDesignDecisions = Utils.extractAnnotations(output,tsd,DesignDecision.class);
-		List<String> discoveredSentences       = Utils.extractAnnotations(output,tsd,Sentence.class);
+		List<String> discoveredDesignDecisions = Utils.extractCoveredTextAnnotations(output,DesignDecision.class);
+		List<String> discoveredSentences       = Utils.extractCoveredTextAnnotations(output,Sentence.class);
 		
 		//Golden design decision that were not discovered
 		double fn = ListUtils.removeAll(goldenDesignDecisions, discoveredDesignDecisions).size();

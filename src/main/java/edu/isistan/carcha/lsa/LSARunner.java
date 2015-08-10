@@ -88,7 +88,7 @@ public class LSARunner {
 	 * @throws IllegalArgumentException the illegal argument exception
 	 * @throws RuntimeException the runtime exception
 	 */
-	public TraceabilityDocument getTraceability() throws IllegalArgumentException, RuntimeException{
+	public TraceabilityDocument getTraceability() throws IllegalArgumentException {
 		
 		if (designDecision == null || designDecision.isEmpty())
 			throw new IllegalArgumentException("designDecision can't be null or empty");
@@ -105,9 +105,9 @@ public class LSARunner {
 				try {
 					sspace = File.createTempFile("lsa-"+concerns.hashCode()+designDecision.hashCode(),"-space.txt");
 					FileUtils.copyFile(documentsFile,this.sspace);
-					logger.info("sspace="+this.sspace.getAbsolutePath());
+					logger.info("sspace = "+this.sspace.getAbsolutePath());
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error("Error creating the temporal file",e);
 				}
 			}
 			
@@ -156,7 +156,7 @@ public class LSARunner {
 			DocumentVectorBuilder builder = new DocumentVectorBuilder(sspace);
 			
 			StopWatch sw = new StopWatch();
-			sw.start("Start the traceability comparation");
+			sw.start("LSA - Traceability discovery");
 
 			int untracedCount = 0;
 			for (Entity req : concerns) {
@@ -182,7 +182,7 @@ public class LSARunner {
 		    	} 
 		    }
 	  		sw.stop();
-			logger.info(sw.shortSummary());
+			logger.info(sw.prettyPrint());
 			
 			//save the traceability results like: untraced count, links, traced count, etc...
 			ret.setLinks(links);
@@ -246,6 +246,16 @@ public class LSARunner {
 		
 		LSARunner runner = new LSARunner(testConcerns, testDesignDecisions, 100,0.75 );
 		TraceabilityDocument doc = runner.getTraceability();
-		System.out.println(doc);
+		logger.info(doc);
     }
+
+
+	@Override
+	public String toString() {
+		return "LSARunner [dimension=" + dimension + ", threshold=" + threshold
+				+ ", sspace=" + sspace + ", concerns=" + concerns.size()
+				+ ", designDecision=" + designDecision.size() + "]";
+	}
+	
+	
 }

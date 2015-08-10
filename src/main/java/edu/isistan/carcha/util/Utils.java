@@ -19,12 +19,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.collections.ListUtils;
@@ -58,136 +55,14 @@ import edu.isistan.carcha.lsa.model.TraceabilityLink;
 public class Utils {
 	
 	/** The Constant CARCHA_TYPE_SYSTEM. */
-	private static final String CARCHA_TYPE_SYSTEM = "TypeSystem";
+	public static final TypeSystemDescription CARCHA_TYPE_SYSTEM = TypeSystemDescriptionFactory.createTypeSystemDescription("TypeSystem"); 
+
+
+	/** The logger. */
+	private static final Log logger = LogFactory.getLog(Utils.class);
 
 	/** The Constant TMP. */
 	private static final String TMP = ".tmp";
-	
-	/** The logger. */
-	private static Log logger = LogFactory.getLog(Utils.class);
-
-	/**
-	 * Sum.
-	 *
-	 * @param concerns the concerns
-	 * @param designDecision the design decision
-	 * @return the list
-	 */
-	@SuppressWarnings("unchecked")
-	public static List<String> sum(List<Entity> concerns,List<Entity> designDecision) {
-		List<String> ret = ListUtils.sum(Utils.transformedList(concerns, 
-				new Entity2String()), 
-				Utils.transformedList(designDecision, new Entity2String()));
-		return ret;
-	}
-
-	/**
-	 * Creates the file from string list.
-	 *
-	 * @param documents the documents
-	 * @return the file
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	public static File createFileFromStringList(List<String> documents) throws IOException {
-		File file = null;
-		try {
-			file = File.createTempFile("documents_", TMP);
-			FileWriter writer = new FileWriter(file);
-			FileUtils.writeLines(file, documents, "\n");
-			writer.close();
-		} catch (IOException e) {
-			logger.error("Error creating the temp file",e);
-			throw e;
-		}
-		return file;
-	}
-
-	/**
-	 * Transformed list.
-	 *
-	 * @param list the list
-	 * @param transformer the transformer
-	 * @return the list
-	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public static List transformedList(List list,Transformer transformer) {
-		List ret = new ArrayList<Entity>();
-		for (Object item : list) {
-			ret.add(transformer.transform(item));
-		}
-		return ret;
-	}
-	
-	/**
-	 * Extracts annotations from a DXMI file.
-	 *
-	 * @param <T> the generic type
-	 * @param dxmiFile the dxmi filename from where the annotation will be extracted
-	 * @param Annotation the annotation
-	 * @param typeLess the type less
-	 * @return the annotation list extracted from the dxmiFile
-	 */
-	public static <T extends Annotation> List<Entity> annotationAsList(String dxmiFile,Class<T> Annotation, boolean typeLess) {
-		List<Entity> ret = new ArrayList<Entity>();
-		JCas jCas;
-
-		try {
-			File tempFile = File.createTempFile("annotations", ".xmi");
-			FileUtils.copyFile(new File(dxmiFile), tempFile);
-			jCas = JCasFactory.createJCas(tempFile.getAbsolutePath(), 
-					TypeSystemDescriptionFactory
-					.createTypeSystemDescription(CARCHA_TYPE_SYSTEM));
-			tempFile.delete();
-		} catch (Exception e) {
-			logger.error("There was an error with the DXMI file", e);
-			return null;
-		} 
-		for (T c : JCasUtil.select(jCas, Annotation)) {
-			Entity entity = null;
-			if ( c instanceof DesignDecision) {
-				DesignDecision dd = (DesignDecision) c;
-				entity = new Entity(dd.getCoveredText(), typeLess ? "tactic" : dd.getTypex(), NodeType.DD);
-			} else {
-				entity = new Entity(c.getCoveredText(),"tactic",NodeType.DD);
-			}
-			ret.add(entity);
-        }
-		return ret;		
-	}
-
-	
-	/**
-	 * Write the traceability object to a file.
-	 *
-	 * @param doc the traceability object
-	 * @param output the file path where the traceability will be written
-	 * @throws FileNotFoundException the file not found exception
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	public static void writeTraceabilityToFile(TraceabilityDocument doc,String output) 
-			throws FileNotFoundException, IOException {
-		File outputFile = new File(output);
-		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-		String pretJson = prettyGson.toJson(doc);
-		FileUtils.writeStringToFile(outputFile, pretJson);
-	}
-	
-	/**
-	 * Read the traceability object from a file.
-	 *
-	 * @param traceabilityFile the traceability file path
-	 * @return the traceability document
-	 * @throws ClassNotFoundException the class not found exception
-	 * @throws FileNotFoundException the file not found exception
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
-	public static TraceabilityDocument readTraceabilityFromFile(String traceabilityFile) 
-			throws ClassNotFoundException, FileNotFoundException, IOException {
-		File inputFile = new File(traceabilityFile);
-		String traceJson = FileUtils.readFileToString(inputFile);
-		Gson gson = new Gson();
-		return gson.fromJson(traceJson,TraceabilityDocument.class);
-	}
 
 	/**
 	 * Calculate true negatives.
@@ -225,7 +100,27 @@ public class Utils {
 		return tp;
 	}
 
-	
+	/**
+	 * Creates the file from string list.
+	 *
+	 * @param documents the documents
+	 * @return the file
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	public static File createFileFromStringList(List<String> documents) throws IOException {
+		File file = null;
+		try {
+			file = File.createTempFile("documents_", TMP);
+			FileWriter writer = new FileWriter(file);
+			FileUtils.writeLines(file, documents, "\n");
+			writer.close();
+		} catch (IOException e) {
+			logger.error("Error creating the temp file",e);
+			throw e;
+		}
+		return file;
+	}
+
 	/**
 	 * Extract the T annotation as a String list and remove duplicates.
 	 *
@@ -237,9 +132,8 @@ public class Utils {
 	 * @throws UIMAException the uIMA exception
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	 public static <T extends Annotation >List<String> extractAnnotations(String filename,
-			 TypeSystemDescription tsd,final Class<T> type) throws UIMAException, IOException {
-		 JCas jCas = JCasFactory.createJCas(filename, tsd);
+	 public static <T extends Annotation >List<String> extractCoveredTextAnnotations(String filename,final Class<T> type) throws UIMAException, IOException {
+		 JCas jCas = JCasFactory.createJCas(filename, CARCHA_TYPE_SYSTEM);
 		 List<String> ret = new ArrayList<String>();
 		 HashSet<String> hs = new HashSet<String>();
 		 
@@ -248,6 +142,125 @@ public class Utils {
 		 }
 		 ret.addAll(hs);
 		 return ret;
+	}
+	
+	/**
+	 * Extracts crosscutting concerns from a DXMI file.
+	 *
+	 * @param reaFile the rea filename from where the crosscutting concerns will be extracted
+	 * @return the crosscutting concerns list extracted from the dxmiFile
+	 */
+	public static List<Entity> extractCrosscuttingConcernsFromREA(String reaFile) {
+		//TODO: get the crosscutting concerns from the REA file using REAssistant.
+		return new ArrayList<Entity>();	
+	}
+
+	
+	/**
+	 * Extracts crosscutting concerns(ccc) from a text file where each ccc is<br>
+	 * <code>
+	 * (classification) \t\t (label)
+	 * <code>
+	 * @param fileName The file name
+	 * @return The entity list
+	 * @throws IOException
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<Entity> extractCrosscuttingConcernsFromTextFile(String fileName) throws IOException {
+		List<Entity> ccc = Utils.transformedList(FileUtils.readLines(new File(fileName)),new String2Concern(true));
+		return ccc;		
+	}
+
+	
+	/**
+	 * Extracts design decisions from a DXMI file.
+	 *
+	 * @param dxmiFile the dxmi filename from where the design decisions will be extracted
+	 * @return the design decisions list extracted from the dxmiFile
+	 */
+	public static List<Entity> extractDesignDecisionsAsList(String dxmiFile) {
+		List<Entity> ret = new ArrayList<Entity>();
+		JCas jCas;
+
+		try {
+			File tempFile = File.createTempFile("annotations", ".xmi");
+			FileUtils.copyFile(new File(dxmiFile), tempFile);
+			jCas = JCasFactory.createJCas(tempFile.getAbsolutePath(),CARCHA_TYPE_SYSTEM);
+			tempFile.delete();
+		} catch (Exception e) {
+			logger.error("There was an error with the DXMI file", e);
+			return null;
+		} 
+		for (DesignDecision dd : JCasUtil.select(jCas, DesignDecision.class)) {
+			Entity entity = new Entity(dd.getCoveredText(), dd.getTypex(), NodeType.DD);
+			ret.add(entity);
+        }
+		return ret;		
+	}
+	
+	/**
+	 * Read the traceability object from a file.
+	 *
+	 * @param traceabilityFile the traceability file path
+	 * @return the traceability document
+	 * @throws ClassNotFoundException the class not found exception
+	 * @throws FileNotFoundException the file not found exception
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	public static TraceabilityDocument readTraceabilityFromFile(String traceabilityFile) 
+			throws ClassNotFoundException, FileNotFoundException, IOException {
+		File inputFile = new File(traceabilityFile);
+		String traceJson = FileUtils.readFileToString(inputFile);
+		Gson gson = new Gson();
+		return gson.fromJson(traceJson,TraceabilityDocument.class);
+	}
+
+	/**
+	 * Sum.
+	 *
+	 * @param concerns the concerns
+	 * @param designDecision the design decision
+	 * @return the list
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<String> sum(List<Entity> concerns,List<Entity> designDecision) {
+		List<String> ret = ListUtils.sum(Utils.transformedList(concerns, 
+				new Entity2String()), 
+				Utils.transformedList(designDecision, new Entity2String()));
+		return ret;
+	}
+
+	
+	/**
+	 * Transformed list.
+	 *
+	 * @param list the list
+	 * @param transformer the transformer
+	 * @return the list
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static List transformedList(List list,Transformer transformer) {
+		List ret = new ArrayList<Entity>();
+		for (Object item : list) {
+			ret.add(transformer.transform(item));
+		}
+		return ret;
+	}
+
+	/**
+	 * Write the traceability object to a file.
+	 *
+	 * @param doc the traceability object
+	 * @param output the file path where the traceability will be written
+	 * @throws FileNotFoundException the file not found exception
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	public static void writeTraceabilityToFile(TraceabilityDocument doc,String output) 
+			throws FileNotFoundException, IOException {
+		File outputFile = new File(output);
+		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+		String pretJson = prettyGson.toJson(doc);
+		FileUtils.writeStringToFile(outputFile, pretJson);
 	}
 
 	/**
@@ -266,58 +279,8 @@ public class Utils {
 			gephi.addNode(d);
 		}
 		for(TraceabilityLink t : result.getLinks()) {
-			gephi.addEdge(t.getConcern(), t.getDesignDecision(), Double.valueOf(t.getWeight()));
+			gephi.addEdge(t.getConcernId(), t.getDesignDecisionId(), Double.valueOf(t.getWeight()));
 		}
 		gephi.saveGraph();
-	}
-
-	/**
-	 * Write matrix.
-	 *
-	 * @param result the result
-	 * @param filename the filename
-	 */
-	public static void writeMatrix(TraceabilityDocument result, String filename) {
-        try {
-        	PrintStream writer = new PrintStream(new File(filename));
-        	Map<Integer, TraceabilityLink> links = new HashMap<Integer, TraceabilityLink>();
-        	
-        	for (TraceabilityLink tl : result.getLinks()) {
-        		links.put(tl.hashCode(),tl);
-        	}
-        	
-        	for (Entity ccc : result.getConcerns()) {
-        		writer.println(ccc.getId()+"\t"+ccc.getLabel());
-        		for (Entity ddd : result.getDesignDecisions()) {
-        			TraceabilityLink pl = links.get(new TraceabilityLink(ccc, ddd, 0.0).hashCode());
-					if (pl != null) {
-						writer.println("\t" +ddd.getId()+"\t"+ddd.getLabel() + " " +pl.getWeight());
-					}
-        		}
-        	}
-        	writer.close();
-        	
-        } catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-	
-	/**
-	 * Write concerns.
-	 *
-	 * @param entities the entities
-	 * @param filename the filename
-	 */
-	public static void writeConcerns(List<Entity> entities, String filename) {
-        try {
-        	PrintStream writer = new PrintStream(new File(filename));
-
-			for (Entity entity : entities) {
-				writer.println(entity.getId()+" === "+entity.getLabel());
-			}
-			writer.close();
-		} catch (IOException e) {
-			logger.error("Error writing the concerns", e);
-		}
-    }	
+	}	
 }

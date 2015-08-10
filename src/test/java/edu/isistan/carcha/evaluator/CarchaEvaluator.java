@@ -20,9 +20,9 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.uima.UIMAException;
-import org.apache.uima.fit.factory.TypeSystemDescriptionFactory;
-import org.apache.uima.resource.metadata.TypeSystemDescription;
 import org.cleartk.token.type.Sentence;
 
 import edu.isistan.carcha.concern.cdetector.DesignDecision;
@@ -34,9 +34,8 @@ import edu.isistan.carcha.util.Utils;
  */
 public class CarchaEvaluator {
 	
-	/** The tsd. */
-	// it Auto-detect our TypeSystem, COOl don't you think ?
-	private final TypeSystemDescription tsd = TypeSystemDescriptionFactory.createTypeSystemDescription("TypeSystem"); 
+	  /** The Constant logger. */
+	  private static final Log logger = LogFactory.getLog(CarchaEvaluator.class);
 
 	/**
 	 * The main method.
@@ -72,17 +71,17 @@ public class CarchaEvaluator {
 			String goldenFileName = goldens[i].getName();
 			String annotatedFileName = annotated[i].getName();
 
-			System.out.println("\n----------------\nComparing "+goldenFileName+" with "+annotatedFileName+"\n----------------\n");
+			logger.info("\n----------------\nComparing "+goldenFileName+" with "+annotatedFileName+"\n----------------\n");
 
-			List<String> goldenSentences = Utils.extractAnnotations(goldens[i].getAbsolutePath(),tsd,Sentence.class);
-			List<String> goldenConcern= Utils.extractAnnotations(goldens[i].getAbsolutePath(),tsd,DesignDecision.class);
-			List<String> discoveredConcern= Utils.extractAnnotations(annotated[i].getAbsolutePath(),tsd,DesignDecision.class);
+			List<String> goldenSentences = Utils.extractCoveredTextAnnotations(goldens[i].getAbsolutePath(),Sentence.class);
+			List<String> goldenConcern= Utils.extractCoveredTextAnnotations(goldens[i].getAbsolutePath(),DesignDecision.class);
+			List<String> discoveredConcern= Utils.extractCoveredTextAnnotations(annotated[i].getAbsolutePath(),DesignDecision.class);
 			
 			goldenSentences.removeAll(discoveredConcern);
 			goldenConcern.removeAll(discoveredConcern);
 			
-			System.out.println("untraced concerns "+goldenConcern.size());
-			System.out.println("untraced sentences "+goldenSentences.size());
+			logger.info("untraced concerns "+goldenConcern.size());
+			logger.info("untraced sentences "+goldenSentences.size());
 
 		}
 	}
