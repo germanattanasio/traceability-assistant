@@ -28,10 +28,10 @@ import com.google.gson.Gson;
 public class TraceabilityLink {
 	
 	/**  The concern id. */
-	private Integer concernId;
+	private int concernId;
 	
 	/**  The design decision id. */
-	private Integer designDecisionId;
+	private int designDecisionId;
 	
 	/** The weight. */
 	private Double weight;

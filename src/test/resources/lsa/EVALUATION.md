@@ -8,7 +8,7 @@ Design decision metrics
 
 ### Distribution
 
-The DDD distribution is generated manually by counting each occurrence for each `.xml` file.  
+The DDD distribution is generated manually by counting each occurrence of a DDD in each `.xml` file.  
 See: `src/test/resources/lsa/1corpus/ccc`
 
 ### Precision, Recall, F2 and Accuracy
