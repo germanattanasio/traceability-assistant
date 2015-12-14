@@ -1,4 +1,6 @@
 # Traceability Assistant
+[![Build Status](https://secure.travis-ci.org/germanattanasio/traceability-assistant.svg)](http://travis-ci.org/germanattanasio/traceability-assistant)
+[![Coverage Status](https://coveralls.io/repos/germanattanasio/traceability-assistant/badge.svg)](https://coveralls.io/github/germanattanasio/traceability-assistant)
 
 TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover traceability links between requirements documents described as use cases and architectural documents.
 
@@ -20,8 +22,8 @@ If you are interested in the eclipse plugins go to: http://traceability-assistan
 
         git clone git@github.com:germanattanasio/traceability-assistant.git
 
-1. Install the [SVD](https://github.com/lucasmaystre/svdlibc) library. 
-2. Open a terminal and type `svd`. 
+1. Install the [SVD](https://github.com/lucasmaystre/svdlibc) library.
+2. Open a terminal and type `svd`.
 3. If you get `command not found`, export the library folder to your PATH.
 
         export PATH=$PATH:/path/to/svdlibc/directory
