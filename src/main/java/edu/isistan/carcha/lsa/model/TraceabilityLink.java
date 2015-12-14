@@ -15,6 +15,8 @@
  */
 package edu.isistan.carcha.lsa.model;
 
+import com.google.gson.Gson;
+
 
 /**
  * The Class TraceabilityLink.
@@ -26,13 +28,13 @@ package edu.isistan.carcha.lsa.model;
 public class TraceabilityLink {
 	
 	/**  The concern id. */
-	private int concernId;
+	private Integer concernId;
 	
 	/**  The design decision id. */
-	private int designDecisionId;
+	private Integer designDecisionId;
 	
 	/** The weight. */
-	private double weight;
+	private Double weight;
 
 	/** The concern. */
 	private transient Entity concern;
@@ -194,15 +196,7 @@ public class TraceabilityLink {
 	 */
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("TraceabilityLink [concern=");
-		builder.append(concernId);
-		builder.append(", designDecision=");
-		builder.append(designDecisionId);
-		builder.append(", weight=");
-		builder.append(weight);
-		builder.append("]");
-		return builder.toString();
+		return new Gson().toJson(this);
 	}
 	
 }

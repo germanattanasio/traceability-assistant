@@ -19,6 +19,8 @@ import java.util.regex.Pattern;
 
 import org.tartarus.snowball.ext.EnglishStemmer;
 
+import com.google.gson.Gson;
+
 /**
  * The Class Entity.
  */
@@ -198,13 +200,7 @@ public class Entity {
 	 */
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(type);
-		builder.append(" \t");
-		builder.append(classification);
-		builder.append("\t");
-		builder.append(label);
-		return builder.toString();
+		return new Gson().toJson(this);
 	}
 
 	/**

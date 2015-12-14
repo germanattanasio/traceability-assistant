@@ -17,6 +17,8 @@ package edu.isistan.carcha.lsa.model;
 
 import java.util.List;
 
+import com.google.gson.GsonBuilder;
+
 /**
  * The Class TraceabilityDocument.
  */
@@ -32,10 +34,10 @@ public class TraceabilityDocument {
 	private List<TraceabilityLink> links;
 	
 	/** The traced concern count. */
-	private int tracedConcernCount;
+	private Integer tracedConcernCount;
 	
 	/** The untraced concern count. */
-	private int untracedConcernCount;
+	private Integer untracedConcernCount;
 	
 	/**
 	 * Instantiates a new traceability document.
@@ -126,14 +128,6 @@ public class TraceabilityDocument {
 	 */
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("TraceabilityDocument [links=");
-		builder.append(links.size());
-		builder.append(", untracedCount=");
-		builder.append(untracedConcernCount);
-		builder.append(", tracedCount=");
-		builder.append(tracedConcernCount);
-		builder.append("]");
-		return builder.toString();
+		return new GsonBuilder().setPrettyPrinting().create().toJson(this);
 	}
 }
