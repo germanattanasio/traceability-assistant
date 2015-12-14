@@ -50,6 +50,11 @@ public class CarchaPipelineTest {
 	/** The sentence folder. */
 	private final String SENTENCE_FOLDER = "src/test/resources/ddd/4sentences/";
 
+	private final String [] testFiles = {
+//			"mslite",
+//			"adventure_builder",
+			"pet_store"			
+			};
 	
 	/** The xmi. */
 	private final String XMI = ".xmi";
@@ -64,8 +69,6 @@ public class CarchaPipelineTest {
 	@Test
 	public final void testExecuteUIMAAnnotator() throws UIMAException, IOException {
 		CarchaPipeline pipeline = new CarchaPipeline();
-		
-		String [] testFiles = {"adventure_builder", "pet_store","mslite"};
 		
 		for (String testFile : testFiles) {
 			String golden = GOLDEN_FOLDER+testFile+XMI;
@@ -88,8 +91,6 @@ public class CarchaPipelineTest {
 	@Test
 	public final void testExecuteSentenceAnnotator() throws UIMAException, IOException {
 		CarchaPipeline pipeline = new CarchaPipeline();
-		
-		String [] testFiles = {"adventure_builder","pet_store","mslite"};
 		
 		for (String testFile : testFiles) {
 			String output = SENTENCE_FOLDER+testFile+XMI;
