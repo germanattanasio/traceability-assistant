@@ -1,6 +1,4 @@
 # Traceability Assistant
-[![Build Status](https://secure.travis-ci.org/germanattanasio/traceability-assistant.svg)](http://travis-ci.org/germanattanasio/traceability-assistant)
-[![Coverage Status](https://coveralls.io/repos/germanattanasio/traceability-assistant/badge.svg)](https://coveralls.io/github/germanattanasio/traceability-assistant)
 
 TRAS(Traceability Assistant) is a semi-automated tool that help analysts uncover traceability links between requirements documents described as use cases and architectural documents.
 
